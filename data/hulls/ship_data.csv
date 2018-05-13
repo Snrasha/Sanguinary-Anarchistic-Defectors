@@ -1,41 +1,18 @@
 name,id,designation,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,hints,breakProb,minPieces,maxPieces,number
-#Fighter frigate,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Warden,forg_warden_fighter,,ammofeed,,1500,300,750,1250,200,15,,130,110,95,95,120,150,NONE,,0,0,0,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,0.5,2,2,0
-Defender,forg_defender_fighter,,flarelauncher,,1800,350,750,1250,100,30,,100,90,90,90,110,160,NONE,,0,0,0,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,0.5,2,2,1
-Picket,forg_picket_fighter,,maneuveringjets,,1400,250,750,1250,100,15,,200,175,150,100,120,120,NONE,,0,0,0,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,0.5,2,2,2
-Sentry,forg_sentry_fighter,,fastmissileracks,,1200,200,750,1250,100,15,,110,90,90,60,100,120,NONE,,0,0,0,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,0.5,2,2,3
-#Fighter destroyer,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Bastillon,forg_bastillon_fighter,,flarelauncher,,4500,550,3500,3125,250,60,,60,40,20,20,20,400,NONE,,0,0,0,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,0.5,2,3,5
-Berserker,forg_berserker_fighter,,burndrive,,4500,575,3400,2813,225,60,,65,45,15,18,18,450,NONE,,0,0,0,,,0,0,,,,,,,,,,,,,HIDE_IN_CODEX,0.5,2,3,6
-#Frigate E,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Lasher(E),forg_lasher_old,Frigate,ammofeed,3,1800,360,1800,1750,120,55,,115,105,85,60,90,220,NONE,,0,0,0,,,20,45,35,25,1,25,9,8500,8,10,240,0.25,3,3,HIDE_IN_CODEX,0.4,2,2,8
-Cerberus(E),forg_cerberus_old,Combat Freighter,burndrive,3,2250,350,1150,1750,125,40,,100,90,70,60,120,280,NONE,,0,0,0,,,15,45,75,40,1,40,9,8000,8,10,240,0.25,3,3,HIDE_IN_CODEX,0.3,2,2,9
-Hound(E),forg_hound_old,Combat Freighter,flarelauncher,3,1900,380,650,1000,80,33,,175,170,95,90,120,180,NONE,,0,0,0,,,10,40,70,30,1,30,9,7000,5,10,240,0.25,3,3,HIDE_IN_CODEX,0.4,2,2,10
-Kite(E),forg_kite_old,Shuttle,maneuveringjets,2,800,100,1300,900,70,25,,130,140,75,45,85,120,NONE,,0,0,0,,,3,25,35,25,1,15,9,3500,5,10,240,0.25,2,2,HIDE_IN_CODEX,0.75,2,2,11
-Brawler(E),forg_brawler_old,Gunship,damper,3,1800,500,2400,2400,190,50,,95,175,115,55,120,260,NONE,,0,0,0,,,15,30,40,20,1,20,9,11000,8,10,240,0.25,3,3,HIDE_IN_CODEX,0.4,2,2,12
-#Frigate F,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Brawler,forg_brawler_mod,Gunship,damper,6,2600,750,2600,2600,210,60,,120,185,125,70,120,270,NONE,,0,0,0,,,15,30,40,20,1,20,10,14000,8,10,360,0.25,5,5,HIDE_IN_CODEX,0.4,2,2,14
-Kite(F),forg_kite_mod,Heavy Frigate,maneuveringjets,5,1300,300,1500,1200,100,35,,150,155,80,45,85,160,NONE,,0,0,0,,,2,30,30,20,1,20,9,5000,5,10,360,0.25,3,3,HIDE_IN_CODEX,0.75,2,2,15
-Sentry(F),forg_sentry_mod,Frigate,fastmissileracks,4,1350,250,770,1250,110,25,,115,95,95,60,100,125,NONE,,0,0,0,,,6,16,20,20,1,20,9,8000,5,5,360,0.25,4,4,HIDE_IN_CODEX,0.5,2,2,16
-Picket(F),forg_picket_mod,Frigate,maneuveringjets,4,1500,275,800,1300,110,20,,210,180,150,100,120,120,NONE,,0,0,0,,,6,20,15,15,1,20,9,8800,5,5,360,0.25,4,4,HIDE_IN_CODEX,0.5,2,2,17
-Warden(F),forg_warden_mod,Frigate,ammofeed,4,1800,350,800,1350,120,35,,125,105,90,90,120,150,NONE,,0,0,0,,,8,35,20,30,1,20,9,8500,5,5,360,0.25,4,4,HIDE_IN_CODEX,0.5,2,2,18
-Defender(F),forg_defender_mod,Frigate,flarelauncher,4,2000,400,800,1350,120,40,,105,95,90,90,110,160,NONE,,0,0,0,,,12,45,20,30,1,20,9,9000,5,5,360,0.25,4,4,HIDE_IN_CODEX,0.5,2,2,19
-Hound(F),forg_hound_mod,Frigate,flarelauncher,4,2200,450,800,1350,120,38,,185,180,100,90,120,210,NONE,,0,0,0,,,10,30,30,20,1,30,10,8000,5,5,360,0.25,4,4,HIDE_IN_CODEX,0.4,2,2,20
-Cerberus(F),forg_cerberus_mod,Heavy Frigate,burndrive,6,3500,450,1350,2000,200,60,,130,120,75,60,120,380,NONE,,0,0,0,,,30,60,50,30,1,40,10,12000,8,10,360,0.25,6,6,HIDE_IN_CODEX,0.3,2,2,21
-Lasher(F),forg_lasher_mod,Heavy Frigate,ammofeed,6,3600,440,1600,2000,210,65,,125,115,100,85,90,280,NONE,,0,0,0,,,25,55,45,30,1,30,10,9500,8,10,360,0.25,6,6,HIDE_IN_CODEX,0.4,2,2,22
-#Destroyer(E),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Enforcer(E),forg_enforcer_old,Destroyer,burndrive,9,6000,850,3900,3333,180,110,,50,35,15,30,20,550,NONE,,0,0,0,,,55,95,80,90,3,25,8,17000,5,12,360,0.25,7,7,HIDE_IN_CODEX,0.4,2,3,24
-Hammerhead(E),forg_hammerhead_old,Destroyer,ammofeed,9,5200,500,4150,4167,240,95,,85,55,35,30,60,420,NONE,,0,0,0,,,45,95,90,60,2,30,8,16000,5,10,360,0.25,7,7,HIDE_IN_CODEX,0.5,2,3,25
-#Destroyer(F),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Enforcer(F),forg_enforcer_mod,Destroyer,burndrive,12,7000,950,4300,4000,250,126,,70,45,25,30,20,600,NONE,,0,0,0,,,65,105,90,90,3,30,9,25000,5,12,540,0.25,11,11,HIDE_IN_CODEX,0.4,2,3,303
-Hammerhead(F),forg_hammerhead_mod,Destroyer,ammofeed,12,7000,800,5000,5500,350,95,,100,70,45,35,60,440,NONE,,0,0,0,,,50,100,105,65,2,30,9,22000,5,12,540,0.25,10,10,HIDE_IN_CODEX,0.5,2,3,27
-Bastillon(F),forg_bastillon_mod,Destroyer,flarelauncher,11,5750,600,3750,3125,275,90,,75,55,35,25,20,420,NONE,,0,0,0,,,50,70,80,40,2,25,9,20000,5,10,540,0.25,8,8,HIDE_IN_CODEX,0.5,2,3,28
-Berserker(F),forg_berserker_mod,Destroyer,burndrive,12,5750,625,3550,2813,250,95,,75,50,25,28,18,470,NONE,,0,0,0,,,50,80,80,40,2,25,9,21000,5,10,540,0.25,8,8,HIDE_IN_CODEX,0.5,2,3,29
-Condor(F),forg_condor_mod,Carrier,fastmissileracks,10,5500,650,2400,2000,130,55,2,50,40,25,25,10,420,NONE,,0,0,0,,,95,155,50,40,2,25,9,20000,5,10,540,0.25,12,10,"CARRIER,HIDE_IN_CODEX",0.5,2,3,30
+Wadjet,SAD_Wadjet,,,,300,30,500,,60,0,,290,450,140,120,190,20,FRONT,,240,0.25,0.8,,,1,1,,,,,,,,,,,,,,0,,,52702
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Epiderm,forg_epiderm,UltraHeavy Destroyer,maneuveringjets,12,7000,900,3550,2813,250,90,,55,30,20,14,10,500,NONE,,0,0,0,,,50,85,100,50,3,35,8,30000,5,12,540,0.25,12,12,"SHIP_WITH_MODULES,HIDE_IN_CODEX",0.5,2,3,3007
-,forg_epiderm_gunpod,Gun pod,,1,3500,600,1500,5000,160,40,,0,0,0,0,0,240,NONE,,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX",0.5,2,2,3009
+Neith,SAD_Neith,Frigate,ms_displacer,4,1050,250,2000,1813,130,40,,155,170,120,140,200,100,FRONT,,210,0.3,0.8,,,7,18,65,40,1.25,35,10,11000,10,15,300,0.25,4,3,,0.4,2,2,54914
+Thoth,SAD_Thoth,Gunship,,5,1400,190,2250,2250,160,45,,140,80,80,90,120,200,FRONT,,270,0.2,0.8,,,12,30,40,25,1.25,35,10,14000,8,10,340,0.25,5,4,,0.3,2,2,54913
+Seshat,SAD_Seshat,Light Carrier,,4,1250,100,1500,130,90,25,,125,80,80,70,70,100,FRONT,,210,0.5,0.8,,,2,50,15,25,0.5,30,10,15000,5,20,260,0.25,3,3,CARRIER,0.65,2,2,54920
+Hapy,SAD_Hapy,Gunship,,5,1550,180,3000,1875,160,50,,135,65,50,95,105,200,FRONT,,270,0.4,0.8,,,25,35,50,25,1.5,30,10,16000,8,10,340,0.25,4,4,,0.5,2,2,54913.2
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Tronion,forg_tronion,UltraHeavy Destroyer,ammofeed,12,5000,825,1500,2000,200,60,,75,40,30,20,15,300,NONE,,0,0,0,,,50,85,100,50,3,35,8,31000,5,12,540,0.25,12,12,"SHIP_WITH_MODULES,HIDE_IN_CODEX",0.5,2,3,3007
-,forg_tronion_left,Left gun pod,ammofeed,1,4500,800,2500,1000,190,40,,0,0,0,0,0,200,NONE,,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX",0.5,2,2,3009
-,forg_tronion_right,Right gun pod,ammofeed,1,4500,800,2500,1000,190,40,,0,0,0,0,0,200,NONE,,0,0,0,,,0,0,0,0,1,0,,500000,,1,,,0,0,"UNBOARDABLE, HIDE_IN_CODEX",0.5,2,2,3009
+Qadesh,SAD_Qadesh,Freighter,,5,3000,200,1500,1167,70,22,,70,25,20,15,7,400,OMNI,,120,0.5,0.8,,,10,20,300,80,2,60,10,15000,5,20,240,0.25,3,3,"CIVILIAN, FREIGHTER",0.6,2,3,304
+Tefnut,SAD_Tefnut,Tanker,,6,4000,250,1500,1167,70,30,,80,30,20,25,15,500,OMNI,,90,0.5,0.8,,,10,20,20,600,2,80,10,18000,5,20,300,0.25,3,3,"CIVILIAN, TANKER",0.75,3,4,311
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Ptah,SAD_Ptah,Destroyer,,11,3300,400,8000,7555,350,100,,95,85,70,35,35,450,FRONT,,270,0.4,0.8,,,35,80,90,50,1.6,45,9,30000,5,15,420,0.25,11,11,,0.5,2,3,54923
+Khonsu,SAD_Khonsu,Destroyer,,9,3000,350,7000,4167,300,70,,80,60,40,50,45,350,OMNI,,160,0.5,1,,,60,90,80,40,3,35,8,18000,4,12,360,0.25,8,8,,0.4,2,3,59971
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Imhotep,SAD_Imhotep,Battle Carrier,ms_booster,18,7000,700,12000,12000,540,170,2,65,40,30,35,35,1800,FRONT,,300,0.7,0.7,,,170,380,110,110,2.75,40,8,75000,3,20,420,0.25,25,25,"CARRIER, COMBAT",0.6,2,3,54911
+Maat,SAD_Maat,Heavy Cruiser,ms_siegemode,15,8000,1000,11000,14000,630,150,,65,45,45,20,30,1800,FRONT,,270,0.4,0.7,,,140,340,140,110,3.75,30,7,65000,3,12,480,0.25,23,23,,0.3,2,3,54920
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Taweret,SAD_Taweret,Battleship,,28,17000,1600,21000,30550,1100,360,1,35,15,10,6,6,3250,FRONT,,280,0.5,0.7,,,400,1000,250,300,10,30,7,275000,3,20,720,0.25,50,50,,0.5,2,5,54921

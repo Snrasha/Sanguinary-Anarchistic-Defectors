@@ -1,0 +1,33 @@
+{
+  "displayName": "Burst",
+  "fluxCapacitors": 9,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "SAD_Hapy",
+  "hullMods": [
+    "magazines"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_Hapy_Burst",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SAD_cepc",
+        "WS0003": "SAD_cepc",
+        "WS0004": "SAD_cepc",
+        "WS0005": "SAD_cepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_pdcepc"
+      }
+    }
+  ],
+  "wings": []
+}

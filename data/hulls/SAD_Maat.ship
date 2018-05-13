@@ -55,6 +55,9 @@
     -121,
     -0
   ],
+  "builtInWeapons": {
+    "WS0003": "SAD_wamgun"
+  },
   "builtInWings": [],
   "center": [
     79,

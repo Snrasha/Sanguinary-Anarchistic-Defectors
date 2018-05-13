@@ -1,0 +1,22 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 7,
+  "fluxVents": 7,
+  "goalVariant": true,
+  "hullId": "SAD_Qadesh",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_Qadesh_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_pdcepc",
+        "WS0002": "SAD_pdcepc"
+      }
+    }
+  ],
+  "wings": []
+}

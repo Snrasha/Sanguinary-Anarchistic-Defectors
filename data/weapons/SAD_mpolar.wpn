@@ -1,25 +1,48 @@
 {
-	"id":"SAD_mpolar",  # this id must match what's in the spreadsheet
-	"specClass":"projectile",
-	"type":"ENERGY",
-	"size":"MEDIUM",
-	"turretSprite":"graphics/weapons/SAD_mpolar_turret_base.png",
-	"hardpointSprite":"graphics/weapons/SAD_mpolar_hardpoint_base.png",
-	"glowColor":[100,200,255,255],
-	"turretOffsets":[10, 0],
-	"turretAngleOffsets":[0],
-	"hardpointOffsets":[15, 0],
-	"hardpointAngleOffsets":[0],
-	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
-	"animationType":"GLOW_AND_FLASH",
-	"muzzleFlashSpec":{"length":33.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":15.0,
-					   "particleSizeMin":10.0,
-					   "particleSizeRange":12.0,
-					   "particleDuration":0.12,
-					   "particleCount":17,
-					   "particleColor":[100,200,255,255]},
-	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
-	"projectileSpecId":"SAD_lemp_shot",  # projectile that will be fired
-	"fireSoundTwo":"polarizerSmall_fire",
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "polarizerSmall_fire",
+  "glowColor": [
+    100,
+    200,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    18.5,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SAD_mpolar_hardpoint_base.png",
+  "id": "SAD_mpolar",
+  "muzzleFlashSpec": {
+    "length": 33,
+    "particleColor": [
+      100,
+      200,
+      255,
+      255
+    ],
+    "particleCount": 17,
+    "particleDuration": 0.12,
+    "particleSizeMin": 10,
+    "particleSizeRange": 12,
+    "spread": 15
+  },
+  "projectileSpecId": "SAD_lemp_shot",
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    12.5,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SAD_mpolar_turret_base.png",
+  "type": "ENERGY"
 }

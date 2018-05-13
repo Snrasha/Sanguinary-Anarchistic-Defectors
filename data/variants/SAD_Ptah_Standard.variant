@@ -1,0 +1,34 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 19,
+  "fluxVents": 20,
+  "goalVariant": true,
+  "hullId": "SAD_Ptah",
+  "hullMods": [
+    "magazines",
+    "fluxcoil"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_Ptah_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_mcepc",
+        "WS0003": "SAD_cepc",
+        "WS0004": "SAD_cepc",
+        "WS0005": "SAD_cepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SAD_mpolar"
+      }
+    }
+  ],
+  "wings": []
+}

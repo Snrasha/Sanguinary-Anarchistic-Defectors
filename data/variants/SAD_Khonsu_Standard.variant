@@ -1,0 +1,32 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 11,
+  "fluxVents": 11,
+  "goalVariant": true,
+  "hullId": "SAD_Khonsu",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_Khonsu_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_pdcepc",
+        "WS0006": "SAD_pdcepc",
+        "WS0007": "SAD_pdcepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "SAD_cepc",
+        "WS0005": "SAD_cepc",
+        "WS0008": "SAD_mcepc"
+      }
+    }
+  ],
+  "wings": []
+}
