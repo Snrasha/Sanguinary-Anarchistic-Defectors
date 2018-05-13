@@ -1,0 +1,18 @@
+{
+	"id":"SAD_cepc_blast",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
+	"collisionClassByFighter":"RAY_FIGHTER",
+	"length":30.0,
+	"width":6.0,
+	"fadeTime":0.19,
+	"fringeColor":[250,135,75,255],
+	"coreColor":[255,240,165,255],
+	"glowColor":[255,100,100,75],
+	"glowRadius":20,
+	"hitGlowRadius":30,
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/missiles/cecp_med.png"
+}

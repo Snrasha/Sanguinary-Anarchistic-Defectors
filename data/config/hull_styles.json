@@ -10,15 +10,15 @@
 		"shieldInnerColor":[165,115,120,75],
 		"fluxVentCoreColor":[95,205,140,255],
 		"fluxVentFringeColor":[50,110,74,255],
-    #"engineLoopSet":"sra_engine_loop", 				# id of entry in sounds.json
-		#"engineAccelerateSet":"sra_engine_accelerate",		        # id of entry in sounds.json
-		#"empLoopSet":"sra_emp_loop",					# id of entry in sounds.json
-		#"fluxLoopSet":"sra_flux_loop",					# id of entry in sounds.json
-		#"ventFluxSet":"sra_vent_flux",					# id of entry in sounds.json
-		#"shieldBurnoutSet":"sra_shield_burnout",			# id of entry in sounds.json
-		#"shieldLowerSet":"sra_shield_lower",				# id of entry in sounds.json
-		#"shieldRaiseSet":"sra_shield_raise",				# id of entry in sounds.json
-		#"explosionShipSet":"sra_explosion_ship",			# id of entry in sounds.json
+    "engineLoopSet":"sra_engine_loop", 				# id of entry in sounds.json
+		"engineAccelerateSet":"sra_engine_accelerate",		        # id of entry in sounds.json
+		"empLoopSet":"sra_emp_loop",					# id of entry in sounds.json
+		"fluxLoopSet":"sra_flux_loop",					# id of entry in sounds.json
+		"ventFluxSet":"sra_vent_flux",					# id of entry in sounds.json
+		"shieldBurnoutSet":"sra_shield_burnout",			# id of entry in sounds.json
+		"shieldLowerSet":"sra_shield_lower",				# id of entry in sounds.json
+		"shieldRaiseSet":"sra_shield_raise",				# id of entry in sounds.json
+		"explosionShipSet":"sra_explosion_ship",			# id of entry in sounds.json
 		"damageDecalSheet":"graphics/damage/SAD_damage_decals_base.png",
 		"damageDecalGlowSheet":"graphics/damage/SAD_damage_decals_glow.png",
 
