@@ -1,0 +1,178 @@
+{
+  "bounds": [
+    -34,
+    6,
+    -23,
+    10,
+    -31.5,
+    12.5,
+    -23.5,
+    24,
+    -17.5,
+    28.5,
+    -11.5,
+    27,
+    -8,
+    36.5,
+    4.5,
+    37,
+    13.5,
+    27.5,
+    23,
+    25,
+    24.5,
+    14.5,
+    35.5,
+    4.5,
+    35.5,
+    -4.5,
+    24.5,
+    -14.5,
+    23,
+    -25,
+    13.5,
+    -27.5,
+    4.5,
+    -37,
+    -8,
+    -36.5,
+    -11.5,
+    -27,
+    -17.5,
+    -28.5,
+    -23.5,
+    -24,
+    -31.5,
+    -12.5,
+    -23,
+    -10,
+    -34,
+    -6
+  ],
+  "builtInWings": [],
+  "center": [
+    37,
+    37
+  ],
+  "collisionRadius": 62.5,
+  "engineSlots": [
+    {
+      "angle": 143,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -26.5,
+        20
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": -143,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -26.5,
+        -20
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": 180,
+      "contrailSize": 27,
+      "length": 51.5,
+      "location": [
+        -36,
+        -0
+      ],
+      "style": "SanguinaryFlare",
+      "width": 27
+    },
+    {
+      "angle": 51,
+      "contrailSize": 128,
+      "length": 30,
+      "location": [
+        7,
+        28
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": -51,
+      "contrailSize": 128,
+      "length": 30,
+      "location": [
+        7,
+        -28
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    }
+  ],
+  "height": 74,
+  "hullId": "SAD_Thoth",
+  "hullName": "Thoth",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 60.5,
+  "spriteName": "graphics/ships/SAD_Thoth.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": -90,
+      "arc": 243,
+      "id": "WS0001",
+      "locations": [
+        -5.5,
+        -16
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 90,
+      "arc": 243,
+      "id": "WS0002",
+      "locations": [
+        -5.5,
+        16
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 16,
+      "id": "WS0003",
+      "locations": [
+        29.5,
+        -20.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYNERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 16,
+      "id": "WS0004",
+      "locations": [
+        29.5,
+        20.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYNERGY"
+    }
+  ],
+  "width": 74
+}

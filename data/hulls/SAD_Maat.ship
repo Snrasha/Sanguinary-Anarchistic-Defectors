@@ -1,0 +1,269 @@
+{
+  "bounds": [
+    -113,
+    15.5,
+    -128.5,
+    17,
+    -132,
+    45,
+    -121,
+    45,
+    -84.5,
+    52,
+    -49,
+    68.5,
+    -22.5,
+    78.5,
+    15.5,
+    64,
+    65.5,
+    33,
+    79,
+    37.5,
+    99.5,
+    36,
+    118.5,
+    22,
+    132.5,
+    20,
+    132.5,
+    -20,
+    118.5,
+    -22,
+    99.5,
+    -36,
+    79,
+    -37.5,
+    65.5,
+    -33,
+    15.5,
+    -64,
+    -22.5,
+    -78.5,
+    -49,
+    -68.5,
+    -84.5,
+    -52,
+    -121,
+    -45,
+    -132,
+    -45,
+    -128.5,
+    -17,
+    -113,
+    -15.5,
+    -121,
+    -0
+  ],
+  "builtInWings": [],
+  "center": [
+    79,
+    139
+  ],
+  "collisionRadius": 185,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 32,
+      "length": 54,
+      "location": [
+        -138,
+        -38
+      ],
+      "style": "SanguinaryFlare",
+      "width": 32
+    },
+    {
+      "angle": -180,
+      "contrailSize": 32,
+      "length": 54,
+      "location": [
+        -138,
+        38
+      ],
+      "style": "SanguinaryFlare",
+      "width": 32
+    },
+    {
+      "angle": 180,
+      "contrailSize": 13,
+      "length": 41.5,
+      "location": [
+        -129,
+        -21.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 13
+    },
+    {
+      "angle": -180,
+      "contrailSize": 13,
+      "length": 41.5,
+      "location": [
+        -129,
+        21.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 13
+    }
+  ],
+  "height": 278,
+  "hullId": "SAD_Maat",
+  "hullName": "Maat",
+  "hullSize": "CRUISER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 180,
+  "spriteName": "graphics/ships/SAD_Maat.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": -74.5,
+      "arc": 213,
+      "id": "WS0001",
+      "locations": [
+        91,
+        -23
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 74.5,
+      "arc": 213,
+      "id": "WS0002",
+      "locations": [
+        91,
+        23
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 5,
+      "id": "WS0003",
+      "locations": [
+        133.5,
+        -0
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -45,
+      "arc": 5,
+      "id": "WS0004",
+      "locations": [
+        66.5,
+        -47.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 45,
+      "arc": 5,
+      "id": "WS0005",
+      "locations": [
+        66.5,
+        47.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -85,
+      "arc": 184,
+      "id": "WS0006",
+      "locations": [
+        -7,
+        -55
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 85,
+      "arc": 184,
+      "id": "WS0007",
+      "locations": [
+        -7,
+        55
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -101.5,
+      "arc": 184,
+      "id": "WS0008",
+      "locations": [
+        -31.5,
+        -26
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 101.5,
+      "arc": 184,
+      "id": "WS0009",
+      "locations": [
+        -31.5,
+        26
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 180,
+      "arc": 250,
+      "id": "WS0010",
+      "locations": [
+        -65,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -45,
+      "arc": 5,
+      "id": "WS0011",
+      "locations": [
+        51.5,
+        -53.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 45,
+      "arc": 5,
+      "id": "WS0012",
+      "locations": [
+        51.5,
+        53.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    }
+  ],
+  "width": 158
+}

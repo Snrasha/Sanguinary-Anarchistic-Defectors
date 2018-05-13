@@ -1,0 +1,297 @@
+{
+	id:"sad",
+	"displayName":"Sanguinary Anarchistic Defectors",
+	"displayNameWithArticle":"the Sanguinary Anarchistic Defectors",
+	"displayNameLong":"Sanguinary Anarchistic Defectors",
+	"displayNameLongWithArticle":"the Sanguinary Anarchistic Defectors",
+	"personNamePrefix":"Bloody",
+	"personNamePrefixAOrAn":"a",
+
+	"logo":"graphics/faction/SAD_flag.png",
+	"crest":"graphics/faction/SAD_crest_flag.png",
+	"shipNamePrefix":"SYS",
+
+	"color":[151,39,102,255],
+	"secondaryUIColor":[247,217,217,255],
+  "secondarySegments":5,
+	"baseUIColor":[247,217,217,255],
+	"darkUIColor":[151,39,102,175],
+	"gridUIColor":[151,39,102,175],
+	"showInIntelTab":false,
+
+	"shipNameSources":{
+			"EGYPTIAN":1,
+	},
+	"names":{
+	"fringe":1,
+	"old english":1,
+	"world":1,
+	"hindu":1,
+	},
+	"hullMods":[
+		"advancedshieldemitter",
+		"advancedoptics",
+		"turretgyros",
+		"augmentedengines",
+		"auxiliarythrusters",
+		"dedicated_targeting_core",
+		"eccm",
+		"missleracks",
+		"extendedshieldemitter",
+		"fluxcoil",
+		"fluxdistributor",
+		"frontemitter",
+		"frontshield",
+		"hardenedshieldemitter",
+		"hardened_subsystems",
+		"insulatedengine",
+		"pointdefenseai",
+		"targetingunit",
+		"adaptiveshields",
+		"fluxbreakers",
+		"stabilizedshieldemitter",
+		"expanded_deck_crew",
+		"recovery_shuttles",
+		"operations_center",
+		"nav_relay",
+		"ecm",
+	],
+	"illegalCommodities":[
+		"organs",
+		"hand_weapons",
+	],
+	"music":{
+		"encounter_hostile":"music_pirates_encounter_hostile",
+	},
+	"portraits":{
+		"standard_male":[
+			"graphics/portraits/portrait_mercenary01.png",
+			"graphics/portraits/portrait_mercenary03.png",
+			"graphics/portraits/portrait_mercenary04.png",
+			"graphics/portraits/portrait12.png",
+			"graphics/portraits/portrait15.png",
+			"graphics/portraits/portrait17.png",
+			"graphics/portraits/portrait18.png",
+			"graphics/portraits/portrait20.png",
+			"graphics/portraits/portrait_pirate02.png",
+			"graphics/portraits/portrait_pirate03.png",
+			"graphics/portraits/portrait33.png",
+			"graphics/portraits/portrait36.png",
+			"graphics/portraits/portrait40.png",
+		],
+		"standard_female":[
+			"graphics/portraits/portrait_mercenary02.png",
+			"graphics/portraits/portrait_mercenary05.png",
+			"graphics/portraits/portrait14.png",
+			"graphics/portraits/portrait16.png",
+			"graphics/portraits/portrait21.png",
+			"graphics/portraits/portrait22.png",
+			"graphics/portraits/portrait24.png",
+			"graphics/portraits/portrait29.png",
+			"graphics/portraits/portrait_pirate01.png",
+			"graphics/portraits/portrait32.png",
+			"graphics/portraits/portrait37.png",
+			"graphics/portraits/portrait39.png",
+		],
+	},
+	"ranks":{
+		"ranks":{
+			"spaceCommander":{"name":"Captain"},
+		},
+		"posts":{
+			"patrolCommander":{"name":"Captain"},
+			"fleetCommander":{"name":"Warlord"},
+			"baseCommander":{"name":"Portking"},
+			"administrator":{"name":"Boss"},
+		},
+	},
+	"custom":{
+		"engageWhenEvenStrength":true,
+		"allowsTransponderOffTrade":true, # to prevent cargoscan dialog from "patrols"
+	},
+	"shipRoles":{
+		"fastAttack":{
+			"fallback":{"combatSmall":1},
+		},
+		"escortSmall":{
+			"forg_cerberus_mod_Defense":7,
+			"forg_cerberus_mod_Attack":8,
+			"forg_cerberus_mod_Overdriven":7,
+			"forg_cerberus_mod_Standard":8,
+
+			"forg_cerberus_old_Overdriven":5,
+			"forg_cerberus_old_Standard":10,
+
+			"forg_hound_mod_Overdriven":10,
+			"forg_hound_mod_Standard":10,
+			"forg_hound_mod_Starting":10,
+
+			"forg_hound_old_Overdriven":4,
+			"forg_hound_old_Standard":5,
+			"forg_hound_old_Starting":6,
+
+			"forg_lasher_mod_Overdriven":10,
+			"forg_lasher_mod_Standard":10,
+			"forg_lasher_mod_Wrong":10,
+
+			"forg_lasher_old_d_Overdriven":4,
+			"forg_lasher_old_d_Standard":8,
+			"forg_lasher_old_Overdriven":1,
+			"forg_lasher_old_Standard":2,
+
+			"forg_brawler_mod_Standard":15,
+			"forg_brawler_mod_Attack":15,
+
+			"forg_brawler_old_Standard":10,
+			"forg_brawler_old_Overdriven":5,
+
+			"forg_kite_mod_Standard":15,
+			"forg_kite_mod_Overdriven":15,
+
+			"forg_kite_old_Standard":10,
+			"forg_kite_old_Overdriven":5,
+
+			"fallback":{"combatSmall":1},
+		},
+		"escortMedium":{
+			"fallback":{"combatMedium":1},
+		},
+		"combatSmall":{
+			"forg_defender_mod_PD":15,
+			"forg_defender_mod_Standard":15,
+
+			"forg_warden_mod_Standard":15,
+			"forg_warden_mod_Defense":15,
+
+			"forg_picket_mod_Standard":11,
+			"forg_picket_mod_Strike":8,
+			"forg_picket_mod_Swarmer":11,
+
+			"forg_sentry_mod_Poke":15,
+			"forg_sentry_mod_Standard":15,
+			"fallback":{"escortSmall":1},
+		},
+		"combatMedium":{
+			"forg_bastillon_mod_Burn":15,
+			"forg_bastillon_mod_Standard":15,
+
+			"forg_berserker_mod_Standard":15,
+			"forg_berserker_mod_Overdriven":15,
+
+		 "forg_hammerhead_old_Balanced":10,
+		 "forg_hammerhead_old_Overdriven":5,
+
+		 "forg_enforcer_old_Assault":7,
+		 "forg_enforcer_old_Balanced":5,
+		 "forg_enforcer_old_Overdriven":3,
+
+		 "forg_enforcer_mod_Assault":10,
+		 "forg_enforcer_mod_Balanced":10,
+		 "forg_enforcer_mod_Overdriven":10,
+
+		 "forg_epiderm_Standard":2,
+		 "forg_epiderm_Support":3,
+		 "forg_tronion_Standard":5,
+
+
+
+			"fallback":{"combatSmall":2},
+		},
+		"combatLarge":{
+			"falcon_d_CS":16,
+			"eagle_d_Assault":8,
+			"dominator_d_Assault":8,
+			"fallback":{"combatMedium":2},
+		},
+		"combatCapital":{
+			"fallback":{"combatLarge":2},
+		},
+
+
+		"carrierSmall":{
+			"forg_condor_mod_Standard":15,
+			"forg_condor_mod_Attack":15,
+			"fallback":{"carrierMedium":0.5},
+		},
+		"carrierMedium":{
+			"mora_Assault":4,
+			"mora_Support":4,
+			"mora_Strike":4,
+			"colossus3_Pirate":12,
+			"fallback":{"carrierSmall":2},
+		},
+		"carrierLarge":{
+			"legion_Escort":1,
+			"legion_Assault":1,
+			"legion_Strike":1,
+			"legion_FS":1,
+			"fallback":{"carrierMedium":3},
+		},
+		"remnantStation1":{
+			"remnant_station2_Standard":10,
+		},
+	},
+
+	"fleetTypeNames":{
+		"patrolSmall":"Raiders",
+		"patrolMedium":"Raiders",
+		"patrolLarge":"Armada",
+		"battlestation":"Battlestation",
+	},
+	"doctrine":{
+		# ship distribution
+		"small":10,
+		"fast":6,
+		"medium":8,
+		"large":4,
+		"capital":1,
+
+		# as fraction of combat ships of same size
+		## less bothered with escorts.
+		"escortSmallFraction":0.8,
+		"escortMediumFraction":0.8,
+
+		# everyone must fight!
+		"combatFreighterProbability":0.75,
+
+		"minPointsForCombatCapital":24,
+		"minPointsForLargeCarrier":30,
+
+		"smallCarrierProbability":0.30,
+		"mediumCarrierProbability":0.30,
+		"largeCarrierProbability":0.30,
+
+		# officers
+		## tend to be poor, but plentiful + but high variance because very independent.
+		"officersPerPoint":0.35,
+		"officerLevelPerPoint":0.15,
+		"officerLevelBase":3,
+		"officerLevelVariance":0.5,
+
+		# level * commanderSkillsPerLevel = base number of skills
+		# plus chance for each skill to actually materialize
+		# e.g: 1.5 total skills and 0.5 commanderSkillChance mean:
+		# 50% (1 * 0.5) chance for one skill
+		# and a 25% chance (0.5 * 0.5) for another one
+		# each skill's level will the higher of 1 and commanderSkillLevelPerLevel * level
+
+		"commanderSkillsPerLevel":0.1,
+		"commanderSkillChance":0.25,
+		"commanderSkillLevelPerLevel":0.1,
+		"commanderSkills":{
+			"officer_management":10,
+			"coordinated_maneuvers":3,
+			"fighter_doctrine":2,
+			"electronic_warfare":1,
+		},
+	},
+	"traits":{
+		"captain":{
+			"timid":1,
+			"cautious":2,
+			"steady":5,
+			"aggressive":10,
+			"reckless":20,
+		},
+	},
+},

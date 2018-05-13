@@ -1,0 +1,8 @@
+id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,num,role,role desc,refit,base value,,,,,,,,,,,,,
+forg_warden_wing,forg_warden_Drone,"no_drop, no_sell, high",1,,4,40,CLAW,6000,1000,1,FIGHTER,Attack Drone,45,10000,,,,,,,,,,,,,19
+forg_defender_wing,forg_defender_Drone,"no_drop, no_sell, high",1,,4,40,CLAW,6000,1000,1,FIGHTER,Attack Drone,45,10000,,,,,,,,,,,,,
+forg_picket_wing,forg_picket_Drone,"no_drop, no_sell, high",1,,4,40,CLAW,6000,1000,1,FIGHTER,Attack Drone,45,10000,,,,,,,,,,,,,
+forg_sentry_wing,forg_sentry_Drone,"no_drop, no_sell, high",1,,4,40,CLAW,6000,1000,1,FIGHTER,Attack Drone,45,10000,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+forg_bastillon_wing,forg_bastillon_Drone,"no_drop, no_sell, high",1,,7,60,CLAW,6000,1000,1,FIGHTER,Attack Drone,60,20000,,,,,,,,,,,,,
+forg_berserker_wing,forg_berserker_Drone,"no_drop, no_sell, high",1,,7,60,CLAW,6000,1000,1,FIGHTER,Attack Drone,60,20000,,,,,,,,,,,,,

@@ -1,0 +1,37 @@
+id,trigger,conditions,script,text,options,notes
+,,,,,,
+# SHI fleet greeting lines,,,,,,
+greetingSHIFriendly,OpenCommLink,"$faction.id == sad
+$faction.friendlyToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""We've got your signal, recognition looks good.  Looks like things are going well on your end $playerName.  Clear skies.""
+OR
+Unconcerned, sedate activity ensues as codes are checked and verified; the watch officer gives a jaunty salute.
+
+""Beacon checks out, you're clear to proceed comrade; burn bright out there!""
+OR
+The SRA fleets communique is preceded by a markedly friendly sounding electronic chirp. ""Secure codes check out; the cooperative authority sends their regards, Captain.""",,
+greetingSHIHostileWeaker,OpenCommLink,"$faction.id == sad
+$faction.hostileToPlayer
+$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"The Yardie $personRank does a fairly admirable job of keeping their voice from trembling as $heOrShe warns, ""Whatever happens next, just know we won't forget it.""
+OR
+The message is perfunctory. ""Damn you.""  Further hails go unanswered.",cutCommLink:Cut the comm link,
+greetingSHIHostileWeakerDefiant,OpenCommLink,"$faction.id == sad
+$faction.hostileToPlayer
+$relativeStrength < 0
+$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"The Yardie $personRank meets your gaze levelly for a few moments, before simply nodding curtly in acknowledgement and signaling $hisOrHer crew to their stations.  The comms signal cuts out a moment later.
+OR
+The SRA fleet meets your call with bravado, though you're unsure if the person on the other end is the fleet leader. 
+
+""Hoping for our surrender then, are you? Piss off, we're tougher than you think you damn running dog!"" The message is accompanied by a particularly rude gesture.",cutCommLink:Cut the comm link,
+greetingSHIHostileStronger,OpenCommLink,"$faction.id == sad
+$faction.hostileToPlayer
+$relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"Cooly regarding you, the Yardie $personRank gives a wolfish grin.  ""Seems you've a fight on your hands, Captain.""
+OR
+""Time for this game to end.""",cutCommLink:Cut the comm link,
+greetingSHINeutral,OpenCommLink,"$faction.id == sad
+$faction.neutralToPlayer","$menuState = fleetConvMain 0
+FireAll PopulateOptions","""Got you on scan, Captain and are monitoring you.  Keep your distance.""",,
+,,,,,,
+# Trade panel flavor text,,,,,,
+flavorTextMarketSHI,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+$faction.id == sad","AddText ""The docks are a riot of color and noise as cargoes are energetically off and onloaded.  An SRA official in a rather eye catching outfit waves you down to see if you need any help."" textGrayColor",,,

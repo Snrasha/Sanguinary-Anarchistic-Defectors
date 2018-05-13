@@ -1,0 +1,93 @@
+{
+  "bounds": [
+    -40,
+    7,
+    -26,
+    11,
+    -20,
+    21,
+    -37,
+    23.5,
+    -3,
+    30.5,
+    15.5,
+    22.5,
+    44,
+    5,
+    44,
+    -5,
+    15.5,
+    -22.5,
+    -3,
+    -30.5,
+    -37,
+    -23.5,
+    -20,
+    -21,
+    -26,
+    -11,
+    -40,
+    -7
+  ],
+  "builtInMods": [
+    "converted_hangar"
+  ],
+  "builtInWings": [],
+  "center": [
+    29,
+    44.5
+  ],
+  "collisionRadius": 80.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 29,
+      "length": 55.5,
+      "location": [
+        -42,
+        -0
+      ],
+      "style": "SanguinaryFlare",
+      "width": 29
+    }
+  ],
+  "height": 89,
+  "hullId": "SAD_Seshat",
+  "hullName": "Seshat",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 78.5,
+  "spriteName": "graphics/ships/SAD_Seshat.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 344,
+      "id": "WS0001",
+      "locations": [
+        5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -6,
+        -0
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 58
+}
