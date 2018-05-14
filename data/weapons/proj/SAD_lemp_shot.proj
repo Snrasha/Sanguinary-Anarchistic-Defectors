@@ -1,7 +1,6 @@
 {
 	"id":"SAD_lemp_shot",
 	"specClass":"projectile",
-	#"onHitEffect":"data.scripts.weapons.SAD_PolarizerSmallOnHitEffect",
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
@@ -16,5 +15,5 @@
 	"textureType":"ROUGH",
 	"textureScrollSpeed":-64.0,
 	"pixelsPerTexel":2.0,
-	"bulletSprite":"graphics/missiles/shell_gauss_cannon.png"	
+	"bulletSprite":"graphics/missiles/shell_gauss_cannon.png"
 }

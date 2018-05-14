@@ -18,77 +18,21 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         api.initFleet(FleetSide.ENEMY, "ISS", FleetGoal.ATTACK, true);
 
         // Set a blurb for each fleet
-        api.setFleetTagline(FleetSide.PLAYER, "Forgotten");
+        api.setFleetTagline(FleetSide.PLAYER, "Sanguinary Anarchistic Defectors");
         api.setFleetTagline(FleetSide.ENEMY, Factions.INDEPENDENT);
 
         // These show up as items in the bulleted list under 
         // "Tactical Objectives" on the mission detail screen
         api.addBriefingItem("Win.");
 
-        // Frigate F
-        api.addToFleet(FleetSide.PLAYER, "forg_cerberus_mod_Attack", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_cerberus_mod_Defense", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_cerberus_mod_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_cerberus_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_hound_mod_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_hound_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_hound_mod_Starting", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_lasher_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_lasher_mod_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_lasher_mod_Wrong", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_brawler_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_brawler_mod_Attack", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_kite_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_kite_mod_Overdriven", FleetMemberType.SHIP, true);
-        
-        // Frigate Delerict F
-        api.addToFleet(FleetSide.PLAYER, "forg_picket_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_picket_mod_Strike", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_picket_mod_Swarmer", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_warden_mod_Defense", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_warden_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_sentry_mod_Poke", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_sentry_mod_Standard", FleetMemberType.SHIP, true);
-       
-        // Frigate E
-        api.addToFleet(FleetSide.PLAYER, "forg_brawler_old_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_brawler_old_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_kite_old_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_kite_old_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_lasher_old_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_lasher_old_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_lasher_old_d_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_lasher_old_d_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_hound_old_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_hound_old_Starting", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_hound_old_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_cerberus_old_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_cerberus_old_Standard", FleetMemberType.SHIP, true);
-
-        // Destroyer E
-        api.addToFleet(FleetSide.PLAYER, "forg_hammerhead_old_Balanced", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_hammerhead_old_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_enforcer_old_Assault", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_enforcer_old_Balanced", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_enforcer_old_Overdriven", FleetMemberType.SHIP, true);
-
-        // Destroyer delerict F
-        api.addToFleet(FleetSide.PLAYER, "forg_bastillon_mod_Burn", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_bastillon_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_berserker_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_berserker_mod_Overdriven", FleetMemberType.SHIP, true);
-       
-         // Destroyer F
-        api.addToFleet(FleetSide.PLAYER, "forg_condor_mod_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_condor_mod_Attack", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_enforcer_mod_Assault", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_enforcer_mod_Balanced", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_enforcer_mod_Overdriven", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_epiderm_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_epiderm_Support", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "forg_tronion_Standard", FleetMemberType.SHIP, true);
-
-        
+        api.addToFleet(FleetSide.PLAYER, "SAD_Qadesh_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Tefnut_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Ptah_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Neith_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Khonsu_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Imhotep_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Hapy_Burst", FleetMemberType.SHIP, true);
+  
         
         FleetMemberAPI fleetMember;
         fleetMember = api.addToFleet(FleetSide.ENEMY, "dominator_Outdated", FleetMemberType.SHIP, "Rhinoceros", false);

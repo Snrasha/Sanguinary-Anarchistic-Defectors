@@ -6,5 +6,5 @@
 	"description":"Requires LazyLib. Compatible Nexerelin. Use Version Checker. With the authorization of the creator of Shadowyard.",
 	"gameVersion":"0.8.1a",
 	"modPlugin":"src.data.scripts.world.SAD_ModPlugin",
-	"jars":["jars/sad.jar"],
+	"jars":["jars/sadJar.jar"],
 }
