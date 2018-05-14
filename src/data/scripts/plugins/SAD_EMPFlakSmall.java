@@ -222,6 +222,7 @@ public class SAD_EMPFlakSmall extends BaseEveryFrameCombatPlugin
   }
   
 
+  @Override
   public void advance(float amount, List<InputEventAPI> events)
   {
     if (engine == null) {
@@ -381,6 +382,7 @@ public class SAD_EMPFlakSmall extends BaseEveryFrameCombatPlugin
     }
   }
   
+  @Override
   public void init(CombatEngineAPI engine)
   {
     this.engine = engine;

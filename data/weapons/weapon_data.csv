@@ -1,10 +1,10 @@
 name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn rate,OPs,ammo,ammo/sec,reload size,type,energy/shot,energy/second,chargeup,chargedown,burst size,burst delay,min spread,max spread,spread/shot,spread decay/sec,beam speed,proj speed,launch speed,flight time,proj hitpoints,hints,tags,number
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Light CEPC,SAD_pdcepc,0,,200,350,,30,,2,50,4,60,2.5,5,ENERGY,4,,0,0.2,5,0.1,0,5,1,15,,800,,,10,"PD, ANTI_FTR","pd4, energy5, SR",1
-CEPC,SAD_cepc,0,,300,675,,100,,3,40,6,30,1.35,3,ENERGY,110,,0,1.2,3,0.2,4,8,4,10,,800,,,30,,energy7,2
-Medium CEPC,SAD_mcepc,2,,2250,800,,200,,8,15,14,20,0.85,2,ENERGY,220,,0,1.1,2,0.25,3,6,2,10,,800,,,30,,energy10,3
+CEPC,SAD_cepc,0,,300,675,,100,,3,45,6,30,1.35,2,ENERGY,110,,0,0.8,2,0.15,4,8,4,10,,800,,,30,,energy7,2
+Medium CEPC,SAD_mcepc,2,,2250,800,,200,,8,25,14,20,0.85,4,ENERGY,220,,0,2.2,4,0.25,3,6,2,10,,800,,,30,,energy10,3
 Wavepulse Cannon,SAD_wamgun,1,,7500,900,,300,,25,15,20,,,,ENERGY,300,,,0.75,,,0,0,0,10,,800,,,30,"STRIKE,USE_VS_FRIGATES","energy10, strike1",4
-Medium Polarizer,SAD_mpolar,2,0.8,2450,600,,30,300,15,25,16,,,,ENERGY,60,,0.1,0.5,,,0,0,0,0,,1000,,,100,"PD,PD_ALSO",energy16,6
+Medium Polarizer,SAD_mpolar,2,0.8,2450,650,,30,300,15,25,16,,,,ENERGY,60,,0.1,0.5,,,0,0,0,0,,1000,,,100,"PD,PD_ALSO",energy16,6
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Shrike ASM,SAD_shrike_rack,1,,250,2000,,750,150,300,30,5,3,,,KINETIC,0,,0,1,1,,0,0,0,,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7",5202.2
 Shrike ASM Pod,SAD_shrike_pod,2,,2100,2000,,750,150,300,30,10,12,,,KINETIC,0,,0,8,3,0.5,0,0,0,0,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7",5202.3
