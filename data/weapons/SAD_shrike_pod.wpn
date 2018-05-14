@@ -16,7 +16,7 @@
     12,
     0
   ],
-  "hardpointSprite": "graphics/shadow_weapons/weapons/SAD_shrike_2x_hardpoint.png",
+  "hardpointSprite": "graphics/weapons/SAD_shrike_2x_hardpoint.png",
   "id": "SAD_shrike_pod",
   "projectileSpecId": "SAD_shrike",
   "renderHints": [
@@ -55,6 +55,6 @@
     4,
     0
   ],
-  "turretSprite": "graphics/shadow_weapons/weapons/SAD_shrike_2x_turret.png",
+  "turretSprite": "graphics/weapons/SAD_shrike_2x_turret.png",
   "type": "MISSILE"
 }

@@ -114,42 +114,12 @@
 			"fallback":{"combatSmall":1},
 		},
 		"escortSmall":{
-			"forg_cerberus_mod_Defense":7,
-			"forg_cerberus_mod_Attack":8,
-			"forg_cerberus_mod_Overdriven":7,
-			"forg_cerberus_mod_Standard":8,
-
-			"forg_cerberus_old_Overdriven":5,
-			"forg_cerberus_old_Standard":10,
-
-			"forg_hound_mod_Overdriven":10,
-			"forg_hound_mod_Standard":10,
-			"forg_hound_mod_Starting":10,
-
-			"forg_hound_old_Overdriven":4,
-			"forg_hound_old_Standard":5,
-			"forg_hound_old_Starting":6,
-
-			"forg_lasher_mod_Overdriven":10,
-			"forg_lasher_mod_Standard":10,
-			"forg_lasher_mod_Wrong":10,
-
-			"forg_lasher_old_d_Overdriven":4,
-			"forg_lasher_old_d_Standard":8,
-			"forg_lasher_old_Overdriven":1,
-			"forg_lasher_old_Standard":2,
-
-			"forg_brawler_mod_Standard":15,
-			"forg_brawler_mod_Attack":15,
-
-			"forg_brawler_old_Standard":10,
-			"forg_brawler_old_Overdriven":5,
-
-			"forg_kite_mod_Standard":15,
-			"forg_kite_mod_Overdriven":15,
-
-			"forg_kite_old_Standard":10,
-			"forg_kite_old_Overdriven":5,
+			"SAD_Hapy_Burst":5,
+			"SAD_Hapy_Missile":5,
+			"SAD_Neith_Missile":5,
+			"SAD_Neith_Standard":5,
+			"SAD_Thoth_Standard":5,
+			"SAD_Thoth_Missile":5,
 
 			"fallback":{"combatSmall":1},
 		},
@@ -157,74 +127,41 @@
 			"fallback":{"combatMedium":1},
 		},
 		"combatSmall":{
-			"forg_defender_mod_PD":15,
-			"forg_defender_mod_Standard":15,
-
-			"forg_warden_mod_Standard":15,
-			"forg_warden_mod_Defense":15,
-
-			"forg_picket_mod_Standard":11,
-			"forg_picket_mod_Strike":8,
-			"forg_picket_mod_Swarmer":11,
-
-			"forg_sentry_mod_Poke":15,
-			"forg_sentry_mod_Standard":15,
+		"SAD_Hapy_Burst":5,
+		"SAD_Hapy_Missile":5,
+		"SAD_Neith_Missile":5,
+		"SAD_Neith_Standard":5,
+		"SAD_Thoth_Standard":5,
+		"SAD_Thoth_Missile":5,
 			"fallback":{"escortSmall":1},
 		},
 		"combatMedium":{
-			"forg_bastillon_mod_Burn":15,
-			"forg_bastillon_mod_Standard":15,
-
-			"forg_berserker_mod_Standard":15,
-			"forg_berserker_mod_Overdriven":15,
-
-		 "forg_hammerhead_old_Balanced":10,
-		 "forg_hammerhead_old_Overdriven":5,
-
-		 "forg_enforcer_old_Assault":7,
-		 "forg_enforcer_old_Balanced":5,
-		 "forg_enforcer_old_Overdriven":3,
-
-		 "forg_enforcer_mod_Assault":10,
-		 "forg_enforcer_mod_Balanced":10,
-		 "forg_enforcer_mod_Overdriven":10,
-
-		 "forg_epiderm_Standard":2,
-		 "forg_epiderm_Support":3,
-		 "forg_tronion_Standard":5,
-
-
-
+			"SAD_Khonsu_Standard":15,
+			"SAD_Ptah_Standard":15,
 			"fallback":{"combatSmall":2},
 		},
 		"combatLarge":{
-			"falcon_d_CS":16,
-			"eagle_d_Assault":8,
-			"dominator_d_Assault":8,
+			"SAD_Maat_Standard":16,
+			"SAD_Imhotep_Missile":8,
+			"SAD_Imhotep_Standard":8,
 			"fallback":{"combatMedium":2},
 		},
 		"combatCapital":{
+			"SAD_Taweret_Standard":10,
 			"fallback":{"combatLarge":2},
 		},
 
 
 		"carrierSmall":{
-			"forg_condor_mod_Standard":15,
-			"forg_condor_mod_Attack":15,
+		  "SAD_Seshat_Standard":4,
 			"fallback":{"carrierMedium":0.5},
 		},
 		"carrierMedium":{
-			"mora_Assault":4,
-			"mora_Support":4,
-			"mora_Strike":4,
-			"colossus3_Pirate":12,
 			"fallback":{"carrierSmall":2},
 		},
 		"carrierLarge":{
-			"legion_Escort":1,
-			"legion_Assault":1,
-			"legion_Strike":1,
-			"legion_FS":1,
+		"SAD_Imhotep_Missile":2,
+		"SAD_Imhotep_Standard":2,
 			"fallback":{"carrierMedium":3},
 		},
 		"remnantStation1":{

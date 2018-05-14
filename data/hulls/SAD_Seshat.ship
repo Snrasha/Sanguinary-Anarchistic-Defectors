@@ -30,6 +30,7 @@
     -7
   ],
   "builtInMods": [
+    "SAD_harShields",
     "converted_hangar"
   ],
   "builtInWings": [],

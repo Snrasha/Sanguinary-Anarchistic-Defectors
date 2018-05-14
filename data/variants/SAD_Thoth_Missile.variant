@@ -1,0 +1,33 @@
+{
+  "displayName": "Missile",
+  "fluxCapacitors": 1,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "SAD_Thoth",
+  "hullMods": [
+    "pointdefenseai",
+    "missleracks"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_Thoth_Missile",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SAD_shrike_rack",
+        "WS0004": "SAD_shrike_rack"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_cepc",
+        "WS0002": "SAD_cepc"
+      }
+    }
+  ],
+  "wings": []
+}

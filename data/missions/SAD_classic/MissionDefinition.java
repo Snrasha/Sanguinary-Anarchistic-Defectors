@@ -25,19 +25,27 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         // "Tactical Objectives" on the mission detail screen
         api.addBriefingItem("Win.");
 
+        api.addToFleet(FleetSide.PLAYER, "SAD_Hapy_Burst", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Hapy_Missile", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Imhotep_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Imhotep_Missile", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Khonsu_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Maat_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Neith_Missile", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Neith_Standard", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Qadesh_Standard", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Tefnut_Standard", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Ptah_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "SAD_Neith_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "SAD_Khonsu_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "SAD_Imhotep_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "SAD_Hapy_Burst", FleetMemberType.SHIP, true);
-  
-        
+        api.addToFleet(FleetSide.PLAYER, "SAD_Seshat_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Taweret_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Thoth_Missile", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Thoth_Standard", FleetMemberType.SHIP, true);
+
+ 
         FleetMemberAPI fleetMember;
         fleetMember = api.addToFleet(FleetSide.ENEMY, "dominator_Outdated", FleetMemberType.SHIP, "Rhinoceros", false);
         fleetMember.getCaptain().setPersonality("aggressive");
-        api.addToFleet(FleetSide.ENEMY, "astral_Strike", FleetMemberType.SHIP, "TTS Ephemeral", false); 
+        api.addToFleet(FleetSide.ENEMY, "astral_Strike", FleetMemberType.SHIP, "TTS Ephemeral", false);
 
         api.addToFleet(FleetSide.ENEMY, "enforcer_Balanced", FleetMemberType.SHIP, "Bully", false);
         api.addToFleet(FleetSide.ENEMY, "enforcer_Balanced", FleetMemberType.SHIP, "Bruiser", false);

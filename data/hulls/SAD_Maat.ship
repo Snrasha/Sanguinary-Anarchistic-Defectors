@@ -55,6 +55,9 @@
     -121,
     -0
   ],
+  "builtInMods": [
+    "SAD_harShields"
+  ],
   "builtInWeapons": {
     "WS0003": "SAD_wamgun"
   },

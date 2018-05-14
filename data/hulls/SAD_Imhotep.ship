@@ -95,6 +95,9 @@
     -105.5,
     -13.5
   ],
+  "builtInMods": [
+    "SAD_harShields"
+  ],
   "builtInWings": [],
   "center": [
     106,

@@ -1,0 +1,34 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 10,
+  "fluxVents": 9,
+  "goalVariant": true,
+  "hullId": "SAD_Thoth",
+  "hullMods": [
+    "magazines",
+    "unstable_injector",
+    "targetingunit"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_Thoth_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_pdcepc",
+        "WS0002": "SAD_pdcepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SAD_pdcepc",
+        "WS0004": "SAD_pdcepc"
+      }
+    }
+  ],
+  "wings": []
+}

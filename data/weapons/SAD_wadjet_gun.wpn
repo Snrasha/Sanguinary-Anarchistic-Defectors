@@ -1,7 +1,7 @@
 {
 	"id":"SAD_wadjet_gun",  # this id must match what's in the spreadsheet
 	"specClass":"projectile",
-	"type":"BALLISTIC",
+	"type":"ENERGY",
 	"size":"SMALL",
 	"turretSprite":"",
 	"hardpointSprite":"",

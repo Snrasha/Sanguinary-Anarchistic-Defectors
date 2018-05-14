@@ -1,10 +1,12 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 30,
+  "fluxCapacitors": 21,
   "fluxVents": 30,
   "goalVariant": true,
   "hullId": "SAD_Imhotep",
-  "hullMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
   "permaMods": [],
   "quality": 0,
   "variantId": "SAD_Imhotep_Standard",
@@ -35,5 +37,8 @@
       "weapons": {}
     }
   ],
-  "wings": []
+  "wings": [
+    "SAD_Wadjet_Wing",
+    "SAD_Wadjet_Wing"
+  ]
 }
