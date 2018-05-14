@@ -14,7 +14,7 @@
 	"glowRadius":8,
 	"textureScrollSpeed":64.0,
 	"pixelsPerTexel":5.0,
-	"bulletSprite":"graphics/shadow_weapons/missiles/SAD_phzdn_shot.png",
+	"bulletSprite":"graphics/missiles/SAD_phzdn_shot.png",
 	"behaviorSpec":{"behavior":"PROXIMITY_FUSE",
 					"shotRangeVariance":0.25,
 					"range":5,

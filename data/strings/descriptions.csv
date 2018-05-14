@@ -1,1 +1,26 @@
 id,type,text1,text2,text3,notes
+,,,,,
+SAD_shrike_rack,WEAPON,"A short-ranged tracking missile, launched from a triple-rack. Intended to bypass active defenses by virtue of overwhelming velocity.
+
+Railgun assisted kinetic penetrator.  Propulsion is very potent, but fuel supply quite short, giving almost no chance of recovery if the shot misses.  Effective primarily against shields.  It is fitted with a small explosive charge, which is set to go off when it senses it is surrounded by a targeted ships hull; while the damage to the hull is typically small, this can damage and disrupt shipboard systems.",Close Support,,
+SAD_shrike_pod,WEAPON,"A short-ranged tracking missile, launched from a magazine-fed dual pod. Intended to pierce active defenses by virtue of overwhelming velocity.
+
+Railgun assisted kinetic penetrator.  Propulsion is very potent, but fuel supply quite short, giving almost no chance of recovery if the shot misses.  Effective primarily against shields.  It is fitted with a small explosive charge, which is set to go off when it senses it is surrounded by a targeted ships hull; while the damage to the hull is typically small, this can damage and disrupt shipboard systems..",Close Support,,
+SAD_cepc,WEAPON,"The CEPC, or Carried Energy Pulse Cannon, is an SRA weapon system capable of significant, if front loaded, damage.
+
+Rather than fire the bolt through a typical lasing medium or projector, Shadowyards researchers opted to utilize a physical medium to act as a carrier for the energy pulse.  While the method has proven to be somewhat more efficient than many other methods and can produce highly damaging bolts, the Charge Carrier Medium (CCM) must be charged before firing, resulting in a limited capacity of available shots at any given time.  The CEPC's fire rate is more than sufficient for this to lead to noticeable drops in combat efficiency in fairly short time frames.",Close Support,,
+SAD_pdcepc,WEAPON,"The Light variant of the CEPC is the SRA's most common dedicated CIWS system, focused on maintaining a high fire rate with excellent accuracy.
+
+Cyclic loading chambers allow the weapon to maintain an extremely high rate of fire; charge carriers are small but capable of reasonable damage at short range.  High accuracy and limited engagement envelope leave it most effective for providing Close Weapons Support against enemy fighters and missiles.",Point Defense,,
+SAD_mcepc,WEAPON,"The Medium CEPC is well liked amongst Shadowyards forces, well regarded as a reliable and deadly weapons platform, despite the high fitting requirements this advanced hardware requires.
+
+Twin cannons ensure a high rate of fire with good accuracy while extended accelerator rails give it superior range.  An improved charging system allows it to fire larger CCM pellets safely, which has greatly improved the weapons damage at some cost in efficiency.",Assault,,
+SAD_wamgun,WEAPON,"Featuring distinctive crescent-bolts of energy, the 'Wavepulse' Cannon is a general-purpose, if exotic, weapon of war.
+
+Ultimately a simple weapon, the Wavepulse is actually numerous smaller particle cannons, horizontally aligned firing in sequence to produce a much larger blast of energy.  Of only middling efficiency, the configuration of particle projectors is nevertheless quite effective at producing localized stress to shields and armor, and the weapon is noted for leaving distinctive 'scars' on damaged hull plating.  The resulting 'cutting' effect can on occasion inflict additional damage as a result of secondary stresses resulting from the unusual damage pattern.",Close Support,,
+SAD_lempGun,WEAPON,"The Polarizer is an energy weapon that delivers an modest electromagnetic pulse (EMP) charge. The polarizer carries its charges on a variant of the CEPC’s carrier medium, which, in it’s highly charged state, becomes unstable; it also fires a shielded micro-sensor which detects hostile craft and causes the blast to explode, delivering its charge to targets within a short range.
+
+As such the Polarizer sees a good deal of use as a general purpose close defense battery, though it remains useful in disabling enemy ships.",Special,,
+,,,,,
+SAD_booster,SHIP_SYSTEM,"Activates ancilliary thrusters as well as increasing main drive output, leading to a brief increase to maximum speed at the cost of flux.",Movement,Provides a brief boost to top speed.,
+SAD_displacer,SHIP_SYSTEM,Teleports the ship forward in the direction it's traveling. The system slowly builds up to three charges which can then be expended in short order.,Movement,Teleports the ship forward in the direction it's traveling. The system can store up to three charges at once and generates flux when used.,
