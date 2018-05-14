@@ -14,5 +14,5 @@
 	"hitGlowRadius":15,
 	"textureScrollSpeed":64.0,
 	"pixelsPerTexel":5.0,
-	"bulletSprite":"graphics/missiles/cecp_sml.png"
+	"bulletSprite":"graphics/missiles/SAD_cecp_sml.png"
 }

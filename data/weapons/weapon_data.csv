@@ -6,3 +6,8 @@ Medium CEPC,SAD_mcepc,2,,2250,800,,200,,8,15,14,20,0.85,2,ENERGY,220,,0,1.1,2,0.
 Wavepulse Cannon,SAD_wamgun,1,,7500,900,,300,,25,15,20,,,,ENERGY,300,,,0.75,,,0,0,0,10,,800,,,30,"STRIKE,USE_VS_FRIGATES","energy10, strike1",4
 Chaingang' CEPC,SAD_chaingang,0,,1750,350,,30,,2,30,10,60,5,20,ENERGY,4,,0,0.8,20,0.025,0,5,0.25,15,,800,,,10,"PD, ANTI_FTR","pd6, energy9, SR",5
 Medium Polarizer,SAD_mpolar,2,0.8,2450,600,,30,300,15,25,16,,,,ENERGY,60,,0.1,0.5,,,0,0,0,0,,1000,,,100,"PD,PD_ALSO",energy16,6
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Shrike ASM,SAD_shrike_rack,1,,250,2000,,750,150,300,30,5,3,,,KINETIC,0,,0,1,1,,0,0,0,,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7",5202.2
+Shrike ASM Pod,SAD_shrike_pod,2,,2100,2000,,750,150,300,30,10,12,,,KINETIC,0,,0,8,3,0.5,0,0,0,0,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7",5202.3
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Type 17 AC,SAD_widjet_gun,0,,200,450,,40,,,50,4,,,,FRAGMENTATION,10,,0,0.3,10,0.08,9,20,4,20,,1500,,,10,"SYSTEM, STRIKE, USE_VS_FRIGATES, ANTI_FTR",,5710

@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
-	"length":45.0,  
+	"length":45.0,
 	"width":9.0,
 	"fadeTime":0.25,
 	"fringeColor":[250,135,75,255],
@@ -14,5 +14,5 @@
 	"hitGlowRadius":40,
 	"textureScrollSpeed":64.0,
 	"pixelsPerTexel":5.0,
-	"bulletSprite":"graphics/missiles/cecp_big.png"
+	"bulletSprite":"graphics/missiles/SAD_cecp_big.png"
 }

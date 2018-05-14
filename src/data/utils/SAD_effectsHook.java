@@ -12,26 +12,6 @@ import org.lwjgl.util.vector.Vector2f;
 
 public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
 {
-  private static final float CONCUSSION_SHOCKWAVE_DURATION = 0.25F;
-  private static final float CONCUSSION_SHOCKWAVE_MAX_SCALE = 1.5F;
-  private static final float CONCUSSION_SHOCKWAVE_MIN_SCALE = 0.25F;
-  private static final String DATA_KEY = "SAD_effectsHook";
-  private static final float FLAK_SHOCKWAVE_DURATION = 0.2F;
-  private static final float FLAK_SHOCKWAVE_MAX_SCALE = 0.8F;
-  private static final float FLAK_SHOCKWAVE_MIN_SCALE = 0.15F;
-  private static final float GAP_DURATION = 0.2F;
-  private static final float GAP_MAX_SCALE = 0.8F;
-  private static final float GAP_MIN_SCALE = 0.15F;
-  private static final float PING_DURATION = 3.0F;
-  private static final float PING_MAX_SCALE = 3.5F;
-  private static final float PING_MIN_SCALE = 0.75F;
-  private static final float PULSE_DURATION = 1.25F;
-  private static final float PULSE_MAX_SCALE = 2.5F;
-  private static final float PULSE_MIN_SCALE = 0.5F;
-  private static final float EMP_SHOCKWAVE_DURATION = 0.05F;
-  private static final float EMP_SHOCKWAVE_MAX_SCALE = 1.0F;
-  private static final float EMP_SHOCKWAVE_MIN_SCALE = 0.2F;
-  private static final int SHOCKWAVE_SIZE = 256;
   private CombatEngineAPI engine;
   
   public SAD_effectsHook() {}

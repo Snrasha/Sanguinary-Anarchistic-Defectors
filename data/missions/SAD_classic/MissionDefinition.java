@@ -1,4 +1,4 @@
-package data.missions.forg_classic;
+package data.missions.SAD_classic;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
