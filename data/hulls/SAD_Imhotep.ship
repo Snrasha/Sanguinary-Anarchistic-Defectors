@@ -169,7 +169,7 @@
     0,
     0
   ],
-  "shieldRadius": 166,
+  "shieldRadius": 158,
   "spriteName": "graphics/ships/SAD_Imhotep.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,

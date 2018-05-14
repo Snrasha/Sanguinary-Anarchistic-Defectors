@@ -53,7 +53,7 @@
     68.5,
     73
   ],
-  "collisionRadius": 119.5,
+  "collisionRadius": 100.5,
   "engineSlots": [
     {
       "angle": 180,
@@ -86,7 +86,7 @@
     0,
     0
   ],
-  "shieldRadius": 116.5,
+  "shieldRadius": 97,
   "spriteName": "graphics/ships/SAD_Qadesh.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,

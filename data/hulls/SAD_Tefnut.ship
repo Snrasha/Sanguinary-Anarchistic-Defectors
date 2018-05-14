@@ -55,7 +55,7 @@
     71,
     109
   ],
-  "collisionRadius": 184.5,
+  "collisionRadius": 141.5,
   "engineSlots": [
     {
       "angle": 180,
@@ -132,7 +132,7 @@
     0,
     0
   ],
-  "shieldRadius": 179,
+  "shieldRadius": 129,
   "spriteName": "graphics/ships/SAD_Tefnut.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,

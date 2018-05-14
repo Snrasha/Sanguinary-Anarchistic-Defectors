@@ -123,7 +123,7 @@
     0,
     0
   ],
-  "shieldRadius": 60.5,
+  "shieldRadius": 52,
   "spriteName": "graphics/ships/SAD_Thoth.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,

@@ -38,7 +38,7 @@
     29,
     44.5
   ],
-  "collisionRadius": 80.5,
+  "collisionRadius": 54.5,
   "engineSlots": [
     {
       "angle": 180,
@@ -60,7 +60,7 @@
     0,
     0
   ],
-  "shieldRadius": 78.5,
+  "shieldRadius": 52,
   "spriteName": "graphics/ships/SAD_Seshat.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,

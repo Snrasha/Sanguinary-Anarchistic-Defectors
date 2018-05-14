@@ -21,7 +21,7 @@
     32,
     37.5
   ],
-  "collisionRadius": 65,
+  "collisionRadius": 58,
   "engineSlots": [
     {
       "angle": 180,
@@ -65,7 +65,7 @@
     0,
     0
   ],
-  "shieldRadius": 63,
+  "shieldRadius": 56.5,
   "spriteName": "graphics/ships/SAD_Hapy.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,

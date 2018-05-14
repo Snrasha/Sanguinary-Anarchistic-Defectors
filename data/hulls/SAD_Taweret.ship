@@ -80,7 +80,7 @@
     210,
     169.5
   ],
-  "collisionRadius": 299,
+  "collisionRadius": 257,
   "engineSlots": [
     {
       "angle": 180,
@@ -201,7 +201,7 @@
     0,
     0
   ],
-  "shieldRadius": 294.5,
+  "shieldRadius": 248,
   "spriteName": "graphics/ships/SAD_Taweret.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,

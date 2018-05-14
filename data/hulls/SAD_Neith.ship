@@ -25,7 +25,7 @@
     35,
     41.5
   ],
-  "collisionRadius": 79,
+  "collisionRadius": 63.5,
   "engineSlots": [
     {
       "angle": -137,
@@ -58,7 +58,7 @@
     0,
     0
   ],
-  "shieldRadius": 77,
+  "shieldRadius": 62,
   "spriteName": "graphics/ships/SAD_Neith.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,
