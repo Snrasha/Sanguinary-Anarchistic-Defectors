@@ -5,8 +5,9 @@ CEPC(S),SAD_cepc,0,,300,675,,100,,3,45,6,30,1.35,3,ENERGY,110,,0,0.8,2,0.15,4,8,
 Medium CEPC(S),SAD_mcepc,2,,2250,800,,200,,8,25,14,20,0.85,2,ENERGY,220,,0,2.2,4,0.25,3,6,2,10,,800,,,30,,energy10,3
 Wavepulse Cannon,SAD_wamgun,1,,7500,900,,300,,25,15,20,,,,ENERGY,300,,,0.75,,,0,0,0,10,,800,,,30,"STRIKE,USE_VS_FRIGATES","energy10, strike1",4
 Medium Polarizer,SAD_mpolar,2,0.8,2450,650,,30,300,15,25,16,,,,ENERGY,60,,0.1,0.5,,,0,0,0,0,,1000,,,100,"PD,PD_ALSO",energy16,6
+Storm Blaster(S),SAD_stormBlaster,2,0,6000,800,,150,,10,5,0,80,0.85,20,FRAGMENTATION,10,,0.25,1.5,20,0.05,0,20,1,7,,850,,,30,SYSTEM,he11,7
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Shrike ASM(S),SAD_shrike_rack,1,,250,2000,,600,150,300,30,5,3,,,KINETIC,0,,0,1,1,,0,0,0,,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7",5202.2
-Shrike ASM Pod(S),SAD_shrike_pod,2,,2100,2000,,600,150,300,30,10,12,,,KINETIC,0,,0,8,3,0.5,0,0,0,0,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7",5202.3
+Shrike ASM(S),SAD_shrike_rack,1,,250,2000,,600,150,300,30,5,3,,,KINETIC,0,,0,1,1,,0,0,0,,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7",8
+Shrike ASM Pod(S),SAD_shrike_pod,2,,2100,2000,,600,150,300,30,10,12,,,KINETIC,0,,0,8,3,0.5,0,0,0,0,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7",9
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Type 17 AC,SAD_wadjet_gun,0,,200,450,,40,,,50,4,,,,FRAGMENTATION,10,,0,0.3,10,0.08,9,20,4,20,,1500,,,10,"SYSTEM, STRIKE, USE_VS_FRIGATES, ANTI_FTR",,5710
+Type 17 AC,SAD_wadjet_gun,0,,200,450,,40,,,50,4,,,,FRAGMENTATION,10,,0,0.3,10,0.08,9,20,4,20,,1500,,,10,"SYSTEM, STRIKE, USE_VS_FRIGATES, ANTI_FTR",,10

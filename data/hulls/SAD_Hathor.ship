@@ -1,0 +1,158 @@
+{
+  "bounds": [
+    -62,
+    28,
+    15.5,
+    53,
+    48.5,
+    42.5,
+    69,
+    16.5,
+    63.5,
+    5,
+    63.5,
+    -5,
+    69,
+    -16.5,
+    48.5,
+    -42.5,
+    15.5,
+    -53,
+    -62,
+    -28,
+    -75,
+    -0
+  ],
+  "builtInMods": [
+    "SAD_harShields"
+  ],
+  "builtInWings": [],
+  "center": [
+    51,
+    100
+  ],
+  "collisionRadius": 119.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 5,
+      "length": 26.5,
+      "location": [
+        -66.5,
+        -18
+      ],
+      "style": "SanguinaryFlare",
+      "width": 5
+    },
+    {
+      "angle": -180,
+      "contrailSize": 5,
+      "length": 26.5,
+      "location": [
+        -66.5,
+        18
+      ],
+      "style": "SanguinaryFlare",
+      "width": 5
+    },
+    {
+      "angle": 180,
+      "contrailSize": 13,
+      "length": 40.5,
+      "location": [
+        -70.5,
+        -12
+      ],
+      "style": "SanguinaryFlare",
+      "width": 13
+    },
+    {
+      "angle": -180,
+      "contrailSize": 13,
+      "length": 40.5,
+      "location": [
+        -70.5,
+        12
+      ],
+      "style": "SanguinaryFlare",
+      "width": 13
+    }
+  ],
+  "height": 167,
+  "hullId": "SAD_Hathor",
+  "hullName": "Hathor",
+  "hullSize": "DESTROYER",
+  "shieldCenter": [
+    -16.5,
+    0
+  ],
+  "shieldRadius": 101,
+  "spriteName": "graphics/ships/SAD_Hathor.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -27,
+        -23.5,
+        -27,
+        24
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": -33.5,
+      "arc": 152,
+      "id": "WS0001",
+      "locations": [
+        43.5,
+        -15
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 33.5,
+      "arc": 152,
+      "id": "WS0002",
+      "locations": [
+        43.5,
+        15
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -78.5,
+      "arc": 210,
+      "id": "WS0003",
+      "locations": [
+        17,
+        -31
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 78.5,
+      "arc": 210,
+      "id": "WS0004",
+      "locations": [
+        17,
+        31
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    }
+  ],
+  "width": 102
+}

@@ -73,7 +73,7 @@
     "SAD_harShields"
   ],
   "builtInWeapons": {
-    "WS0023": "SAD_wamgun"
+    "WS0023": "SAD_stormBlaster"
   },
   "builtInWings": [],
   "center": [
@@ -475,10 +475,10 @@
       "arc": 5,
       "id": "WS0023",
       "locations": [
-        166,
+        163,
         -0
       ],
-      "mount": "HIDDEN",
+      "mount": "HARDPOINT",
       "size": "LARGE",
       "type": "BUILT_IN"
     }
