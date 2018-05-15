@@ -3,6 +3,7 @@ package src.data.utils;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.ViewportAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
 import java.util.Iterator;
@@ -13,8 +14,6 @@ import org.lwjgl.util.vector.Vector2f;
 public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
 {
   private CombatEngineAPI engine;
-  
-  public SAD_effectsHook() {}
   
   public static void createFlakShockwave(Vector2f location)
   {
@@ -68,36 +67,7 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
     
     pings.add(new tagPing(location, velocity, 3.0F, 3.5F, 0.75F));
   }
-  
-  public static void createPulse(Vector2f location)
-  {
-    LocalData localData = (LocalData)Global.getCombatEngine().getCustomData().get("SAD_effectsHook");
-    if (localData == null)
-    {
-      return;
-    }
-    
-    List<swacsPulse> pulses = localData.pulses;
-    
-    pulses.add(new swacsPulse(location, 1.25F, 2.5F, 0.5F));
-  }
-  
-
-
-
-  public static void createRift(Vector2f location)
-  {
-    LocalData localData = (LocalData)Global.getCombatEngine().getCustomData().get("SAD_effectsHook");
-    if (localData == null)
-    {
-      return;
-    }
-   
-    List<Rift> rifts =  localData.rifts;
-    
-    rifts.add(new Rift(location, 0.2F, 0.8F, 0.15F));
-  }
-  
+ 
 
   public void advance(float amount, List<InputEventAPI> events)
   {
@@ -148,44 +118,10 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
         ping.scale = (ping.minScale + (ping.maxLifespan - ping.lifespan) / ping.maxLifespan * (ping.maxScale - ping.minScale));
       }
     }
-    List<swacsPulse> pulses = localData.pulses;
-    
-    Iterator<swacsPulse> iterC = pulses.iterator();
-    while (iterC.hasNext())
-    {
-      swacsPulse pulse = (swacsPulse)iterC.next();
-      
-      pulse.lifespan -= amount;
-      if (pulse.lifespan <= 0.0F)
-      {
-        iterC.remove();
-      }
-      else
-      {
-        pulse.alpha = (pulse.lifespan / pulse.maxLifespan);
-        pulse.scale = (pulse.minScale + (pulse.maxLifespan - pulse.lifespan) / pulse.maxLifespan * (pulse.maxScale - pulse.minScale));
-      }
-    }
-    List<Rift> rifts = localData.rifts;
-    
-    Iterator<Rift> iterD = rifts.iterator();
-    while (iterD.hasNext())
-    {
-      Rift rift = (Rift)iterD.next();
-      
-      rift.lifespan -= amount;
-      if (rift.lifespan <= 0.0F)
-      {
-        iterD.remove();
-      }
-      else
-      {
-        rift.alpha = (rift.lifespan / rift.maxLifespan);
-        rift.scale = (rift.maxScale - (rift.maxLifespan - rift.lifespan) / rift.maxLifespan * (rift.maxScale - rift.minScale));
-      }
-    }
+ 
   }
   
+  @Override
   public void init(CombatEngineAPI engine)
   {
     this.engine = engine;
@@ -193,7 +129,8 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
   }
   
 
-  public void renderInWorldCoords(com.fs.starfarer.api.combat.ViewportAPI viewport)
+  @Override
+  public void renderInWorldCoords(ViewportAPI viewport)
   {
     if (engine == null)
     {
@@ -205,9 +142,7 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
     LocalData localData = (LocalData)engine.getCustomData().get("SAD_effectsHook");
     List<Shockwave> shockwaves = localData.shockwaves;
     List<tagPing> pings = localData.pings;
-    List<swacsPulse> pulses = localData.pulses;
-    List<Rift> rifts = localData.rifts;
-    
+  
 
     for (Shockwave wave : shockwaves)
     {
@@ -233,59 +168,13 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
         waveSprite.renderAtCenter(ping.location.x, ping.location.y);
       }
     }
-    
-    for (swacsPulse pulse : pulses) {
-      SpriteAPI waveSprite = Global.getSettings().getSprite("ping", "swacsPing");
-      if (waveSprite != null)
-      {
-        waveSprite.setAlphaMult(pulse.alpha);
-        waveSprite.setAdditiveBlend();
-        waveSprite.setAngle(pulse.facing);
-        waveSprite.setSize(pulse.scale * 256.0F, pulse.scale * 256.0F);
-        waveSprite.renderAtCenter(pulse.location.x, pulse.location.y);
-      }
-    }
-    
-    for (Rift rift : rifts) {
-      SpriteAPI eventHorizonSprite = Global.getSettings().getSprite("misc", "ms_eventHorizon");
-      SpriteAPI gapSprite = Global.getSettings().getSprite("misc", "ms_phaseSpaceRift" + org.lazywizard.lazylib.MathUtils.getRandomNumberInRange(1, 5));
-      
-      SpriteAPI flareSprite = Global.getSettings().getSprite("flare", "nidhoggr_ALF");
-      if (eventHorizonSprite != null)
-      {
-        eventHorizonSprite.setAlphaMult(rift.alpha);
-        eventHorizonSprite.setAdditiveBlend();
-        eventHorizonSprite.setAngle(rift.facing);
-        eventHorizonSprite.setSize(150.0F, 150.0F);
-        eventHorizonSprite.renderAtCenter(rift.location.x, rift.location.y);
-      }
-      
-      if (gapSprite != null)
-      {
-        gapSprite.setAlphaMult(0.8F);
-        gapSprite.setAdditiveBlend();
-        gapSprite.setAngle(rift.facing);
-        gapSprite.setSize(rift.scale * 256.0F, rift.scale * 256.0F);
-        gapSprite.renderAtCenter(rift.location.x, rift.location.y);
-      }
-      
-
-      if (flareSprite != null)
-      {
-        flareSprite.setAlphaMult(rift.alpha);
-        flareSprite.setAdditiveBlend();
-        flareSprite.setAngle(0.0F);
-        flareSprite.renderAtCenter(rift.location.x, rift.location.y);
-      }
-    }
+   
   }
   
   private static final class LocalData
   {
     final List<SAD_effectsHook.Shockwave> shockwaves = new LinkedList();
     final List<SAD_effectsHook.tagPing> pings = new LinkedList();
-    final List<SAD_effectsHook.swacsPulse> pulses = new LinkedList();
-    final List<SAD_effectsHook.Rift> rifts = new LinkedList();
     
     private LocalData() {}
   }
@@ -338,51 +227,5 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
     }
   }
   
-  static class swacsPulse
-  {
-    float alpha;
-    final float facing;
-    float lifespan;
-    final Vector2f location;
-    float maxLifespan;
-    float maxScale;
-    float minScale;
-    float scale;
-    
-    swacsPulse(Vector2f location, float duration, float maxScale, float minScale)
-    {
-      this.location = new Vector2f(location);
-      alpha = 1.0F;
-      facing = ((float)Math.random() * 360.0F);
-      maxLifespan = duration;
-      lifespan = maxLifespan;
-      this.maxScale = maxScale;
-      this.minScale = minScale;
-      scale = minScale;
-    }
-  }
   
-  static class Rift
-  {
-    float alpha;
-    final float facing;
-    float lifespan;
-    final Vector2f location;
-    float maxLifespan;
-    float maxScale;
-    float minScale;
-    float scale;
-    
-    Rift(Vector2f location, float duration, float maxScale, float minScale)
-    {
-      this.location = new Vector2f(location);
-      alpha = 1.0F;
-      facing = ((float)Math.random() * 360.0F);
-      maxLifespan = duration;
-      lifespan = maxLifespan;
-      this.maxScale = maxScale;
-      this.minScale = minScale;
-      scale = minScale;
-    }
-  }
 }

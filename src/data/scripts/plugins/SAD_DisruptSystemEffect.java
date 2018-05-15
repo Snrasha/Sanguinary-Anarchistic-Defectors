@@ -1,5 +1,6 @@
 package src.data.scripts.plugins;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
@@ -14,16 +15,14 @@ public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
 
     private final float damageMalus = 1.5f;
 
-    public Map<ShipAPI, Float> TELEMETRY = new java.util.HashMap();
+    public static Map<ShipAPI, Float> TELEMETRY = new java.util.HashMap();
     private final IntervalUtil interval = new IntervalUtil(2.0F, 2.0F);
     private CombatEngineAPI engine;
-
-    public SAD_DisruptSystemEffect() {
-    }
 
     @Override
     public void init(CombatEngineAPI engine) {
         this.engine = engine;
+        this.TELEMETRY = new java.util.HashMap();
     }
 
     @Override
@@ -38,7 +37,7 @@ public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
         if (!TELEMETRY.isEmpty()) {
             for (Map.Entry<ShipAPI, Float> entry : TELEMETRY.entrySet()) {
                 ShipAPI ship = (ShipAPI) entry.getKey();
-                String id = ship.getFleetMemberId()+"_disrupt";
+                String id = ship.getFleetMemberId() + "_disrupt";
                 Vector2f loc = ship.getLocation();
                 Vector2f vel = ship.getVelocity();
 
@@ -55,21 +54,19 @@ public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
 
                     interval.advance(amount);
                     if (interval.intervalElapsed()) {
-                        for (int i = 0; i < 1; i++) {
-                            SAD_effectsHook.createPing(loc, vel);
-                        }
+                        SAD_effectsHook.createPing(loc, vel);
+
                     }
-/*
                     ship.getMutableStats().getArmorDamageTakenMult().modifyMult(id, damageMalus);
                     ship.getMutableStats().getHullDamageTakenMult().modifyMult(id, damageMalus);
                     ship.getMutableStats().getShieldDamageTakenMult().modifyMult(id, damageMalus);
-*/
+
                 }
             }
         }
     }
 
-    public void putTELEMETRY(ShipAPI ship) {
+    public static void putTELEMETRY(ShipAPI ship) {
         TELEMETRY.put(ship, 20.0f);
     }
 }

@@ -4,7 +4,7 @@
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
 	"collisionClassByFighter":"RAY_FIGHTER",
-	"onHitEffect":"data.scripts.weapons.SAD_WavebeamOnHitEffect",
+	"onHitEffect":"src.data.scripts.weapons.SAD_WavebeamOnHitEffect",
 	"length":26.0,
 	"width":42,
 	"fadeTime":0.3,

@@ -1,7 +1,16 @@
 {
 
-    "plugins":{
-		"SmallEMPFlak":"src.data.scripts.plugins.SAD_EMPFlakSmall",
-		"DisruptSystem":"src.data.scripts.plugins.SAD_DisruptSystemEffect",
-	},
+  "plugins":{
+    "SmallEMPFlak":"src.data.scripts.plugins.SAD_EMPFlakSmall",
+    "DisruptSystem":"src.data.scripts.plugins.SAD_DisruptSystemEffect",
+  },
+  "graphics":{
+
+    "concussion":{
+      "flareFlakWave":"graphics/shi/fx/ms_flakWave.png"
+    },
+    "ping":{
+      "tagPing":"graphics/shi/fx/ms_tagPing.png",
+    },
+  }
 }
