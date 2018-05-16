@@ -1,0 +1,29 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "SAD_MotherShip_BackSlide_Inv",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_MotherShip_BackSlide_Inv_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "SAD_pdcepc",
+        "WS0003": "SAD_pdcepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_mcepc"
+      }
+    }
+  ],
+  "wings": []
+}

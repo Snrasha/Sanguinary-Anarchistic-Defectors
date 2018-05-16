@@ -1,0 +1,34 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "SAD_MotherShip_FrontSide",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_MotherShip_FrontSide_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "SAD_cepc",
+        "WS0006": "SAD_cepc",
+        "WS0007": "SAD_cepc",
+        "WS0008": "SAD_cepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SAD_pdcepc",
+        "WS0004": "SAD_pdcepc",
+        "WS0009": "SAD_pdcepc",
+        "WS0010": "SAD_pdcepc"
+      }
+    }
+  ],
+  "wings": []
+}
