@@ -1,0 +1,1 @@
+-Fixer la tranche  du vaisseau Capital, il y a une coupure trop net sur le capital dû à  la texture.
