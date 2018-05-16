@@ -25,5 +25,8 @@
       }
     }
   ],
-  "wings": []
+  "wings": [
+    "SAD_Wadjet_Wing",
+    "SAD_Wadjet_Wing"
+  ]
 }

@@ -157,6 +157,7 @@
 			"fallback":{"carrierMedium":0.5},
 		},
 		"carrierMedium":{
+		"SAD_Hathor_Standard":4,
 			"fallback":{"carrierSmall":2},
 		},
 		"carrierLarge":{
@@ -164,8 +165,31 @@
 		"SAD_Imhotep_Standard":2,
 			"fallback":{"carrierMedium":3},
 		},
+
+		"freighterSmall":{
+	"fallback":{"freighterMedium":1},
+		},
+		"freighterMedium":{
+		"SAD_Qadesh_Standard":2,
+	"fallback":{"freighterSmall":2},
+		},
+		"freighterLarge":{
+	"fallback":{"freighterMedium":2},
+		},
+		"tankerSmall":{
+	"fallback":{"tankerMedium":1},
+		},
+		"tankerMedium":{
+		"SAD_Tefnut_Standard":2,
+	"fallback":{"tankerSmall":2},
+		},
+		"tankerLarge":{
+	"fallback":{"tankerMedium":2},
+		},
+
+
 		"remnantStation1":{
-			"remnant_station2_Standard":10,
+			"SAD_MotherShip_Standard":10,
 		},
 	},
 
@@ -177,11 +201,12 @@
 	},
 	"doctrine":{
 		# ship distribution
+		"fighters":6,
 		"small":10,
-		"fast":6,
+		"fast":4,
 		"medium":8,
-		"large":4,
-		"capital":1,
+		"large":8,
+		"capital":2,
 
 		# as fraction of combat ships of same size
 		## less bothered with escorts.
@@ -199,36 +224,28 @@
 		"largeCarrierProbability":0.30,
 
 		# officers
-		## tend to be poor, but plentiful + but high variance because very independent.
 		"officersPerPoint":0.35,
-		"officerLevelPerPoint":0.15,
-		"officerLevelBase":3,
-		"officerLevelVariance":0.5,
+		"officerLevelPerPoint":0.4,
+		"officerLevelBase":6,
+		"officerLevelVariance":0.4,
 
-		# level * commanderSkillsPerLevel = base number of skills
-		# plus chance for each skill to actually materialize
-		# e.g: 1.5 total skills and 0.5 commanderSkillChance mean:
-		# 50% (1 * 0.5) chance for one skill
-		# and a 25% chance (0.5 * 0.5) for another one
-		# each skill's level will the higher of 1 and commanderSkillLevelPerLevel * level
-
-		"commanderSkillsPerLevel":0.1,
-		"commanderSkillChance":0.25,
-		"commanderSkillLevelPerLevel":0.1,
+		"commanderSkillsPerLevel":0.2,
+		"commanderSkillChance":0.4,
+		"commanderSkillLevelPerLevel":0.15,
 		"commanderSkills":{
-			"officer_management":10,
-			"coordinated_maneuvers":3,
-			"fighter_doctrine":2,
-			"electronic_warfare":1,
-		},
+			"officer_management":6,
+			"coordinated_maneuvers":6,
+			"fighter_doctrine":9,
+			"electronic_warfare":9,
+	        }
 	},
 	"traits":{
 		"captain":{
 			"timid":1,
-			"cautious":2,
-			"steady":5,
+			"cautious":1,
+			"steady":2,
 			"aggressive":10,
-			"reckless":20,
+			"reckless":3,
 		},
 	},
 },
