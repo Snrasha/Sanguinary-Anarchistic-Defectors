@@ -1,0 +1,58 @@
+{
+  "bounds": [
+    5.5,
+    10,
+    9.5,
+    -9,
+    -8.5,
+    -12.5,
+    -12,
+    8
+  ],
+  "builtInWings": [],
+  "center": [
+    11,
+    17
+  ],
+  "collisionRadius": 22.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -15.5,
+        -0
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    }
+  ],
+  "height": 34,
+  "hullId": "SAD_Anuket",
+  "hullName": "Anuket",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    -0
+  ],
+  "shieldRadius": 22,
+  "spriteName": "graphics/ships/SAD_Anuket.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        2.5,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    }
+  ],
+  "width": 26
+}

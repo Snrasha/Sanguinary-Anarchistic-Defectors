@@ -1,0 +1,21 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "SAD_Anuket",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_Anuket_Standard",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_shrike_fighter"
+      }
+    }
+  ],
+  "wings": []
+}
