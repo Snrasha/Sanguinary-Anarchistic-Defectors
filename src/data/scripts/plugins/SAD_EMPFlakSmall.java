@@ -12,7 +12,6 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
 import src.data.scripts.world.SAD_ModPlugin;
 import src.data.utils.SAD_Utils;
-import src.data.utils.SAD_effectsHook;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashSet;

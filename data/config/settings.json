@@ -4,7 +4,7 @@
     "SAD_SmallEMPFlak":"src.data.scripts.plugins.SAD_EMPFlakSmall",
     "SAD_DisruptSystem":"src.data.scripts.plugins.SAD_DisruptSystemEffect",
     "SAD_ArmorPiercePlugin":"src.data.scripts.plugins.SAD_ArmorPiercePlugin",
-
+    "SAD_Effects":"src.data.scripts.plugins.SAD_effectsHook",
   },
   "graphics":{
     "flare":{

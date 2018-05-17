@@ -9,20 +9,19 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import java.util.List;
 import java.util.Map;
 import org.lwjgl.util.vector.Vector2f;
-import src.data.utils.SAD_effectsHook;
 
 public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
 
     private final float damageMalus = 1.5f;
 
-    public static Map<ShipAPI, Float> TELEMETRY = new java.util.HashMap();
+    public static Map<ShipAPI, Float> telemetry = new java.util.HashMap();
     private final IntervalUtil interval = new IntervalUtil(2.0F, 2.0F);
     private CombatEngineAPI engine;
 
     @Override
     public void init(CombatEngineAPI engine) {
         this.engine = engine;
-        this.TELEMETRY = new java.util.HashMap();
+        SAD_DisruptSystemEffect.telemetry = new java.util.HashMap();
     }
 
     @Override
@@ -30,12 +29,12 @@ public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
         if (engine == null) {
             return;
         }
-        if (engine.isPaused()) {
+        if (telemetry == null || engine.isPaused()) {
             return;
         }
 
-        if (!TELEMETRY.isEmpty()) {
-            for (Map.Entry<ShipAPI, Float> entry : TELEMETRY.entrySet()) {
+        if (!telemetry.isEmpty()) {
+            for (Map.Entry<ShipAPI, Float> entry : telemetry.entrySet()) {
                 ShipAPI ship = (ShipAPI) entry.getKey();
                 String id = ship.getFleetMemberId() + "_disrupt";
                 Vector2f loc = ship.getLocation();
@@ -44,13 +43,13 @@ public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
                 float remaining = (entry.getValue()) - amount;
 
                 if (remaining < 0.0F) {
-                    TELEMETRY.clear();
+                    telemetry.clear();
 
                     ship.getMutableStats().getArmorDamageTakenMult().unmodify(id);
                     ship.getMutableStats().getHullDamageTakenMult().unmodify(id);
                     ship.getMutableStats().getShieldDamageTakenMult().unmodify(id);
                 } else {
-                    TELEMETRY.put(ship, remaining);
+                    telemetry.put(ship, remaining);
 
                     interval.advance(amount);
                     if (interval.intervalElapsed()) {
@@ -67,6 +66,6 @@ public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
     }
 
     public static void putTELEMETRY(ShipAPI ship) {
-        TELEMETRY.put(ship, 20.0f);
+        telemetry.put(ship, 20.0f);
     }
 }

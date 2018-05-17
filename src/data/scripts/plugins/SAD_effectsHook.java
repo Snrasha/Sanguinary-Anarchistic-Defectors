@@ -1,4 +1,4 @@
-package src.data.utils;
+package src.data.scripts.plugins;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
@@ -69,6 +69,7 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
   }
  
 
+  @Override
   public void advance(float amount, List<InputEventAPI> events)
   {
     if (engine == null)
