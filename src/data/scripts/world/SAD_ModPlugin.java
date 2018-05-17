@@ -7,9 +7,7 @@ import com.fs.starfarer.api.campaign.CampaignPlugin;
 import com.fs.starfarer.api.combat.MissileAIPlugin;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
-import exerelin.campaign.SectorManager;  
 import com.thoughtworks.xstream.XStream;
-import src.data.scripts.campaign.SAD_ThemeGenerator;
 import src.data.utils.XStreamConfig;
 import data.scripts.hullmods.TEM_LatticeShield;
 import src.data.scripts.ai.SAD_SimpleMissileAI;
@@ -35,9 +33,7 @@ public class SAD_ModPlugin extends BaseModPlugin {
   
   
     private static void init() {
-      boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");  
-      if (!haveNexerelin || SectorManager.getCorvusMode())  
-        new SAD_Gen().generate(Global.getSector());
+       new SAD_Gen().generate(Global.getSector());
 
 
     }
@@ -52,7 +48,6 @@ public class SAD_ModPlugin extends BaseModPlugin {
     public void onNewGame() {
        init();
         
-       new SAD_ThemeGenerator();
       
     }
    public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip)
