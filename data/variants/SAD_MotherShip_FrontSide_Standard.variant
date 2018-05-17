@@ -28,6 +28,13 @@
         "WS0009": "SAD_pdcepc",
         "WS0010": "SAD_pdcepc"
       }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "MAIN": "SAD_rhpbc"
+      }
     }
   ],
   "wings": []

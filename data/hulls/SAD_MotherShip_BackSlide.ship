@@ -1,49 +1,42 @@
 {
   "bounds": [
-    118.5,
-    -63,
-    128.5,
-    18,
+    120.5,
+    -47.5,
+    120,
+    25,
     101,
     46,
-    115.5,
-    58,
-    61,
-    85,
-    30,
-    65,
-    24.5,
-    87,
-    -19.5,
-    84,
-    -23,
-    64,
+    122,
+    68.5,
+    -25,
+    69.5,
     -73,
     98.5,
     -109.5,
     90,
-    -108,
+    -110,
     15,
     -80,
     6,
-    -53.5,
-    -22.5,
+    -53,
+    -28.5,
     -27,
     -48,
-    -11.5,
-    -69.5,
-    -1.5,
+    -13.5,
+    -70,
+    -5.5,
     -86.5,
-    12,
-    -76,
+    8.5,
+    -75.5,
     42,
     -75,
-    93,
-    -48.5
+    98.5,
+    -44
   ],
   "builtInMods": [
     "SAD_harShields",
-    "supercomputer"
+    "supercomputer",
+    "reduced_explosion"
   ],
   "builtInWings": [],
   "center": [
@@ -57,7 +50,7 @@
       "contrailSize": 31,
       "length": 72.5,
       "location": [
-        -107,
+        -109,
         22.5
       ],
       "style": "SanguinaryFlare",
@@ -68,8 +61,8 @@
       "contrailSize": 31,
       "length": 72.5,
       "location": [
-        -107.5,
-        82.5
+        -109,
+        83
       ],
       "style": "SanguinaryFlare",
       "width": 31
@@ -79,7 +72,7 @@
       "contrailSize": 14,
       "length": 46,
       "location": [
-        -114,
+        -116,
         52.5
       ],
       "style": "SanguinaryFlare",
@@ -90,7 +83,7 @@
       "contrailSize": 14,
       "length": 46,
       "location": [
-        -118,
+        -120,
         44.5
       ],
       "style": "SanguinaryFlare",
@@ -101,14 +94,14 @@
       "contrailSize": 14,
       "length": 46,
       "location": [
-        -118,
+        -120,
         60.5
       ],
       "style": "SanguinaryFlare",
       "width": 14
     }
   ],
-  "height": 252,
+  "height": 248,
   "hullId": "SAD_MotherShip_BackSlide",
   "hullName": "Back Slide",
   "hullSize": "FRIGATE",
@@ -126,8 +119,8 @@
       "arc": 360,
       "id": "LB 1",
       "locations": [
-        55.5,
-        -17.5
+        65.5,
+        8.5
       ],
       "mount": "HIDDEN",
       "size": "LARGE",
@@ -138,8 +131,8 @@
       "arc": 360,
       "id": "LB 2",
       "locations": [
-        66,
-        11
+        33.5,
+        8
       ],
       "mount": "HIDDEN",
       "size": "LARGE",
@@ -150,7 +143,7 @@
       "arc": 190,
       "id": "WS0001",
       "locations": [
-        -10,
+        -12,
         -20.5
       ],
       "mount": "TURRET",
@@ -162,7 +155,7 @@
       "arc": 213,
       "id": "WS0002",
       "locations": [
-        -2,
+        -4,
         -62
       ],
       "mount": "TURRET",
@@ -174,7 +167,7 @@
       "arc": 153,
       "id": "WS0003",
       "locations": [
-        -61.5,
+        -63.5,
         64.5
       ],
       "mount": "TURRET",
@@ -182,5 +175,5 @@
       "type": "ENERGY"
     }
   ],
-  "width": 197
+  "width": 193
 }

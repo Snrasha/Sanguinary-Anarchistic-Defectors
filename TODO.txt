@@ -1,1 +1,4 @@
 -Fixer la tranche  du vaisseau Capital, il y a une coupure trop net sur le capital dû à  la texture.
+-Ajouter la supra weapon du mothership.
+-Fix le shipsystem du capital.
+-Mettre sa couluer au mothership.

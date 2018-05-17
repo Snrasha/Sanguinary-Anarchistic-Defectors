@@ -1,11 +1,15 @@
 {
 
   "plugins":{
-    "SmallEMPFlak":"src.data.scripts.plugins.SAD_EMPFlakSmall",
-    "DisruptSystem":"src.data.scripts.plugins.SAD_DisruptSystemEffect",
+    "SAD_SmallEMPFlak":"src.data.scripts.plugins.SAD_EMPFlakSmall",
+    "SAD_DisruptSystem":"src.data.scripts.plugins.SAD_DisruptSystemEffect",
+    "SAD_ArmorPiercePlugin":"src.data.scripts.plugins.SAD_ArmorPiercePlugin",
+
   },
   "graphics":{
-
+    "flare":{
+      "nidhoggr_ALF":"graphics/shi/fx/ms_nidhoggrAnFlare.png",
+    },
     "concussion":{
       "flareFlakWave":"graphics/shi/fx/ms_flakWave.png"
     },

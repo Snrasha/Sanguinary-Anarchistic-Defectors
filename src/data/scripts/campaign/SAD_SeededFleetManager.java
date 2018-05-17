@@ -75,22 +75,25 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
         int combatPoints = minPts + random.nextInt(maxPts - minPts + 1);
 
         String type = FleetTypes.PATROL_SMALL;
+        int supportPoints=0;
         if (combatPoints > 8) {
             type = FleetTypes.PATROL_MEDIUM;
+            supportPoints=2;
         }
         if (combatPoints > 16) {
             type = FleetTypes.PATROL_LARGE;
+             supportPoints=2;
         }
-
+        
         FleetParams params = new FleetParams(
                 system.getLocation(),
                 null,
-                "forgotten",
+                "sad",
                 null, // fleet's faction, if different from above, which is also used for source market picking
                 type,
                 combatPoints, // combatPts
-                0f, // freighterPts 
-                0f, // tankerPts
+                supportPoints, // freighterPts 
+                supportPoints, // tankerPts
                 0f, // transportPts
                 0f, // linerPts
                 0f, // civilianPts 

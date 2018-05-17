@@ -118,7 +118,7 @@ public class SAD_Gen implements SectorGeneratorPlugin {
         }
 
         context.constellations = constellations;
-        gen.generateForSector(context, 1);
+        gen.generateForSector(context, 3);
 
     }
 

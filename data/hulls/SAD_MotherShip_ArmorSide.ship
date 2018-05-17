@@ -1,36 +1,39 @@
 {
   "bounds": [
-    148,
-    10.5,
-    131.5,
-    -18.5,
-    78,
-    -23,
-    30.5,
-    -35,
-    -6,
-    -40.5,
+    179,
+    28.5,
+    158,
+    -4.5,
+    81,
+    -12,
+    18,
+    -26,
+    -46,
+    -48,
     -82,
-    -65.5,
-    -148.5,
-    -45.5,
-    -138.5,
-    39.5,
-    -84.5,
-    25.5,
-    26.5,
-    57.5,
-    43.5,
-    53,
-    18.5,
-    31,
-    128.5,
-    28.5
+    -46.5,
+    -147.5,
+    -12,
+    -132.5,
+    -8,
+    -123.5,
+    60.5,
+    -75.5,
+    38,
+    -78,
+    70,
+    70,
+    68,
+    45.5,
+    45,
+    176.5,
+    39
   ],
   "builtInMods": [
     "supercomputer",
     "SAD_harShields",
-    "no_weapon_flux"
+    "no_weapon_flux",
+    "reduced_explosion"
   ],
   "builtInWings": [],
   "center": [
@@ -39,7 +42,7 @@
   ],
   "collisionRadius": 199.5,
   "engineSlots": [],
-  "height": 295,
+  "height": 324,
   "hullId": "SAD_MotherShip_ArmorSide",
   "hullName": "Armor Side",
   "hullSize": "FRIGATE",
@@ -57,8 +60,8 @@
       "arc": 136,
       "id": "WS0001",
       "locations": [
-        32.5,
-        0.5
+        58.5,
+        14.5
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
@@ -69,8 +72,8 @@
       "arc": 113,
       "id": "WS0002",
       "locations": [
-        -7.5,
-        -10.5
+        18.5,
+        3
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
@@ -81,8 +84,8 @@
       "arc": 113,
       "id": "WS0003",
       "locations": [
-        -104.5,
-        -31.5
+        -78.5,
+        -17.5
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
@@ -93,8 +96,8 @@
       "arc": 149,
       "id": "WS0004",
       "locations": [
-        -81.5,
-        -53
+        -55.5,
+        -39.5
       ],
       "mount": "TURRET",
       "size": "SMALL",
@@ -105,8 +108,8 @@
       "arc": 105,
       "id": "WS0005",
       "locations": [
-        100.5,
-        7.5
+        126.5,
+        21.5
       ],
       "mount": "TURRET",
       "size": "SMALL",
@@ -117,8 +120,8 @@
       "arc": 136,
       "id": "WS0006",
       "locations": [
-        61.5,
-        -10.5
+        87.5,
+        3.5
       ],
       "mount": "TURRET",
       "size": "SMALL",
@@ -129,13 +132,13 @@
       "arc": 152,
       "id": "WS0007",
       "locations": [
-        -47.5,
-        -15.5
+        -21.5,
+        -2.5
       ],
       "mount": "TURRET",
       "size": "LARGE",
       "type": "ENERGY"
     }
   ],
-  "width": 135
+  "width": 121
 }

@@ -34,7 +34,7 @@ public class SAD_ModPlugin extends BaseModPlugin {
   }
   
   
-    private static void initforgotten() {
+    private static void init() {
       boolean haveNexerelin = Global.getSettings().getModManager().isModEnabled("nexerelin");  
       if (!haveNexerelin || SectorManager.getCorvusMode())  
         new SAD_Gen().generate(Global.getSector());
@@ -50,9 +50,9 @@ public class SAD_ModPlugin extends BaseModPlugin {
 
     @Override
     public void onNewGame() {
-        initforgotten();
+       init();
         
-       SAD_ThemeGenerator generator = new SAD_ThemeGenerator();
+       new SAD_ThemeGenerator();
       
     }
    public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip)

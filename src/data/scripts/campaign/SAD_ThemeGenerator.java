@@ -53,9 +53,9 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
     public static enum ForgottenSystemType {
        
         
-        DESTROYED(SAD_Tags.THEME_FORGOTTEN_DESTROYED, "$forgottenDestroyed"),
-        SUPPRESSED(SAD_Tags.THEME_FORGOTTEN_SUPPRESSED, "$forgottenSuppressed"),
-        RESURGENT(SAD_Tags.THEME_FORGOTTEN_RESURGENT, "$forgottenResurgent"),;
+        DESTROYED(SAD_Tags.THEME_SAD_DESTROYED, "$sadDestroyed"),
+        SUPPRESSED(SAD_Tags.THEME_SAD_SUPPRESSED, "$sadSuppressed"),
+        RESURGENT(SAD_Tags.THEME_SAD_RESURGENT, "$sadResurgent"),;
 
         private String tag;
         private String beaconFlag;
@@ -133,7 +133,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             System.out.println("\n\n\n");
         }
         if (DEBUG) {
-            System.out.println("Generating forgotten systems");
+            System.out.println("Generating SAD systems");
         }
 
         int numUsed = 0;
@@ -182,8 +182,8 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 StarSystemData data = mainCandidates.get(j);
                 populateMain(data, type);
 
-                data.system.addTag(SAD_Tags.THEME_FORGOTTEN);
-                data.system.addTag(SAD_Tags.THEME_FORGOTTEN_MAIN);
+                data.system.addTag(SAD_Tags.THEME_SAD);
+                data.system.addTag(SAD_Tags.THEME_SAD_MAIN);
                 data.system.addTag(type.getTag());
                 forgottenSystems.add(data);
 
@@ -194,19 +194,19 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 switch (type) {
                     case DESTROYED:
                         {
-                            SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 3, 8, 1, 2, 0.05f);
+                            SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 3, 8, 4, 12, 0.25f);
                             data.system.addScript(fleets);
                             break;
                         }
                     case SUPPRESSED:
                         {
-                            SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 7, 12, 4, 12, 0.25f);
+                            SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 7, 12,8, 20, 0.25f);
                             data.system.addScript(fleets);
                             Boolean addStation = random.nextFloat() < suppressedStationMult;
                             if (j == 0 && !addSuppressedStation.isEmpty()) {
                                 addSuppressedStation.pickAndRemove();
                             }       if (addStation) {
-                                List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("remnant_station2_Damaged", 10f));
+                                List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
                                 for (CampaignFleetAPI station : stations) {
                                     int maxFleets = 2 + random.nextInt(3);
                                     SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
@@ -217,7 +217,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                             }       break;
                         }
                     case RESURGENT:
-                        List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("remnant_station2_Standard", 10f));
+                        List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
                         for (CampaignFleetAPI station : stations) {
                             int maxFleets = 8 + random.nextInt(5);
                             SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
@@ -237,8 +237,8 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
                 populateNonMain(data);
 
-                data.system.addTag(SAD_Tags.THEME_FORGOTTEN);
-                data.system.addTag(SAD_Tags.THEME_FORGOTTEN_SECONDARY);
+                data.system.addTag(SAD_Tags.THEME_SAD);
+                data.system.addTag(SAD_Tags.THEME_SAD_SECONDARY);
                 data.system.addTag(type.getTag());
                 forgottenSystems.add(data);
 
@@ -256,14 +256,14 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         addDefenders(forgottenSystems);
 
         if (DEBUG) {
-            System.out.println("Finished generating forgotten systems\n\n\n\n\n");
+            System.out.println("Finished generating SAD systems\n\n\n\n\n");
         }
     }
 
     public void addDefenders(List<StarSystemData> systemData) {
         for (StarSystemData data : systemData) {
             float mult = 1f;
-            if (data.system.hasTag(SAD_Tags.THEME_FORGOTTEN_SECONDARY)) {
+            if (data.system.hasTag(SAD_Tags.THEME_SAD_SECONDARY)) {
                 mult = 0.5f;
             }
 
@@ -303,7 +303,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 }
 
                 if (random.nextFloat() < prob) {
-                    Misc.setDefenderOverride(added.entity, new DefenderDataOverride("forgotten", 1f, min, max, 4));
+                    Misc.setDefenderOverride(added.entity, new DefenderDataOverride("sad", 1f, min, max, 4));
                 }
             }
         }
@@ -312,7 +312,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
     public void populateNonMain(StarSystemData data) {
         if (DEBUG) {
-            System.out.println(" Generating secondary Forgotten system in " + data.system.getName());
+            System.out.println(" Generating secondary SAD system in " + data.system.getName());
         }
         boolean special = data.isBlackHole() || data.isNebula() || data.isPulsar();
         if (special) {
@@ -354,7 +354,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
     public void populateMain(StarSystemData data, ForgottenSystemType type) {
 
         if (DEBUG) {
-            System.out.println(" Generating forgotten center in " + data.system.getName());
+            System.out.println(" Generating SAD center in " + data.system.getName());
         }
 
         StarSystemAPI system = data.system;
@@ -605,7 +605,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             String type = stationTypes.pick();
             if (loc != null) {
 
-                CampaignFleetAPI fleet = FleetFactoryV2.createEmptyFleet("forgotten", FleetTypes.BATTLESTATION, null);
+                CampaignFleetAPI fleet = FleetFactoryV2.createEmptyFleet("sad", FleetTypes.BATTLESTATION, null);
 
                 FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, type);
                 fleet.getFleetData().addFleetMember(member);
@@ -641,7 +641,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                     fleet.getMemoryWithoutUpdate().set("$damagedStation", true);
                 } //else {
                 PersonAPI commander = OfficerManagerEvent.createOfficer(
-                        Global.getSector().getFaction("forgotten"), level, true);
+                        Global.getSector().getFaction("sad"), level, true);
                 if (!damaged) {
                     commander.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 3);
                 }

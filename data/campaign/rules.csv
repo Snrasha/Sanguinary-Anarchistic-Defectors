@@ -35,3 +35,19 @@ FireAll PopulateOptions","""Got you on scan, Captain and are monitoring you.  Ke
 # Trade panel flavor text,,,,,,
 flavorTextMarketSHI,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == sad","AddText ""The docks are a riot of color and noise as cargoes are energetically off and onloaded.  An SRA official in a rather eye catching outfit waves you down to see if you need any help."" textGrayColor",,,
+,,,,,,
+beaconOpenDialogSadDestroyed,OpenInteractionDialog,"$tag:warning_beacon
+$sadDestroyed","ShowDefaultVisual
+SetShortcut beaconLeave ""ESCAPE""","This autonomous warning beacon emits a looping message.
+
+""DANGER: This star system is known to contain potentially active anarchist. Access to this system by unauthorized parties is forbidden by Hegemony Navy diktat 224.34.""",beaconLeave:Leave,
+beaconOpenDialogSadSuppressed,OpenInteractionDialog,"$tag:warning_beacon
+$sadSuppressed","ShowDefaultVisual
+SetShortcut beaconLeave ""ESCAPE""","This autonomous warning beacon emits a looping message.
+
+""DANGER: This star system is known to contain potentially active anarchist. Access to this system by unauthorized parties is forbidden by Hegemony Navy diktat 224.34.""",beaconLeave:Leave,
+beaconOpenDialogSadResurgent,OpenInteractionDialog,"$tag:warning_beacon
+$sadResurgent","ShowDefaultVisual
+SetShortcut beaconLeave ""ESCAPE""","This autonomous warning beacon emits a looping message.
+
+""DANGER: This star system is known to contain potentially active anarchist. Access to this system by unauthorized parties is forbidden by Hegemony Navy diktat 224.34.""",beaconLeave:Leave,
