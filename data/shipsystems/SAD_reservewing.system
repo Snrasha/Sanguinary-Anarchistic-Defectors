@@ -1,7 +1,7 @@
 {
 	"id":"SAD_reservewing",
 	"type":"STAT_MOD",
-	"aiType":"RESERVE_DEPLOYMENT",
+	"aiType":"CUSTOM",
 
 	"statsScript":"src.data.shipsystems.scripts.SAD_ReserveWingStats",
 
