@@ -10,3 +10,6 @@ Version 0.2:
 -add every descriptions.
 -Fix a too sharp paintjob on the capital.
 -Clean up mod.
+-fix crash shipsystem of carrier
+-fix shield radius of frigate.
+-Increase the range where the bomber deploy the strike ASM.
