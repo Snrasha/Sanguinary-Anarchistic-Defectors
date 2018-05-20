@@ -1,3 +1,3 @@
 id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,num,role,role desc,refit,base value
-SAD_Wadjet_Wing,SAD_Wadjet_Standard,"fighter4, fighter, high",2,,5,12,BOX,4000,500,2,FIGHTER,Heavy Fighter,14,10000
-SAD_Anuket_Wing,SAD_Anuket_Standard,"bomber4, bomber, high",2,,6,14,BOX,4000,700,2,BOMBER,Kinetic Bomber,16,12000
+SAD_Wadjet_Wing,SAD_Wadjet_Standard,"fighter4, no_sell, high",2,,5,12,BOX,4000,500,2,FIGHTER,Heavy Fighter,14,10000
+SAD_Anuket_Wing,SAD_Anuket_Standard,"bomber4, no_sell, high",2,,6,14,BOX,4000,700,2,BOMBER,Kinetic Bomber,16,12000

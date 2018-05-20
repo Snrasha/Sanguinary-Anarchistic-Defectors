@@ -9,7 +9,7 @@
 
 	"logo":"graphics/faction/SAD_flag.png",
 	"crest":"graphics/faction/SAD_crest_flag.png",
-	"shipNamePrefix":"SYS",
+	"shipNamePrefix":"SAD",
 
 	"color":[151,39,102,255],
 	"secondaryUIColor":[247,217,217,255],

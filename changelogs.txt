@@ -1,1 +1,12 @@
 Version 0.2:
+-Fix version checker
+-Fix the no_sell of ships.
+-Fix weapons sells.
+-Fix name of fighter.
+-Fix Nexerelin friendly faction.
+-Fix prefix SYS to SAD.
+-Increase Thoth-class thruster stats.
+-Decrease Neith-class thruster stats.
+-add every descriptions.
+-Fix a too sharp paintjob on the capital.
+-Clean up mod.

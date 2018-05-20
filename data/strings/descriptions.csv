@@ -31,8 +31,49 @@ SAD_mpolar,WEAPON,"The Polarizer is an energy weapon that delivers an modest ele
 As such the Polarizer sees a good deal of use as a general purpose close defense battery, though it remains useful in disabling enemy ships.
 
 The medium version from the Sanguinary Anarchist use always the same ammo, but with a high fire-rate.",Special,,
+SAD_stormBlaster,WEAPON,"Rotary energy weapon system with an extremely high rate of fire. With a insane ammo magazine, it can shoot for a long time before run out.
+Particle masses become unstable after a short distance and tend to detonate spectacularly when near dense concentrations of matter, such as starships.  Though it's damage against shields and armor is middling at best, the Storm Blaster shines when engaging small craft or vessels with unprotected hull.",,,
 ,,,,,
 SAD_booster,SHIP_SYSTEM,"Activates ancilliary thrusters as well as increasing main drive output, leading to a brief increase to maximum speed at the cost of flux.",Movement,Provides a brief boost to top speed.,
 SAD_displacer,SHIP_SYSTEM,Teleports the ship forward in the direction it's traveling. The system slowly builds up to four charges which can then be expended in short order.,Movement,Teleports the ship forward in the direction it's traveling. The system can store up to four charges at once and generates flux when used.,
 SAD_reservewing,SHIP_SYSTEM,"This ship system is exactly the same than the standard shipsystem, except than it do not deploy extra fighter if they cost more than 16 OP. Deploy always 2 extra fighters except if the wing is a unique fighter.",Fighter,Deploys extra 2 fighter craft that can fight for a short time before returning to the carrier. Do not deploy craft if the OP cost is too high.,
 SAD_siegemode,SHIP_SYSTEM,"While in use, this system improves shield and weapon efficiency as well as weapons range, but reroutes power from the thrusters  in the process, greatly impairing mobility.",Defensive,"Improves shield efficiency, weapon efficiency, and weapons range. Greatly reduces mobility.",
+SAD_DisturbSystem,SHIP_SYSTEM,"The system uses the sensor to find weaknesses in enemy ships, increasing the damage they take by 25%. ",Offensive,"The system uses the sensor to find weaknesses in enemy ships, increasing the damage they take by 25%. ",
+,,,,,
+SAD_Wadjet,SHIP,"Designed exactly like the Neriad-class, the Blackcap missile have be replaced per a second rapid fire auto cannon.
+The mission of the Wadjet is to be usable everywhere on the sector or planet like the Neriad.
+It have be upgraded for get more top-speed and a better front shield. Otherwise, the cost of this fighter is the twice of the Neriad.",,,
+SAD_Anuket,SHIP,"Not very effecient, the Anuket-Class  is a simple bomber with a Strike ASM missile and nothing else.
+",,,
+SAD_Neith,SHIP,"The SAD utilised the blueprint of the Seski class corvette in designing this frigate. Upscaling from corvette to frigate has removed the weaknesses of the Seski and increased the offensive power and shipsystems of the Neith-class, however it has also resulted in a comparative loss of speed.",,,
+SAD_Thoth,SHIP,"The Thoth class have be designed with the blueprint of the Enlil-class, designed for the speed, he combine a excellent shipsystem with a standard armor
+and skills compared to the standard of Shadowyard Industry.",,,
+SAD_Seshat,SHIP,"The Seshat-class carrier have be designed per the SAD with the Morningstar-class blueprint.
+This carrier have for function to stock qew fighters for intercept enemy or re-fuel these fighters.
+But otherwise, it lack of functionality.",,,
+SAD_Hapy,SHIP,"This Hapy-class can be very strange when people know what blueprint have be used per the SAD.
+It have be designed after a Southpaw-class and the good frontal firepower.
+Like many others frigates, it got the Phase Skimmer shipsystem.",,,
+SAD_Qadesh,SHIP,"The Qadesh-class is designed with the Cetus-class blueprint, the lack of a freighter and the no-neccessity of a heavy freighter have made this ship.
+But they needed also their own freighter.",,,
+SAD_Tefnut,SHIP,"The Tefnut-class is desgined with the Semele-class blueprint, with the same reason than the Qadesh, the Semele is a too big tanker and they needed a tanker for their personal use.
+But they needed also their own tanker.",,,
+SAD_Hathor,SHIP,"The Hathor-class is a carrier with a consequent reserve of fighter.
+When needed, it can deploy two more fighter for fight, but keep to do that always for do not overload the system of the ship.
+It have be designed with the Delphi-class blueprint.",,,
+SAD_Ptah,SHIP,"The Ptah-class can be called the baby Tartarus with a shipsystem identical to Tartarus.
+Designed with the Tartarus-class blueprint, it got strong firepower but not the best ship.",,,
+SAD_Khonsu,SHIP,"The Khonsu-class is fast, strong mount and good shipsystem. It have be maded with the Minarette-class blueprint and Inanna-class blueprint.
+It is probably the best ship of SAD armements.",,,
+SAD_Imhotep,SHIP,"The Imhotep-class is a strong battlecarrier with a decent amount of firepower.
+Maded with the Skadi-class blueprint, it own the same shipsystem than the Hathor where it can deploy two more fighter or bomber when needed.",,,
+SAD_Maat,SHIP,"The Maat-class is a ship who follow the concept of the Delphi-class with a defense of the level of the Tartarus.
+The built-in wave pulse of the Maat-class have for reason to be less expensive than made apart.
+It can lack of firepower compared to Clade-class but have strong defense.",,,
+SAD_Taweret,SHIP,"The Taweret-class is a monster of complexity with the blueprint of the Belet-Seri-class and others capitals blueprint.
+Capable of found every weakness of every enemy on the radar, it can destroy them without problem.
+And if your shield is down, it finish you with the heavy Storm Blaster installed on the front of the ship.",,,
+SAD_MotherShip,SHIP,"Nobody know who made this monstruosity, but every people know than this ship have be made of scrap of every Shadowyard ships founded.
+Mimir,Delphi,Cetus,Charybdis,Vardr and others ships are far visible on it.
+
+The ship can clearly lack of power for a ship of this size, but it have not be maded for be offensive, same if the SAD have steal the blueprint of the Nídhöggr Lance and insert the weapon on the ship. The MotherShip is a support ship who is used per the SAD faction for build ships for prepare the futur sanguinary invasion.",,,
