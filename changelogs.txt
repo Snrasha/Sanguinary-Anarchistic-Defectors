@@ -1,6 +1,9 @@
 Version 0.3:
 -Modify the color of warning beacon for be more alert.
 -Mothership spawn now with two capitals for the defense.
+-Imhotep: Nerf of OP  170 to 140.
+-Ptah: Nerf topspeed 95 to 75.
+-Fix every variants with flux problems.
 
 Version 0.2:
 -Fix version checker

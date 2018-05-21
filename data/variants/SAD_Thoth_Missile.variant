@@ -1,12 +1,12 @@
 {
   "displayName": "Missile",
-  "fluxCapacitors": 1,
-  "fluxVents": 10,
+  "fluxCapacitors": 7,
+  "fluxVents": 7,
   "goalVariant": true,
   "hullId": "SAD_Thoth",
   "hullMods": [
-    "pointdefenseai",
-    "missleracks"
+    "missleracks",
+    "magazines"
   ],
   "permaMods": [],
   "quality": 0,
@@ -25,7 +25,7 @@
       "mode": "LINKED",
       "weapons": {
         "WS0001": "SAD_cepc",
-        "WS0002": "SAD_cepc"
+        "WS0002": "SAD_pdcepc"
       }
     }
   ],

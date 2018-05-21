@@ -5,7 +5,8 @@
   "goalVariant": true,
   "hullId": "SAD_Hapy",
   "hullMods": [
-    "magazines"
+    "magazines",
+    "fluxdistributor"
   ],
   "permaMods": [],
   "quality": 0,
@@ -15,8 +16,8 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "SAD_cepc",
-        "WS0003": "SAD_cepc",
+        "WS0002": "SAD_pdcepc",
+        "WS0003": "SAD_pdcepc",
         "WS0004": "SAD_cepc",
         "WS0005": "SAD_cepc"
       }

@@ -1,6 +1,6 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 6,
+  "fluxCapacitors":10,
   "fluxVents": 6,
   "goalVariant": true,
   "hullId": "SAD_Neith",
@@ -13,8 +13,8 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "SAD_cepc",
-        "WS0003": "SAD_cepc"
+        "WS0002": "SAD_pdcepc",
+        "WS0003": "SAD_pdcepc"
       }
     },
     {

@@ -1,11 +1,12 @@
 {
   "displayName": "Missile",
-  "fluxCapacitors": 8,
-  "fluxVents": 8,
+  "fluxCapacitors": 10,
+  "fluxVents": 3,
   "goalVariant": true,
   "hullId": "SAD_Hapy",
   "hullMods": [
-    "missleracks"
+    "missleracks",
+    "blast_doors"
   ],
   "permaMods": [],
   "quality": 0,
@@ -15,7 +16,8 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "SAD_pdcepc"
+        "WS0001": "SAD_pdcepc",
+        "WS0003": "SAD_pdcepc"
       }
     },
     {
@@ -30,8 +32,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "SAD_cepc",
-        "WS0003": "SAD_cepc"
+        "WS0002": "SAD_cepc"
       }
     }
   ],
