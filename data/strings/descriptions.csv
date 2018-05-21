@@ -36,11 +36,11 @@ Particle masses become unstable after a short distance and tend to detonate spec
 ,,,,,
 SAD_booster,SHIP_SYSTEM,"Activates ancilliary thrusters as well as increasing main drive output, leading to a brief increase to maximum speed at the cost of flux.",Movement,Provides a brief boost to top speed.,
 SAD_displacer,SHIP_SYSTEM,Teleports the ship forward in the direction it's traveling. The system slowly builds up to four charges which can then be expended in short order.,Movement,Teleports the ship forward in the direction it's traveling. The system can store up to four charges at once and generates flux when used.,
-SAD_reservewing,SHIP_SYSTEM,"This ship system is exactly the same than the standard shipsystem, except than it do not deploy extra fighter if they cost more than 16 OP. Deploy always 2 extra fighters except if the wing is a unique fighter.",Fighter,Deploys extra 2 fighter craft that can fight for a short time before returning to the carrier. Do not deploy craft if the OP cost is too high.,
+SAD_reservewing,SHIP_SYSTEM,"This ship system is exactly the same than the standard shipsystem, except than it do not deploy extra fighter if they cost more than 15 OP. Deploy always 2 extra fighters except if the wing is a unique fighter.",Fighter,Deploys extra 2 fighter craft that can fight for a short time before returning to the carrier. Do not deploy craft if the OP cost is superior to 15,
 SAD_siegemode,SHIP_SYSTEM,"While in use, this system improves shield and weapon efficiency as well as weapons range, but reroutes power from the thrusters  in the process, greatly impairing mobility.",Defensive,"Improves shield efficiency, weapon efficiency, and weapons range. Greatly reduces mobility.",
 SAD_DisturbSystem,SHIP_SYSTEM,"The system uses the sensor to find weaknesses in enemy ships, increasing the damage they take by 25%. ",Offensive,"The system uses the sensor to find weaknesses in enemy ships, increasing the damage they take by 25%. ",
 ,,,,,
-SAD_Wadjet,SHIP,"Designed exactly like the Neriad-class, the Blackcap missile have be replaced per a second rapid fire auto cannon.
+SAD_Wadjet,SHIP,"While Wadjet shares the Neriad's design, it has few differences, most notable one is the Blackcap Launcher being replaced with another AC 17 Autocannon.
 The mission of the Wadjet is to be usable everywhere on the sector or planet like the Neriad.
 It have be upgraded for get more top-speed and a better front shield. Otherwise, the cost of this fighter is the twice of the Neriad.",,,
 SAD_Anuket,SHIP,"Not very effecient, the Anuket-Class  is a simple bomber with a Strike ASM missile and nothing else.

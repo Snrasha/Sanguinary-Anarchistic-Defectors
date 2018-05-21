@@ -51,8 +51,7 @@ import src.data.utils.SAD_themes;
 public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
     public static enum ForgottenSystemType {
-       
-        
+
         DESTROYED(SAD_Tags.THEME_SAD_DESTROYED, "$sadDestroyed"),
         SUPPRESSED(SAD_Tags.THEME_SAD_SUPPRESSED, "$sadSuppressed"),
         RESURGENT(SAD_Tags.THEME_SAD_RESURGENT, "$sadResurgent"),;
@@ -192,30 +191,31 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 }
 
                 switch (type) {
-                    case DESTROYED:
-                        {
-                            SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 3, 8, 4, 12, 0.25f);
-                            data.system.addScript(fleets);
-                            break;
+                    case DESTROYED: {
+                        SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 3, 8, 4, 12, 0.25f);
+                        data.system.addScript(fleets);
+                        break;
+                    }
+                    case SUPPRESSED: {
+                        SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 7, 12, 8, 20, 0.25f);
+                        data.system.addScript(fleets);
+                        Boolean addStation = random.nextFloat() < suppressedStationMult;
+                        if (j == 0 && !addSuppressedStation.isEmpty()) {
+                            addSuppressedStation.pickAndRemove();
                         }
-                    case SUPPRESSED:
-                        {
-                            SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 7, 12,8, 20, 0.25f);
-                            data.system.addScript(fleets);
-                            Boolean addStation = random.nextFloat() < suppressedStationMult;
-                            if (j == 0 && !addSuppressedStation.isEmpty()) {
-                                addSuppressedStation.pickAndRemove();
-                            }       if (addStation) {
-                                List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
-                                for (CampaignFleetAPI station : stations) {
-                                    int maxFleets = 2 + random.nextInt(3);
-                                    SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
-                                            station, 1f, 0, maxFleets, 20f, 6, 12);
-                                    data.system.addScript(activeFleets);
-                                }
-                                
-                            }       break;
+                        if (addStation) {
+                            List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
+                            for (CampaignFleetAPI station : stations) {
+
+                                int maxFleets = 2 + random.nextInt(3);
+                                SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
+                                        station, 1f, 0, maxFleets, 20f, 6, 12);
+                                data.system.addScript(activeFleets);
+                            }
+
                         }
+                        break;
+                    }
                     case RESURGENT:
                         List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
                         for (CampaignFleetAPI station : stations) {
@@ -223,7 +223,8 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                             SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
                                     station, 1f, 2, maxFleets, 10f, 8, 24);
                             data.system.addScript(activeFleets);
-                        }   break;
+                        }
+                        break;
                     default:
                         break;
                 }
@@ -608,7 +609,13 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 CampaignFleetAPI fleet = FleetFactoryV2.createEmptyFleet("sad", FleetTypes.BATTLESTATION, null);
 
                 FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, type);
+
                 fleet.getFleetData().addFleetMember(member);
+                member.setFlagship(true);
+                FleetMemberAPI member2 = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "SAD_Taweret_Standard");
+                FleetMemberAPI member3 = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "SAD_Taweret_Standard");
+                fleet.getFleetData().addFleetMember(member2);
+                fleet.getFleetData().addFleetMember(member3);
 
                 //fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PIRATE, true);
                 fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);
@@ -632,25 +639,27 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 setEntityLocation(fleet, loc, null);
                 convertOrbitWithSpin(fleet, 5f);
 
-                boolean damaged = type.toLowerCase().contains("damaged");
                 float mult = 25f;
                 int level = 20;
-                if (damaged) {
-                    mult = 10f;
-                    level = 10;
-                    fleet.getMemoryWithoutUpdate().set("$damagedStation", true);
-                } //else {
+
                 PersonAPI commander = OfficerManagerEvent.createOfficer(
                         Global.getSector().getFaction("sad"), level, true);
-                if (!damaged) {
-                    commander.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 3);
-                }
+                commander.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 3);
+
                 FleetFactoryV2.addCommanderSkills(commander, fleet, random);
                 fleet.setCommander(commander);
                 fleet.getFlagship().setCaptain(commander);
-                //}
-
+             
                 member.getRepairTracker().setCR(member.getRepairTracker().getMaxCR());
+                
+                PersonAPI officer2 = OfficerManagerEvent.createOfficer(
+                        Global.getSector().getFaction("sad"), level, true);
+                PersonAPI officer3 = OfficerManagerEvent.createOfficer(
+                        Global.getSector().getFaction("sad"), level, true);
+                member2.setCaptain(officer2);
+                member3.setCaptain(officer3);
+                member2.getRepairTracker().setCR(member.getRepairTracker().getMaxCR());
+                member3.getRepairTracker().setCR(member.getRepairTracker().getMaxCR());
 
                 SAD_SeededFleetManager.addForgottenSurveyDataDrops(random, fleet, mult);
 

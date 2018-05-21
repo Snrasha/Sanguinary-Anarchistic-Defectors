@@ -42,9 +42,8 @@ public class SAD_ReserveWingStats extends BaseShipSystemScript {
     }
 
     public static int getAdditionalFor(FighterWingSpecAPI spec) {
-        if(spec.getOpCost()>16) return 0;
+        if(spec.getOpCost()>=16) return 0;
         if(spec.getNumFighters()<2) return 1;
-
         return 2;
     }
 

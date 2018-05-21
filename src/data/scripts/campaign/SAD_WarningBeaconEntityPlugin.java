@@ -38,8 +38,8 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 	}
 	
 	Object readResolve() {
-		sprite = Global.getSettings().getSprite("campaignEntities", "warning_beacon");
-		glow = Global.getSettings().getSprite("campaignEntities", "warning_beacon_glow");
+		sprite = Global.getSettings().getSprite("campaignEntities", "SAD_warning_beacon");
+		glow = Global.getSettings().getSprite("campaignEntities", "SAD_warning_beacon_glow");
 		return this;
 	}
 	
@@ -83,10 +83,12 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 		}
 	}
 
+        @Override
 	public float getRenderRange() {
 		return entity.getRadius() + 100f;
 	}
 
+        @Override
 	public void render(CampaignEngineLayers layer, ViewportAPI viewport) {
 		float alphaMult = viewport.getAlphaMult();
 		if (alphaMult <= 0f) return;
@@ -118,7 +120,7 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 		boolean glowAsLayer = true;
 		if (glowAsLayer) {
 			//glow.setAngle(entity.getFacing() - 90f);
-			Color glowColor = new Color(255,200,0,255);
+			Color glowColor = new Color(255,200,255,255);
 			//Color glowColor = entity.getFaction().getBrightUIColor();
 			if (entity.getMemoryWithoutUpdate().contains(GLOW_COLOR_KEY)) {
 				glowColor = (Color) entity.getMemoryWithoutUpdate().get(GLOW_COLOR_KEY);
@@ -139,7 +141,7 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 			glow.renderAtCenter(loc.x, loc.y);
 		} else {
 			glow.setAngle(entity.getFacing() - 90f);
-			glow.setColor(new Color(255,165,100));
+			glow.setColor(new Color(255,165,255));
 			float gs = w * 3;
 			glow.setSize(gs, gs);
 			glow.setAdditiveBlend();

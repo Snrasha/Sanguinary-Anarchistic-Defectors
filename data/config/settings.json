@@ -16,5 +16,9 @@
     "ping":{
       "tagPing":"graphics/shi/fx/ms_tagPing.png",
     },
+    "campaignEntities":{
+      "SAD_warning_beacon":"graphics/stations/buoy00.png",
+      "SAD_warning_beacon_glow":"graphics/stations/buoy00glow.png",
+    },
   }
 }
