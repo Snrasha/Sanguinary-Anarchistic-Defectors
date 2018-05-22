@@ -43,8 +43,8 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
 
                 @Override
                 public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
-                    bcc.aiRetreatAllowed = false;
-                    bcc.objectivesAllowed = false;
+                    bcc.aiRetreatAllowed = true;
+                    bcc.objectivesAllowed = true;
                 }
             };
             return config;
