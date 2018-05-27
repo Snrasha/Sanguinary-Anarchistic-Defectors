@@ -1,7 +1,7 @@
 Version 0.4: 
--Modify weapon graphic
+-Modify weapon graphic.
 -Modify the wavepulse, less damage, more recoil, exactly equivalent to wavepulse.
-
+-Fix a nullexception for the disrupt system.
 
 Version 0.3: 
 -Do not break save, but many fix will not appears on your current save.
