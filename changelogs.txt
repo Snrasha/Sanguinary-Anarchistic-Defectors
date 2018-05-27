@@ -1,6 +1,11 @@
+Version 0.4: 
+-Modify weapon graphic
+-Modify the wavepulse, less damage, more recoil, exactly equivalent to wavepulse.
+
+
 Version 0.3: 
 -Do not break save, but many fix will not appears on your current save.
--Modify the color of warning beacon for be more alert.
+-Modify the color of warning beacon for be more visible.
 -Mothership spawn now with two capitals for the defense.
 -Imhotep: Nerf of OP  170 to 140.
 -Ptah: Nerf topspeed 95 to 75.

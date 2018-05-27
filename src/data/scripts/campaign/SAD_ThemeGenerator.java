@@ -496,7 +496,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             }
         }
 
-        CustomCampaignEntityAPI beacon = Global.getSector().getHyperspace().addCustomEntity(null, null, Entities.WARNING_BEACON, Factions.NEUTRAL);
+        CustomCampaignEntityAPI beacon = Global.getSector().getHyperspace().addCustomEntity("SAD_warning_beacon", null, Entities.WARNING_BEACON, Factions.NEUTRAL);
         beacon.getMemoryWithoutUpdate().set(type.getBeaconFlag(), true);
         if (closestPoint == null) {
             float orbitDays = minRange / (10f + StarSystemGenerator.random.nextFloat() * 5f);
@@ -521,14 +521,14 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             }
         }
 
-        Color glowColor = new Color(255, 200, 0, 255);
-        Color pingColor = new Color(255, 200, 0, 255);
+        Color glowColor = new Color(255, 0, 200, 255);
+        Color pingColor = new Color(255, 0,200, 255);
         if (type == ForgottenSystemType.SUPPRESSED) {
-            glowColor = new Color(250, 155, 0, 255);
-            pingColor = new Color(250, 155, 0, 255);
+            glowColor = new Color(250, 0, 155, 255);
+            pingColor = new Color(250, 0, 155, 255);
         } else if (type == ForgottenSystemType.RESURGENT) {
-            glowColor = new Color(250, 55, 0, 255);
-            pingColor = new Color(250, 125, 0, 255);
+            glowColor = new Color(250, 0, 55, 255);
+            pingColor = new Color(250, 0, 125, 255);
         }
         Misc.setWarningBeaconColors(beacon, glowColor, pingColor);
 
