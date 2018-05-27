@@ -65,7 +65,7 @@ public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
         }
     }
 
-    public static void putTELEMETRY(ShipAPI ship) {
+    public static synchronized void putTELEMETRY(ShipAPI ship) {
         telemetry.put(ship, 20.0f);
     }
 }

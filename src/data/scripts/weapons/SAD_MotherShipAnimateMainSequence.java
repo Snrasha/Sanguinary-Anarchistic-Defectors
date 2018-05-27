@@ -2,7 +2,6 @@ package src.data.scripts.weapons;
 
 import com.fs.starfarer.api.AnimationAPI;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
-import com.fs.starfarer.api.combat.DamagingProjectileAPI;
 import com.fs.starfarer.api.combat.EveryFrameWeaponEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
@@ -10,7 +9,6 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import java.awt.Color;
 import java.util.Iterator;
 import org.lazywizard.lazylib.MathUtils;
-import org.lwjgl.util.vector.Vector2f;
 
 public class SAD_MotherShipAnimateMainSequence implements EveryFrameWeaponEffectPlugin {
 
