@@ -4,3 +4,4 @@ Booster Jets,SAD_booster,,,,,,,,2,0.12,0.7,0.2,2.5,0,,,,,,,,,,,graphics/icons/hu
 Disturb System,SAD_DisturbSystem,,,,,,,,,,3,1,,20,,,,,,,,,,,graphics/icons/hullsys/entropy_amplifier.png
 Reserve Deployment,SAD_reservewing,,,,,,0.5,,,,0.1,,3,30,,,,,,,,,,,graphics/icons/hullsys/reserve_deployment.png
 Siege Mode,SAD_siegemode,,,,,,,,,,1,,0,2,TRUE,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
+Wooden Transform,SAD_transform,,,,,,,,,,2,,1,3,TRUE,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png

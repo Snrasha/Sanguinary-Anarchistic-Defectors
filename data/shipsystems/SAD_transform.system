@@ -1,0 +1,10 @@
+{
+	"id":"SAD_transform",
+	"type":"STAT_MOD",
+	"aiType":"CUSTOM",
+	"aiScript":"src.data.shipsystems.scripts.ai.SAD_transform_AI",
+	"statsScript":"src.data.shipsystems.scripts.SAD_transform_Stats",
+	"useSound":"system_maneuvering_jets",
+	"loopSound":"system_maneuvering_jets_loop",
+	"outOfUsesSound":"engine_disabled",
+}

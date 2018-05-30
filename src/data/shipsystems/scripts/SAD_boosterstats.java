@@ -6,8 +6,9 @@ public class SAD_boosterstats implements com.fs.starfarer.api.plugins.ShipSystem
 {
   public SAD_boosterstats() {}
   
-  public void apply(MutableShipStatsAPI stats, String id, com.fs.starfarer.api.plugins.ShipSystemStatsScript.State state, float effectLevel) {
-    if (state == com.fs.starfarer.api.plugins.ShipSystemStatsScript.State.OUT) {
+  @Override
+  public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
+    if (state == State.OUT) {
       stats.getMaxSpeed().modifyPercent(id, 100.0F * effectLevel);
       stats.getMaxTurnRate().modifyPercent(id, 100.0F * effectLevel);
       stats.getDeceleration().modifyPercent(id, 100.0F * effectLevel);
@@ -23,6 +24,7 @@ public class SAD_boosterstats implements com.fs.starfarer.api.plugins.ShipSystem
     }
   }
   
+  @Override
   public void unapply(MutableShipStatsAPI stats, String id)
   {
     stats.getMaxSpeed().unmodify(id);
@@ -32,12 +34,13 @@ public class SAD_boosterstats implements com.fs.starfarer.api.plugins.ShipSystem
     stats.getDeceleration().unmodify(id);
   }
   
-  public com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData getStatusData(int index, com.fs.starfarer.api.plugins.ShipSystemStatsScript.State state, float effectLevel)
+  @Override
+  public StatusData getStatusData(int index, State state, float effectLevel)
   {
     if (index == 0)
-      return new com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData("improved maneuverability", false);
+      return new StatusData("improved maneuverability", false);
     if (index == 1) {
-      return new com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData("increased top speed", false);
+      return new StatusData("increased top speed", false);
     }
     return null;
   }

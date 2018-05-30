@@ -1,0 +1,187 @@
+{
+  "bounds": [
+    -95.5,
+    8,
+    -69,
+    11,
+    -58.5,
+    30.5,
+    -20.5,
+    37,
+    41,
+    24,
+    58.5,
+    40,
+    89,
+    28.5,
+    89,
+    -28.5,
+    58.5,
+    -40,
+    41,
+    -24,
+    -20.5,
+    -37,
+    -58.5,
+    -30.5,
+    -69,
+    -11,
+    -95.5,
+    -8
+  ],
+  "builtInMods": [
+    "SAD_harShields"
+  ],
+  "builtInWeapons": {
+    "WS0003": "SAD_ArmorPlate_Apis_r",
+    "WS0004": "SAD_ArmorPlate_Apis_l"
+  },
+  "builtInWings": [],
+  "center": [
+    40,
+    100
+  ],
+  "collisionRadius": 147,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -58,
+        -23
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": -180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -58,
+        23
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": 180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -62,
+        -16
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": -180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -62,
+        16
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": 180,
+      "contrailSize": 44,
+      "length": 75,
+      "location": [
+        -98,
+        -0
+      ],
+      "style": "SanguinaryFlare",
+      "width": 44
+    },
+    {
+      "angle": 116.5,
+      "contrailSize": 126,
+      "length": 30,
+      "location": [
+        21,
+        25.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": -116.5,
+      "contrailSize": 126,
+      "length": 30,
+      "location": [
+        21,
+        -25.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    }
+  ],
+  "height": 200,
+  "hullId": "SAD_Apis",
+  "hullName": "Apis",
+  "hullSize": "DESTROYER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 138.5,
+  "spriteName": "graphics/ships/SAD_Apis.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 0,
+      "id": "WS0001",
+      "locations": [
+        77.5,
+        -0
+      ],
+      "mount": "HARDPOINT",
+      "size": "LARGE",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "MIDDLE",
+      "locations": [
+        31,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS0003",
+      "locations": [
+        27.5,
+        -26.5
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "WS0004",
+      "locations": [
+        27.5,
+        26.5
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 80
+}

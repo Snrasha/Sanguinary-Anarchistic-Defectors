@@ -16,3 +16,7 @@ Shrike ASM(S),SAD_shrike_fighter,2,0,2100,2000,,600,150,300,30,0,1,,,KINETIC,0,,
 Mimir Flash,SAD_rhpbc_muzzle,0,0,,1,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,12
 Dummy Lance,SAD_rhpbc_replacement,0,0,25000,2000,,8000,750,1000,,25,,,,ENERGY,0,,4,12,1,1,0,0,,,,1000,,,30,SYSTEM,,13
 Nídhöggr Lance,SAD_rhpbc,0,0,25000,2000,,8000,750,1000,,25,3,0.18,3,ENERGY,0,,4,12,3,1,0,0,,,,1000,,,30,SYSTEM,,14
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,SAD_ArmorPlate_Apis_l,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,
+,SAD_ArmorPlate_Apis_r,0,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,

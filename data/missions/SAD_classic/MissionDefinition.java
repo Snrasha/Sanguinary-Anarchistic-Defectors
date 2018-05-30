@@ -41,6 +41,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         api.addToFleet(FleetSide.PLAYER, "SAD_Thoth_Missile", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Thoth_Standard", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Hathor_Standard", FleetMemberType.SHIP, true);
+        api.addToFleet(FleetSide.PLAYER, "SAD_Apis_Standard", FleetMemberType.SHIP, true);
 
  
         FleetMemberAPI fleetMember;

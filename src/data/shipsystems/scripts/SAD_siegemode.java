@@ -9,7 +9,7 @@ public class SAD_siegemode implements com.fs.starfarer.api.plugins.ShipSystemSta
     
 
     @Override
-    public void apply(MutableShipStatsAPI stats, String id, com.fs.starfarer.api.plugins.ShipSystemStatsScript.State state, float effectLevel) {
+    public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
         CombatEntityAPI entity = stats.getEntity();
         if (!(entity instanceof com.fs.starfarer.api.combat.ShipAPI)) {
             return;
@@ -40,18 +40,18 @@ public class SAD_siegemode implements com.fs.starfarer.api.plugins.ShipSystemSta
     }
 
     @Override
-    public ShipSystemStatsScript.StatusData getStatusData(int index, com.fs.starfarer.api.plugins.ShipSystemStatsScript.State state, float effectLevel) {
+    public ShipSystemStatsScript.StatusData getStatusData(int index, State state, float effectLevel) {
         if (index == 0) {
-            return new com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData("engine power redirected", false);
+            return new StatusData("engine power redirected", false);
         }
         if (index == 1) {
-            return new com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData("energy weapon range +" + (int) (200.0F * effectLevel), false);
+            return new StatusData("energy weapon range +" + (int) (200.0F * effectLevel), false);
         }
         if (index == 2) {
-            return new com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData("energy weapon flux costs " + (int) (-20.0F * effectLevel) + "%", false);
+            return new StatusData("energy weapon flux costs " + (int) (-20.0F * effectLevel) + "%", false);
         }
         if (index == 3) {
-            return new com.fs.starfarer.api.plugins.ShipSystemStatsScript.StatusData("damage to shields reduced by " + (int) (10.0F * effectLevel) + "%", false);
+            return new StatusData("damage to shields reduced by " + (int) (10.0F * effectLevel) + "%", false);
         }
         return null;
     }
