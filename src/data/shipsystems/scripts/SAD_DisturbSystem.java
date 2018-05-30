@@ -25,7 +25,7 @@ public class SAD_DisturbSystem extends BaseShipSystemScript {
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, ShipSystemStatsScript.State state, float effectLevel) {
-        if (engine != Global.getCombatEngine()) {
+        if (engine ==null) {
             engine = Global.getCombatEngine();
         }
         if (engine.isPaused()) {
@@ -75,7 +75,4 @@ public class SAD_DisturbSystem extends BaseShipSystemScript {
         }
     }
 
-    public void init(CombatEngineAPI engine, ShipAPI host) {
-        this.engine = engine;
-    }
 }

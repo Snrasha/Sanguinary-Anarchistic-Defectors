@@ -11,29 +11,30 @@ import java.util.Iterator;
 public class SAD_transform_Stats implements ShipSystemStatsScript {
 
     private CombatEngineAPI engine;
-    
-    private final float standardangle=0;
+
+    private final float standardarcM = 360f;
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 
-        if (engine != Global.getCombatEngine()) {
+        if (engine == null) {
             engine = Global.getCombatEngine();
+
         }
         if (engine.isPaused()) {
             return;
         }
 
-        ShipAPI ship = null;
+        ShipAPI ship;
         if ((stats.getEntity() instanceof ShipAPI)) {
             ship = (ShipAPI) stats.getEntity();
         } else {
             return;
         }
+
         if (state == State.OUT) {
-            stats.getMaxSpeed().modifyPercent(id, 30f * effectLevel);
-            stats.getMaxTurnRate().modifyPercent(id, 30f * effectLevel);
-            stats.getDeceleration().modifyPercent(id, 30f * effectLevel);
+            stats.getMaxSpeed().unmodify(id);
+            stats.getMaxTurnRate().unmodify(id);
         } else {
             stats.getMaxSpeed().modifyFlat(id, 20f * effectLevel);
             stats.getMaxSpeed().modifyPercent(id, 10f * effectLevel);
@@ -46,48 +47,52 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
         }
         stats.getShieldAbsorptionMult().modifyPercent(id, effectLevel * 10f);
 
-        if (effectLevel > 0.0F) {
+        if ((effectLevel > 0f || effectLevel < 1f)) {// && state == state.IN) {
+
             Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
             WeaponAPI weapon;
-            int lr=0;
-            while (iter.hasNext() && lr<2) {
+            float widthS;
+            float heightS;
+            while (iter.hasNext()) {
                 weapon = iter.next();
                 switch (weapon.getSlot().getId()) {
                     case "LEFT":
-                        weapon.setCurrAngle(standardangle+effectLevel*20);
-                        lr++;
+                        weapon.setCurrAngle(ship.getFacing() + effectLevel * 10f);
+                        widthS = weapon.getSprite().getWidth() / 2;
+                        heightS = weapon.getSprite().getHeight() / 2;
+
+                        weapon.getSprite().setCenter(widthS+(0.5f*widthS*effectLevel), heightS+(0.5f*heightS*effectLevel));
+                        break;
+                    case "MIDDLE":
+                        weapon.setCurrAngle(weapon.getCurrAngle() - (weapon.getCurrAngle() / ship.getFacing()));
+                        weapon.getSlot().setArc(standardarcM - effectLevel * standardarcM);
                         break;
                     case "RIGHT":
-                        weapon.setCurrAngle(standardangle-effectLevel*20);
-                        lr++;
+                        widthS = weapon.getSprite().getWidth() / 2;
+                        heightS = weapon.getSprite().getHeight() / 2;
+
+                        weapon.setCurrAngle(ship.getFacing() - effectLevel * 10f);
+                        weapon.getSprite().setCenter(widthS+(0.5f*widthS*effectLevel), heightS+(0.5f*heightS*effectLevel));
+
                         break;
                 }
             }
 
         }
-        
-        
         if (effectLevel == 1f) {
-
             Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
             WeaponAPI weapon;
-            boolean stop=false;
-            while (iter.hasNext() && !stop) {
+            while (iter.hasNext()) {
                 weapon = iter.next();
                 switch (weapon.getSlot().getId()) {
                     case "MIDDLE":
-                        weapon.disable(true);
-                        stop=true;
+                        weapon.setCurrAngle(ship.getFacing());
                         break;
                 }
             }
 
         }
 
-    }
-
-    public void init(CombatEngineAPI engine, ShipAPI host) {
-        this.engine = engine;
     }
 
     @Override
@@ -98,26 +103,6 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
         stats.getAcceleration().unmodify(id);
         stats.getDeceleration().unmodify(id);
         stats.getShieldAbsorptionMult().unmodify(id);
-
-        ShipAPI ship = null;
-        if ((stats.getEntity() instanceof ShipAPI)) {
-            ship = (ShipAPI) stats.getEntity();
-        } else {
-            return;
-        }
-
-        Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
-        WeaponAPI weapon;
-        while (iter.hasNext()) {
-            weapon = iter.next();
-            switch (weapon.getSlot().getId()) {
-                case "MIDDLE":
-                    weapon.disable(false);
-                    weapon.repair();
-                    break;
-            }
-        }
-
     }
 
     @Override
