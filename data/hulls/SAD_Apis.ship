@@ -45,58 +45,58 @@
   "engineSlots": [
     {
       "angle": 180,
-      "contrailSize": 30,
-      "length": 30,
+      "contrailSize": 9,
+      "length": 47,
       "location": [
-        -58,
-        -23
+        -58.5,
+        -22
       ],
       "style": "SanguinaryFlare",
-      "width": 10
+      "width": 9
     },
     {
       "angle": -180,
-      "contrailSize": 30,
-      "length": 30,
+      "contrailSize": 9,
+      "length": 47,
       "location": [
-        -58,
-        23
+        -58.5,
+        22
       ],
       "style": "SanguinaryFlare",
-      "width": 10
+      "width": 9
     },
     {
       "angle": 180,
-      "contrailSize": 30,
-      "length": 30,
+      "contrailSize": 8,
+      "length": 64.5,
       "location": [
         -62,
         -16
       ],
       "style": "SanguinaryFlare",
-      "width": 10
+      "width": 8
     },
     {
       "angle": -180,
-      "contrailSize": 30,
-      "length": 30,
+      "contrailSize": 8,
+      "length": 64.5,
       "location": [
         -62,
         16
       ],
       "style": "SanguinaryFlare",
-      "width": 10
+      "width": 8
     },
     {
       "angle": 180,
-      "contrailSize": 44,
-      "length": 75,
+      "contrailSize": 37,
+      "length": 100,
       "location": [
         -98,
         -0
       ],
       "style": "SanguinaryFlare",
-      "width": 44
+      "width": 37
     }
   ],
   "height": 200,
@@ -114,8 +114,8 @@
   "weaponSlots": [
     {
       "angle": 0,
-      "arc": 0,
-      "id": "WS0001",
+      "arc": 15,
+      "id": "LARGE",
       "locations": [
         77.5,
         -0
@@ -126,7 +126,7 @@
     },
     {
       "angle": 0,
-      "arc": 360,
+      "arc": 350,
       "id": "MIDDLE",
       "locations": [
         31,
@@ -141,8 +141,8 @@
       "arc": 360,
       "id": "RIGHT",
       "locations": [
-        27.5,
-        -26.5
+        29,
+        -26
       ],
       "mount": "TURRET",
       "size": "LARGE",
@@ -153,8 +153,8 @@
       "arc": 360,
       "id": "LEFT",
       "locations": [
-        27.5,
-        26.5
+        29,
+        26
       ],
       "mount": "TURRET",
       "size": "LARGE",

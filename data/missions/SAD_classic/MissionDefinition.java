@@ -24,6 +24,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         // These show up as items in the bulleted list under 
         // "Tactical Objectives" on the mission detail screen
         api.addBriefingItem("Win.");
+        api.addToFleet(FleetSide.PLAYER, "SAD_Apis_Standard", FleetMemberType.SHIP, true);
 
         api.addToFleet(FleetSide.PLAYER, "SAD_Hapy_Burst", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Hapy_Missile", FleetMemberType.SHIP, true);
@@ -41,7 +42,6 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         api.addToFleet(FleetSide.PLAYER, "SAD_Thoth_Missile", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Thoth_Standard", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Hathor_Standard", FleetMemberType.SHIP, true);
-        api.addToFleet(FleetSide.PLAYER, "SAD_Apis_Standard", FleetMemberType.SHIP, true);
 
  
         FleetMemberAPI fleetMember;

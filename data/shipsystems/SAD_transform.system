@@ -7,9 +7,9 @@
 	"statsScript":"src.data.shipsystems.scripts.SAD_transform_Stats",
 
 	"engineGlowColor":[207,123,103,125],
-	"engineGlowLengthMult":1.1,
+	"engineGlowLengthMult":0.8,
 	"engineGlowWidthMult":0.55,
-	"engineGlowGlowMult":1.2,
+	"engineGlowGlowMult":0.5,
   "flameoutOnImpactChance":0,
 
 

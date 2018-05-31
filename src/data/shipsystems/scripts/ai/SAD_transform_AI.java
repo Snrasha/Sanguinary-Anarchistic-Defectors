@@ -1,16 +1,23 @@
 package src.data.shipsystems.scripts.ai;
 
+import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ShipSystemAIScript;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
-import com.fs.starfarer.api.combat.ShipwideAIFlags.AIFlags;
+import com.fs.starfarer.api.combat.WeaponAPI;
+import org.lazywizard.lazylib.MathUtils;
+import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-public class SAD_transform_AI implements com.fs.starfarer.api.combat.ShipSystemAIScript {
+public class SAD_transform_AI implements ShipSystemAIScript {
 
     private ShipSystemAPI system;
     private ShipAPI ship;
     private ShipwideAIFlags flags;
+
+    private float compt = 0;
+    private float comptmax = 1;
 
     @Override
     public void init(ShipAPI ship, ShipSystemAPI system, ShipwideAIFlags flags, com.fs.starfarer.api.combat.CombatEngineAPI engine) {
@@ -21,22 +28,48 @@ public class SAD_transform_AI implements com.fs.starfarer.api.combat.ShipSystemA
 
     @Override
     public void advance(float amount, Vector2f missileDangerDir, Vector2f collisionDangerDir, ShipAPI target) {
-        int enable = 0;
+        compt += amount;
 
-        if (flags.hasFlag(AIFlags.BACKING_OFF)) {
-            enable += 2;
-        }
-        if (flags.hasFlag(AIFlags.DO_NOT_USE_SHIELDS)) {
-            enable += 2;
-        }
-        if (flags.hasFlag(AIFlags.HAS_INCOMING_DAMAGE) || missileDangerDir!=null) {
-            enable -= 4;
-        }
-        if (flags.hasFlag(AIFlags.RUN_QUICKLY)) {
-            enable += 2;
+        if (compt < comptmax) {
+            return;
         }
 
-        if (enable > 0) {
+        compt = 0;
+
+        boolean usesystem = false;
+
+        if (target != null) {
+
+            float range = 0;
+            for (WeaponAPI weapon : ship.getAllWeapons()) {
+                if (weapon.getSlot().getId().equals("LARGE")) {
+                    range = weapon.getRange();
+                    break;
+                }
+            }
+            if (!system.isOn()) {
+                range = range * 1.5f;
+            }
+            float tan = VectorUtils.getAngle(ship.getLocation(), target.getLocation());
+            
+            float distance=MathUtils.getDistance(ship, target) ;
+            float shortan= Math.abs(MathUtils.getShortestRotation(ship.getFacing(), tan));
+            if (distance< range && shortan< 80) {
+                usesystem = true;
+            }
+
+            if (target.getFluxTracker().isOverloadedOrVenting()
+                    && (target.getFluxTracker().getOverloadTimeRemaining() > 5f
+                    || target.getFluxTracker().getTimeToVent() > 5f)) {
+                usesystem = true;
+            }
+
+        }
+        /*if (ship.getVelocity().length() < (ship.getMaxSpeedWithoutBoost() * 0.75f)) {
+            usesystem=true;
+        }*/
+
+        if (usesystem) {
             activateSystem();
         } else {
             deactivateSystem();
