@@ -106,7 +106,7 @@
     0
   ],
   "shieldRadius": 138.5,
-  "spriteName": "graphics/ships/SAD_Apis.png",
+  "spriteName": "graphics/ships/apis/SAD_Apis.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,
   "weaponSlots": [

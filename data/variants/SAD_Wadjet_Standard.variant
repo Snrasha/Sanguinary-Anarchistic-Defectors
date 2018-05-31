@@ -13,8 +13,8 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "SAD_wadjet_gun",
-        "WS0002": "SAD_wadjet_gun"
+        "FRONTL": "SAD_wadjet_gun",
+        "FRONTR": "SAD_wadjet_gun"
       }
     }
   ],

@@ -42,7 +42,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/weapons/apis/SAD_ap_b_l.png",
+  "turretSprite": "graphics/ships/apis/SAD_ap_b_l.png",
   "type": "DECORATIVE",
   "width": 1
 }

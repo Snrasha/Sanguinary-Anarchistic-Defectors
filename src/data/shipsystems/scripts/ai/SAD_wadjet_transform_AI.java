@@ -4,18 +4,16 @@ import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ShipSystemAIScript;
 import com.fs.starfarer.api.combat.ShipSystemAPI;
 import com.fs.starfarer.api.combat.ShipwideAIFlags;
-import com.fs.starfarer.api.combat.WeaponAPI;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
 import org.lwjgl.util.vector.Vector2f;
 
-public class SAD_transform_AI implements ShipSystemAIScript {
+public class SAD_wadjet_transform_AI implements ShipSystemAIScript {
 
     private ShipSystemAPI system;
     private ShipAPI ship;
-
     private float compt = 0;
     private final float comptmax = 1;
+    private final float grange = 450;
 
     @Override
     public void init(ShipAPI ship, ShipSystemAPI system, ShipwideAIFlags flags, com.fs.starfarer.api.combat.CombatEngineAPI engine) {
@@ -35,37 +33,23 @@ public class SAD_transform_AI implements ShipSystemAIScript {
 
         boolean usesystem = false;
 
-        if (target != null) {
+        ShipAPI target2 = target;
+        if (target == null) {
+            if (ship.getWing() != null && ship.getWing().getSourceShip() != null) {
+                target2 = ship.getWing().getSourceShip().getShipTarget();
+            }
+        }
 
-            float range = 0;
-            for (WeaponAPI weapon : ship.getAllWeapons()) {
-                if (weapon.getSlot().getId().equals("LARGE")) {
-                    range = weapon.getRange();
-                    break;
-                }
-            }
-            if (!system.isOn()) {
-                range = range * 1.5f;
-            }
-            float tan = VectorUtils.getAngle(ship.getLocation(), target.getLocation());
-            
-            float distance=MathUtils.getDistance(ship, target) ;
-            float shortan= Math.abs(MathUtils.getShortestRotation(ship.getFacing(), tan));
-            if (distance< range && shortan< 80) {
-                usesystem = true;
-            }
+        if (target2 != null) {
 
-            if (target.getFluxTracker().isOverloadedOrVenting()
-                    && (target.getFluxTracker().getOverloadTimeRemaining() > 5f
-                    || target.getFluxTracker().getTimeToVent() > 5f)) {
+            float range = grange;
+
+            float distance = MathUtils.getDistance(ship, target2);
+            if (distance < range) {
                 usesystem = true;
             }
 
         }
-        /*if (ship.getVelocity().length() < (ship.getMaxSpeedWithoutBoost() * 0.75f)) {
-            usesystem=true;
-        }*/
-
         if (usesystem) {
             activateSystem();
         } else {

@@ -138,6 +138,7 @@
 		"combatMedium":{
 			"SAD_Khonsu_Standard":15,
 			"SAD_Ptah_Standard":15,
+			"SAD_Apis_Standard":5,
 			"fallback":{"combatSmall":2},
 		},
 		"combatLarge":{

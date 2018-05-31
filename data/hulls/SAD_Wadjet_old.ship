@@ -1,22 +1,17 @@
 {
   "bounds": [
-    -12,
-    14,
+    -11.5,
+    14.5,
     13.5,
     2.5,
     13.5,
     -2.5,
-    -12,
-    -14
+    -11.5,
+    -14.5
   ],
   "builtInMods": [
     "SAD_harShields"
   ],
-  "builtInWeapons": {
-    "COCKPIT": "SAD_w_cockpit",
-    "LEFT": "SAD_w_l",
-    "RIGHT": "SAD_w_r"
-  },
   "builtInWings": [],
   "center": [
     15.5,
@@ -37,7 +32,7 @@
     }
   ],
   "height": 32,
-  "hullId": "SAD_Wadjet",
+  "hullId": "SAD_Wadjet_old",
   "hullName": "Wadjet",
   "hullSize": "FIGHTER",
   "shieldCenter": [
@@ -45,14 +40,14 @@
     0
   ],
   "shieldRadius": 25,
-  "spriteName": "graphics/ships/wadjet/SAD_Wadjet_Core.png",
+  "spriteName": "graphics/ships/SAD_Wadjet.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {
       "angle": 0,
       "arc": 15,
-      "id": "FRONTL",
+      "id": "WS0001",
       "locations": [
         3,
         -8.5
@@ -64,7 +59,7 @@
     {
       "angle": -0,
       "arc": 15,
-      "id": "FRONTR",
+      "id": "WS0002",
       "locations": [
         3,
         8.5
@@ -72,42 +67,6 @@
       "mount": "HIDDEN",
       "size": "SMALL",
       "type": "ENERGY"
-    },
-    {
-      "angle": 0,
-      "arc": 360,
-      "id": "RIGHT",
-      "locations": [
-        -9,
-        -8.5
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
-    },
-    {
-      "angle": -0,
-      "arc": 360,
-      "id": "LEFT",
-      "locations": [
-        -9,
-        8.5
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
-    },
-    {
-      "angle": 0,
-      "arc": 360,
-      "id": "COCKPIT",
-      "locations": [
-        8.5,
-        -0
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
     }
   ],
   "width": 31

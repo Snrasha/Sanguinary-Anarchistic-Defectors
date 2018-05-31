@@ -28,9 +28,9 @@
   ],
   "hardpointSprite": "",
   "hitGlowRadius": 0,
-  "id": "SAD_ap_t_r",
+  "id": "SAD_w_cockpit",
   "pixelsPerTexel": 1,
-  "showDamageWhenDecorative": true,
+  "showDamageWhenDecorative": false,
   "size": "SMALL",
   "specClass": "beam",
   "textureScrollSpeed": 1,
@@ -42,7 +42,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/ships/apis/SAD_ap_t_r.png",
+  "turretSprite": "graphics/ships/wadjet/SAD_w_cockpit.png",
   "type": "DECORATIVE",
   "width": 1
 }
