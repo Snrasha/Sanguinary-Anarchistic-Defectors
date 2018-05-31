@@ -25,7 +25,9 @@ Twin cannons ensure a high rate of fire with good accuracy while extended accele
 The modified version of the Sanguinary Anarchist modify the number of projectile fired per the weapon.",Assault,,
 SAD_wamgun,WEAPON,"Featuring distinctive crescent-bolts of energy, the 'Wavepulse' Cannon is a general-purpose, if exotic, weapon of war.
 
-Ultimately a simple weapon, the Wavepulse is actually numerous smaller particle cannons, horizontally aligned firing in sequence to produce a much larger blast of energy.  Of only middling efficiency, the configuration of particle projectors is nevertheless quite effective at producing localized stress to shields and armor, and the weapon is noted for leaving distinctive 'scars' on damaged hull plating.  The resulting 'cutting' effect can on occasion inflict additional damage as a result of secondary stresses resulting from the unusual damage pattern.",Close Support,,
+Ultimately a simple weapon, the Wavepulse is actually numerous smaller particle cannons, horizontally aligned firing in sequence to produce a much larger blast of energy.  Of only middling efficiency, the configuration of particle projectors is nevertheless quite effective at producing localized stress to shields and armor, and the weapon is noted for leaving distinctive 'scars' on damaged hull plating.  The resulting 'cutting' effect can on occasion inflict additional damage as a result of secondary stresses resulting from the unusual damage pattern.
+
+The SAD version increase the capacity of the weapon to shoot but lose insane damage on the process.",Close Support,,
 SAD_mpolar,WEAPON,"The Polarizer is an energy weapon that delivers an modest electromagnetic pulse (EMP) charge. The polarizer carries its charges on a variant of the CEPC’s carrier medium, which, in it’s highly charged state, becomes unstable; it also fires a shielded micro-sensor which detects hostile craft and causes the blast to explode, delivering its charge to targets within a short range.
 
 As such the Polarizer sees a good deal of use as a general purpose close defense battery, though it remains useful in disabling enemy ships.
@@ -39,6 +41,7 @@ SAD_displacer,SHIP_SYSTEM,Teleports the ship forward in the direction it's trave
 SAD_reservewing,SHIP_SYSTEM,"This ship system is exactly the same than the standard shipsystem, except than it do not deploy extra fighter if they cost more than 15 OP. Deploy always 2 extra fighters except if the wing is a unique fighter.",Fighter,Deploys extra 2 fighter craft that can fight for a short time before returning to the carrier. Do not deploy craft if the OP cost is superior to 15,
 SAD_siegemode,SHIP_SYSTEM,"While in use, this system improves shield and weapon efficiency as well as weapons range, but reroutes power from the thrusters  in the process, greatly impairing mobility.",Defensive,"Improves shield efficiency, weapon efficiency, and weapons range. Greatly reduces mobility.",
 SAD_DisturbSystem,SHIP_SYSTEM,"The system uses the sensor to find weaknesses in enemy ships, increasing the damage they take by 25%. ",Offensive,"The system uses the sensor to find weaknesses in enemy ships, increasing the damage they take by 25%. ",
+SAD_transform,SHIP_SYSTEM,"The Apis can switch between a high mobility mode, boosting engine performance by 50 percent, and a heavy assault mode, boosting range and recoil of weapons by 50 percent and reducing their flux cost by 50 percent.",Offensive,Switch between high mobility or heavy assault modes.,
 ,,,,,
 SAD_Wadjet,SHIP,"While Wadjet shares the Neriad's design, it has few differences, most notable one is the Blackcap Launcher being replaced with another AC 17 Autocannon.
 The mission of the Wadjet is to be usable everywhere on the sector or planet like the Neriad.
@@ -65,6 +68,8 @@ SAD_Ptah,SHIP,"The Ptah-class can be called the baby Tartarus with a shipsystem 
 Designed with the Tartarus-class blueprint, it got strong firepower but not the best ship.",,,
 SAD_Khonsu,SHIP,"The Khonsu-class is fast, strong mount and good shipsystem. It have be maded with the Minarette-class blueprint and Inanna-class blueprint.
 It is probably the best ship of SAD armements.",,,
+SAD_Apis,SHIP,"The Apis-class is a elite destroyer, cannot be compared to others ships, if it have the same blueprint of Clade-class, theses performances are beyond others.
+It can switch between two modes for be more versality, the system can be compared to the Tartarus system, but do not include defense capacity.",,,
 SAD_Imhotep,SHIP,"The Imhotep-class is a strong battlecarrier with a decent amount of firepower.
 Maded with the Skadi-class blueprint, it own the same shipsystem than the Hathor where it can deploy two more fighter or bomber when needed.",,,
 SAD_Maat,SHIP,"The Maat-class is a ship who follow the concept of the Delphi-class with a defense of the level of the Tartarus.

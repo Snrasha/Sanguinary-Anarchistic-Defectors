@@ -67,7 +67,7 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
                         case "RIGHT2":
                             weapon.setCurrAngle(ship.getFacing() + effectLevel * 15f);
                             break;
- 
+
                     }
                 } else {
                     float effectLevel2 = effectLevel - 0.5f;
@@ -92,7 +92,7 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
                             heightS = weapon.getSprite().getHeight() / 2;
                             weapon.getSprite().setCenter(widthS - (0.5f * widthS * effectLevel2), heightS + (0.5f * heightS * effectLevel2));
                             break;
-                     /*  case "ZJOINTL":
+                        /*  case "ZJOINTL":
                             weapon.setCurrAngle(-90 + ship.getFacing() + effectLevel2 * 25f);
                             break;
                         case "ZJOINTR":
@@ -174,7 +174,24 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
         stats.getEnergyWeaponRangeBonus().unmodify(id);
         stats.getEnergyRoFMult().unmodify(id);
         stats.getEnergyWeaponFluxCostMod().unmodify(id);
-
+        
+        
+        ShipAPI ship;
+        if ((stats.getEntity() instanceof ShipAPI)) {
+            ship = (ShipAPI) stats.getEntity();
+        } else {
+            return;
+        }
+        Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
+        WeaponAPI weapon;
+        while (iter.hasNext()) {
+            weapon = iter.next();
+            switch (weapon.getSlot().getId()) {
+                case "MIDDLE":
+                    weapon.getSlot().setArc(340);
+                    break;
+            }
+        }
     }
 
     @Override

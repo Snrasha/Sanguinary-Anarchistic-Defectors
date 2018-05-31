@@ -14,16 +14,15 @@ public class SAD_transform_AI implements ShipSystemAIScript {
 
     private ShipSystemAPI system;
     private ShipAPI ship;
-    private ShipwideAIFlags flags;
+    private final Vector2f ZERO= new Vector2f(0,0);
 
     private float compt = 0;
-    private float comptmax = 1;
+    private final float comptmax = 1;
 
     @Override
     public void init(ShipAPI ship, ShipSystemAPI system, ShipwideAIFlags flags, com.fs.starfarer.api.combat.CombatEngineAPI engine) {
         this.ship = ship;
         this.system = system;
-        this.flags = flags;
     }
 
     @Override

@@ -1,10 +1,12 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 14,
+  "fluxCapacitors": 12,
   "fluxVents": 20,
   "goalVariant": true,
   "hullId": "SAD_Apis",
-  "hullMods": [],
+  "hullMods": [
+    "hardenedshieldemitter"
+  ],
   "permaMods": [],
   "quality": 0,
   "variantId": "SAD_Apis_Standard",
