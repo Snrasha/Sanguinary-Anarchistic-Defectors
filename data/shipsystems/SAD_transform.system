@@ -14,7 +14,9 @@
 
 
 
-	"useSound":"system_maneuvering_jets",
-	"loopSound":"system_maneuvering_jets_loop",
-	"outOfUsesSound":"engine_disabled",
+		"useSound":"system_high_energy_focus_activate",
+		"deactivateSound":"system_high_energy_focus_deactivate",
+
+		"outOfUsesSound":"gun_out_of_ammo",
+		"loopSound":"system_high_energy_focus_loop",
 }

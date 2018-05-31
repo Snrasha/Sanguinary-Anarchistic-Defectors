@@ -36,9 +36,7 @@
     "LEFT": "SAD_ap_b_l",
     "LEFT2": "SAD_ap_t_l",
     "RIGHT": "SAD_ap_b_r",
-    "RIGHT2": "SAD_ap_t_r",
-    "WS0001": "blinker_green",
-    "WS0002": "blinker_red"
+    "RIGHT2": "SAD_ap_t_r"
   },
   "builtInWings": [],
   "center": [
@@ -183,30 +181,6 @@
       "locations": [
         73.5,
         -18.5
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
-    },
-    {
-      "angle": -0,
-      "arc": 360,
-      "id": "WS0001",
-      "locations": [
-        14,
-        27.5
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "DECORATIVE"
-    },
-    {
-      "angle": 0,
-      "arc": 360,
-      "id": "WS0002",
-      "locations": [
-        14,
-        -27.5
       ],
       "mount": "TURRET",
       "size": "SMALL",
