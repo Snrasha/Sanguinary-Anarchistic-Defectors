@@ -13,7 +13,7 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
 
     private CombatEngineAPI engine;
 
-    private final float standardarcM = 360;
+    private final float standardarcM = 340;
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
@@ -44,7 +44,8 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
         stats.getEnergyRoFMult().modifyPercent(id, 50f * effectLevel);
         stats.getEnergyWeaponFluxCostMod().modifyPercent(id, -50f * effectLevel);
 
-        if ((effectLevel > 0f || effectLevel < 1f)) {// && state == state.IN) {
+        if ((effectLevel > 0f || effectLevel < 0.9f)) {
+            boolean effect50 = effectLevel < 0.5f;
 
             Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
             WeaponAPI weapon;
@@ -52,13 +53,55 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
             float heightS;
             while (iter.hasNext()) {
                 weapon = iter.next();
+                if (effect50) {
+                    switch (weapon.getSlot().getId()) {
+                        case "LEFT":
+                            weapon.setCurrAngle(ship.getFacing() - effectLevel * 15f);
+                            break;
+                        case "RIGHT":
+                            weapon.setCurrAngle(ship.getFacing() + effectLevel * 15f);
+                            break;
+                        case "LEFT2":
+                            weapon.setCurrAngle(ship.getFacing() - effectLevel * 15f);
+                            break;
+                        case "RIGHT2":
+                            weapon.setCurrAngle(ship.getFacing() + effectLevel * 15f);
+                            break;
+ 
+                    }
+                } else {
+                    float effectLevel2 = effectLevel - 0.5f;
+                    switch (weapon.getSlot().getId()) {
+                        case "LEFT":
+                            widthS = weapon.getSprite().getWidth() / 2;
+                            heightS = weapon.getSprite().getHeight() / 2;
+                            weapon.getSprite().setCenter(widthS - (0.55f * widthS * effectLevel2), heightS - (0.30f * heightS * effectLevel2));
+                            break;
+                        case "RIGHT":
+                            widthS = weapon.getSprite().getWidth() / 2;
+                            heightS = weapon.getSprite().getHeight() / 2;
+                            weapon.getSprite().setCenter(widthS + (0.55f * widthS * effectLevel2), heightS - (0.30f * heightS * effectLevel2));
+                            break;
+                        case "LEFT2":
+                            widthS = weapon.getSprite().getWidth() / 2;
+                            heightS = weapon.getSprite().getHeight() / 2;
+                            weapon.getSprite().setCenter(widthS + (0.5f * widthS * effectLevel2), heightS + (0.5f * heightS * effectLevel2));
+                            break;
+                        case "RIGHT2":
+                            widthS = weapon.getSprite().getWidth() / 2;
+                            heightS = weapon.getSprite().getHeight() / 2;
+                            weapon.getSprite().setCenter(widthS - (0.5f * widthS * effectLevel2), heightS + (0.5f * heightS * effectLevel2));
+                            break;
+                     /*  case "ZJOINTL":
+                            weapon.setCurrAngle(-90 + ship.getFacing() + effectLevel2 * 25f);
+                            break;
+                        case "ZJOINTR":
+                            weapon.setCurrAngle(90 + ship.getFacing() - effectLevel2 * 25f);
+                            break;*/
+                    }
+                }
+
                 switch (weapon.getSlot().getId()) {
-                    case "LEFT":
-                        weapon.setCurrAngle(ship.getFacing() - effectLevel * 10f);
-                        widthS = weapon.getSprite().getWidth() / 2;
-                        heightS = weapon.getSprite().getHeight() / 2;
-                        weapon.getSprite().setCenter(widthS - (0.5f * widthS * effectLevel), heightS - (0.25f * heightS * effectLevel));
-                        break;
                     case "MIDDLE":
 
                         weapon.getSlot().setArc(standardarcM - 0.9f * effectLevel * standardarcM);
@@ -80,17 +123,10 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
                             }
                         }
                         break;
-                    case "RIGHT":
-                        widthS = weapon.getSprite().getWidth() / 2;
-                        heightS = weapon.getSprite().getHeight() / 2;
 
-                        weapon.setCurrAngle(ship.getFacing() + effectLevel * 10f);
-                        weapon.getSprite().setCenter(widthS + (0.5f * widthS * effectLevel), heightS - (0.25f * heightS * effectLevel));
-
-                        break;
                 }
-            }
 
+            }
         }
         if (effectLevel == 1f) {
             Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
@@ -126,7 +162,8 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
     }
 
     @Override
-    public void unapply(MutableShipStatsAPI stats, String id) {
+    public void unapply(MutableShipStatsAPI stats, String id
+    ) {
         stats.getMaxSpeed().unmodify(id);
         stats.getMaxTurnRate().unmodify(id);
         stats.getTurnAcceleration().unmodify(id);
@@ -141,7 +178,9 @@ public class SAD_transform_Stats implements ShipSystemStatsScript {
     }
 
     @Override
-    public StatusData getStatusData(int index, State state, float effectLevel) {
+    public StatusData getStatusData(int index, State state,
+            float effectLevel
+    ) {
         if (index == 0) {
             return new StatusData("engine power redirected", false);
         }
