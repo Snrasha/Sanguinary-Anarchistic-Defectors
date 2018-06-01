@@ -11,9 +11,10 @@
   "weaponGroups": [
     {
       "autofire": false,
-      "mode": "LINKED",
+      "mode": "ALTERNATING",
       "weapons": {
-        "WS0001": "SAD_shrike_fighter"
+        "WS0001": "SAD_shrike_fighter",
+        "WS0002": "SAD_shrike_fighter"
       }
     }
   ],

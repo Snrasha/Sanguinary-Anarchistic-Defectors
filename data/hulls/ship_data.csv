@@ -1,6 +1,6 @@
 name,id,designation,system id,fleet pts,hitpoints,armor rating,max flux,8/6/5/4%,flux dissipation,ordnance points,fighter bays,max speed,acceleration,deceleration,max turn rate,turn acceleration,mass,shield type,defense id,shield arc,shield upkeep,shield efficiency,phase cost,phase upkeep,min crew,max crew,cargo,fuel,fuel/ly,range,max burn,base value,cr %/day,CR to deploy,peak CR sec,CR loss/sec,supplies/rec,supplies/mo,hints,breakProb,minPieces,maxPieces,number
-Wadjet,SAD_Wadjet,,SAD_wadjet_transform,,350,100,500,,80,0,,400,450,200,120,190,20,FRONT,,240,0.25,0.8,,,1,1,,,,,,,,,,,,,,0,,,90000
-Anuket,SAD_Anuket,,,,300,60,200,,20,0,,200,200,140,80,90,25,NONE,,,,,,,1,1,,,,,,,,,,,,,,0,,,90001
+Wadjet,SAD_Wadjet,,SAD_wadjet_transform,,600,75,500,,80,0,,400,450,200,120,190,20,FRONT,,240,0.25,0.8,,,1,1,,,,,,,,,,,,,,0,,,90000
+Anuket,SAD_Anuket,,,,500,50,200,,20,0,,200,350,200,150,150,25,NONE,,,,,,,1,1,,,,,,,,,,,,,,0,,,90001
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Neith,SAD_Neith,Frigate,SAD_displacer,4,1050,250,2000,1813,130,40,,155,140,100,100,120,100,FRONT,,210,0.3,0.8,,,7,18,65,40,1,35,10,11000,10,15,300,0.25,4,3,HIDE_IN_CODEX,0.4,2,2,90003
 Thoth,SAD_Thoth,Gunship,SAD_booster,5,1400,190,2250,2250,160,45,,145,125,120,90,120,180,FRONT,,270,0.2,0.8,,,12,30,40,25,0.9,35,10,14000,8,10,340,0.25,5,4,HIDE_IN_CODEX,0.3,2,2,90004

@@ -2,8 +2,8 @@ Version 0.5:
 -Add the Apis, Elite destroyer for than people can loot the large weapon of SAD faction.
 -Modify the wadjet who follow the same system than Apis.
 -Shipsystem of Ptah and Maat is more visible when they enable that.
--Upgrade the wadjet for the job of destroy ships. Their weapons hit energy and with a bit of EMP.
--Reduce the cooldown of the siege mode system
+-Upgrade the wadjet for the job of destroy ships. Their weapons hit energy and with a bit of EMP. They lost their flak guns
+-Reduce the cooldown of the siege mode system.
 -Remade graphics of every weapons.
 
 

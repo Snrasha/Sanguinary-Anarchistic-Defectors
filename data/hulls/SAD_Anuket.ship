@@ -1,34 +1,43 @@
 {
   "bounds": [
-    5.5,
-    10,
-    9.5,
-    -9,
-    -8.5,
-    -12.5,
-    -12,
-    8
+    -7.5,
+    19,
+    -7.5,
+    -19,
+    17,
+    -0
   ],
   "builtInWings": [],
   "center": [
-    11,
-    17
+    18.5,
+    13
   ],
   "collisionRadius": 22.5,
   "engineSlots": [
     {
       "angle": 180,
-      "contrailSize": 30,
-      "length": 30,
+      "contrailSize": 8,
+      "length": 16.5,
       "location": [
-        -15.5,
-        -0
+        -11,
+        -6
       ],
       "style": "SanguinaryFlare",
-      "width": 10
+      "width": 8
+    },
+    {
+      "angle": 180,
+      "contrailSize": 8,
+      "length": 16.5,
+      "location": [
+        -11,
+        6
+      ],
+      "style": "SanguinaryFlare",
+      "width": 8
     }
   ],
-  "height": 34,
+  "height": 31,
   "hullId": "SAD_Anuket",
   "hullName": "Anuket",
   "hullSize": "FIGHTER",
@@ -43,16 +52,28 @@
   "weaponSlots": [
     {
       "angle": 0,
-      "arc": 0,
+      "arc": 10,
       "id": "WS0001",
       "locations": [
-        2.5,
-        -0
+        9.5,
+        8
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 10,
+      "id": "WS0002",
+      "locations": [
+        9.5,
+        -8
       ],
       "mount": "HARDPOINT",
       "size": "SMALL",
       "type": "MISSILE"
     }
   ],
-  "width": 26
+  "width": 37
 }
