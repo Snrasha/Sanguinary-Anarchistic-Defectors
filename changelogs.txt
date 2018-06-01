@@ -4,6 +4,7 @@ Version 0.5:
 -Shipsystem of Ptah and Maat is more visible when they enable that.
 -Upgrade the wadjet for the job of destroy ships. Their weapons hit energy and with a bit of EMP.
 -Reduce the cooldown of the siege mode system
+-Remade graphics of every weapons.
 
 
 Version 0.4: 
