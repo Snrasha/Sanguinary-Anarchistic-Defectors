@@ -1,3 +1,11 @@
+Version 0.5:
+-Add the Apis, Elite destroyer for than people can loot the large weapon of SAD faction.
+-Modify the wadjet who follow the same system than Apis.
+-Shipsystem of Ptah and Maat is more visible when they enable that.
+-Upgrade the wadjet for the job of destroy ships. Their weapons hit energy and with a bit of EMP.
+-Reduce the cooldown of the siege mode system
+
+
 Version 0.4: 
 -Modify weapon graphic.
 -Modify the wavepulse, less damage, more recoil, exactly equivalent to wavepulse.

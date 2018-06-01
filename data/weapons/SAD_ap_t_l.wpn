@@ -26,6 +26,8 @@
     0,
     0
   ],
+  #"renderBelowAllWeapons":true,
+
   "hardpointSprite": "",
   "hitGlowRadius": 0,
   "id": "SAD_ap_t_l",

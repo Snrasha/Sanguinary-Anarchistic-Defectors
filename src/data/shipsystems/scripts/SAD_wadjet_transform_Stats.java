@@ -33,6 +33,7 @@ public class SAD_wadjet_transform_Stats implements ShipSystemStatsScript {
         stats.getMaxSpeed().modifyPercent(id, -80f * effectLevel);
         stats.getAcceleration().modifyPercent(id, -80f * effectLevel);
         //stats.getDeceleration().modifyPercent(id, -80f * effectLevel);
+        stats.getShieldDamageTakenMult().modifyPercent(id,-50f* effectLevel);
         stats.getEnergyWeaponRangeBonus().modifyPercent(id, 50f * effectLevel);
         stats.getEnergyRoFMult().modifyPercent(id, 50f * effectLevel);
         stats.getEnergyWeaponFluxCostMod().modifyPercent(id, -90f * effectLevel);
@@ -76,6 +77,7 @@ public class SAD_wadjet_transform_Stats implements ShipSystemStatsScript {
         stats.getEnergyWeaponRangeBonus().unmodify(id);
         stats.getEnergyRoFMult().unmodify(id);
         stats.getEnergyWeaponFluxCostMod().unmodify(id);
+        stats.getShieldDamageTakenMult().unmodify(id);
 
     }
 

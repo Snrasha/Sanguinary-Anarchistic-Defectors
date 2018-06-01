@@ -1,17 +1,33 @@
 package src.data.shipsystems.scripts;
 
-import com.fs.starfarer.api.combat.CombatEntityAPI;
+import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import java.util.Iterator;
 
-public class SAD_siegemode implements com.fs.starfarer.api.plugins.ShipSystemStatsScript {
+public class SAD_siegemode implements ShipSystemStatsScript {
 
-    
+    private CombatEngineAPI engine;
+    private final float ptahwidth = 14;
+    private final float maatheight = 58;
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
-        CombatEntityAPI entity = stats.getEntity();
-        if (!(entity instanceof com.fs.starfarer.api.combat.ShipAPI)) {
+
+        if (engine == null) {
+            engine = Global.getCombatEngine();
+
+        }
+        if (engine.isPaused()) {
+            return;
+        }
+        ShipAPI ship;
+        if ((stats.getEntity() instanceof ShipAPI)) {
+            ship = (ShipAPI) stats.getEntity();
+        } else {
             return;
         }
 
@@ -26,6 +42,45 @@ public class SAD_siegemode implements com.fs.starfarer.api.plugins.ShipSystemSta
         stats.getZeroFluxSpeedBoost().modifyMult(id, 1.0F - 0.5F * effectLevel);
 
         stats.getShieldAbsorptionMult().modifyPercent(id, -1.0F * effectLevel * 10.0F);
+
+        if ((effectLevel > 0f || effectLevel < 0.9f)) {
+            boolean ptah = ship.getHullSpec().getBaseHullId().endsWith("h");
+
+            Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
+            WeaponAPI weapon;
+            float widthS;
+            float heightS;
+            while (iter.hasNext()) {
+                weapon = iter.next();
+                switch (weapon.getSlot().getId()) {
+                    case "RIGHT":
+                        widthS = weapon.getSprite().getWidth() / 2;
+                        heightS = weapon.getSprite().getHeight() / 2;
+                        if (ptah) {
+                            weapon.getSprite().setWidth(ptahwidth - (effectLevel * 2));
+                            weapon.getSprite().setCenter(widthS - (0.55f * widthS * effectLevel), heightS);
+                        } else {
+                            weapon.getSprite().setHeight(maatheight - (effectLevel * 4));
+                            weapon.getSprite().setCenter(widthS - (0.30f * widthS * effectLevel), heightS + (0.30f * heightS * effectLevel));
+                        }
+                        break;
+                    case "LEFT":
+                        widthS = weapon.getSprite().getWidth() / 2;
+                        heightS = weapon.getSprite().getHeight() / 2;
+                        if (ptah) {
+                            weapon.getSprite().setWidth(ptahwidth - (effectLevel * 2));
+                            weapon.getSprite().setCenter(widthS + (0.55f * widthS * effectLevel), heightS);
+                        } else {
+                            weapon.getSprite().setHeight(maatheight - (effectLevel * 4));
+                            weapon.getSprite().setCenter(widthS + (0.30f * widthS * effectLevel), heightS + (0.30f * heightS * effectLevel));
+                        }
+                        break;
+                }
+
+            }
+
+        }
+
     }
 
     @Override

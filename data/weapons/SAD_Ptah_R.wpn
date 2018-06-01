@@ -30,7 +30,7 @@
 
   "hardpointSprite": "",
   "hitGlowRadius": 0,
-  "id": "SAD_ap_b_l",
+  "id": "SAD_Ptah_R",
   "pixelsPerTexel": 1,
   "showDamageWhenDecorative": true,
   "size": "SMALL",
@@ -44,7 +44,7 @@
     0,
     0
   ],
-  "turretSprite": "graphics/ships/apis/SAD_ap_b_l.png",
+  "turretSprite": "graphics/ships/ptah/SAD_Ptah_R.png",
   "type": "DECORATIVE",
   "width": 1
 }

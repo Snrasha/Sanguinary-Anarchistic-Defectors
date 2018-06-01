@@ -59,6 +59,8 @@
     "SAD_harShields"
   ],
   "builtInWeapons": {
+    "LEFT": "SAD_Maat_L",
+    "RIGHT": "SAD_Maat_R",
     "WS0003": "SAD_wamgun"
   },
   "builtInWings": [],
@@ -122,7 +124,7 @@
     0
   ],
   "shieldRadius": 164,
-  "spriteName": "graphics/ships/SAD_Maat.png",
+  "spriteName": "graphics/ships/maat/SAD_Maat_Core.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,
   "weaponSlots": [
@@ -269,6 +271,30 @@
       "mount": "HARDPOINT",
       "size": "SMALL",
       "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LEFT",
+      "locations": [
+        -55,
+        58.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "RIGHT",
+      "locations": [
+        -55,
+        -58.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
     }
   ],
   "width": 158
