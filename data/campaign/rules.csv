@@ -1,53 +1,66 @@
 id,trigger,conditions,script,text,options,notes
 ,,,,,,
-# SHI fleet greeting lines,,,,,,
-greetingSHIFriendly,OpenCommLink,"$faction.id == sad
+# SAD fleet greeting lines,,,,,,
+greetingSADFriendly,OpenCommLink,"$faction.id == sad
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
-FireAll PopulateOptions","""We've got your signal, recognition looks good.  Looks like things are going well on your end $playerName.  Clear skies.""
+FireAll PopulateOptions","""Don't be a fool, casting at every blip you find out here. You want to get picked up by half the listening stations this side of the Sector?""
 OR
-Unconcerned, sedate activity ensues as codes are checked and verified; the watch officer gives a jaunty salute.
-
-""Beacon checks out, you're clear to proceed comrade; burn bright out there!""
+""Keep it jolly, hunter. We'll be on our way.""
 OR
-The SRA fleets communique is preceded by a markedly friendly sounding electronic chirp. ""Secure codes check out; the cooperative authority sends their regards, Captain.""",,
-greetingSHIHostileWeaker,OpenCommLink,"$faction.id == sad
+""Good hunting out here 'eh? Yeah, well I wouldn't tell if it was either. Burn bright.""",,
+greetingSADHostileWeaker,OpenCommLink,"$faction.id == sad
 $faction.hostileToPlayer
-$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"The Yardie $personRank does a fairly admirable job of keeping their voice from trembling as $heOrShe warns, ""Whatever happens next, just know we won't forget it.""
+$relativeStrength < 0",$entity.ignorePlayerCommRequests = true 1,"""Greetings, honorable commander! We are a humble League merchant trading fleet headed for resupply. We would be honored to assist you in any way.""
 OR
-The message is perfunctory. ""Damn you.""  Further hails go unanswered.",cutCommLink:Cut the comm link,
-greetingSHIHostileWeakerDefiant,OpenCommLink,"$faction.id == sad
+""I must have left my transponder off; silly me. Here, I'll just be on my way...""",cutCommLink:Cut the comm link,
+greetingSADHostileWeakerDefiant,OpenCommLink,"$faction.id == sad
 $faction.hostileToPlayer
 $relativeStrength < 0
-$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"The Yardie $personRank meets your gaze levelly for a few moments, before simply nodding curtly in acknowledgement and signaling $hisOrHer crew to their stations.  The comms signal cuts out a moment later.
+$weakerThanPlayerButHolding",$entity.ignorePlayerCommRequests = true 1,"The anarchist $personRank glares at you briefly before shutting down the comm link.
 OR
-The SRA fleet meets your call with bravado, though you're unsure if the person on the other end is the fleet leader. 
-
-""Hoping for our surrender then, are you? Piss off, we're tougher than you think you damn running dog!"" The message is accompanied by a particularly rude gesture.",cutCommLink:Cut the comm link,
-greetingSHIHostileStronger,OpenCommLink,"$faction.id == sad
+$personName glares defiantly. ""You'll never take me alive!""
+OR
+""You fight like an algae-farmer! Less talk, more shoot.""",cutCommLink:Cut the comm link,
+greetingSADHostileStronger,OpenCommLink,"$faction.id == sad
 $faction.hostileToPlayer
-$relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"Cooly regarding you, the Yardie $personRank gives a wolfish grin.  ""Seems you've a fight on your hands, Captain.""
+$relativeStrength >= 0",$entity.ignorePlayerCommRequests = true 1,"""Attention, you belongs now to my black list of people than i need to kill. You, and all your possessions are now my personal property. Any resisting ship will be disabled, boarded, your officers massacred, and your crew sold as slaves.
+We lie, your crew will be killed anyways.
+""
 OR
-""Time for this game to end.""",cutCommLink:Cut the comm link,
-greetingSHINeutral,OpenCommLink,"$faction.id == sad
+""Like you are not like me, die and let me go get your goods or you'll be taking a very long walk out the airlock once I've claimed your ship.""
+OR
+The anarchist $personRank and their crews makes a rude gesture and laughs before cutting the transmission.
+OR
+""When you will go on Hell, tell 'em it was $personName that sent you and than we will come someday for them""
+OR
+The open comms-line crackles; after a moment $personName speaks.
+""Wait, someone actually answered this thing? People like you know use this thing? Ah ah, die.""
+OR
+""You come here for my pleasure, thank you."" growls $personName.",cutCommLink:Cut the comm link,
+greetingSADNeutral,OpenCommLink,"$faction.id == sad
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
-FireAll PopulateOptions","""Got you on scan, Captain and are monitoring you.  Keep your distance.""",,
+FireAll PopulateOptions","""Unless I am reading my scopes wrong, you have no reason to be talkin' right now. Get it?""
+OR
+""Go away, I'm trying to kill you.""
+OR
+""What, you scrubbing cryotanks? Get lost.""",,
 ,,,,,,
 # Trade panel flavor text,,,,,,
-flavorTextMarketSHI,TradePanelFlavorText,"$global.tradePanelMode == MARKET
+flavorTextMarketSAD,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == sad","AddText ""The docks are a riot of color and noise as cargoes are energetically off and onloaded.  An SRA official in a rather eye catching outfit waves you down to see if you need any help."" textGrayColor",,,
 ,,,,,,
 beaconOpenDialogSadDestroyed,OpenInteractionDialog,"$tag:warning_beacon
 $sadDestroyed","ShowDefaultVisual
 SetShortcut beaconLeave ""ESCAPE""","This autonomous warning beacon emits a looping message.
 
-""DANGER: This star system is known to contain potentially active anarchist. Access to this system by unauthorized parties is forbidden by Hegemony Navy diktat 224.34.""",beaconLeave:Leave,
+""WARNING: This star system belongs to Anarchists. You aren't authorized to enter this system, except if you wish to die in cold void's embrace.""",beaconLeave:Leave,
 beaconOpenDialogSadSuppressed,OpenInteractionDialog,"$tag:warning_beacon
 $sadSuppressed","ShowDefaultVisual
 SetShortcut beaconLeave ""ESCAPE""","This autonomous warning beacon emits a looping message.
 
-""DANGER: This star system is known to contain potentially active anarchist. Access to this system by unauthorized parties is forbidden by Hegemony Navy diktat 224.34.""",beaconLeave:Leave,
+""WARNING: This star system belongs to Anarchists. You aren't authorized to enter this system, except if you wish to die in extreme cold void's embrace.""",beaconLeave:Leave,
 beaconOpenDialogSadResurgent,OpenInteractionDialog,"$tag:warning_beacon
 $sadResurgent","ShowDefaultVisual
 SetShortcut beaconLeave ""ESCAPE""","This autonomous warning beacon emits a looping message.
 
-""DANGER: This star system is known to contain potentially active anarchist. Access to this system by unauthorized parties is forbidden by Hegemony Navy diktat 224.34.""",beaconLeave:Leave,
+""WARNING: This star system belongs to the Anarchists. Enter if you dare. We'll kill you anyway.""",beaconLeave:Leave,

@@ -43,11 +43,12 @@ SAD_siegemode,SHIP_SYSTEM,"While in use, this system improves shield and weapon 
 SAD_DisturbSystem,SHIP_SYSTEM,"The system uses the sensor to find weaknesses in enemy ships, increasing the damage they take by 25%. ",Offensive,"The system uses the sensor to find weaknesses in enemy ships, increasing the damage they take by 25%. ",
 SAD_transform,SHIP_SYSTEM,"The Apis can switch between a high mobility mode, boosting engine performance by 50 percent, and a heavy assault mode, boosting range and recoil of weapons by 50 percent and reducing their flux cost by 50 percent.",Offensive,Switch between high mobility or heavy assault modes.,
 SAD_wadjet_transform,SHIP_SYSTEM,"The Wadjet can switch between a high mobility mode, boosting engine performance by 50 percent, and a heavy assault mode, boosting range and recoil of weapons by 50 percent and reducing their flux cost by 50 percent.",Offensive,Switch between high mobility or heavy assault modes.,
+SAD_flux_perf,SHIP_SYSTEM,"The Hapy can switch to a  assault mode, boosting range by 15 percent and reducing their flux cost by 50 percent. Otherwise, lost engine performance.",Offensive,Switch between mobility or assault modes.,
 ,,,,,
 SAD_Wadjet,SHIP,"While Wadjet shares the Neriad's design, it has few differences, most notable one are replaced weapons with 2 CPEC.
 The mission of the Wadjet is to be usable everywhere on the sector or planet like the Neriad.
 It have be upgraded for get more top-speed and a better front shield. Otherwise, the cost of this fighter is the twice of the Neriad.",,,
-SAD_Anuket,SHIP,"Not very effecient, the Anuket-Class  is a simple bomber with a Strike ASM missile and nothing else.
+SAD_Anuket,SHIP,"Not very effecient, the Anuket-Class  is a simple bomber with two smalls Strike ASM missile and nothing else.
 ",,,
 SAD_Neith,SHIP,"The SAD utilised the blueprint of the Seski class corvette in designing this frigate. Upscaling from corvette to frigate has removed the weaknesses of the Seski and increased the offensive power and shipsystems of the Neith-class, however it has also resulted in a comparative loss of speed.",,,
 SAD_Thoth,SHIP,"The Thoth class have be designed with the blueprint of the Enlil-class, designed for the speed, he combine a excellent shipsystem with a standard armor

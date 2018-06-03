@@ -1,3 +1,11 @@
+
+
+Version 0.6:
+-Change shipsystem of Hapy
+-Fix rules.csv
+-Fix Survey data drops.
+
+
 Version 0.5:
 -Add the Apis, Elite destroyer for than people can loot the large weapon of SAD faction.
 -Modify the wadjet who follow the same system than Apis.
@@ -5,6 +13,7 @@ Version 0.5:
 -Upgrade the wadjet for the job of destroy ships. Their weapons hit energy and with a bit of EMP. They lost their flak guns
 -Reduce the cooldown of the siege mode system.
 -Remade graphics of every weapons.
+-Remade the Anuket
 
 
 Version 0.4: 

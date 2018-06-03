@@ -6,7 +6,9 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import java.awt.Color;
 import java.util.Iterator;
+import org.lwjgl.util.vector.Vector2f;
 
 public class SAD_siegemode implements ShipSystemStatsScript {
 
@@ -76,10 +78,34 @@ public class SAD_siegemode implements ShipSystemStatsScript {
                         }
                         break;
                 }
-
             }
+        }/*
+        if (effectLevel > 0.9f) {
+            Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
+            WeaponAPI weapon;
+            Vector2f vect = new Vector2f();
+            Vector2f pos = new Vector2f();
 
-        }
+            while (iter.hasNext()) {
+                weapon = iter.next();
+                switch (weapon.getSlot().getId()) {
+                    case "RIGHT":
+                        pos = new Vector2f(weapon.getLocation());
+                        pos.setY(-5);
+
+                        ship.getVelocity().negate(vect);
+                        engine.addSmoothParticle(weapon.getLocation(), vect, 10, 0.5f, 0.2f, Color.GREEN);
+                        break;
+                    case "LEFT":
+                        pos = new Vector2f(weapon.getLocation());
+                        pos.setY(-5);
+
+                        ship.getVelocity().negate(vect);
+                        engine.addSmoothParticle(weapon.getLocation(), vect, 10, 5, 0.2f, Color.GREEN);
+                        break;
+                }
+            }
+        }*/
 
     }
 

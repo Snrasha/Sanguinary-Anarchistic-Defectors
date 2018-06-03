@@ -1,0 +1,17 @@
+{
+    "faction":"sad",
+    "firstname":"Jean",
+    "lastname":"DuLoup",
+    "gender":"M",    # M/F/N  (Male, female, any)
+    "Officerlevel":-1, # Per default if -1, put the officerLevel max of your settings.
+
+    "mainShip":"SAD_Taweret_Standard", # Flag Ship variant
+    "ships":[], # Variants added after the mainShip
+
+    "randomFleet":true, # If random fleet(from the faction) will be added.
+    "reward":300000, # Bounty reward.
+    "text1":"Jean DuLoup is a SAD guys with a standard fleet who contains a capital",
+    "text2":"What say the Gladiator on fight",
+
+    "avatar":"graphics/portraits/portrait_mercenary01.png", # Portrait of the Gladiator
+}

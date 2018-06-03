@@ -6,3 +6,4 @@ Reserve Deployment,SAD_reservewing,,,,,,0.5,,,,0.1,,3,30,,,,,,,,,,,graphics/icon
 Siege Mode,SAD_siegemode,,,,,,,,,,0.5,,0.5,1,TRUE,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 Wooden Transform,SAD_transform,,,,,,,,,,1,,1,1,TRUE,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
 Retractable Wings,SAD_wadjet_transform,,,,,,,,,,1,,1,1,TRUE,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png
+Flux performance,SAD_flux_perf,,,,,,,,,,1,,1,1,TRUE,,,,,,,,,,graphics/icons/hullsys/infernium_injector.png

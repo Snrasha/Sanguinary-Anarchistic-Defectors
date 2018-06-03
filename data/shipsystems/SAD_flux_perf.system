@@ -1,0 +1,22 @@
+{
+	"id":"SAD_flux_perf",
+	"type":"ENGINE_MOD",
+
+	"aiType":"CUSTOM",
+	"aiScript":"src.data.shipsystems.scripts.ai.SAD_flux_perf_AI",
+	"statsScript":"src.data.shipsystems.scripts.SAD_flux_perf_Stats",
+
+	"engineGlowColor":[207,123,103,125],
+	"engineGlowLengthMult":0.8,
+	"engineGlowWidthMult":0.55,
+	"engineGlowGlowMult":0.5,
+  "flameoutOnImpactChance":0,
+
+
+
+		"useSound":"system_high_energy_focus_activate",
+		"deactivateSound":"system_high_energy_focus_deactivate",
+
+		"outOfUsesSound":"gun_out_of_ammo",
+		"loopSound":"system_high_energy_focus_loop",
+}
