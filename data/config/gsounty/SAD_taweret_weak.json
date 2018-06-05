@@ -9,7 +9,7 @@
     "ships":[], # Variants added after the mainShip
 
     "randomFleet":false, # If random fleet(from the faction) will be added.
-    "reward":100000, # Bounty reward.
+    "reward":300000, # Bounty reward.
     "description":"Jeanne DuLoup is famous for fight alone with a capital.",
     "dialog":"Hello, ready to death against ONE ship?",
 

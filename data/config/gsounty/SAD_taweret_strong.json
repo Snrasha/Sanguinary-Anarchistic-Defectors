@@ -9,7 +9,7 @@
     "ships":[], # Variants added after the mainShip
 
     "randomFleet":true, # If random fleet(from the faction) will be added.
-    "reward":300000, # Bounty reward.
+    "reward":500000, # Bounty reward.
     "combatPoints":40,
     "description":"Jean DuLoup is a SAD guys with a standard fleet who contains a capital",
     "dialog":"You cannot beat me, i am the wolf of the Anarchist!",

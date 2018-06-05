@@ -1,4 +1,5 @@
-
+Version 0.61:
+-Add GS mission
 
 Version 0.6:
 -Change shipsystem of Hapy
