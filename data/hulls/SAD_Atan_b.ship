@@ -35,8 +35,7 @@
   ],
   "builtInMods": [
     "SAD_harShields",
-    "high_maintenance",
-    "comp_armor"
+    "high_maintenance"
   ],
   "builtInWeapons": {
     "BLEFT": "SAD_Atan_b_l_b",

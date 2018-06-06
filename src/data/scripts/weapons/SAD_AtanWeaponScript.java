@@ -19,6 +19,7 @@ public class SAD_AtanWeaponScript implements EveryFrameWeaponEffectPlugin {
     private float powerAcc = 0;
     private float angleAcc = 0;
     private float powerStraf = 0;
+    
 
     private int sensAcc = 1;
     private int sensStraf = 1;
@@ -67,7 +68,7 @@ public class SAD_AtanWeaponScript implements EveryFrameWeaponEffectPlugin {
         }
         ShipEngineControllerAPI engines = ship.getEngineController();
 
-        float amountbuff = amount;
+        float amountbuff = amount*10;
         if (ship.getSystem().isActive()) {
             amountbuff *= 4;
         }
@@ -153,13 +154,22 @@ public class SAD_AtanWeaponScript implements EveryFrameWeaponEffectPlugin {
         
         ship.getEngineController().extendFlame(id, 1 - 0.5f * effectLevel+maxsp/MAXSPEEDBONUS, 1 - 0.5f * effectLevel+maxsp/MAXSPEEDBONUS, 1 - 0.5f * effectLevel+maxsp/MAXSPEEDBONUS);
 
-
-        bleft.setCurrAngle(ship.getFacing() + angleAcc * 1.5f*(1f-effectLevel)+45*effectLevel);
+        
+        bleft.setCurrAngle(ship.getFacing() +angleAcc * 1.5f*(1f-effectLevel)+45*effectLevel);
         tleft.setCurrAngle(ship.getFacing() + angleAcc*(1f-effectLevel)+45*effectLevel);
 
         bright.setCurrAngle(ship.getFacing() - angleAcc * 1.5f*(1f-effectLevel)-45*effectLevel);
         tright.setCurrAngle(ship.getFacing() - angleAcc*(1f-effectLevel)-45*effectLevel);
+        
+        
+       /* flapflap(amount);
+        bleft.setCurrAngle(ship.getFacing() -flapflap*(1f-effectLevel) +angleAcc * 1.5f*(1f-effectLevel)+45*effectLevel);
+        tleft.setCurrAngle(ship.getFacing() +flapflap*(1f-effectLevel)+ angleAcc*(1f-effectLevel)+45*effectLevel);
 
+        bright.setCurrAngle(ship.getFacing()+flapflap*(1f-effectLevel) - angleAcc * 1.5f*(1f-effectLevel)-45*effectLevel);
+        tright.setCurrAngle(ship.getFacing()-flapflap*(1f-effectLevel) - angleAcc*(1f-effectLevel)-45*effectLevel);
+        */
+        
         float widthS;
         float heightS;
         widthS = bleft.getSprite().getWidth() / 2;
@@ -187,9 +197,21 @@ public class SAD_AtanWeaponScript implements EveryFrameWeaponEffectPlugin {
             powerStraf = -MAXSPEEDBONUS;
         }
     }
-
+    /*
+    private float flapflap=-10;
+    private int flip=1;
+    private void flapflap(float amount){
+        this.flapflap+=flip*amount*320;
+        if(flapflap>10){
+            flip=-1;
+        }
+        if(flapflap<-10){
+            flip=1;
+        }
+    }
+*/
     private void increaseAcc(float amount) {
-        powerAcc += sensAcc * amount * 10;
+        powerAcc += sensAcc * amount;
         if (powerAcc > MAXSPEEDBONUS) {
             powerAcc = MAXSPEEDBONUS;
         }
