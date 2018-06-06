@@ -1,0 +1,51 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "everyFrameEffect": "src.data.scripts.weapons.SAD_AtanWeaponScript",
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "renderBelowAllWeapons":true,
+
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "SAD_Atan_b_l",
+  "pixelsPerTexel": 1,
+  "showDamageWhenDecorative": true,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 1,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "graphics/ships/atan/SAD_Atan_b_l.png",
+  "type": "DECORATIVE",
+  "width": 1
+}

@@ -1,3 +1,8 @@
+Version 0.62:
+-One bounty have see the reward decreased.
+-Add a elite rare frigate.
+-Add two GS missions, add a chain on mission on them
+
 Version 0.61:
 -Add GS mission
 

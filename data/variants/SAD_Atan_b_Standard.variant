@@ -1,0 +1,41 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "SAD_Atan_b",
+  "hullMods": [
+    "targetingunit",
+    "blast_doors",
+    "reinforcedhull",
+    "fluxdistributor",
+    "fluxcoil"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_Atan_b_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "lightdualac"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "chaingun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "lightdualmg"
+      }
+    }
+  ],
+  "wings": []
+}

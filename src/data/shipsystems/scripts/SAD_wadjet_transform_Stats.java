@@ -48,6 +48,7 @@ public class SAD_wadjet_transform_Stats implements ShipSystemStatsScript {
                 weapon = iter.next();
                 switch (weapon.getSlot().getId()) {
                     case "COCKPIT":
+                       
                         widthS = weapon.getSprite().getWidth() / 2;
                         heightS = weapon.getSprite().getHeight() / 2;
                         weapon.getSprite().setCenter(widthS, heightS + (1f * heightS * effectLevel));
