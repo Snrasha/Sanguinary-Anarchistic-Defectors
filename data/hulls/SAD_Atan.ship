@@ -42,7 +42,7 @@
     "BRIGHT": "SAD_Atan_b_r",
     "TLEFT": "SAD_Atan_t_l",
     "TRIGHT": "SAD_Atan_t_r",
-    "WS0002": "SAD_mcepc"
+    "WS0002": "SAD_slowbeamM"
   },
   "builtInWings": [],
   "center": [

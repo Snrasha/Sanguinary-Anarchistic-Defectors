@@ -35,6 +35,7 @@ As such the Polarizer sees a good deal of use as a general purpose close defense
 The medium version from the Sanguinary Anarchist use always the same ammo, but with a high fire-rate.",Special,,
 SAD_stormBlaster,WEAPON,"Rotary energy weapon system with an extremely high rate of fire. With a insane ammo magazine, it can shoot for a long time before run out.
 Particle masses become unstable after a short distance and tend to detonate spectacularly when near dense concentrations of matter, such as starships.  Though it's damage against shields and armor is middling at best, the Storm Blaster shines when engaging small craft or vessels with unprotected hull.",,,
+SAD_slowbeamM,WEAPON,This unique weapon of Atan-Class is a Mono CAS Beam reduced for be usable for the Atan.,,,
 ,,,,,
 SAD_booster,SHIP_SYSTEM,"Activates ancilliary thrusters as well as increasing main drive output, leading to a brief increase to maximum speed at the cost of flux.",Movement,Provides a brief boost to top speed.,
 SAD_displacer,SHIP_SYSTEM,Teleports the ship forward in the direction it's traveling. The system slowly builds up to four charges which can then be expended in short order.,Movement,Teleports the ship forward in the direction it's traveling. The system can store up to four charges at once and generates flux when used.,
@@ -83,3 +84,12 @@ And if your shield is down, it finish you with the heavy Storm Blaster installed
 SAD_MotherShip,SHIP,"Nobody knows who made this monstrosity. All they know is that it has been made out of collected scrap parts from all the shadowyard ships that are currently in use.
 
 It clearly lacks in power for a ship its size, but it has not been made for offensive use, although the SAD have stolen the blueprints of the Nidhögger lance and included it in the design. The MotherShip is a dedicated support ship that is used as a mobile shipyard, to prepare for the future sanguinary invasion",,,
+SAD_Atan_b,SHIP,"Atan-class is a ship so expensive and hard to made than everyone think than theses Anarchists have steal theses ships.
+Probably the case. The Atan is a ship with a insane speed who switch to a defensive mode if he overload or venting for reduce damage taken.
+With this insane defense and speed, the shipsystem permit to redirect some of the engine to the weapon.
+
+The Atan(B) is a damaged version who have lost their speed and the unique built-in weapon, who have be replaced per a chainGun.",,,
+SAD_Atan,SHIP,"Atan-class is a ship so expensive and hard to made than everyone think than theses Anarchists have steal theses ships.
+Probably the case. The Atan is a ship with a insane speed who switch to a defensive mode if he overload or venting for reduce damage taken.
+With this insane defense and speed, the shipsystem permit to redirect some of the engine to the weapon.
+But this ship is rare and people have just see three of them.",,,

@@ -1,3 +1,16 @@
+
+Version 0.63:(nerf)
+-Nerf of Taweret. 
+        -OP 300 from 360
+        -Armor 1000 from 1600
+	-Hull 12000 from 17000
+        -Max crew 700 from 1000
+	-Shipsystem debuff duration: 10secondes from 20 secondes.
+-Insert description of the elite rare frigate.
+-Modify the built-in of the elite rare frigate.
+
+
+
 Version 0.62:
 -One bounty have see the reward decreased.
 -Add a elite rare frigate.

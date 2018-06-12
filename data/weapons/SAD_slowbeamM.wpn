@@ -1,0 +1,56 @@
+{
+  "beamFireOnlyOnFullCharge": true,
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    200,
+    175,
+    255
+  ],
+  "displayArcRadius": 225,
+  "everyFrameEffect": "src.data.scripts.weapons.SAD_MurtiSoundPlugin",
+  "fireSoundTwo": "ms_slowBeamM_Loop",
+  "fringeColor": [
+    185,
+    60,
+    55,
+    255
+  ],
+  "glowColor": [
+    225,
+    100,
+    100,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    18.5,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SAD_slowBeamM_hardpoint_g.png",
+  "hitGlowRadius": 0,
+  "id": "SAD_slowbeamM",
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "pixelsPerTexel": 5,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 72,
+  "textureType": [
+    "graphics/fx/SAD_beam_slow_fringe.png",
+    "graphics/fx/SAD_beam_slow_core.png"
+  ],
+  "turretAngleOffsets": [
+  ],
+  "turretOffsets": [
+  ],
+  "turretSprite": "",
+  "type": "ENERGY",
+  "width": 20
+}

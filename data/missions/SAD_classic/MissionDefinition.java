@@ -25,7 +25,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         // "Tactical Objectives" on the mission detail screen
         api.addBriefingItem("Win.");
 
-       // api.addToFleet(FleetSide.PLAYER, "SAD_Atan_Standard", FleetMemberType.SHIP, true);
+        //api.addToFleet(FleetSide.PLAYER, "SAD_Atan_Standard", FleetMemberType.SHIP, true);
        // api.addToFleet(FleetSide.PLAYER, "SAD_Atan_b_Standard", FleetMemberType.SHIP, true);
 
         api.addToFleet(FleetSide.PLAYER, "SAD_Apis_Standard", FleetMemberType.SHIP, true);

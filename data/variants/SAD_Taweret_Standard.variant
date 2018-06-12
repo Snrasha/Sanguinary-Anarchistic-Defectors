@@ -5,9 +5,7 @@
   "goalVariant": true,
   "hullId": "SAD_Taweret",
   "hullMods": [
-    "targetingunit",
-    "missleracks",
-    "hardenedshieldemitter"
+    "targetingunit"
   ],
   "permaMods": [],
   "quality": 0,
@@ -41,7 +39,7 @@
         "WS0002": "SAD_wamgun",
         "WS0003": "SAD_mcepc",
         "WS0004": "SAD_mcepc",
-        "WS0023": "SAD_wamgun"
+        "WS0023": "SAD_stormBlaster"
       }
     },
     {
