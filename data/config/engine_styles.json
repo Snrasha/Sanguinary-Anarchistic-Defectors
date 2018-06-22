@@ -9,6 +9,16 @@
 		"contrailColor":[85,35,50,30],
 		"type":"GLOW" # GLOW or SMOKE
 	},
+	"R_SanguinaryFlare":{
+		"engineColor":[210,125,105,215],
+		"contrailParticleSizeMult":3,
+		"contrailParticleDuration":4,
+		"contrailParticleFinalSizeMult":0.5,
+		"contrailMaxSpeedMult":0.5,
+		"contrailAngularVelocityMult":0,
+		"contrailColor":[85,35,50,30],
+		"type":"GLOW" # GLOW or SMOKE
+	},
 	"SanguinaryFlareTeal":{
 		"engineColor":[75,165,110,215],
 		"contrailParticleSizeMult":3,
