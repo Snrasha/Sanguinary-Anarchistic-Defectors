@@ -613,7 +613,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 fleet.getFleetData().addFleetMember(member);
                 member.setFlagship(true);
                 FleetMemberAPI member2 = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "SAD_Taweret_Standard");
-                FleetMemberAPI member3 = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "SAD_Taweret_Standard");
+                FleetMemberAPI member3 = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "SAD_Niddhoggr_Standard");
                 fleet.getFleetData().addFleetMember(member2);
                 fleet.getFleetData().addFleetMember(member3);
 

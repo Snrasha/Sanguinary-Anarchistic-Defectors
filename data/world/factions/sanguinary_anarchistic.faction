@@ -149,6 +149,7 @@
 		},
 		"combatCapital":{
 			"SAD_Taweret_Standard":10,
+			"SAD_Niddhoggr_Standard":5,
 			"fallback":{"combatLarge":2},
 		},
 
