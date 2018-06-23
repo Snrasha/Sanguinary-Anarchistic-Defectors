@@ -38,6 +38,7 @@ public class SAD_DisturbSystem extends BaseShipSystemScript {
         } else {
             return;
         }
+      
         float jitterLevel;
         float jitterRangeBonus;
         if (effectLevel > 0.0F) {

@@ -9,12 +9,14 @@ public class SAD_BurnDriveStats extends BaseShipSystemScript {
         @Override
 	public void apply(MutableShipStatsAPI stats, String id, State state, float effectLevel) {
 		if (state == ShipSystemStatsScript.State.OUT) {
+                    	stats.getMaxTurnRate().unmodify(id);
+                       // stats.getAcceleration().unmodify(id);
 			stats.getMaxSpeed().unmodify(id); // to slow down ship to its regular top speed while powering drive down
 		} else {
-			stats.getMaxSpeed().modifyFlat(id, 150f * effectLevel);
-			stats.getAcceleration().modifyFlat(id, 150f * effectLevel);
+			stats.getMaxSpeed().modifyFlat(id, 300f * effectLevel);
+			stats.getAcceleration().modifyFlat(id, 300f * effectLevel);
 			//stats.getAcceleration().modifyPercent(id, 200f * effectLevel);
-                        stats.getMaxTurnRate().modifyMult(id, 2f * effectLevel);
+                        stats.getMaxTurnRate().modifyMult(id, 0.2f * effectLevel);
 		}
                 
 	}
