@@ -54,5 +54,5 @@
   ],
   "turretSprite": "graphics/weapons/SAD_slowBeamH_turret.png",
   "type": "ENERGY",
-  "width": 32
+  "width": 20
 }

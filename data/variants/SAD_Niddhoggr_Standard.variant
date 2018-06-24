@@ -20,7 +20,8 @@
         "WS0008": "SAD_mcepc",
         "WS0014": "SAD_mcepc",
         "WS0016": "SAD_mcepc",
-        "WS0018": "SAD_slowbeamH",
+        "WS0017": "SAD_slowbeamH",
+        "WS0018": "SAD_wamgun",
         "WS0022": "SAD_mcepc"
       }
     },
@@ -56,9 +57,7 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "WS0017": "SAD_wamgun"
-      }
+      "weapons": {}
     }
   ],
   "wings": [
