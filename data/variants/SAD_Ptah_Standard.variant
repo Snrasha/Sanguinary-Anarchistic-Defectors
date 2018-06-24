@@ -1,6 +1,6 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 15,
+  "fluxCapacitors": 17,
   "fluxVents": 20,
   "goalVariant": true,
   "hullId": "SAD_Ptah",

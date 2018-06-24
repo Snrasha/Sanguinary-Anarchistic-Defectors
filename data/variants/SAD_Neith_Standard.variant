@@ -1,7 +1,7 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors":10,
-  "fluxVents": 6,
+  "fluxCapacitors": 10,
+  "fluxVents": 8,
   "goalVariant": true,
   "hullId": "SAD_Neith",
   "hullMods": [],

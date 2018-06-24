@@ -1,30 +1,32 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 14,
+  "displayName": "Strange",
+  "fluxCapacitors": 2,
   "fluxVents": 20,
   "goalVariant": true,
   "hullId": "SAD_Apis",
   "hullMods": [
-    "hardenedshieldemitter"
+    "converted_hangar"
   ],
   "permaMods": [],
   "quality": 0,
-  "variantId": "SAD_Apis_Standard",
+  "variantId": "SAD_Apis_Strange",
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "MIDDLE": "SAD_mpolar"
+        "LARGE": "SAD_slowbeamH"
       }
     },
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "LARGE": "SAD_wamgun"
+        "MIDDLE": "SAD_mcepc"
       }
     }
   ],
-  "wings": []
+  "wings": [
+    "SAD_Wadjet_Wing"
+  ]
 }

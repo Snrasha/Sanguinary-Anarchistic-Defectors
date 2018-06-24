@@ -1,7 +1,7 @@
 {
   "displayName": "Missile",
   "fluxCapacitors": 13,
-  "fluxVents": 6,
+  "fluxVents": 10,
   "goalVariant": true,
   "hullId": "SAD_Imhotep",
   "hullMods": [

@@ -36,6 +36,7 @@ The medium version from the Sanguinary Anarchist use always the same ammo, but w
 SAD_stormBlaster,WEAPON,"Rotary energy weapon system with an extremely high rate of fire. With a insane ammo magazine, it can shoot for a long time before run out.
 Particle masses become unstable after a short distance and tend to detonate spectacularly when near dense concentrations of matter, such as starships.  Though it's damage against shields and armor is middling at best, the Storm Blaster shines when engaging small craft or vessels with unprotected hull.",,,
 SAD_slowbeamM,WEAPON,This unique weapon of Atan-Class is a Mono CAS Beam reduced for be usable for the Atan.,,,
+SAD_slowbeamH,WEAPON,"The Break CAS Beam is a modified weapon of Deva CAS Beam, where the damage output is insane.",,,
 ,,,,,
 SAD_booster,SHIP_SYSTEM,"Activates ancilliary thrusters as well as increasing main drive output, leading to a brief increase to maximum speed at the cost of flux.",Movement,Provides a brief boost to top speed.,
 SAD_displacer,SHIP_SYSTEM,Teleports the ship forward in the direction it's traveling. The system slowly builds up to four charges which can then be expended in short order.,Movement,Teleports the ship forward in the direction it's traveling. The system can store up to four charges at once and generates flux when used.,

@@ -1,12 +1,11 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 29,
+  "fluxCapacitors": 41,
   "fluxVents": 50,
   "goalVariant": true,
   "hullId": "SAD_Niddhoggr",
   "hullMods": [
-    "targetingunit",
-    "magazines"
+    "targetingunit"
   ],
   "permaMods": [],
   "quality": 1,
@@ -16,17 +15,12 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "SAD_mcepc",
         "WS0002": "SAD_mcepc",
-        "WS0005": "SAD_mcepc",
         "WS0006": "SAD_mcepc",
-        "WS0007": "SAD_mcepc",
         "WS0008": "SAD_mcepc",
-        "WS0013": "SAD_mcepc",
         "WS0014": "SAD_mcepc",
-        "WS0015": "SAD_mcepc",
         "WS0016": "SAD_mcepc",
-        "WS0021": "SAD_mcepc",
+        "WS0018": "SAD_slowbeamH",
         "WS0022": "SAD_mcepc"
       }
     },
@@ -34,14 +28,20 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
+        "WS0001": "SAD_mpolar",
         "WS0003": "SAD_pdcepc",
         "WS0004": "SAD_pdcepc",
+        "WS0005": "SAD_mpolar",
+        "WS0007": "SAD_mpolar",
         "WS0009": "SAD_pdcepc",
         "WS0010": "SAD_pdcepc",
         "WS0011": "SAD_pdcepc",
         "WS0012": "SAD_pdcepc",
+        "WS0013": "SAD_mpolar",
+        "WS0015": "SAD_mpolar",
         "WS0019": "SAD_pdcepc",
         "WS0020": "SAD_pdcepc",
+        "WS0021": "SAD_mpolar",
         "WS0023": "SAD_mpolar",
         "WS0024": "SAD_mpolar",
         "WS0025": "SAD_pdcepc",
@@ -57,8 +57,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0017": "SAD_wamgun",
-        "WS0018": "SAD_wamgun"
+        "WS0017": "SAD_wamgun"
       }
     }
   ],

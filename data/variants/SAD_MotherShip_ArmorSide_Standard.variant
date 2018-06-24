@@ -14,7 +14,8 @@
       "mode": "LINKED",
       "weapons": {
         "WS0001": "SAD_mpolar",
-        "WS0003": "SAD_mpolar"
+        "WS0003": "SAD_mpolar",
+        "WS0007": "SAD_slowbeamH"
       }
     },
     {
@@ -36,9 +37,7 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {
-        "WS0007": "SAD_wamgun"
-      }
+      "weapons": {}
     },
     {
       "autofire": false,

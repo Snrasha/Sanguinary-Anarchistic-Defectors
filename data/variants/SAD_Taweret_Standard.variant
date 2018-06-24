@@ -1,6 +1,6 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 37,
+  "fluxCapacitors": 39,
   "fluxVents": 50,
   "goalVariant": true,
   "hullId": "SAD_Taweret",
@@ -35,7 +35,7 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "SAD_wamgun",
+        "WS0001": "SAD_slowbeamH",
         "WS0002": "SAD_wamgun",
         "WS0003": "SAD_mcepc",
         "WS0004": "SAD_mcepc",

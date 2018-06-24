@@ -1,6 +1,8 @@
 
 Version 0.7:
 -Add the Maelstrom ship.
+-Reduce OP of Medium polarizer to 14 from 16. He is pretty bad compared to a heavy burst PD.
+-Add a mysterious weapon.
 
 
 Version 0.63:(nerf)
