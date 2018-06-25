@@ -220,8 +220,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                         List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
                         for (CampaignFleetAPI station : stations) {
                             int maxFleets = 8 + random.nextInt(5);
-                            SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
-                                    station, 1f, 2, maxFleets, 10f, 8, 24);
+                            SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(station, 1f, 2, maxFleets, 10f, 8, 24);
                             data.system.addScript(activeFleets);
                         }
                         break;
