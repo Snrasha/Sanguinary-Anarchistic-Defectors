@@ -2,7 +2,7 @@
   "id":"sad",
 	"name":"Sanguinary Anarchistic Defectors",
 	"author":"Snrasha",
-	"version":"0.7",
+	"version":"0.71",
 	"description":"Requires LazyLib,GraphicLibs. Compatible Nexerelin. Use Version Checker. With the authorization of the creator of Shadowyard. Thank Maelstrom for the Niddhoggr",
 	"gameVersion":"0.8.1a",
 	"modPlugin":"src.data.scripts.world.SAD_ModPlugin",

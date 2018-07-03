@@ -3,4 +3,7 @@
     "corvusCompatible":true,
     "dropPrisoners":false,
     "hostileToAll":2,
+    "startRelationships":{ "shadow_industry":-1},
+    "maxRelationships":{ "shadow_industry":-0.5 },
+    "morality":"amoral",
 }

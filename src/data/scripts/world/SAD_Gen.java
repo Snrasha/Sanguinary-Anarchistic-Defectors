@@ -149,8 +149,9 @@ public class SAD_Gen implements SectorGeneratorPlugin {
         factionList.remove(sad);
 
         for (FactionAPI faction : factionList) {
-            sad.setRelationship(faction.getId(), RepLevel.NEUTRAL);
+            sad.setRelationship(faction.getId(), RepLevel.HOSTILE);
         }
+        sad.setRelationship(Factions.INDEPENDENT, RepLevel.NEUTRAL);
         sad.setRelationship(Factions.PLAYER,RepLevel.HOSTILE);
 
     }
