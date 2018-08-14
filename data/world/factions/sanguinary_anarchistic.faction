@@ -144,8 +144,12 @@
 		},
 		"combatLarge":{
 			"SAD_Maat_Standard":16,
+			"SAD_Owclaw_Another":6,
+			"SAD_Owclaw_Attack":6,							
 			"SAD_Imhotep_Missile":8,
 			"SAD_Imhotep_Standard":8,
+			"SAD_Taweret_Standard":2,
+			"SAD_Niddhoggr_Standard":1,
 			"fallback":{"combatMedium":2},
 		},
 		"combatCapital":{

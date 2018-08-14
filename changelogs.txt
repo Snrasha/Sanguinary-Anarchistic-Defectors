@@ -1,4 +1,12 @@
 
+
+Version 0.8:
+-Add a ship, because why not? Will maybe fix the problem of lack of large weapon.
+-Reduce the sound of the burst beam.
+-Bla bla bla.
+
+
+
 Version 0.71:
 -Fix relation  where faction is not hostile against this sub-faction.
 

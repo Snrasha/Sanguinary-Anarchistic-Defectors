@@ -1,10 +1,12 @@
 {
   "displayName": "Another",
   "fluxCapacitors": 3,
-  "fluxVents": 15,
+  "fluxVents": 30,
   "goalVariant": true,
   "hullId": "SAD_Owclaw",
-  "hullMods": [],
+  "hullMods": [
+    "targetingunit"
+  ],
   "permaMods": [],
   "quality": 0,
   "variantId": "SAD_Owclaw_Another",
