@@ -17,8 +17,7 @@ public class SAD_ModPlugin extends BaseModPlugin {
     
   public static final String SIMPLE_SHRIKE = "SAD_shrike";
   public static boolean templarsExist = false;
-  
-  
+
   @Override
   public void onApplicationLoad() {
     templarsExist = Global.getSettings().getModManager().isModEnabled("Templars");

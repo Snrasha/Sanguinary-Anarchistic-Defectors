@@ -113,18 +113,18 @@
             {"file":"sounds/shadow_fx/fx/shadow_weapons/polarizer_impact2.ogg","pitch":1.24,"volume":0.7}
         ],
     },
-    "ms_slowBeamM_charge":{
+    "SAD_slowBeamM_charge":{
         "sounds": [
-            {"file":"sounds/shadow_fx/fx/shadow_weapons/slowBeamM_Charge.ogg","pitch":1,"volume":0.6}
+            {"file":"sounds/shadow_fx/fx/shadow_weapons/slowBeamM_Charge.ogg","pitch":0.5,"volume":0.6}
         ]
     },
 
-    "ms_slowBeamM_Loop":{
+    "SAD_slowBeamM_Loop":{
         "sounds": [
-            {"file":"sounds/shadow_fx/fx/shadow_weapons/slowBeamM_Loop.ogg","pitch":1,"volume":0.6}
+            {"file":"sounds/shadow_fx/fx/shadow_weapons/slowBeamM_Loop.ogg","pitch":0.5,"volume":0.6}
         ]
     },
-    
+
 
     "stormblaster_fire":{
         "sounds":[

@@ -9,7 +9,7 @@
     255
   ],
   "everyFrameEffect": "src.data.scripts.weapons.SAD_MurtiSoundPlugin",
-  "fireSoundTwo": "ms_slowBeamM_Loop",
+  "fireSoundTwo": "SAD_slowBeamM_Loop",
   "fringeColor": [
     185,
     60,
