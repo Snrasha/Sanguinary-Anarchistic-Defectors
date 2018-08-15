@@ -84,7 +84,7 @@ public class SAD_MurtiSoundPlugin implements EveryFrameWeaponEffectPlugin {
             }
         } else if ((weapon.getChargeLevel() > 0.0F) && (weapon.getCooldownRemaining() <= 0.0F)) {
             charging = true;
-            Global.getSoundPlayer().playSound("SAD_slowBeamM_charge", 0.5F, 0.5F, point1, weapon.getShip().getVelocity());
+            //Global.getSoundPlayer().playSound("SAD_slowBeamM_charge", 0.5F, 0.5F, point1, weapon.getShip().getVelocity());
         }
 
         last_charge_level = charge_level;

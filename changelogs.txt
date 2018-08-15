@@ -1,5 +1,10 @@
 
 
+
+Version 0.81:
+-Add a GS compatibility
+
+
 Version 0.8:
 -Add a ship, because why not? Will maybe fix the problem of lack of large weapon.
 -Reduce the sound of the burst beam.
