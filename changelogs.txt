@@ -1,8 +1,8 @@
 
-
-
 Version 0.81:
 -Add a GS compatibility
+-Add a phase ship.
+-Nerf the owclaw flux dissipation 500 from 740
 
 
 Version 0.8:

@@ -120,7 +120,7 @@
 			"SAD_Neith_Standard":5,
 			"SAD_Thoth_Standard":5,
 			"SAD_Thoth_Missile":5,
-
+			"SAD_Babi_Standard":2,
 			"fallback":{"combatSmall":1},
 		},
 		"escortMedium":{
@@ -140,12 +140,13 @@
 			"SAD_Ptah_Standard":15,
 			"SAD_Apis_Standard":3,
 			"SAD_Apis_Strange":3,
+			"SAD_Babi_Standard":3,
 			"fallback":{"combatSmall":2},
 		},
 		"combatLarge":{
 			"SAD_Maat_Standard":16,
 			"SAD_Owclaw_Another":6,
-			"SAD_Owclaw_Attack":6,							
+			"SAD_Owclaw_Attack":6,
 			"SAD_Imhotep_Missile":8,
 			"SAD_Imhotep_Standard":8,
 			"SAD_Taweret_Standard":2,

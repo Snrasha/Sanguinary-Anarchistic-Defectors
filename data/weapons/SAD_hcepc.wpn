@@ -1,0 +1,50 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "cepc_midline",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGunSprite": "",
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hardpointUnderSprite": "",
+  "id": "SAD_hcepc",
+  "muzzleFlashSpec": {
+    "length": 20,
+    "particleColor": [
+      250,
+      135,
+      75,
+      255
+    ],
+    "particleCount": 14,
+    "particleDuration": 0.12,
+    "particleSizeMin": 6,
+    "particleSizeRange": 6,
+    "spread": 0
+  },
+  "projectileSpecId": "SAD_cepc_blast",
+  "renderHints": [
+    RENDER_BARREL_BELOW
+  ],
+  "size": "SMALL",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGunSprite": "graphics/weapons/SAD_hcepc_turret_recoil.png",
+  "turretOffsets": [
+  18.5,
+  2
+  ],
+  "turretSprite": "graphics/weapons/SAD_hcepc_turret_base.png",
+  "turretUnderSprite": "graphics/weapons/SAD_hcepc_turret_under.png",
+  "type": "ENERGY",
+  "visualRecoil": 4
+}

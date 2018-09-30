@@ -1,0 +1,3 @@
+-Le stormblaster built-in du Taweret bug au niveau des sprites, voir le gif, quand il tire, il vibre(décalage de pixel)
+
+-Mettre des synergy mounts sur le niddhoggr

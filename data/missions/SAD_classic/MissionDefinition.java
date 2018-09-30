@@ -27,7 +27,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
 
         //api.addToFleet(FleetSide.PLAYER, "SAD_Atan_Standard", FleetMemberType.SHIP, true);
        // api.addToFleet(FleetSide.PLAYER, "SAD_Atan_b_Standard", FleetMemberType.SHIP, true);
-
+        api.addToFleet(FleetSide.PLAYER, "SAD_Babi_Standard", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Apis_Standard", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Hapy_Burst", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "SAD_Imhotep_Standard", FleetMemberType.SHIP, true);

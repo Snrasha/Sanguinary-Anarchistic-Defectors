@@ -7,7 +7,6 @@
 
     "mainShip":"SAD_Taweret_Standard", # Flag Ship variant
     "ships":[], # Variants added after the mainShip
-
     "randomFleet":true, # If random fleet(from the faction) will be added.
     "reward":500000, # Bounty reward.
     "combatPoints":40,

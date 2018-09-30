@@ -1,54 +1,52 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 41,
+  "fluxCapacitors": 39,
   "fluxVents": 50,
   "goalVariant": true,
   "hullId": "SAD_Niddhoggr",
   "hullMods": [
-    "targetingunit"
+    "targetingunit",
+    "magazines",
+    "missleracks"
   ],
   "permaMods": [],
   "quality": 1,
   "variantId": "SAD_Niddhoggr_Standard",
   "weaponGroups": [
     {
-      "autofire": true,
+      "autofire": false,
       "mode": "LINKED",
       "weapons": {
-        "WS0002": "SAD_mcepc",
-        "WS0006": "SAD_mcepc",
-        "WS0008": "SAD_mcepc",
-        "WS0014": "SAD_mcepc",
-        "WS0016": "SAD_mcepc",
-        "WS0017": "SAD_slowbeamH",
-        "WS0018": "SAD_wamgun",
-        "WS0022": "SAD_mcepc"
+        "WS0001": "SAD_shrike_pod",
+        "WS0002": "SAD_shrike_pod",
+        "WS0005": "SAD_shrike_pod",
+        "WS0006": "SAD_shrike_pod",
+        "WS0013": "SAD_shrike_pod",
+        "WS0014": "SAD_shrike_pod",
+        "WS0015": "SAD_shrike_pod",
+        "WS0016": "SAD_shrike_pod",
+        "WS0023": "SAD_shrike_pod",
+        "WS0024": "SAD_shrike_pod",
+        "WS0027": "SAD_shrike_rack",
+        "WS0028": "SAD_shrike_rack"
       }
     },
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "SAD_mpolar",
         "WS0003": "SAD_pdcepc",
         "WS0004": "SAD_pdcepc",
-        "WS0005": "SAD_mpolar",
         "WS0007": "SAD_mpolar",
         "WS0009": "SAD_pdcepc",
         "WS0010": "SAD_pdcepc",
         "WS0011": "SAD_pdcepc",
         "WS0012": "SAD_pdcepc",
-        "WS0013": "SAD_mpolar",
-        "WS0015": "SAD_mpolar",
         "WS0019": "SAD_pdcepc",
         "WS0020": "SAD_pdcepc",
         "WS0021": "SAD_mpolar",
-        "WS0023": "SAD_mpolar",
-        "WS0024": "SAD_mpolar",
         "WS0025": "SAD_pdcepc",
         "WS0026": "SAD_pdcepc",
-        "WS0027": "SAD_pdcepc",
-        "WS0028": "SAD_pdcepc",
         "WS0029": "SAD_pdcepc",
         "WS0030": "SAD_pdcepc",
         "WS0031": "SAD_pdcepc"
@@ -57,7 +55,18 @@
     {
       "autofire": true,
       "mode": "LINKED",
-      "weapons": {}
+      "weapons": {
+        "WS0008": "SAD_mcepc",
+        "WS0018": "SAD_wamgun",
+        "WS0022": "SAD_mcepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0017": "SAD_slowbeamH"
+      }
     }
   ],
   "wings": [
