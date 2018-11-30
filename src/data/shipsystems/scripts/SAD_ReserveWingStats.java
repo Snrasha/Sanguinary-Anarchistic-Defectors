@@ -27,7 +27,7 @@ public class SAD_ReserveWingStats extends BaseShipSystemScript {
                 bay.makeCurrentIntervalFast();
                 FighterWingSpecAPI spec = bay.getWing().getSpec();
 
-                int addForWing = getAdditionalFor(spec);
+                int addForWing = getAdditionalFor(spec,stats);
                 int maxTotal = spec.getNumFighters() + addForWing;
                 int actualAdd = maxTotal - bay.getWing().getWingMembers().size();
                 actualAdd = Math.min(spec.getNumFighters(), actualAdd);
@@ -41,8 +41,8 @@ public class SAD_ReserveWingStats extends BaseShipSystemScript {
         }
     }
 
-    public static int getAdditionalFor(FighterWingSpecAPI spec) {
-        if(spec.getOpCost()>=16) return 0;
+    public static int getAdditionalFor(FighterWingSpecAPI spec,MutableShipStatsAPI stats) {
+        if(spec.getOpCost(stats)>=16) return 0;
         if(spec.getNumFighters()<2) return 1;
         return 2;
     }

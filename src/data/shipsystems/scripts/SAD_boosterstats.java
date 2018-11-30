@@ -1,9 +1,10 @@
 package src.data.shipsystems.scripts;
 
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
+import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 
-public class SAD_boosterstats implements com.fs.starfarer.api.plugins.ShipSystemStatsScript
-{
+public class SAD_boosterstats extends BaseShipSystemScript {
+
   public SAD_boosterstats() {}
   
   @Override

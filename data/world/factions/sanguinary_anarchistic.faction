@@ -108,98 +108,54 @@
 	"custom":{
 		"engageWhenEvenStrength":true,
 		"allowsTransponderOffTrade":true, # to prevent cargoscan dialog from "patrols"
+		"punitiveExpeditionData":{
+		"vsCompetitors":true,
+		"vsFreePort":true,
+		"canBombard":true,
+		"territorial":true,
+		 },
+		 "engagesInHostilities":true,
+		 "exemptFromFoodShortages":true,
 	},
-	"shipRoles":{
-		"fastAttack":{
-			"fallback":{"combatSmall":1},
-		},
-		"escortSmall":{
-			"SAD_Hapy_Burst":5,
-			"SAD_Hapy_Missile":5,
-			"SAD_Neith_Missile":5,
-			"SAD_Neith_Standard":5,
-			"SAD_Thoth_Standard":5,
-			"SAD_Thoth_Missile":5,
-			"SAD_Babi_Standard":2,
-			"fallback":{"combatSmall":1},
-		},
-		"escortMedium":{
-			"fallback":{"combatMedium":1},
-		},
-		"combatSmall":{
-		"SAD_Hapy_Burst":5,
-		"SAD_Hapy_Missile":5,
-		"SAD_Neith_Missile":5,
-		"SAD_Neith_Standard":5,
-		"SAD_Thoth_Standard":5,
-		"SAD_Thoth_Missile":5,
-			"fallback":{"escortSmall":1},
-		},
-		"combatMedium":{
-			"SAD_Khonsu_Standard":15,
-			"SAD_Ptah_Standard":15,
-			"SAD_Apis_Standard":3,
-			"SAD_Apis_Strange":3,
-			"SAD_Babi_Standard":3,
-			"fallback":{"combatSmall":2},
-		},
-		"combatLarge":{
-			"SAD_Maat_Standard":16,
-			"SAD_Owclaw_Another":6,
-			"SAD_Owclaw_Attack":6,
-			"SAD_Imhotep_Missile":8,
-			"SAD_Imhotep_Standard":8,
-			"SAD_Taweret_Standard":2,
-			"SAD_Niddhoggr_Standard":1,
-			"fallback":{"combatMedium":2},
-		},
-		"combatCapital":{
-			"SAD_Taweret_Standard":10,
-			"SAD_Niddhoggr_Standard":5,
-			"fallback":{"combatLarge":2},
-		},
-
-
-		"carrierSmall":{
-		  "SAD_Seshat_Standard":4,
-			"fallback":{"carrierMedium":0.5},
-		},
-		"carrierMedium":{
-		"SAD_Hathor_Standard":4,
-			"fallback":{"carrierSmall":2},
-		},
-		"carrierLarge":{
-		"SAD_Imhotep_Missile":2,
-		"SAD_Imhotep_Standard":2,
-			"fallback":{"carrierMedium":3},
-		},
-
-		"freighterSmall":{
-	"fallback":{"freighterMedium":1},
-		},
-		"freighterMedium":{
-		"SAD_Qadesh_Standard":2,
-	"fallback":{"freighterSmall":2},
-		},
-		"freighterLarge":{
-	"fallback":{"freighterMedium":2},
-		},
-		"tankerSmall":{
-	"fallback":{"tankerMedium":1},
-		},
-		"tankerMedium":{
-		"SAD_Tefnut_Standard":2,
-	"fallback":{"tankerSmall":2},
-		},
-		"tankerLarge":{
-	"fallback":{"tankerMedium":2},
-		},
-
-
-		"remnantStation1":{
-			"SAD_MotherShip_Standard":10,
-		},
+	# variantOverrides restricts hulls to listed variants and adjusts their probability
+	"variantOverrides":{
 	},
+	"hullFrequency":{
+		"tags":{"sad_bp":10,
+			"sad_special":10,
+		},
+		#"hulls":{    },
+	},
+	"shipsWhenImporting":{
+		"tags":["sad_bp", "sad_special"],
+		#"hulls":[],
+	},
+	"knownShips":{
+		"tags":["sad_bp", "sad_special"],
+		#"hulls":["prometheus","atlas"]
+	},
+	"priorityShips":{
+		"tags":["sad_bp", "sad_special"],
+		#"hulls":[],
+	},
+
+	"knownFighters":{
+		"tags":["sad_bp", "sad_special"],
+		#"fighters":[],
+	},
+	"priorityFighters":{
+		"tags":["sad_bp", "sad_special"],
+		#"fighters":[],
+	},
+	"knownWeapons":{
+		"tags":["sad_bp", "sad_special"],
+			#"weapons":[]
+		},
+		"priorityWeapons":{
+			"tags":["sad_bp", "sad_special"],
+				#"weapons":[]
+			},
+
 
 	"fleetTypeNames":{
 		"patrolSmall":"Raiders",
@@ -207,47 +163,9 @@
 		"patrolLarge":"Armada",
 		"battlestation":"Battlestation",
 	},
-	"doctrine":{
-		# ship distribution
-		"fighters":6,
-		"small":10,
-		"fast":4,
-		"medium":8,
-		"large":8,
-		"capital":2,
 
-		# as fraction of combat ships of same size
-		## less bothered with escorts.
-		"escortSmallFraction":0.8,
-		"escortMediumFraction":0.8,
-
-		# everyone must fight!
-		"combatFreighterProbability":0.75,
-
-		"minPointsForCombatCapital":24,
-		"minPointsForLargeCarrier":30,
-
-		"smallCarrierProbability":0.30,
-		"mediumCarrierProbability":0.30,
-		"largeCarrierProbability":0.30,
-
-		# officers
-		"officersPerPoint":0.35,
-		"officerLevelPerPoint":0.4,
-		"officerLevelBase":6,
-		"officerLevelVariance":0.4,
-
-		"commanderSkillsPerLevel":0.2,
-		"commanderSkillChance":0.4,
-		"commanderSkillLevelPerLevel":0.15,
-		"commanderSkills":{
-			"officer_management":6,
-			"coordinated_maneuvers":6,
-			"fighter_doctrine":9,
-			"electronic_warfare":9,
-	        }
-	},
 	"traits":{
+		"admiral": {},
 		"captain":{
 			"timid":1,
 			"cautious":1,
@@ -255,5 +173,30 @@
 			"aggressive":10,
 			"reckless":3,
 		},
+	},
+	"factionDoctrine":{
+			"warships":4,
+			"carriers":2,
+			"phaseShips":1,
+
+			"officerQuality":1,
+			"shipQuality":1,
+			"numShips":5,
+
+			"shipSize":3,
+			"aggression":4,
+
+			"combatFreighterProbability":0.25,     				# instead of some portion of the freighters in a fleet
+			"combatFreighterCombatUseFraction":0.25,  				# as part of the normal combat lineup
+			"combatFreighterCombatUseFractionWhenPriority":0.20,# as part of normal combat lineup, when marked as priority ship
+			"autofitRandomizeProbability":0.10,
+
+			"commanderSkillsShuffleProbability":0.5,
+			"commanderSkills":[
+					"electronic_warfare",
+					"fighter_doctrine",
+					"officer_management",
+					"coordinated_maneuvers",
+			],
 	},
 },

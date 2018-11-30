@@ -1,8 +1,16 @@
 
+Version 0.81b:
+-Fix the phase ship(Babi) mount
+-Fix the shipsystem of Babi.
+
+
+
 Version 0.81:
 -Add a GS compatibility
 -Add a phase ship.
 -Nerf the owclaw flux dissipation 500 from 740
+-Fix weapon pixel
+-Increase power of the niddhoggr, replace some energy mount per synergy
 
 
 Version 0.8:

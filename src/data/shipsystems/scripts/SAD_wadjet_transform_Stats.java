@@ -5,10 +5,10 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import java.util.Iterator;
 
-public class SAD_wadjet_transform_Stats implements ShipSystemStatsScript {
+public class SAD_wadjet_transform_Stats extends BaseShipSystemScript {
 
     private CombatEngineAPI engine;
 

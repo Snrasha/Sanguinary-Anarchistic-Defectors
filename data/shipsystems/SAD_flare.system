@@ -1,0 +1,11 @@
+{
+	"id":"SAD_flare",
+	"type":"WEAPON",
+	"aiType":"FLARE",
+	"weaponDataId":"SAD_flareLauncher",
+
+	"outOfUsesSound":"gun_out_of_ammo",
+
+	"aiHints":{
+	}
+}

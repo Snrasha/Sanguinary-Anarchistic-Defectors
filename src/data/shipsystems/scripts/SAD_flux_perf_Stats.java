@@ -5,12 +5,13 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import com.fs.starfarer.api.util.Misc;
 import java.awt.Color;
 import java.util.EnumSet;
 
-public class SAD_flux_perf_Stats implements ShipSystemStatsScript {
+public class SAD_flux_perf_Stats extends BaseShipSystemScript {
 
     public static final Color JITTER_UNDER_COLOR = new Color(255, 50, 0, 125);
     private CombatEngineAPI engine;

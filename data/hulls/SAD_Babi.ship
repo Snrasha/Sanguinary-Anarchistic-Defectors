@@ -165,9 +165,9 @@
         9.5,
         46.5
       ],
-      "mount": "TURRET",
+      "mount": "HIDDEN",
       "size": "SMALL",
-      "type": "BUILT_IN"
+      "type": "SYSTEM"
     }
   ],
   "width": 108

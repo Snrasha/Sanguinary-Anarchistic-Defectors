@@ -28,13 +28,14 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.BaseF
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfig;
 import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDConfigGen;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV2;
+import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.ids.Abilities;
 import com.fs.starfarer.api.impl.campaign.ids.Entities;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
+import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.procgen.Constellation;
 import com.fs.starfarer.api.impl.campaign.procgen.DefenderDataOverride;
 import com.fs.starfarer.api.impl.campaign.procgen.NameAssigner;
@@ -43,6 +44,11 @@ import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner.
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
+import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.DEBUG;
+import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.computeSystemData;
+import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.convertOrbitWithSpin;
+import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.pickCommonLocation;
+import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.setEntityLocation;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.ThemeGenContext;
 import src.data.utils.SAD_Tags;
@@ -50,16 +56,15 @@ import src.data.utils.SAD_themes;
 
 public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
-    public static enum ForgottenSystemType {
+    public static enum SAD_SystemType {
 
-        DESTROYED(SAD_Tags.THEME_SAD_DESTROYED, "$sadDestroyed"),
         SUPPRESSED(SAD_Tags.THEME_SAD_SUPPRESSED, "$sadSuppressed"),
         RESURGENT(SAD_Tags.THEME_SAD_RESURGENT, "$sadResurgent"),;
 
         private String tag;
         private String beaconFlag;
 
-        private ForgottenSystemType(String tag, String beaconFlag) {
+        private SAD_SystemType(String tag, String beaconFlag) {
             this.tag = tag;
             this.beaconFlag = beaconFlag;
         }
@@ -73,8 +78,8 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         }
     }
 
-    public static final int MIN_CONSTELLATIONS_WITH_FORGOTTEN = 15;//15
-    public static final int MAX_CONSTELLATIONS_WITH_FORGOTTEN = 25;//25
+    public static final int MIN_CONSTELLATIONS_WITH_SAD = 5;//15
+    public static final int MAX_CONSTELLATIONS_WITH_SAD = 10;//25
 
     public static float CONSTELLATION_SKIP_PROB = 0.25f;
 
@@ -84,21 +89,17 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
     }
 
     @Override
-    public void generateForSector(ThemeGenContext context, float allowedSectorFraction) {
+    public void generateForSector(ThemeGenContext context, float allowedUnusedFraction) {
 
-        float total = (float) (context.constellations.size() - context.majorThemes.size()) * allowedSectorFraction;
+        float total = (float) (context.constellations.size() - context.majorThemes.size()) * allowedUnusedFraction;
         if (total <= 0) {
             return;
         }
 
-        int num = (int) StarSystemGenerator.getNormalRandom(MIN_CONSTELLATIONS_WITH_FORGOTTEN, MAX_CONSTELLATIONS_WITH_FORGOTTEN);
+        int num = (int) StarSystemGenerator.getNormalRandom(MIN_CONSTELLATIONS_WITH_SAD, MAX_CONSTELLATIONS_WITH_SAD);
+        //num = 30;
         if (num > total) {
             num = (int) total;
-        }
-
-        int numDestroyed = (int) (num * (0.23f + 0.1f * random.nextFloat()));
-        if (numDestroyed < 1) {
-            numDestroyed = 1;
         }
         int numSuppressed = (int) (num * (0.23f + 0.1f * random.nextFloat()));
         if (numSuppressed < 1) {
@@ -108,7 +109,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         float suppressedStationMult = 0.5f;
         int suppressedStations = (int) Math.ceil(numSuppressed * suppressedStationMult);
 
-        WeightedRandomPicker<Boolean> addSuppressedStation = new WeightedRandomPicker<Boolean>(random);
+        WeightedRandomPicker<Boolean> addSuppressedStation = new WeightedRandomPicker<>(random);
         for (int i = 0; i < numSuppressed; i++) {
             if (i < suppressedStations) {
                 addSuppressedStation.add(true, 1f);
@@ -120,34 +121,23 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         List<Constellation> constellations = getSortedAvailableConstellations(context, false, new Vector2f(), null);
         Collections.reverse(constellations);
 
-        float skipProb = CONSTELLATION_SKIP_PROB;
-        if (total < num / (1f - skipProb)) {
-            skipProb = 1f - (num / total);
-        }
-        skipProb = 0f;
-
-        List<StarSystemData> forgottenSystems = new ArrayList<StarSystemData>();
+        List<StarSystemData> sadSystems = new ArrayList<>();
 
         if (DEBUG) {
             System.out.println("\n\n\n");
         }
         if (DEBUG) {
-            System.out.println("Generating SAD systems");
+            System.out.println("Generating sad systems");
         }
 
         int numUsed = 0;
         for (int i = 0; i < num && i < constellations.size(); i++) {
             Constellation c = constellations.get(i);
-            if (random.nextFloat() < skipProb) {
-                if (DEBUG) {
-                    System.out.println("Skipping constellation " + c.getName());
-                }
-                continue;
-            }
 
-            List<StarSystemData> systems = new ArrayList<StarSystemData>();
+            List<StarSystemData> systems = new ArrayList<>();
             for (StarSystemAPI system : c.getSystems()) {
                 StarSystemData data = computeSystemData(system);
+                if(!data.system.hasTag(Tags.THEME_REMNANT))
                 systems.add(data);
             }
 
@@ -164,14 +154,12 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 continue;
             }
 
-            ForgottenSystemType type = ForgottenSystemType.RESURGENT;
-            if (numUsed < numDestroyed) {
-                type = ForgottenSystemType.DESTROYED;
-            } else if (numUsed < numDestroyed + numSuppressed) {
-                type = ForgottenSystemType.SUPPRESSED;
+            SAD_SystemType type = SAD_SystemType.RESURGENT;
+            if (numUsed < numSuppressed) {
+                type = SAD_SystemType.SUPPRESSED;
             }
 
-            context.majorThemes.put(c, SAD_themes.SAD);
+            context.majorThemes.put(c, getThemeId());
             numUsed++;
 
             if (DEBUG) {
@@ -184,48 +172,38 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 data.system.addTag(SAD_Tags.THEME_SAD);
                 data.system.addTag(SAD_Tags.THEME_SAD_MAIN);
                 data.system.addTag(type.getTag());
-                forgottenSystems.add(data);
+                sadSystems.add(data);
 
                 if (!NameAssigner.isNameSpecial(data.system)) {
                     NameAssigner.assignSpecialNames(data.system);
                 }
 
-                switch (type) {
-                    case DESTROYED: {
-                        SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 3, 8, 4, 12, 0.25f);
-                        data.system.addScript(fleets);
-                        break;
+                if (type == SAD_SystemType.SUPPRESSED) {
+                    SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 7, 12, 4, 12, 0.25f);
+                    data.system.addScript(fleets);
+
+                    Boolean addStation = random.nextFloat() < suppressedStationMult;
+                    if (j == 0 && !addSuppressedStation.isEmpty()) {
+                        addSuppressedStation.pickAndRemove();
                     }
-                    case SUPPRESSED: {
-                        SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 7, 12, 8, 20, 0.25f);
-                        data.system.addScript(fleets);
-                        Boolean addStation = random.nextFloat() < suppressedStationMult;
-                        if (j == 0 && !addSuppressedStation.isEmpty()) {
-                            addSuppressedStation.pickAndRemove();
-                        }
-                        if (addStation) {
+                    if (addStation) {
                             List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
-                            for (CampaignFleetAPI station : stations) {
-
-                                int maxFleets = 2 + random.nextInt(3);
-                                SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
-                                        station, 1f, 0, maxFleets, 20f, 6, 12);
-                                data.system.addScript(activeFleets);
-                            }
-
-                        }
-                        break;
-                    }
-                    case RESURGENT:
-                        List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
                         for (CampaignFleetAPI station : stations) {
-                            int maxFleets = 8 + random.nextInt(5);
-                            SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(station, 1f, 2, maxFleets, 10f, 8, 24);
+                            int maxFleets = 2 + random.nextInt(3);
+                            SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
+                                    station, 1f, 0, maxFleets, 20f, 6, 12);
                             data.system.addScript(activeFleets);
                         }
-                        break;
-                    default:
-                        break;
+
+                    }
+                } else if (type == SAD_SystemType.RESURGENT) {
+                            List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
+                    for (CampaignFleetAPI station : stations) {
+                        int maxFleets = 8 + random.nextInt(5);
+                        SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
+                                station, 1f, 0, maxFleets, 10f, 8, 24);
+                        data.system.addScript(activeFleets);
+                    }
                 }
             }
 
@@ -238,123 +216,46 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 populateNonMain(data);
 
                 data.system.addTag(SAD_Tags.THEME_SAD);
-                data.system.addTag(SAD_Tags.THEME_SAD_SECONDARY);
+                data.system.addTag(SAD_Tags.THEME_SAD_MAIN);
                 data.system.addTag(type.getTag());
-                forgottenSystems.add(data);
+                sadSystems.add(data);
 
-                if (random.nextFloat() < 0.5f) {
-                    SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 1, 3, 1, 2, 0.05f);
-                    data.system.addScript(fleets);
-                }
+                SAD_SeededFleetManager fleets = new SAD_SeededFleetManager(data.system, 1, 3, 1, 2, 0.05f);
+                data.system.addScript(fleets);
             }
         }
 
         SpecialCreationContext specialContext = new SpecialCreationContext();
         specialContext.themeId = getThemeId();
-        SalvageSpecialAssigner.assignSpecials(forgottenSystems, specialContext);
-
-        addDefenders(forgottenSystems);
-
+        SalvageSpecialAssigner.assignSpecials(sadSystems, specialContext);
         if (DEBUG) {
-            System.out.println("Finished generating SAD systems\n\n\n\n\n");
-        }
-    }
-
-    public void addDefenders(List<StarSystemData> systemData) {
-        for (StarSystemData data : systemData) {
-            float mult = 1f;
-            if (data.system.hasTag(SAD_Tags.THEME_SAD_SECONDARY)) {
-                mult = 0.5f;
-            }
-
-            for (AddedEntity added : data.generated) {
-                if (added.entityType == null) {
-                    continue;
-                }
-                if (Entities.WRECK.equals(added.entityType)) {
-                    continue;
-                }
-
-                float prob = 0f;
-                float min = 1f;
-                float max = 1f;
-                if (Entities.STATION_MINING_REMNANT.equals(added.entityType)) {
-                    prob = 0.25f;
-                    min = 8;
-                    max = 15;
-                } else if (Entities.ORBITAL_HABITAT_REMNANT.equals(added.entityType)) {
-                    prob = 0.25f;
-                    min = 8;
-                    max = 15;
-                } else if (Entities.STATION_RESEARCH_REMNANT.equals(added.entityType)) {
-                    prob = 0.25f;
-                    min = 10;
-                    max = 20;
-                }
-
-                prob *= mult;
-                min *= mult;
-                max *= mult;
-                if (min < 1) {
-                    min = 1;
-                }
-                if (max < 1) {
-                    max = 1;
-                }
-
-                if (random.nextFloat() < prob) {
-                    Misc.setDefenderOverride(added.entity, new DefenderDataOverride("sad", 1f, min, max, 4));
-                }
-            }
+            System.out.println("Finished generating sad systems\n\n\n\n\n");
         }
 
     }
 
     public void populateNonMain(StarSystemData data) {
         if (DEBUG) {
-            System.out.println(" Generating secondary SAD system in " + data.system.getName());
+            System.out.println(" Generating secondary sad system in " + data.system.getName());
         }
-        boolean special = data.isBlackHole() || data.isNebula() || data.isPulsar();
-        if (special) {
-            addResearchStations(data, 0.75f, 1, 1, createStringPicker(Entities.STATION_RESEARCH_REMNANT, 10f));
-        }
+            addResearchStations(data, 0.75f, 1, 1, createStringPicker(Entities.STATION_RESEARCH, 10f));
 
         if (random.nextFloat() < 0.5f) {
             return;
         }
-
-        if (!data.resourceRich.isEmpty()) {
-            addMiningStations(data, 0.5f, 1, 1, createStringPicker(Entities.STATION_MINING_REMNANT, 10f));
-        }
-
-        if (!special && !data.habitable.isEmpty()) {
-            // ruins on planet, or orbital station
-            addHabCenters(data, 0.25f, 1, 1, createStringPicker(Entities.ORBITAL_HABITAT_REMNANT, 10f));
-        }
-
         addShipGraveyard(data, 0.05f, 1, 1,
-                createStringPicker(Factions.TRITACHYON, 0f, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
-
+                createStringPicker(Factions.TRITACHYON, 10f, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
         addDebrisFields(data, 0.25f, 1, 2);
 
         addDerelictShips(data, 0.5f, 0, 3,
-                createStringPicker(Factions.TRITACHYON, 0f, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
-
-        addCaches(data, 0.25f, 0, 2, createStringPicker(
-                Entities.WEAPONS_CACHE_REMNANT, 4f,
-                Entities.WEAPONS_CACHE_SMALL_REMNANT, 10f,
-                Entities.SUPPLY_CACHE, 4f,
-                Entities.SUPPLY_CACHE_SMALL, 10f,
-                Entities.EQUIPMENT_CACHE, 4f,
-                Entities.EQUIPMENT_CACHE_SMALL, 10f
-        ));
+                createStringPicker(Factions.TRITACHYON, 10f, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
 
     }
 
-    public void populateMain(StarSystemData data, ForgottenSystemType type) {
+    public void populateMain(StarSystemData data, SAD_SystemType type) {
 
         if (DEBUG) {
-            System.out.println(" Generating SAD center in " + data.system.getName());
+            System.out.println(" Generating sad center in " + data.system.getName());
         }
 
         StarSystemAPI system = data.system;
@@ -375,53 +276,29 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             level = HabitationLevel.HIGH;
         }
 
-        addHabCenters(data, 1, maxHabCenters, maxHabCenters, createStringPicker(Entities.ORBITAL_HABITAT_REMNANT, 10f));
-
-        // add various stations, orbiting entities, etc
-        float probGate = 1f;
         float probRelay = 1f;
-        float probMining = 0.5f;
         float probResearch = 0.25f;
 
         switch (level) {
             case HIGH:
-                probGate = 0.75f;
                 probRelay = 1f;
                 break;
             case MEDIUM:
-                probGate = 0.5f;
                 probRelay = 0.75f;
                 break;
             case LOW:
-                probGate = 0.25f;
                 probRelay = 0.5f;
                 break;
         }
-
-        addCommRelay(data, probRelay);
-        addInactiveGate(data, probGate, 0.5f, 0.5f,
-                createStringPicker(Factions.TRITACHYON, 0, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
-
+        addObjectives(data, probRelay);
         addShipGraveyard(data, 0.25f, 1, 1,
-                createStringPicker(Factions.TRITACHYON, 0, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
-
-        addMiningStations(data, probMining, 1, 1, createStringPicker(Entities.STATION_MINING_REMNANT, 10f));
-
-        addResearchStations(data, probResearch, 1, 1, createStringPicker(Entities.STATION_RESEARCH_REMNANT, 10f));
+                createStringPicker(Factions.TRITACHYON, 10f, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
+        addResearchStations(data, probResearch, 2, 2, createStringPicker(Entities.STATION_RESEARCH, 10f));
 
         addDebrisFields(data, 0.75f, 1, 5);
-
         addDerelictShips(data, 0.75f, 0, 7,
-                createStringPicker(Factions.TRITACHYON, 0, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
+                createStringPicker(Factions.TRITACHYON, 10f, Factions.HEGEMONY, 7f, Factions.INDEPENDENT, 3f));
 
-        addCaches(data, 0.75f, 0, 3, createStringPicker(
-                Entities.WEAPONS_CACHE_REMNANT, 10f,
-                Entities.WEAPONS_CACHE_SMALL_REMNANT, 10f,
-                Entities.SUPPLY_CACHE, 10f,
-                Entities.SUPPLY_CACHE_SMALL, 10f,
-                Entities.EQUIPMENT_CACHE, 10f,
-                Entities.EQUIPMENT_CACHE_SMALL, 10f
-        ));
 
     }
 
@@ -445,6 +322,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         }
 
         Collections.sort(systems, new Comparator<StarSystemData>() {
+            @Override
             public int compare(StarSystemData o1, StarSystemData o2) {
                 float s1 = getMainCenterScore(o1);
                 float s2 = getMainCenterScore(o2);
@@ -463,7 +341,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         return total;
     }
 
-    public static CustomCampaignEntityAPI addBeacon(StarSystemAPI system, ForgottenSystemType type) {
+    public static CustomCampaignEntityAPI addBeacon(StarSystemAPI system, SAD_SystemType type) {
 
         SectorEntityToken anchor = system.getHyperspaceAnchor();
         List<SectorEntityToken> points = Global.getSector().getHyperspace().getEntities(JumpPointAPI.class);
@@ -494,9 +372,19 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 closestRange = dist;
             }
         }
-
         CustomCampaignEntityAPI beacon = Global.getSector().getHyperspace().addCustomEntity("SAD_warning_beacon", null, Entities.WARNING_BEACON, Factions.NEUTRAL);
+
         beacon.getMemoryWithoutUpdate().set(type.getBeaconFlag(), true);
+
+        switch (type) {
+            case SUPPRESSED:
+                beacon.addTag(Tags.BEACON_MEDIUM);
+                break;
+            case RESURGENT:
+                beacon.addTag(Tags.BEACON_HIGH);
+                break;
+        }
+
         if (closestPoint == null) {
             float orbitDays = minRange / (10f + StarSystemGenerator.random.nextFloat() * 5f);
             //beacon.setCircularOrbit(anchor, StarSystemGenerator.random.nextFloat() * 360f, minRange, orbitDays);
@@ -520,29 +408,20 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             }
         }
 
-        Color glowColor = new Color(255, 0, 200, 255);
-        Color pingColor = new Color(255, 0,200, 255);
-        if (type == ForgottenSystemType.SUPPRESSED) {
-            glowColor = new Color(250, 0, 155, 255);
-            pingColor = new Color(250, 0, 155, 255);
-        } else if (type == ForgottenSystemType.RESURGENT) {
-            glowColor = new Color(250, 0, 55, 255);
-            pingColor = new Color(250, 0, 125, 255);
+        Color glowColor = new Color(250, 155, 0, 255);
+        Color pingColor = new Color(250, 155, 0, 255);
+        if (type == SAD_SystemType.RESURGENT) {
+            glowColor = new Color(250, 55, 0, 255);
+            pingColor = new Color(250, 125, 0, 255);
         }
         Misc.setWarningBeaconColors(beacon, glowColor, pingColor);
 
         return beacon;
     }
 
-    /**
-     * Sorted by *descending* distance from sortFrom.
-     *
-     * @param context
-     * @param sortFrom
-     * @return
-     */
+
     protected List<Constellation> getSortedAvailableConstellations(ThemeGenContext context, boolean emptyOk, final Vector2f sortFrom, List<Constellation> exclude) {
-        List<Constellation> constellations = new ArrayList<Constellation>();
+        List<Constellation> constellations = new ArrayList<>();
         for (Constellation c : context.constellations) {
             if (context.majorThemes.containsKey(c)) {
                 continue;
@@ -559,6 +438,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         }
 
         Collections.sort(constellations, new Comparator<Constellation>() {
+            @Override
             public int compare(Constellation o1, Constellation o2) {
                 float d1 = Misc.getDistance(o1.getLocation(), sortFrom);
                 float d2 = Misc.getDistance(o2.getLocation(), sortFrom);
@@ -588,8 +468,8 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
     }
 
     public List<CampaignFleetAPI> addBattlestations(StarSystemData data, float chanceToAddAny, int min, int max,
-            WeightedRandomPicker<String> stationTypes) {
-        List<CampaignFleetAPI> result = new ArrayList<CampaignFleetAPI>();
+        WeightedRandomPicker<String> stationTypes) {
+        List<CampaignFleetAPI> result = new ArrayList<>();
         if (random.nextFloat() >= chanceToAddAny) {
             return result;
         }
@@ -605,16 +485,10 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             String type = stationTypes.pick();
             if (loc != null) {
 
-                CampaignFleetAPI fleet = FleetFactoryV2.createEmptyFleet("sad", FleetTypes.BATTLESTATION, null);
+                CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet("sad", FleetTypes.BATTLESTATION, null);
 
                 FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, type);
-
                 fleet.getFleetData().addFleetMember(member);
-                member.setFlagship(true);
-                FleetMemberAPI member2 = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "SAD_Taweret_Standard");
-                FleetMemberAPI member3 = Global.getFactory().createFleetMember(FleetMemberType.SHIP, "SAD_Niddhoggr_Standard");
-                fleet.getFleetData().addFleetMember(member2);
-                fleet.getFleetData().addFleetMember(member3);
 
                 //fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PIRATE, true);
                 fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_AGGRESSIVE, true);
@@ -622,8 +496,9 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_ALLOW_DISENGAGE, true);
 
                 fleet.setStationMode(true);
+                fleet.addTag(SAD_Tags.SAD_STATION);
 
-                addForgottenStationInteractionConfig(fleet);
+                addSADStationInteractionConfig(fleet);
 
                 data.system.addEntity(fleet);
 
@@ -638,40 +513,36 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 setEntityLocation(fleet, loc, null);
                 convertOrbitWithSpin(fleet, 5f);
 
+                boolean damaged = type.toLowerCase().contains("damaged");
                 float mult = 25f;
                 int level = 20;
-
+                if (damaged) {
+                    mult = 10f;
+                    level = 10;
+                    fleet.getMemoryWithoutUpdate().set("$damagedStation", true);
+                } //else {
                 PersonAPI commander = OfficerManagerEvent.createOfficer(
                         Global.getSector().getFaction("sad"), level, true);
-                commander.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 3);
-
-                FleetFactoryV2.addCommanderSkills(commander, fleet, random);
+                if (!damaged) {
+                    commander.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 3);
+                }
+                FleetFactoryV3.addCommanderSkills(commander, fleet, random);
                 fleet.setCommander(commander);
                 fleet.getFlagship().setCaptain(commander);
-             
+                //}
+
                 member.getRepairTracker().setCR(member.getRepairTracker().getMaxCR());
-                
-                PersonAPI officer2 = OfficerManagerEvent.createOfficer(
-                        Global.getSector().getFaction("sad"), level, true);
-                PersonAPI officer3 = OfficerManagerEvent.createOfficer(
-                        Global.getSector().getFaction("sad"), level, true);
-                member2.setCaptain(officer2);
-                member3.setCaptain(officer3);
-                member2.getRepairTracker().setCR(member.getRepairTracker().getMaxCR());
-                member3.getRepairTracker().setCR(member.getRepairTracker().getMaxCR());
-
-                SAD_SeededFleetManager.addForgottenSurveyDataDrops(random, fleet, mult);
-
                 result.add(fleet);
+
             }
         }
 
         return result;
     }
 
-    public static void addForgottenStationInteractionConfig(CampaignFleetAPI fleet) {
+    public static void addSADStationInteractionConfig(CampaignFleetAPI fleet) {
         fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,
-                new Forg_StationInteractionConfigGen());
+                new SAD_StationInteractionConfigGen());
     }
 
     @Override
@@ -679,8 +550,9 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         return 1500;
     }
 
-    public static class Forg_StationInteractionConfigGen implements FIDConfigGen {
+    public static class SAD_StationInteractionConfigGen implements FIDConfigGen {
 
+        @Override
         public FIDConfig createConfig() {
             FIDConfig config = new FIDConfig();
 
@@ -691,15 +563,18 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             config.showEngageText = false;
 
             config.delegate = new BaseFIDDelegate() {
+                @Override
                 public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {
                 }
 
+                @Override
                 public void notifyLeave(InteractionDialogAPI dialog) {
                 }
 
+                @Override
                 public void battleContextCreated(InteractionDialogAPI dialog, BattleCreationContext bcc) {
-                    bcc.aiRetreatAllowed = false;
-                    bcc.objectivesAllowed = false;
+                   // bcc.aiRetreatAllowed = false;
+                   // bcc.objectivesAllowed = false;
                 }
             };
             return config;

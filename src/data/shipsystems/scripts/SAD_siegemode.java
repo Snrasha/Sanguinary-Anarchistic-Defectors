@@ -5,12 +5,13 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import java.awt.Color;
 import java.util.Iterator;
 import org.lwjgl.util.vector.Vector2f;
 
-public class SAD_siegemode implements ShipSystemStatsScript {
+public class SAD_siegemode extends BaseShipSystemScript {
 
     private CombatEngineAPI engine;
     private final float ptahwidth = 14;

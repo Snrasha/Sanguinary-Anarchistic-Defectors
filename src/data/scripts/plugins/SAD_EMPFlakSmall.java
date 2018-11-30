@@ -199,7 +199,7 @@ public class SAD_EMPFlakSmall extends BaseEveryFrameCombatPlugin
         Vector2f damagePoint = CollisionUtils.getCollisionPoint(point, projection, mtgt);
         
 
-        if ((targ == null) || (!targ.getVariant().getHullMods().contains("tem_latticeshield")) || ((SAD_ModPlugin.templarsExist) && (data.scripts.hullmods.TEM_LatticeShield.shieldLevel(targ) <= 0.0F) && (targ.getVariant().getHullMods().contains("tem_latticeshield"))))
+        if ((targ == null)) //|| (!targ.getVariant().getHullMods().contains("tem_latticeshield")) || ((SAD_ModPlugin.templarsExist) && (data.scripts.hullmods.TEM_LatticeShield.shieldLevel(targ) <= 0.0F) && (targ.getVariant().getHullMods().contains("tem_latticeshield"))))
         {
 
           if (damagePoint != null) {

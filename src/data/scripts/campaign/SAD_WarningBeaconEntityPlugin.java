@@ -14,7 +14,7 @@ import com.fs.starfarer.api.combat.ViewportAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.BaseCustomEntityPlugin;
 import com.fs.starfarer.api.impl.campaign.ids.Pings;
-import src.data.scripts.campaign.SAD_ThemeGenerator.ForgottenSystemType;
+import src.data.scripts.campaign.SAD_ThemeGenerator.SAD_SystemType;
 
 public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 
@@ -59,12 +59,10 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 				if (playerFleet != null && 
 					entity.getVisibilityLevelTo(playerFleet) == VisibilityLevel.COMPOSITION_AND_FACTION_DETAILS) {
 					
-					String pingId = Pings.WARNING_BEACON1;
-					freqMult = 1f;
-					if (entity.getMemoryWithoutUpdate().getBoolean(ForgottenSystemType.SUPPRESSED.getBeaconFlag())) {
-						pingId = Pings.WARNING_BEACON2;
-						freqMult = 1.25f;
-					} else if (entity.getMemoryWithoutUpdate().getBoolean(ForgottenSystemType.RESURGENT.getBeaconFlag())) {
+					
+					String pingId = Pings.WARNING_BEACON2;
+					freqMult = 1.25f;
+					 if (entity.getMemoryWithoutUpdate().getBoolean(SAD_SystemType.RESURGENT.getBeaconFlag())) {
 						pingId = Pings.WARNING_BEACON3;
 						freqMult = 1.5f;
 					}

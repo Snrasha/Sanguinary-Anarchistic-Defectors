@@ -5,11 +5,11 @@ import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
-import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import java.util.Iterator;
 import org.lazywizard.lazylib.MathUtils;
 
-public class SAD_transform_Stats implements ShipSystemStatsScript {
+public class SAD_transform_Stats extends BaseShipSystemScript {
 
     private CombatEngineAPI engine;
 

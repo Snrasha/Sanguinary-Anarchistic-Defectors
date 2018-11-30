@@ -3,13 +3,12 @@ package src.data.scripts.campaign;
 import java.util.Random;
 
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.FleetOrStubAPI;
 import com.fs.starfarer.api.campaign.LocationAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.CampaignEventListener.FleetDespawnReason;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV2;
-import com.fs.starfarer.api.impl.campaign.fleets.FleetParams;
+import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
+import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
 import com.fs.starfarer.api.impl.campaign.fleets.SourceBasedFleetManager;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 
@@ -51,29 +50,26 @@ public class SAD_StationFleetManager extends SourceBasedFleetManager {
             supportPoints = 2;
 
         }
+        combatPoints *= 8f;
 
-        FleetParams params = new FleetParams(
-                source.getLocationInHyperspace(),
+        FleetParamsV3 params = new FleetParamsV3(
                 source.getMarket(),
+                source.getLocationInHyperspace(),
                 "sad",
-                null, // fleet's faction, if different from above, which is also used for source market picking
+                1f,
                 type,
                 combatPoints, // combatPts
                 supportPoints,// freighterPts 
                 supportPoints, // tankerPts
                 0f, // transportPts
                 0f, // linerPts
-                0f, // civilianPts 
                 0f, // utilityPts
-                0f, // qualityBonus
-                1f, // qualityOverride
-                1f, // officer num mult
-                0 // officer level bonus
+                0f // qualityMod
         );
-        //params.withOfficers = false;
+        params.officerNumberBonus = 10;
         params.random = random;
 
-        CampaignFleetAPI fleet = FleetFactoryV2.createFleet(params);
+        CampaignFleetAPI fleet = FleetFactoryV3.createFleet(params);
         if (fleet == null) {
             return null;
         };
@@ -81,7 +77,7 @@ public class SAD_StationFleetManager extends SourceBasedFleetManager {
         LocationAPI location = source.getContainingLocation();
         location.addEntity(fleet);
 
-        SAD_SeededFleetManager.initForgottenFleetProperties(random, fleet);
+        SAD_SeededFleetManager.initSADFleetProperties(random, fleet);
 
         fleet.setLocation(source.getLocation().x, source.getLocation().y);
         fleet.setFacing(random.nextFloat() * 360f);
@@ -92,7 +88,7 @@ public class SAD_StationFleetManager extends SourceBasedFleetManager {
     }
 
     @Override
-    public void reportFleetDespawnedToListener(FleetOrStubAPI fleet, FleetDespawnReason reason, Object param) {
+    public void reportFleetDespawnedToListener(CampaignFleetAPI fleet, FleetDespawnReason reason, Object param) {
         super.reportFleetDespawnedToListener(fleet, reason, param);
         if (reason == FleetDespawnReason.DESTROYED_BY_BATTLE) {
             totalLost++;
