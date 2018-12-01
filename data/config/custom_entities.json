@@ -6,7 +6,7 @@
 		"detectionRange":3000, # must be >0 for discoverable/discoveryXP to be used
 		"discoverable":true,
 		"discoveryXP":500,
-		"icon":"graphics/icons/warning_beacon.png",
+		"icon":"graphics/icons/SAD_warning_beacon.png",
 		"iconColor":[255,100,255,255],
 		"iconWidth":24,
 		"iconHeight":24,

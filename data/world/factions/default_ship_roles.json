@@ -23,7 +23,6 @@
 		"SAD_Ptah_Standard":15,
 		"SAD_Apis_Standard":3,
 		"SAD_Apis_Strange":3,
-		"SAD_Babi_Standard":3,
 		"fallback":{"combatSmall":2},
 	},
 	"combatLarge":{
@@ -42,7 +41,25 @@
 		"fallback":{"combatLarge":2},
 	},
 
+	"phaseSmall":{
+		"SAD_Babi_Standard":3,
+		"fallback":{"phaseMedium":0.5},
+		"fallback2":{"phaseLarge":0.25},
+	},
+	"phaseMedium":{
+		"SAD_Babi_Standard":3,
 
+		"fallback":{"phaseSmall":1},
+		"fallback2":{"phaseLarge":0.5},
+	},
+	"phaseLarge":{
+		"SAD_Babi_Standard":3,
+
+		"fallback":{"phaseMedium":1},
+		"fallback2":{"phaseSmall":1},
+	},
+	"phaseCapital":{
+	},
 	"carrierSmall":{
 		"SAD_Seshat_Standard":4,
 		"fallback":{"carrierMedium":0.5},

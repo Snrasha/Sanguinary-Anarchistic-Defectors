@@ -15,9 +15,6 @@ import com.fs.starfarer.api.impl.campaign.MilitaryResponseScript;
 import com.fs.starfarer.api.impl.campaign.MilitaryResponseScript.MilitaryResponseParams;
 import com.fs.starfarer.api.impl.campaign.command.WarSimScript;
 import com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.RouteData;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.RouteSegment;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.intel.raid.ActionStage;
 import com.fs.starfarer.api.impl.campaign.intel.raid.RaidIntel.RaidStageStatus;
@@ -26,6 +23,8 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD.BombardType;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import src.data.scripts.campaign.raid.SAD_RouteManager.RouteData;
+import src.data.scripts.campaign.raid.SAD_RouteManager.RouteSegment;
 import src.data.scripts.campaign.raid.SAD_raidIntel.PunExOutcome;
 import src.data.scripts.campaign.raid.SAD_raidManager.PunExGoal;
 
@@ -106,7 +105,7 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		abortIfNeededBasedOnFP(true);
 		if (status != RaidStageStatus.ONGOING) return;
 		
-		boolean inSpawnRange = RouteManager.isPlayerInSpawnRange(target.getPrimaryEntity());
+		boolean inSpawnRange = SAD_RouteManager.isPlayerInSpawnRange(target.getPrimaryEntity());
 		if (!inSpawnRange && untilAutoresolve <= 0){
 			autoresolve();
 			return;
@@ -239,7 +238,7 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		
 		((SAD_raidIntel)intel).sendEnteredSystemUpdate();
 		
-		List<RouteData> routes = RouteManager.getInstance().getRoutesForSource(intel.getRouteSourceId());
+		List<RouteData> routes = SAD_RouteManager.getInstance().getRoutesForSource(intel.getRouteSourceId());
 		for (RouteData route : routes) {
 			if (target.getStarSystem() != null) { // so that fleet may spawn NOT at the target
 				route.addSegment(new RouteSegment(Math.min(5f, untilAutoresolve), target.getStarSystem().getCenter()));

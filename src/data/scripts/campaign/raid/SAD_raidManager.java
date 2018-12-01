@@ -17,7 +17,6 @@ import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
-import com.fs.starfarer.api.impl.campaign.DebugFlags;
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.ids.Abilities;
@@ -27,7 +26,6 @@ import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
-import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.DEBUG;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.convertOrbitWithSpin;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.pickCommonLocation;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.setEntityLocation;
@@ -36,11 +34,12 @@ import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
 import org.lazywizard.lazylib.MathUtils;
-import src.data.scripts.campaign.SAD_ThemeGenerator;
 import static src.data.scripts.campaign.SAD_ThemeGenerator.addSADStationInteractionConfig;
 import src.data.utils.SAD_Tags;
+import org.apache.log4j.Logger;
 
 public class SAD_raidManager implements EveryFrameScript {
+    public static final Logger log = Global.getLogger(SAD_raidManager.class);
 
     public static final String KEY = "$SAD_raidManager";
 
@@ -54,8 +53,6 @@ public class SAD_raidManager implements EveryFrameScript {
     // if more factions send non-territorial expeditions, longer timeout
     public static float TARGET_NUMBER_FOR_FREQUENCY = 5f;
 
-    public static int FACTION_MUST_BE_IN_TOP_X_PRODUCERS = 3;
-    public static float PLAYER_FRACTION_TO_NOTICE = 0.33f;
     public static final float MAX_THRESHOLD = 1000f;
 
     public static enum PunExType {
@@ -105,6 +102,7 @@ public class SAD_raidManager implements EveryFrameScript {
         dataSAD = Global.getSector().getFaction(SAD_Tags.SAD_FACTION);
         PunExData curr = new PunExData();
         dataPun = curr;
+        dataPun.anger=500;
 
     }
 
@@ -122,11 +120,15 @@ public class SAD_raidManager implements EveryFrameScript {
             if (days < 45f) {
                 continue;
             }
+            for(String str:system.getTags())log.info(system.getNameWithLowercaseType()+"Has TAGs: " + str);
+
 
             float weight = 0f;
-            if (!system.hasTag(SAD_Tags.THEME_SAD)) {
+            if (!system.hasTag(SAD_Tags.THEME_SAD) && !system.hasTag(SAD_Tags.THEME_SAD_MAIN)) {
                 continue;
             }
+            log.info("    Picker add " + system.getNameWithLowercaseType());
+
             float dist = system.getLocation().length();
 
             float distMult = 1f;
@@ -152,9 +154,7 @@ public class SAD_raidManager implements EveryFrameScript {
         }
 
         int num = min + random.nextInt(max - min + 1);
-        if (DEBUG) {
-            System.out.println("    Adding " + num + " battlestations");
-        }
+        log.info("    Adding " + num + " battlestations");
         for (int i = 0; i < num; i++) {
 
             BaseThemeGenerator.EntityLocation loc = pickCommonLocation(random, system, 200f, true, null);
@@ -218,9 +218,11 @@ public class SAD_raidManager implements EveryFrameScript {
 
     public CampaignFleetAPI getStation() {
         StarSystemAPI system = pickSADSystem();
+        if(system==null)return null;
         List<CampaignFleetAPI> fleets = system.getFleets();
         for (CampaignFleetAPI fleet : fleets) {
             if (fleet.hasTag(SAD_Tags.SAD_STATION)) {
+                log.info("Found sad station to "+fleet.getContainingLocation().getNameWithLowercaseType());
                 return fleet;
             }
         }
@@ -228,6 +230,7 @@ public class SAD_raidManager implements EveryFrameScript {
         fleets= addBattlestations(system, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
         for (CampaignFleetAPI fleet : fleets) {
             if (fleet.hasTag(SAD_Tags.SAD_STATION)) {
+                log.info("Found a build sad station to "+fleet.getContainingLocation().getNameWithLowercaseType());
                 return fleet;
             }
         }
@@ -245,41 +248,34 @@ public class SAD_raidManager implements EveryFrameScript {
 
         float days = Misc.getDays(amount);
 
-        boolean first = true;
-        PunExData curr = this.dataPun;
-        if (first && DebugFlags.PUNITIVE_EXPEDITION_DEBUG) {
-            days *= 1000f;
-            curr.timeout = 0f;
-            curr.anger = 1000f;
-        }
-        first = false;
 
-        if (curr.intel != null) {
-            if (curr.intel.isEnded()) {
-                curr.timeout = 100f + 100f * curr.random.nextFloat();
+        if (this.dataPun.intel != null) {
+            if (this.dataPun.intel.isEnded()) {
+                this.dataPun.timeout = 100f + 100f * this.dataPun.random.nextFloat();
 
-                if (curr.intel instanceof SAD_raidIntel) {
-                    SAD_raidIntel intel = (SAD_raidIntel) curr.intel;
+                if (this.dataPun.intel instanceof SAD_raidIntel) {
+                    SAD_raidIntel intel = (SAD_raidIntel) this.dataPun.intel;
                     if (!intel.isTerritorial()) {
-                        curr.timeout += getExtraTimeout(curr);
+                        this.dataPun.timeout += getExtraTimeout(this.dataPun);
                     }
                 }
 
-                curr.intel = null;
+                this.dataPun.intel = null;
             }
         } else {
-            curr.timeout -= days;
-            if (curr.timeout <= 0) {
-                curr.timeout = 0;
+            this.dataPun.timeout -= days;
+            if (this.dataPun.timeout <= 0) {
+                this.dataPun.timeout = 0;
             }
         }
 
-        curr.tracker.advance(days);
+        this.dataPun.tracker.advance(days);
         //System.out.println(curr.tracker.getElapsed());
-        if (curr.tracker.intervalElapsed()
-                && curr.intel == null
-                && curr.timeout <= 0) {
-            checkExpedition(curr);
+        if (this.dataPun.tracker.intervalElapsed()
+                && this.dataPun.intel == null
+                && this.dataPun.timeout <= 0) {
+            checkExpedition(this.dataPun);
+            
         }
     }
 
@@ -388,40 +384,23 @@ public class SAD_raidManager implements EveryFrameScript {
             }
 
             float weight = 0f;
-            for (PunExReason reason : reasons) {
-                if (reason.commodityId != null) {
-                    CommodityOnMarketAPI com = market.getCommodityData(reason.commodityId);
-                    weight += com.getAvailable();
-                }
-            }
-
-            if (market.isFreePort()) {
-                weight += market.getSize();
-            }
-            if (Misc.getClaimingFaction(market.getPrimaryEntity()) == curr.faction) {
-                weight += 1000f + market.getDaysInExistence();
-            }
+            weight += market.getSize();
+            weight += 1000f + market.getDaysInExistence();
+            
 
             if (weight > max) {
                 target = market;
                 max = weight;
             }
-            //picker.add(market, weight);
         }
 
         if (target == null || max <= 0) {
             return;
         }
 
-        WeightedRandomPicker<MarketAPI> picker = new WeightedRandomPicker<MarketAPI>(curr.random);
-        for (MarketAPI market : Global.getSector().getEconomy().getMarketsInGroup(null)) {
-            if (market.getFaction() == curr.faction
-                    && market.getMemoryWithoutUpdate().getBoolean(MemFlags.MARKET_MILITARY)) {
-                picker.add(market, market.getSize());
-            }
-        }
 
-        MarketAPI from = picker.pick();
+
+        CampaignFleetAPI from = this.getStation();
         if (from == null) {
             return;
         }
@@ -481,9 +460,8 @@ public class SAD_raidManager implements EveryFrameScript {
         //float fp = from.getSize() * 20 + threshold * 0.5f;
         float fp = 50 + curr.threshold * 0.5f;
         //fp = 500;
-        if (from.getFaction().isHostileTo(target.getFaction())) {
-            fp *= 1.5f;
-        }
+        fp *= 5f;
+        
 
         float totalAttempts = 0f;
         PunExData d = this.dataPun;
@@ -504,7 +482,8 @@ public class SAD_raidManager implements EveryFrameScript {
 
         float orgDur = 20f + extraMult * 10f + (10f + extraMult * 5f) * (float) Math.random();
 
-        curr.intel = new SAD_raidIntel(from.getFaction(), from, target, fp, orgDur, goal, industry, bestReason);
+        if(from==null)return;
+        curr.intel = new SAD_raidIntel(this.dataSAD, from, target, fp, orgDur, goal, industry, bestReason);
         if (curr.intel.isDone()) {
             curr.intel = null;
             return;
@@ -518,6 +497,7 @@ public class SAD_raidManager implements EveryFrameScript {
         }
     }
 
+    @Override
     public boolean isDone() {
         return false;
     }

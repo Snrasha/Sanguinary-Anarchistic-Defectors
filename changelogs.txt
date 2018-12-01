@@ -1,4 +1,9 @@
 
+
+Version 0.9:
+-Update for the version 0.9 of Starsector
+-Add a special expedition only for sad faction.
+
 Version 0.81b:
 -Fix the phase ship(Babi) mount
 -Fix the shipsystem of Babi.

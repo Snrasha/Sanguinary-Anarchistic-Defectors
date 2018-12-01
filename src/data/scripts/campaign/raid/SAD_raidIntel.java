@@ -11,27 +11,18 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
-import com.fs.starfarer.api.campaign.econ.CommoditySpecAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.DebugFlags;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
 import com.fs.starfarer.api.impl.campaign.fleets.RouteLocationCalculator;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.OptionalFleetData;
-import com.fs.starfarer.api.impl.campaign.fleets.RouteManager.RouteData;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Ranks;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
-import com.fs.starfarer.api.impl.campaign.intel.punitive.PEAssembleStage;
-import com.fs.starfarer.api.impl.campaign.intel.punitive.PEOrganizeStage;
-import com.fs.starfarer.api.impl.campaign.intel.punitive.PEReturnStage;
-import com.fs.starfarer.api.impl.campaign.intel.punitive.PETravelStage;
-import com.fs.starfarer.api.impl.campaign.intel.raid.RaidAssignmentAI;
 import com.fs.starfarer.api.impl.campaign.intel.raid.RaidIntel;
 import com.fs.starfarer.api.impl.campaign.intel.raid.RaidIntel.RaidDelegate;
-import com.fs.starfarer.api.impl.campaign.procgen.themes.RouteFleetAssignmentAI;
 import com.fs.starfarer.api.ui.Alignment;
 import com.fs.starfarer.api.ui.ButtonAPI;
 import com.fs.starfarer.api.ui.IntelUIAPI;
@@ -39,11 +30,14 @@ import com.fs.starfarer.api.ui.LabelAPI;
 import com.fs.starfarer.api.ui.SectorMapAPI;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
+import src.data.scripts.campaign.raid.SAD_RouteManager.RouteData;
+import src.data.scripts.campaign.raid.SAD_RouteManager.SAD_OptionalFleetData;
 import src.data.scripts.campaign.raid.SAD_raidManager.PunExGoal;
 import src.data.scripts.campaign.raid.SAD_raidManager.PunExReason;
 import src.data.scripts.campaign.raid.SAD_raidManager.PunExType;
+import src.data.utils.SAD_Tags;
 
-public class SAD_raidIntel extends RaidIntel implements RaidDelegate {
+public class SAD_raidIntel extends RaidIntel implements RaidDelegate, SAD_RouteManager.SAD_RouteFleetSpawner{
 
 	public static final String BUTTON_AVERT = "BUTTON_CHANGE_ORDERS";
 	
@@ -62,7 +56,7 @@ public class SAD_raidIntel extends RaidIntel implements RaidDelegate {
 	protected SAD_ActionStage action;
 	protected PunExGoal goal;
 	protected MarketAPI target;
-	protected MarketAPI from;
+	protected CampaignFleetAPI from;
 	protected PunExOutcome outcome;
 	
 	protected Random random = new Random();
@@ -71,7 +65,7 @@ public class SAD_raidIntel extends RaidIntel implements RaidDelegate {
 	protected Industry targetIndustry;
 	protected FactionAPI targetFaction;
 	
-	public SAD_raidIntel(FactionAPI faction, MarketAPI from, MarketAPI target, 
+	public SAD_raidIntel(FactionAPI faction, CampaignFleetAPI from, MarketAPI target, 
 								   float expeditionFP, float organizeDuration,
 								   PunExGoal goal, Industry targetIndustry, PunExReason bestReason) {
 		super(target.getStarSystem(), faction, null);
@@ -83,24 +77,23 @@ public class SAD_raidIntel extends RaidIntel implements RaidDelegate {
 		this.target = target;
 		targetFaction = target.getFaction();
 		
-		SectorEntityToken gather = from.getPrimaryEntity();
+		SectorEntityToken gather = from;//target.getPrimaryEntity();
 		
 		
 		float orgDur = organizeDuration;
 		if (DebugFlags.PUNITIVE_EXPEDITION_DEBUG) orgDur = 0.5f;
 		
-		addStage(new PEOrganizeStage(this, from, orgDur));
+		addStage(new SAD_OrganizeStage(this, from, orgDur));
 		
 		float successMult = 0.5f;
-		PEAssembleStage assemble = new PEAssembleStage(this, gather);
-		assemble.addSource(from);
+		SAD_AssembleStage assemble = new SAD_AssembleStage(this, gather,from);
 		assemble.setSpawnFP(expeditionFP);
 		assemble.setAbortFP(expeditionFP * successMult);
 		addStage(assemble);
 		
 		
 		SectorEntityToken raidJump = RouteLocationCalculator.findJumpPointToUse(getFactionForUIColors(), target.getPrimaryEntity());
-		PETravelStage travel = new PETravelStage(this, gather, raidJump, false);
+		SAD_TravelStage travel = new SAD_TravelStage(this, gather, raidJump, false);
 		travel.setAbortFP(expeditionFP * successMult);
 		addStage(travel);
 		
@@ -108,7 +101,7 @@ public class SAD_raidIntel extends RaidIntel implements RaidDelegate {
 		action.setAbortFP(expeditionFP * successMult);
 		addStage(action);
 		
-		addStage(new PEReturnStage(this));
+		addStage(new SAD_returnStage(this));
 		
 		Global.getSector().getIntelManager().addIntel(this);
 	}
@@ -125,12 +118,19 @@ public class SAD_raidIntel extends RaidIntel implements RaidDelegate {
 		return targetFaction;
 	}
 
-	public MarketAPI getFrom() {
-		return from;
+	public void reportAboutToBeDespawnedByRouteManager(RouteData route) {
+	}
+	
+	public boolean shouldRepeat(RouteData route) {
+		return false;
 	}
 
-	public RouteFleetAssignmentAI createAssignmentAI(CampaignFleetAPI fleet, RouteData route) {
-		RaidAssignmentAI raidAI = new RaidAssignmentAI(fleet, route, action);
+	public boolean shouldCancelRouteAfterDelayCheck(RouteData route) {
+		return false;
+	}
+
+	public SAD_RaidAssignmentAI createAssignmentAI(CampaignFleetAPI fleet, RouteData route) {
+		SAD_RaidAssignmentAI raidAI = new SAD_RaidAssignmentAI(fleet, route, action);
 		//raidAI.setDelegate(action);
 		return raidAI;
 	}
@@ -438,31 +438,27 @@ public class SAD_raidIntel extends RaidIntel implements RaidDelegate {
 		this.outcome = outcome;
 	}
 	
-	
-        @Override
 	public CampaignFleetAPI spawnFleet(RouteData route) {
 		
-		MarketAPI market = route.getMarket();
-		CampaignFleetAPI fleet = createFleet(market.getFactionId(), route, market, null, random);
+		CampaignFleetAPI fleet = createFleet(SAD_Tags.SAD_FACTION, route, null, random);
 		
 		if (fleet == null || fleet.isEmpty()) return null;
 		
 		
-		market.getContainingLocation().addEntity(fleet);
+		from.getContainingLocation().addEntity(fleet);
 		fleet.setFacing((float) Math.random() * 360f);
 		// this will get overridden by the patrol assignment AI, depending on route-time elapsed etc
-		fleet.setLocation(market.getPrimaryEntity().getLocation().x, market.getPrimaryEntity().getLocation().x);
+		fleet.setLocation(from.getLocation().x, from.getLocation().x);
 		
 		fleet.addScript(createAssignmentAI(fleet, route));
 		
 		return fleet;
 	}
 	
-        @Override
-	public CampaignFleetAPI createFleet(String factionId, RouteData route, MarketAPI market, Vector2f locInHyper, Random random) {
+	public CampaignFleetAPI createFleet(String factionId, RouteData route, Vector2f locInHyper, Random random) {
 		if (random == null) random = this.random;
 		
-		OptionalFleetData extra = route.getExtra();
+		SAD_OptionalFleetData extra = route.getExtra();
 
 		float combat = extra.fp;
 		float tanker = extra.fp * (0.1f + random.nextFloat() * 0.05f);
@@ -481,7 +477,7 @@ public class SAD_raidIntel extends RaidIntel implements RaidDelegate {
 		
 		
 		FleetParamsV3 params = new FleetParamsV3(
-				market, 
+				null, 
 				locInHyper,
 				factionId,
 				route == null ? null : route.getQualityOverride(),

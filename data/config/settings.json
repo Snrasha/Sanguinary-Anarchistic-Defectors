@@ -17,8 +17,11 @@
       "tagPing":"graphics/shi/fx/ms_tagPing.png",
     },
     "campaignEntities":{
-      "SAD_warning_beacon":"graphics/stations/buoy00.png",
-      "SAD_warning_beacon_glow":"graphics/stations/buoy00glow.png",
+      "SAD_warning_beacon":"graphics/stations/SAD_buoy00.png",
+      "SAD_warning_beacon_glow":"graphics/stations/SAD_buoy00glow.png",
     },
-  }
+  },
+  "blueprint_packages":{
+    "sad_tech_package":"graphics/icons/cargo/SAD_package.png",
+  },
 }

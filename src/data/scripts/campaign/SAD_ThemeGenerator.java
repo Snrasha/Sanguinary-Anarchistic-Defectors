@@ -37,7 +37,6 @@ import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.procgen.Constellation;
-import com.fs.starfarer.api.impl.campaign.procgen.DefenderDataOverride;
 import com.fs.starfarer.api.impl.campaign.procgen.NameAssigner;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner.SpecialCreationContext;
@@ -51,10 +50,12 @@ import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerat
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.setEntityLocation;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.ThemeGenContext;
+import org.apache.log4j.Logger;
 import src.data.utils.SAD_Tags;
 import src.data.utils.SAD_themes;
 
 public class SAD_ThemeGenerator extends BaseThemeGenerator {
+    public static final Logger log = Global.getLogger(SAD_ThemeGenerator.class);
 
     public static enum SAD_SystemType {
 
@@ -123,12 +124,9 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
         List<StarSystemData> sadSystems = new ArrayList<>();
 
-        if (DEBUG) {
-            System.out.println("\n\n\n");
-        }
-        if (DEBUG) {
-            System.out.println("Generating sad systems");
-        }
+        log.info("\n\n\n");
+        log.info("Generating sad systems");
+        
 
         int numUsed = 0;
         for (int i = 0; i < num && i < constellations.size(); i++) {
@@ -148,9 +146,8 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                 numMain = mainCandidates.size();
             }
             if (numMain <= 0) {
-                if (DEBUG) {
-                    System.out.println("Skipping constellation " + c.getName() + ", no suitable main candidates");
-                }
+                log.info("Skipping constellation " + c.getName() + ", no suitable main candidates");
+                
                 continue;
             }
 
@@ -162,9 +159,8 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             context.majorThemes.put(c, getThemeId());
             numUsed++;
 
-            if (DEBUG) {
-                System.out.println("Generating " + numMain + " main systems in " + c.getName());
-            }
+            log.info("Generating " + numMain + " main systems in " + c.getName());
+            
             for (int j = 0; j < numMain; j++) {
                 StarSystemData data = mainCandidates.get(j);
                 populateMain(data, type);
@@ -228,16 +224,14 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         SpecialCreationContext specialContext = new SpecialCreationContext();
         specialContext.themeId = getThemeId();
         SalvageSpecialAssigner.assignSpecials(sadSystems, specialContext);
-        if (DEBUG) {
-            System.out.println("Finished generating sad systems\n\n\n\n\n");
-        }
+        log.info("Finished generating sad systems\n\n\n\n\n");
+        
 
     }
 
     public void populateNonMain(StarSystemData data) {
-        if (DEBUG) {
-            System.out.println(" Generating secondary sad system in " + data.system.getName());
-        }
+        log.info(" Generating secondary sad system in " + data.system.getName());
+        
             addResearchStations(data, 0.75f, 1, 1, createStringPicker(Entities.STATION_RESEARCH, 10f));
 
         if (random.nextFloat() < 0.5f) {
@@ -254,17 +248,13 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
     public void populateMain(StarSystemData data, SAD_SystemType type) {
 
-        if (DEBUG) {
-            System.out.println(" Generating sad center in " + data.system.getName());
-        }
+        log.info(" Generating sad center in " + data.system.getName());
+        
 
         StarSystemAPI system = data.system;
 
         addBeacon(system, type);
 
-        if (DEBUG) {
-            System.out.println("    Added warning beacon");
-        }
 
         int maxHabCenters = 1 + random.nextInt(3);
 
@@ -303,7 +293,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
     }
 
     public List<StarSystemData> getSortedSystemsSuitedToBePopulated(List<StarSystemData> systems) {
-        List<StarSystemData> result = new ArrayList<StarSystemData>();
+        List<StarSystemData> result = new ArrayList<>();
 
         for (StarSystemData data : systems) {
             if (data.isBlackHole() || data.isNebula() || data.isPulsar()) {
@@ -312,12 +302,6 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
             if (data.planets.size() >= 4 || data.habitable.size() >= 1) {
                 result.add(data);
-
-//				Collections.sort(data.habitable, new Comparator<PlanetAPI>() {
-//					public int compare(PlanetAPI o1, PlanetAPI o2) {
-//						return (int) Math.signum(o1.getMarket().getHazardValue() - o2.getMarket().getHazardValue());
-//					}
-//				});
             }
         }
 
@@ -345,7 +329,6 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
         SectorEntityToken anchor = system.getHyperspaceAnchor();
         List<SectorEntityToken> points = Global.getSector().getHyperspace().getEntities(JumpPointAPI.class);
-
         float minRange = 600;
 
         float closestRange = Float.MAX_VALUE;
@@ -408,11 +391,11 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             }
         }
 
-        Color glowColor = new Color(250, 155, 0, 255);
-        Color pingColor = new Color(250, 155, 0, 255);
+        Color glowColor = new Color(0, 155, 255, 255);
+        Color pingColor = new Color(0, 155, 255, 255);
         if (type == SAD_SystemType.RESURGENT) {
-            glowColor = new Color(250, 55, 0, 255);
-            pingColor = new Color(250, 125, 0, 255);
+            glowColor = new Color(0, 55, 255, 255);
+            pingColor = new Color(0, 125, 255, 255);
         }
         Misc.setWarningBeaconColors(beacon, glowColor, pingColor);
 
@@ -475,9 +458,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         }
 
         int num = min + random.nextInt(max - min + 1);
-        if (DEBUG) {
-            System.out.println("    Adding " + num + " battlestations");
-        }
+log.info("    Adding " + num + " battlestations");
         for (int i = 0; i < num; i++) {
 
             EntityLocation loc = pickCommonLocation(random, data.system, 200f, true, null);

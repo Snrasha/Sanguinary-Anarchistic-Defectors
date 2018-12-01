@@ -13,13 +13,12 @@ import com.fs.starfarer.api.campaign.SectorEntityToken.VisibilityLevel;
 import com.fs.starfarer.api.combat.ViewportAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.BaseCustomEntityPlugin;
-import com.fs.starfarer.api.impl.campaign.ids.Pings;
 import src.data.scripts.campaign.SAD_ThemeGenerator.SAD_SystemType;
 
 public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 
-	public static String GLOW_COLOR_KEY = "$core_beaconGlowColor";
-	public static String PING_COLOR_KEY = "$core_beaconPingColor";
+	public static String GLOW_COLOR_KEY = "$sad_beaconGlowColor";
+	public static String PING_COLOR_KEY = "$sad_beaconPingColor";
 	
 	public static float GLOW_FREQUENCY = 1f; // on/off cycles per second
 	
@@ -35,6 +34,7 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 		//this.entity = entity;
 		entity.setDetectionRangeDetailsOverrideMult(0.75f);
 		readResolve();
+                
 	}
 	
 	Object readResolve() {
@@ -60,10 +60,10 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 					entity.getVisibilityLevelTo(playerFleet) == VisibilityLevel.COMPOSITION_AND_FACTION_DETAILS) {
 					
 					
-					String pingId = Pings.WARNING_BEACON2;
+					String pingId = "SAD_warning_beacon2";
 					freqMult = 1.25f;
 					 if (entity.getMemoryWithoutUpdate().getBoolean(SAD_SystemType.RESURGENT.getBeaconFlag())) {
-						pingId = Pings.WARNING_BEACON3;
+						pingId = "SAD_warning_beacon3";
 						freqMult = 1.5f;
 					}
 					
@@ -118,7 +118,7 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 		boolean glowAsLayer = true;
 		if (glowAsLayer) {
 			//glow.setAngle(entity.getFacing() - 90f);
-			Color glowColor = new Color(255,200,255,255);
+			Color glowColor = new Color(100,100,255,255);
 			//Color glowColor = entity.getFaction().getBrightUIColor();
 			if (entity.getMemoryWithoutUpdate().contains(GLOW_COLOR_KEY)) {
 				glowColor = (Color) entity.getMemoryWithoutUpdate().get(GLOW_COLOR_KEY);
@@ -139,7 +139,7 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 			glow.renderAtCenter(loc.x, loc.y);
 		} else {
 			glow.setAngle(entity.getFacing() - 90f);
-			glow.setColor(new Color(255,165,255));
+			glow.setColor(new Color(100,165,255));
 			float gs = w * 3;
 			glow.setSize(gs, gs);
 			glow.setAdditiveBlend();

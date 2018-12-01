@@ -108,12 +108,6 @@
 	"custom":{
 		"engageWhenEvenStrength":true,
 		"allowsTransponderOffTrade":true, # to prevent cargoscan dialog from "patrols"
-		"punitiveExpeditionData":{
-		"vsCompetitors":true,
-		"vsFreePort":true,
-		"canBombard":true,
-		"territorial":true,
-		 },
 		 "engagesInHostilities":true,
 		 "exemptFromFoodShortages":true,
 	},
@@ -184,7 +178,7 @@
 			"numShips":5,
 
 			"shipSize":3,
-			"aggression":4,
+			"aggression":3,
 
 			"combatFreighterProbability":0.25,     				# instead of some portion of the freighters in a fleet
 			"combatFreighterCombatUseFraction":0.25,  				# as part of the normal combat lineup

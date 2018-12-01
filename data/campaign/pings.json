@@ -1,0 +1,28 @@
+{
+
+	"SAD_warning_beacon2":{
+		"sounds":["default_campaign_ping", ""],
+		"color":[0,165,255,255],
+		"useFactionColor":false,
+		"width":7,
+		"range":250,
+		"duration":1,
+		"invert":false,
+
+		"num":2,
+		"delay":1,
+	},
+
+	"SAD_warning_beacon3":{
+		"sounds":["default_campaign_ping", "", "default_campaign_ping"],
+		"color":[0,165,255,255],
+		"useFactionColor":false,
+		"width":7,
+		"range":250,
+		"duration":1,
+		"invert":false,
+
+		"num":3,
+		"delay":1,
+	},
+}
