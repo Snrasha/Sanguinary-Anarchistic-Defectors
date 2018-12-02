@@ -1,5 +1,9 @@
 
 
+Version 0.9b(preview):
+-The Atan can be found on normal fleet.
+
+
 Version 0.9:
 -Update for the version 0.9 of Starsector
 -Add a regenerating system if a SAD station has be destroyed. (They always respawn after a certain time)

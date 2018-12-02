@@ -10,20 +10,19 @@
 		"SAD_Thoth_Missile":5,
 	},
 	"combatSmall":{
-	"SAD_Hapy_Burst":5,
-	"SAD_Hapy_Missile":5,
-	"SAD_Neith_Missile":5,
-	"SAD_Neith_Standard":5,
-	"SAD_Thoth_Standard":5,
-	"SAD_Thoth_Missile":5,
-		"fallback":{"escortSmall":1},
+	"SAD_Hapy_Burst":10,
+	"SAD_Hapy_Missile":10,
+	"SAD_Neith_Missile":10,
+	"SAD_Neith_Standard":10,
+	"SAD_Thoth_Standard":10,
+	"SAD_Thoth_Missile":10,
+	"SAD_Atan_b_Standard":1,
 	},
 	"combatMedium":{
 		"SAD_Khonsu_Standard":15,
 		"SAD_Ptah_Standard":15,
 		"SAD_Apis_Standard":3,
 		"SAD_Apis_Strange":3,
-		"fallback":{"combatSmall":2},
 	},
 	"combatLarge":{
 		"SAD_Maat_Standard":16,
@@ -33,45 +32,25 @@
 		"SAD_Imhotep_Standard":8,
 		"SAD_Taweret_Standard":2,
 		"SAD_Niddhoggr_Standard":1,
-		"fallback":{"combatMedium":2},
+		"SAD_Atan_Standard":1,
 	},
 	"combatCapital":{
 		"SAD_Taweret_Standard":10,
 		"SAD_Niddhoggr_Standard":5,
-		"fallback":{"combatLarge":2},
 	},
 
 	"phaseSmall":{
 		"SAD_Babi_Standard":3,
-		"fallback":{"phaseMedium":0.5},
-		"fallback2":{"phaseLarge":0.25},
-	},
-	"phaseMedium":{
-		"SAD_Babi_Standard":3,
-
-		"fallback":{"phaseSmall":1},
-		"fallback2":{"phaseLarge":0.5},
-	},
-	"phaseLarge":{
-		"SAD_Babi_Standard":3,
-
-		"fallback":{"phaseMedium":1},
-		"fallback2":{"phaseSmall":1},
-	},
-	"phaseCapital":{
 	},
 	"carrierSmall":{
 		"SAD_Seshat_Standard":4,
-		"fallback":{"carrierMedium":0.5},
 	},
 	"carrierMedium":{
 	"SAD_Hathor_Standard":4,
-		"fallback":{"carrierSmall":2},
 	},
 	"carrierLarge":{
 	"SAD_Imhotep_Missile":2,
 	"SAD_Imhotep_Standard":2,
-		"fallback":{"carrierMedium":3},
 	},
 
 	"freighterSmall":{
