@@ -1,19 +1,20 @@
-package src.data.scripts.campaign.raid;
+package src.data.scripts.campaign.raid.sub;
 
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.impl.campaign.intel.raid.BaseRaidStage;
-import com.fs.starfarer.api.impl.campaign.intel.raid.RaidIntel;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import java.awt.Color;
+import src.data.scripts.campaign.raid.SAD_raidIntel;
+import src.data.scripts.campaign.raid.SAD_raidIntel.RaidStageStatus;
 
-public class SAD_OrganizeStage extends BaseRaidStage {
+public class SAD_OrganizeStage extends SAD_BaseRaidStage {
+	
 
     protected CampaignFleetAPI from;
     protected IntervalUtil interval = new IntervalUtil(0.1f, 0.2f);
 
-    public SAD_OrganizeStage(RaidIntel raid, CampaignFleetAPI from, float durDays) {
+    public SAD_OrganizeStage(SAD_raidIntel raid, CampaignFleetAPI from, float durDays) {
         //super(raid, market, durDays);
         super(raid);
         this.from = from;
@@ -26,7 +27,7 @@ public class SAD_OrganizeStage extends BaseRaidStage {
     }
 
     protected String getRaidString() {
-        return "Crazy raid";
+        return "crazy raid";
     }
     @Override
     public void advance(float amount) {
@@ -36,12 +37,12 @@ public class SAD_OrganizeStage extends BaseRaidStage {
     @Override
     protected void updateStatus() {
         if (maxDays <= elapsed) {
-            status = RaidIntel.RaidStageStatus.SUCCESS;
+            status = RaidStageStatus.SUCCESS;
         }
     }
 
     public void abort() {
-        status = RaidIntel.RaidStageStatus.FAILURE;
+        status = RaidStageStatus.FAILURE;
     }
 
     public CampaignFleetAPI getFrom() {
@@ -60,7 +61,7 @@ public class SAD_OrganizeStage extends BaseRaidStage {
         float opad = 10f;
 
         int days = Math.round(maxDays - elapsed);
-        String strDays = RaidIntel.getDaysString(days);
+        String strDays = SAD_raidIntel.getDaysString(days);
 
         String timing = getForcesString() + " should begin assembling in %s " + strDays + ".";
         if (days < 2) {
@@ -68,7 +69,7 @@ public class SAD_OrganizeStage extends BaseRaidStage {
         }
 
         String raid = getRaidString();
-        if (status == RaidIntel.RaidStageStatus.FAILURE) {
+        if (status == RaidStageStatus.FAILURE) {
             info.addPara("The " + raid + " has been disrupted in the planning stages and will not happen.", opad);
         } else if (curr == index) {
             info.addPara("The " + raid + " is currently being planned "
@@ -77,5 +78,10 @@ public class SAD_OrganizeStage extends BaseRaidStage {
 
         }
     }
-
 }
+
+
+
+
+
+

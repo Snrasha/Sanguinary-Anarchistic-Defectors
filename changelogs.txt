@@ -2,7 +2,8 @@
 
 Version 0.9:
 -Update for the version 0.9 of Starsector
--Add a special expedition only for sad faction.
+-Add a regenerating system if a SAD station has be destroyed. (They always respawn after a certain time)
+
 
 Version 0.81b:
 -Fix the phase ship(Babi) mount

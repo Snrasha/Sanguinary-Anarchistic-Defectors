@@ -1,41 +1,29 @@
-package src.data.scripts.campaign.raid;
-
-import java.awt.Color;
-import java.util.ArrayList;
-import java.util.List;
+package src.data.scripts.campaign.raid.sub;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.SectorEntityToken;
-import com.fs.starfarer.api.campaign.ai.CampaignFleetAIAPI.ActionType;
+import com.fs.starfarer.api.campaign.ai.CampaignFleetAIAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.impl.campaign.DebugFlags;
 import com.fs.starfarer.api.impl.campaign.MilitaryResponseScript;
-import com.fs.starfarer.api.impl.campaign.MilitaryResponseScript.MilitaryResponseParams;
 import com.fs.starfarer.api.impl.campaign.command.WarSimScript;
 import com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
-import com.fs.starfarer.api.impl.campaign.intel.raid.ActionStage;
-import com.fs.starfarer.api.impl.campaign.intel.raid.RaidIntel.RaidStageStatus;
-import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseAssignmentAI.FleetActionDelegate;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseAssignmentAI;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD;
-import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD.BombardType;
 import com.fs.starfarer.api.ui.TooltipMakerAPI;
 import com.fs.starfarer.api.util.Misc;
-import src.data.scripts.campaign.raid.SAD_RouteManager.RouteData;
-import src.data.scripts.campaign.raid.SAD_RouteManager.RouteSegment;
-import src.data.scripts.campaign.raid.SAD_raidIntel.PunExOutcome;
-import src.data.scripts.campaign.raid.SAD_raidManager.PunExGoal;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
+import src.data.scripts.campaign.raid.SAD_RouteManager;
+import src.data.scripts.campaign.raid.SAD_raidManager;
+import src.data.scripts.campaign.raid.SAD_raidIntel;
 
-public class SAD_ActionStage extends ActionStage implements FleetActionDelegate {
-	
-	protected MarketAPI target;
-	protected boolean playerTargeted = false;
-	protected List<MilitaryResponseScript> scripts = new ArrayList<MilitaryResponseScript>();
-	protected boolean gaveOrders = true; // will be set to false in updateRoutes()
-	protected float untilAutoresolve = 30f;
-	
+
+public class SAD_ActionStage extends SAD_BaseRaidStage implements BaseAssignmentAI.FleetActionDelegate {
 	public SAD_ActionStage(SAD_raidIntel raid, MarketAPI target) {
 		super(raid);
 		this.target = target;
@@ -43,6 +31,19 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		
 		untilAutoresolve = 15f + 5f * (float) Math.random();
 	}
+
+	@Override
+	public void notifyStarted() {
+		updateRoutes();
+	}
+
+        	
+	protected MarketAPI target;
+	protected boolean playerTargeted = false;
+	protected List<MilitaryResponseScript> scripts = new ArrayList<MilitaryResponseScript>();
+	protected boolean gaveOrders = true; // will be set to false in updateRoutes()
+	protected float untilAutoresolve = 30f;
+
 	
 
 	@Override
@@ -65,7 +66,7 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 			// just make sure they're around for long enough
 			float duration = 100f;
 			
-			MilitaryResponseParams params = new MilitaryResponseParams(ActionType.HOSTILE, 
+			MilitaryResponseScript.MilitaryResponseParams params = new MilitaryResponseScript.MilitaryResponseParams(CampaignFleetAIAPI.ActionType.HOSTILE, 
 					"PE_" + Misc.genUID() + target.getId(), 
 					intel.getFaction(),
 					target.getPrimaryEntity(),
@@ -75,7 +76,7 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 			target.getContainingLocation().addScript(script);
 			scripts.add(script);
 			
-			MilitaryResponseParams defParams = new MilitaryResponseParams(ActionType.HOSTILE, 
+			MilitaryResponseScript.MilitaryResponseParams defParams = new MilitaryResponseScript.MilitaryResponseParams(CampaignFleetAIAPI.ActionType.HOSTILE, 
 					"defPE_" + Misc.genUID() + target.getId(), 
 					target.getFaction(),
 					target.getPrimaryEntity(),
@@ -103,7 +104,7 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 //		}
 		
 		abortIfNeededBasedOnFP(true);
-		if (status != RaidStageStatus.ONGOING) return;
+		if (status != SAD_raidIntel.RaidStageStatus.ONGOING) return;
 		
 		boolean inSpawnRange = SAD_RouteManager.isPlayerInSpawnRange(target.getPrimaryEntity());
 		if (!inSpawnRange && untilAutoresolve <= 0){
@@ -112,7 +113,7 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		}
 		
 		if (!target.isInEconomy() || !target.isPlayerOwned()) {
-			status = RaidStageStatus.FAILURE;
+			status = SAD_raidIntel.RaidStageStatus.FAILURE;
 			removeMilScripts();
 			giveReturnOrdersToStragglers(getRoutes());
 			return;
@@ -122,8 +123,8 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 	
 	public String getRaidActionText(CampaignFleetAPI fleet, MarketAPI market) {
 		SAD_raidIntel intel = ((SAD_raidIntel)this.intel);
-		PunExGoal goal = intel.getGoal();
-		if (goal == PunExGoal.BOMBARD) {
+		SAD_raidManager.PunExGoal goal = intel.getGoal();
+		if (goal == SAD_raidManager.PunExGoal.BOMBARD) {
 			return "bombarding " + market.getName();
 		}
 		return "raiding " + market.getName();
@@ -131,8 +132,8 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 
 	public String getRaidApproachText(CampaignFleetAPI fleet, MarketAPI market) {
 		SAD_raidIntel intel = ((SAD_raidIntel)this.intel);
-		PunExGoal goal = intel.getGoal();
-		if (goal == PunExGoal.BOMBARD) {
+		SAD_raidManager.PunExGoal goal = intel.getGoal();
+		if (goal == SAD_raidManager.PunExGoal.BOMBARD) {
 			return "moving in to bombard " + market.getName();
 		}
 		return "moving in to raid " + market.getName();
@@ -142,11 +143,11 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		removeMilScripts();
 		
 		SAD_raidIntel intel = ((SAD_raidIntel)this.intel);
-		PunExGoal goal = intel.getGoal();
+		SAD_raidManager.PunExGoal goal = intel.getGoal();
 		
-		status = RaidStageStatus.SUCCESS;
+		status = SAD_raidIntel.RaidStageStatus.SUCCESS;
 		
-		if (goal == PunExGoal.BOMBARD) {
+		if (goal == SAD_raidManager.PunExGoal.BOMBARD) {
 			float cost = MarketCMD.getBombardmentCost(market, fleet);
 			//float maxCost = intel.getAssembleStage().getOrigSpawnFP() * Misc.FP_TO_BOMBARD_COST_APPROX_MULT;
 			float maxCost = intel.getRaidFP() / intel.getNumFleets() * Misc.FP_TO_BOMBARD_COST_APPROX_MULT;
@@ -155,11 +156,11 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 			}
 			
 			if (cost <= maxCost) {
-				new MarketCMD(market.getPrimaryEntity()).doBombardment(intel.getFaction(), BombardType.SATURATION);
-				intel.setOutcome(PunExOutcome.SUCCESS);
+				new MarketCMD(market.getPrimaryEntity()).doBombardment(intel.getFaction(), MarketCMD.BombardType.SATURATION);
+				intel.setOutcome(SAD_raidIntel.PunExOutcome.SUCCESS);
 			} else {
-				intel.setOutcome(PunExOutcome.BOMBARD_FAIL);
-				status = RaidStageStatus.FAILURE;
+				intel.setOutcome(SAD_raidIntel.PunExOutcome.BOMBARD_FAIL);
+				status = SAD_raidIntel.RaidStageStatus.FAILURE;
 				
 				Misc.setFlagWithReason(market.getMemoryWithoutUpdate(), MemFlags.RECENTLY_BOMBARDED, 
 			   			   			   intel.getFaction().getId(), true, 30f);
@@ -177,10 +178,10 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 			boolean raidSuccess = new MarketCMD(market.getPrimaryEntity()).doIndustryRaid(intel.getFaction(), str, intel.targetIndustry, durMult);
 			
 			if (raidSuccess) {
-				intel.setOutcome(PunExOutcome.SUCCESS);
+				intel.setOutcome(SAD_raidIntel.PunExOutcome.SUCCESS);
 			} else {
-				intel.setOutcome(PunExOutcome.RAID_FAIL);
-				status = RaidStageStatus.FAILURE;
+				intel.setOutcome(SAD_raidIntel.PunExOutcome.RAID_FAIL);
+				status = SAD_raidIntel.RaidStageStatus.FAILURE;
 				
 				Misc.setFlagWithReason(market.getMemoryWithoutUpdate(), MemFlags.RECENTLY_RAIDED, 
 						   			   intel.getFaction().getId(), true, 30f);
@@ -194,7 +195,7 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		
 		// when FAILURE, gets sent by RaidIntel
 		if (intel.getOutcome() != null) {
-			if (status == RaidStageStatus.SUCCESS) {
+			if (status == SAD_raidIntel.RaidStageStatus.SUCCESS) {
 				intel.sendOutcomeUpdate();
 			} else {
 				removeMilScripts();
@@ -211,14 +212,14 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		float defensiveStr = enemyStr + WarSimScript.getStationStrength(target.getFaction(), 
 							 target.getStarSystem(), target.getPrimaryEntity());
 		if (defensiveStr >= str) {
-			status = RaidStageStatus.FAILURE;
+			status = SAD_raidIntel.RaidStageStatus.FAILURE;
 			removeMilScripts();
 			giveReturnOrdersToStragglers(getRoutes());
 			
 			// not strictly necessary, I think, but shouldn't hurt
 			// otherwise would get set in PunitiveExpeditionIntel.notifyRaidEnded()
 			SAD_raidIntel intel = ((SAD_raidIntel)this.intel);
-			intel.setOutcome(PunExOutcome.TASK_FORCE_DEFEATED);
+			intel.setOutcome(SAD_raidIntel.PunExOutcome.TASK_FORCE_DEFEATED);
 			return;
 		}
 		
@@ -238,12 +239,12 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		
 		((SAD_raidIntel)intel).sendEnteredSystemUpdate();
 		
-		List<RouteData> routes = SAD_RouteManager.getInstance().getRoutesForSource(intel.getRouteSourceId());
-		for (RouteData route : routes) {
+		List<SAD_RouteManager.RouteData> routes = SAD_RouteManager.getInstance().getRoutesForSource(intel.getRouteSourceId());
+		for (SAD_RouteManager.RouteData route : routes) {
 			if (target.getStarSystem() != null) { // so that fleet may spawn NOT at the target
-				route.addSegment(new RouteSegment(Math.min(5f, untilAutoresolve), target.getStarSystem().getCenter()));
+				route.addSegment(new SAD_RouteManager.RouteSegment(Math.min(5f, untilAutoresolve), target.getStarSystem().getCenter()));
 			}
-			route.addSegment(new RouteSegment(1000f, target.getPrimaryEntity()));
+			route.addSegment(new SAD_RouteManager.RouteSegment(1000f, target.getPrimaryEntity()));
 		}
 	}
 	
@@ -260,7 +261,7 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		
 		if (curr < index) return;
 		
-		if (status == RaidStageStatus.ONGOING && curr == index) {
+		if (status == SAD_raidIntel.RaidStageStatus.ONGOING && curr == index) {
 			info.addPara("The expedition forces are currently in-system.", opad);
 			return;
 		}
@@ -272,34 +273,34 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 				info.addPara("The ground defenses of " + target.getName() + " were sufficient to prevent bombardment.", opad);
 				break;
 			case RAID_FAIL:
-				info.addPara("The raiding forces have been repelled by the ground defenses of " + target.getName() + ".", opad);
+				info.addPara("The \"Peace and Love\" forces have been repelled by the ground defenses of " + target.getName() + ".", opad);
 				break;
 			case SUCCESS:
-				if (intel.goal == PunExGoal.BOMBARD) {
+				if (intel.goal == SAD_raidManager.PunExGoal.BOMBARD) {
 					if (!target.isInEconomy()) {
-						info.addPara("The expeditionary force has successfully bombarded " + target.getName() + ", destroying the colony outright.", opad);
+						info.addPara("The \"Peace and Love\" force has successfully bombarded " + target.getName() + ", destroying the colony outright.", opad);
 					} else {
-						info.addPara("The expeditionary force has successfully bombarded " + target.getName() + ".", opad);
+						info.addPara("The \"Peace and Love\" force has successfully bombarded " + target.getName() + ".", opad);
 					}
 				} else if (intel.getTargetIndustry() != null) {
-					info.addPara("The expeditionary force has disrupted " + 
+					info.addPara("The \"Peace and Love\" force has disrupted " + 
 							intel.getTargetIndustry().getCurrentName() + " operations for %s days.",
 							opad, h, "" + (int)Math.round(intel.getTargetIndustry().getDisruptedDays()));
 				}
 				break;
 			case TASK_FORCE_DEFEATED:
-				info.addPara("The expeditionary force has been defeated by the defenders of " +
+				info.addPara("The \"Peace and Love\" force has been defeated by the defenders of " +
 								target.getName() + ".", opad);
 				break;
 			case COLONY_NO_LONGER_EXISTS:
-				info.addPara("The expedition has been aborted.", opad);
+				info.addPara("The \"Peace and Love\" force has been aborted.", opad);
 				break;
 			
 			}
-		} else if (status == RaidStageStatus.SUCCESS) {			
-			info.addPara("The expeditionary force has succeeded.", opad); // shouldn't happen?
+		} else if (status == SAD_raidIntel.RaidStageStatus.SUCCESS) {			
+			info.addPara("The \"Peace and Love\" force has succeeded.", opad); // shouldn't happen?
 		} else {
-			info.addPara("The expeditionary force has failed.", opad); // shouldn't happen?
+			info.addPara("The \"Peace and Love\" force has failed.", opad); // shouldn't happen?
 		}
 	}
 
@@ -321,25 +322,8 @@ public class SAD_ActionStage extends ActionStage implements FleetActionDelegate 
 		return "traveling";		
 	}
 	
-	@Override
 	public boolean isPlayerTargeted() {
 		return playerTargeted;
 	}
+        
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -104,7 +104,7 @@ public class SAD_AvertInteractionDialogPluginImpl implements InteractionDialogPl
 		
 		switch (option) {
 		case BRIBE:
-			int bribe = computeBribeAmount();
+			int bribe = 10*computeBribeAmount();
 			textPanel.addPara("Sufficient funding allocated to proper official and unofficial actors should " +
 					"ensure that the expedition does not go beyond the planning stage.");
 			
@@ -123,7 +123,7 @@ public class SAD_AvertInteractionDialogPluginImpl implements InteractionDialogPl
 			
 			break;
 		case USE_CONNECTIONS:
-			boolean canUseConnections = faction.isAtWorst(Factions.PLAYER, MIN_REP);
+			boolean canUseConnections = false;//faction.isAtWorst(Factions.PLAYER, MIN_REP);
 			if (canUseConnections) {
 				textPanel.addPara("You can use your connections to pull a few strings and ensure the operation " +
 						"never gets beyond the planning stage.");
@@ -197,7 +197,7 @@ public class SAD_AvertInteractionDialogPluginImpl implements InteractionDialogPl
 		textPanel.addTooltip();
 		
 		textPanel.addPara("The operation is still in the planning stages, " +
-				"and you have several options at your disposal to ensure it never gets off the ground.");
+				"and you have(not) several options at your disposal to ensure it never gets off the ground.");
 	}
 	
 	public void optionSelected(String text, Object optionData) {

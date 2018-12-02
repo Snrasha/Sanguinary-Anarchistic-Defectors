@@ -28,34 +28,6 @@
 	"world":1,
 	"hindu":1,
 	},
-	"hullMods":[
-		"advancedshieldemitter",
-		"advancedoptics",
-		"turretgyros",
-		"augmentedengines",
-		"auxiliarythrusters",
-		"dedicated_targeting_core",
-		"eccm",
-		"missleracks",
-		"extendedshieldemitter",
-		"fluxcoil",
-		"fluxdistributor",
-		"frontemitter",
-		"frontshield",
-		"hardenedshieldemitter",
-		"hardened_subsystems",
-		"insulatedengine",
-		"pointdefenseai",
-		"targetingunit",
-		"adaptiveshields",
-		"fluxbreakers",
-		"stabilizedshieldemitter",
-		"expanded_deck_crew",
-		"recovery_shuttles",
-		"operations_center",
-		"nav_relay",
-		"ecm",
-	],
 	"illegalCommodities":[
 		"organs",
 		"hand_weapons",
@@ -149,7 +121,35 @@
 			"tags":["sad_bp", "sad_special"],
 				#"weapons":[]
 			},
-
+			"knownHullMods":{
+				"tags":["base_bp"],
+				"hullMods":[
+				        "advancedshieldemitter",
+				        "advancedoptics",
+				        "augmentedengines",
+				        "auxiliarythrusters",
+				        "dedicated_targeting_core",
+				        "eccm",
+				        "missleracks",
+				        "extendedshieldemitter",
+				        "fluxcoil",
+				        "fluxdistributor",
+				        "frontemitter",
+				        "frontshield",
+				        "hardenedshieldemitter",
+				        "hardened_subsystems",
+				        "insulatedengine",
+				        "targetingunit",
+				        "adaptiveshields",
+				        "fluxbreakers",
+				        "stabilizedshieldemitter",
+				        "expanded_deck_crew",
+				        "recovery_shuttles",
+				        "operations_center",
+				        "nav_relay",
+				        "ecm",
+				],
+			},
 
 	"fleetTypeNames":{
 		"patrolSmall":"Raiders",
@@ -183,7 +183,7 @@
 			"combatFreighterProbability":0.25,     				# instead of some portion of the freighters in a fleet
 			"combatFreighterCombatUseFraction":0.25,  				# as part of the normal combat lineup
 			"combatFreighterCombatUseFractionWhenPriority":0.20,# as part of normal combat lineup, when marked as priority ship
-			"autofitRandomizeProbability":0.10,
+			"autofitRandomizeProbability":0.0,
 
 			"commanderSkillsShuffleProbability":0.5,
 			"commanderSkills":[

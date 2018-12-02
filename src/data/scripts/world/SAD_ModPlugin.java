@@ -13,7 +13,8 @@ import com.thoughtworks.xstream.XStream;
 import src.data.utils.XStreamConfig;
 //import data.scripts.hullmods.TEM_LatticeShield;
 import src.data.scripts.ai.SAD_SimpleMissileAI;
-import src.data.scripts.campaign.raid.SAD_raidManager;
+import src.data.scripts.campaign.SAD_respawnManager;
+//import src.data.scripts.campaign.raid.SAD_raidManager;
 
 public class SAD_ModPlugin extends BaseModPlugin {
 
@@ -52,14 +53,18 @@ public class SAD_ModPlugin extends BaseModPlugin {
 
         SectorAPI sector = Global.getSector();
         GenericPluginManagerAPI plugins = sector.getGenericPlugins();
-        if (!sector.hasScript(SAD_raidManager.class)) {
+        /*if (!sector.hasScript(SAD_raidManager.class)) {
             sector.addScript(new SAD_raidManager());
+        }*/
+        if (!sector.hasScript(SAD_respawnManager.class)) {
+            sector.addScript(new SAD_respawnManager());
         }
+        
     }
 
     @Override
     public void onNewGameAfterEconomyLoad() {
-        addScriptsIfNeeded();
+       addScriptsIfNeeded();
 
     }
 

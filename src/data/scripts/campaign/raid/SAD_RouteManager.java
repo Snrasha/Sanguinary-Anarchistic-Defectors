@@ -21,7 +21,7 @@ import com.fs.starfarer.api.campaign.listeners.FleetEventListener;
 import com.fs.starfarer.api.util.Misc;
 
 public class SAD_RouteManager implements FleetEventListener {
-	public static final String KEY = "$core_routeManager";
+	public static final String KEY = "$sad_routeManager";
 	
 	public static float IN_OUT_PHASE_DAYS = 3f;
 	public static float IN_OUT_PHASE_FRACTION = 0.2f;
@@ -226,7 +226,7 @@ public class SAD_RouteManager implements FleetEventListener {
 		protected SAD_OptionalFleetData extra = null;
 		protected float delay = 0f;
 		protected String source;
-		protected CampaignFleetAPI from;
+		public SectorEntityToken from;
 		protected Long seed;
 		protected long timestamp;
 		protected List<RouteSegment> segments = new ArrayList<RouteSegment>();
@@ -236,7 +236,7 @@ public class SAD_RouteManager implements FleetEventListener {
 		protected RouteSegment current;
 		protected SAD_RouteFleetSpawner spawner;
 	
-		public RouteData(String source, CampaignFleetAPI from, Long seed, SAD_OptionalFleetData extra) {
+		public RouteData(String source, SectorEntityToken from, Long seed, SAD_OptionalFleetData extra) {
 			this.source = source;
 			this.from = from;
 			this.seed = seed;
@@ -246,7 +246,7 @@ public class SAD_RouteManager implements FleetEventListener {
 		public SAD_OptionalFleetData getExtra() {
 			return extra;
 		}
-		public CampaignFleetAPI getFrom() {
+		public SectorEntityToken getFrom() {
 			return from;
 		}
 		public void goToAtLeastNext(RouteSegment from) {
@@ -458,11 +458,11 @@ public class SAD_RouteManager implements FleetEventListener {
 	}
 	
 	
-	public RouteData addRoute(String source, CampaignFleetAPI from, Long seed, SAD_OptionalFleetData extra, SAD_RouteFleetSpawner spawner) {
+	public RouteData addRoute(String source, SectorEntityToken from, Long seed, SAD_OptionalFleetData extra, SAD_RouteFleetSpawner spawner) {
 		return addRoute(source, from, seed, extra, spawner, null);
 	}
 	
-	public RouteData addRoute(String source, CampaignFleetAPI from, Long seed, SAD_OptionalFleetData extra, SAD_RouteFleetSpawner spawner, Object custom) {
+	public RouteData addRoute(String source, SectorEntityToken from, Long seed, SAD_OptionalFleetData extra, SAD_RouteFleetSpawner spawner, Object custom) {
 		routesByLocation = null;
 		
 		RouteData route = new RouteData(source, from, seed, extra);
@@ -560,9 +560,6 @@ public class SAD_RouteManager implements FleetEventListener {
 				}
 			}
 			
-//			if (shouldDespawn(data)) {
-//				System.out.println("wfwefwe");
-//			}
 			if (shouldDespawn(data)) {
 				data.spawner.reportAboutToBeDespawnedByRouteManager(data);
 				data.activeFleet.despawn(FleetDespawnReason.PLAYER_FAR_AWAY, null);
@@ -572,13 +569,9 @@ public class SAD_RouteManager implements FleetEventListener {
 				data.activeFleet = null;
 				sub++;
 				
-				//System.out.println("Despawn index: " + routes.indexOf(data));
 				continue;
 			}
 			
-//			if (shouldSpawn(data)) {
-//				System.out.println("wefwef23f23");
-//			}
 			if (shouldSpawn(data)) {
 				data.activeFleet = data.spawner.spawnFleet(data);
 				if (data.activeFleet != null) {
@@ -588,37 +581,20 @@ public class SAD_RouteManager implements FleetEventListener {
 					data.expire();
 				}
 				
-//				Vector2f interpLoc = data.getInterpolatedHyperLocation();
-//				float distLY = Misc.getDistanceLY(interpLoc, player.getLocationInHyperspace());
-//				float distLYActual = Misc.getDistanceLY(data.activeFleet.getLocation(), player.getLocationInHyperspace());
-//				System.out.println("Dist: " + distLY + ", actual: " + distLYActual);
-				//System.out.println("Spawn index: " + routes.indexOf(data));
-				continue;
 			}
 			
 		}
 		
-//		System.out.println("Add: " + add + ", sub: " + sub);
-//		System.out.println("Total: " + Global.getSector().getHyperspace().getFleets().size());
 	}
 	
 	protected boolean shouldSpawn(RouteData data) {
 		if (data.delay > 0) return false;
 		if (data.activeFleet != null) return false;
-		//if (true) return true;
-		
-//		int index = data.getSegments().indexOf(data.getCurrent());
-//		if (index <= 0 || data.getCurrent().elapsed < 8f) return false;
-		//if (index <= 3 || data.getCurrent().elapsed < 1f) return false;
-//		if (index < 5) return false;
-		
 		Vector2f interpLoc = data.getInterpolatedHyperLocation();
 		
 		CampaignFleetAPI player = Global.getSector().getPlayerFleet();
 		float distLY = Misc.getDistanceLY(interpLoc, player.getLocationInHyperspace());
-		if (distLY < SPAWN_DIST_LY) return true;
-		
-		return false;
+		return distLY < SPAWN_DIST_LY;
 	}
 	
 	public static boolean isPlayerInSpawnRange(SectorEntityToken from) {

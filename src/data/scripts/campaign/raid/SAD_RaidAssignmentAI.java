@@ -12,12 +12,12 @@ import com.fs.starfarer.api.campaign.StarSystemAPI;
 import com.fs.starfarer.api.campaign.ai.FleetAssignmentDataAPI;
 import com.fs.starfarer.api.impl.campaign.fleets.RouteLocationCalculator;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
-import com.fs.starfarer.api.impl.campaign.intel.raid.BaseRaidStage;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseAssignmentAI;
 import com.fs.starfarer.api.util.Misc;
 import java.util.List;
 import src.data.scripts.campaign.raid.SAD_RouteManager.RouteData;
 import src.data.scripts.campaign.raid.SAD_RouteManager.RouteSegment;
+import src.data.scripts.campaign.raid.sub.*;
 
 public class SAD_RaidAssignmentAI extends BaseAssignmentAI implements FleetActionTextProvider {
        protected RouteData route;
@@ -285,7 +285,7 @@ public class SAD_RaidAssignmentAI extends BaseAssignmentAI implements FleetActio
 		//if (!Misc.isBusy(fleet) && 
 		if (curr != null && 
 				(
-					BaseRaidStage.STRAGGLER.equals(route.getCustom()) || 
+					SAD_BaseRaidStage.STRAGGLER.equals(route.getCustom()) || 
 					SAD_AssembleStage.WAIT_STAGE.equals(curr.custom) || 
 					curr.isTravel())) {
 			Misc.setFlagWithReason(fleet.getMemoryWithoutUpdate(), MemFlags.FLEET_BUSY, "raid_wait", true, 1);

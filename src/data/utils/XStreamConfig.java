@@ -39,7 +39,7 @@ public class XStreamConfig {
         x.aliasAttribute(SAD_WarningBeaconEntityPlugin.class, "freqMult", "f");
         x.aliasAttribute(SAD_WarningBeaconEntityPlugin.class, "sincePing", "s");
 
-        x.alias("SAD_RouteManager", SAD_RouteManager.class);
+    /*    x.alias("SAD_RouteManager", SAD_RouteManager.class);
         x.aliasAttribute(SAD_RouteManager.class, "routes", "r");
 
         x.alias("SAD_RouteData", RouteData.class);
@@ -77,6 +77,6 @@ public class XStreamConfig {
         x.aliasAttribute(SAD_OptionalFleetData.class, "factionId", "f");
         x.aliasAttribute(SAD_OptionalFleetData.class, "fleetType", "t");
         x.aliasAttribute(SAD_OptionalFleetData.class, "damage", "d");
-
+*/
     }
 }

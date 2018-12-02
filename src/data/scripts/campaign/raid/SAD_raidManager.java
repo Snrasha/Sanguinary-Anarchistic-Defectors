@@ -11,7 +11,6 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
-import com.fs.starfarer.api.campaign.econ.CommodityOnMarketAPI;
 import com.fs.starfarer.api.campaign.econ.Industry;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
@@ -24,7 +23,6 @@ import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
-import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.convertOrbitWithSpin;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.pickCommonLocation;
@@ -37,8 +35,10 @@ import org.lazywizard.lazylib.MathUtils;
 import static src.data.scripts.campaign.SAD_ThemeGenerator.addSADStationInteractionConfig;
 import src.data.utils.SAD_Tags;
 import org.apache.log4j.Logger;
+import src.data.scripts.campaign.SAD_StationFleetManager;
 
 public class SAD_raidManager implements EveryFrameScript {
+
     public static final Logger log = Global.getLogger(SAD_raidManager.class);
 
     public static final String KEY = "$SAD_raidManager";
@@ -83,12 +83,12 @@ public class SAD_raidManager implements EveryFrameScript {
     public static class PunExData {
 
         public FactionAPI faction;
-        public IntervalUtil tracker = new IntervalUtil(20f, 40f);
+        public IntervalUtil tracker = new IntervalUtil(10f, 20f);
         public float anger = 0f;
         public float threshold = 100f;
         public float timeout = 0f;
-        ;
-		public BaseIntelPlugin intel;
+
+        public SAD_raidIntel intel;
         public Random random = new Random();
 
         public int numSuccesses = 0;
@@ -102,7 +102,7 @@ public class SAD_raidManager implements EveryFrameScript {
         dataSAD = Global.getSector().getFaction(SAD_Tags.SAD_FACTION);
         PunExData curr = new PunExData();
         dataPun = curr;
-        dataPun.anger=500;
+        dataPun.anger = 500;
 
     }
 
@@ -111,7 +111,7 @@ public class SAD_raidManager implements EveryFrameScript {
     }
     protected Random random = MathUtils.getRandom();
 
-    protected StarSystemAPI pickSADSystem() {
+    protected StarSystemAPI pickSADSystem(boolean logEnable) {
         WeightedRandomPicker<StarSystemAPI> far = new WeightedRandomPicker<>(random);
         WeightedRandomPicker<StarSystemAPI> picker = new WeightedRandomPicker<>(random);
 
@@ -120,14 +120,20 @@ public class SAD_raidManager implements EveryFrameScript {
             if (days < 45f) {
                 continue;
             }
-            for(String str:system.getTags())log.info(system.getNameWithLowercaseType()+"Has TAGs: " + str);
-
+            if (logEnable) {
+                for (String str : system.getTags()) {
+                    log.info(system.getNameWithLowercaseType() + " has TAGs: " + str);
+                }
+            }
 
             float weight = 0f;
+            weight = 1000f;
             if (!system.hasTag(SAD_Tags.THEME_SAD) && !system.hasTag(SAD_Tags.THEME_SAD_MAIN)) {
                 continue;
             }
-            log.info("    Picker add " + system.getNameWithLowercaseType());
+            if (logEnable) {
+                log.info("    Picker add " + system.getNameWithLowercaseType());
+            }
 
             float dist = system.getLocation().length();
 
@@ -147,7 +153,7 @@ public class SAD_raidManager implements EveryFrameScript {
         return picker.pick();
     }
 
-    public List<CampaignFleetAPI> addBattlestations(StarSystemAPI system, float chanceToAddAny, int min, int max,WeightedRandomPicker<String> stationTypes) {
+    public List<CampaignFleetAPI> addBattlestations(StarSystemAPI system, float chanceToAddAny, int min, int max, WeightedRandomPicker<String> stationTypes) {
         List<CampaignFleetAPI> result = new ArrayList<>();
         if (random.nextFloat() >= chanceToAddAny) {
             return result;
@@ -213,48 +219,67 @@ public class SAD_raidManager implements EveryFrameScript {
 
             }
         }
+        for (CampaignFleetAPI station : result) {
+            int maxFleets = 2 + random.nextInt(3);
+            SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
+                    station, 1f, 0, maxFleets, 20f, 6, 12);
+            system.addScript(activeFleets);
+        }
         return result;
     }
 
     public CampaignFleetAPI getStation() {
-        StarSystemAPI system = pickSADSystem();
-        if(system==null)return null;
+        StarSystemAPI system = pickSADSystem(true);
+
+        if (system == null) {
+            log.info("null has be choice ");
+
+            return null;
+        }
+        log.info(system.getNameWithLowercaseType() + " has be choice ");
+
         List<CampaignFleetAPI> fleets = system.getFleets();
+        log.info("Fleet size:" + fleets.size());
+
         for (CampaignFleetAPI fleet : fleets) {
+            for (String str : fleet.getTags()) {
+                log.info(fleet.getName() + " has TAGs: " + str);
+            }
+
             if (fleet.hasTag(SAD_Tags.SAD_STATION)) {
-                log.info("Found sad station to "+fleet.getContainingLocation().getNameWithLowercaseType());
+                log.info("Found sad station to " + fleet.getContainingLocation().getNameWithLowercaseType());
                 return fleet;
             }
         }
-        
-        fleets= addBattlestations(system, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
+
+        fleets = addBattlestations(system, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
         for (CampaignFleetAPI fleet : fleets) {
-            if (fleet.hasTag(SAD_Tags.SAD_STATION)) {
-                log.info("Found a build sad station to "+fleet.getContainingLocation().getNameWithLowercaseType());
-                return fleet;
-            }
+            log.info("Found a build sad station to " + fleet.getContainingLocation().getNameWithLowercaseType());
+            return fleet;
+
         }
-         
+
         return null;
 
     }
 
-    public WeightedRandomPicker<String> createStringPicker(Object ... params) {
-		return BaseThemeGenerator.createStringPicker(random, params);
+    public WeightedRandomPicker<String> createStringPicker(Object... params) {
+        return BaseThemeGenerator.createStringPicker(random, params);
     }
-	
+
+    float compt = 5f;
+
     @Override
     public void advance(float amount) {
 
         float days = Misc.getDays(amount);
 
-
         if (this.dataPun.intel != null) {
             if (this.dataPun.intel.isEnded()) {
-                this.dataPun.timeout = 100f + 100f * this.dataPun.random.nextFloat();
+                this.dataPun.timeout = 100f * this.dataPun.random.nextFloat();
 
                 if (this.dataPun.intel instanceof SAD_raidIntel) {
-                    SAD_raidIntel intel = (SAD_raidIntel) this.dataPun.intel;
+                    SAD_raidIntel intel =this.dataPun.intel;
                     if (!intel.isTerritorial()) {
                         this.dataPun.timeout += getExtraTimeout(this.dataPun);
                     }
@@ -263,6 +288,18 @@ public class SAD_raidManager implements EveryFrameScript {
                 this.dataPun.intel = null;
             }
         } else {
+            compt -= days;
+            if (compt < 0) {
+                compt = 5;
+
+                CampaignFleetAPI sta = getStation();
+                if (sta != null) {
+                    log.info("Stations get: " + sta.getFullName());
+                    log.info("Stations get: " + sta.getId());
+                } else {
+                    log.info("Stations get: null");
+                }
+            }
             this.dataPun.timeout -= days;
             if (this.dataPun.timeout <= 0) {
                 this.dataPun.timeout = 0;
@@ -275,7 +312,7 @@ public class SAD_raidManager implements EveryFrameScript {
                 && this.dataPun.intel == null
                 && this.dataPun.timeout <= 0) {
             checkExpedition(this.dataPun);
-            
+
         }
     }
 
@@ -302,7 +339,7 @@ public class SAD_raidManager implements EveryFrameScript {
         List<PunExReason> reasons = getExpeditionReasons(curr);
         float total = 0f;
         for (PunExReason reason : reasons) {
-            total += reason.weight;
+            total += reason.weight*100;
         }
 
         curr.anger += total * (0.25f + curr.random.nextFloat() * 0.75f);
@@ -368,7 +405,6 @@ public class SAD_raidManager implements EveryFrameScript {
 
     protected void createExpedition(PunExData curr) {
 
-
         List<PunExReason> reasons = getExpeditionReasons(curr);
         if (reasons.isEmpty()) {
             return;
@@ -386,7 +422,6 @@ public class SAD_raidManager implements EveryFrameScript {
             float weight = 0f;
             weight += market.getSize();
             weight += 1000f + market.getDaysInExistence();
-            
 
             if (weight > max) {
                 target = market;
@@ -398,13 +433,13 @@ public class SAD_raidManager implements EveryFrameScript {
             return;
         }
 
-
-
         CampaignFleetAPI from = this.getStation();
-        if (from == null) {
-            return;
+        if (from != null) {
+            log.info("Stations get: " + from.getFullName());
+        } else {
+            log.info("Stations get: null");
+               return;
         }
-
         Collections.sort(reasons, new Comparator<PunExReason>() {
             @Override
             public int compare(PunExReason o1, PunExReason o2) {
@@ -413,7 +448,7 @@ public class SAD_raidManager implements EveryFrameScript {
         });
         PunExReason bestReason = reasons.get(0);
 
-        PunExGoal goal = null;
+        PunExGoal goal;
         Industry industry = null;
         if (bestReason.type == PunExType.ANTI_FREE_PORT) {
             goal = PunExGoal.RAID_SPACEPORT;
@@ -461,11 +496,9 @@ public class SAD_raidManager implements EveryFrameScript {
         float fp = 50 + curr.threshold * 0.5f;
         //fp = 500;
         fp *= 5f;
-        
 
         float totalAttempts = 0f;
-        PunExData d = this.dataPun;
-        totalAttempts += d.numAttempts;
+        totalAttempts += this.dataPun.numAttempts;
 
         float extraMult = 0f;
         if (totalAttempts <= 2) {
@@ -482,7 +515,7 @@ public class SAD_raidManager implements EveryFrameScript {
 
         float orgDur = 20f + extraMult * 10f + (10f + extraMult * 5f) * (float) Math.random();
 
-        if(from==null)return;
+ 
         curr.intel = new SAD_raidIntel(this.dataSAD, from, target, fp, orgDur, goal, industry, bestReason);
         if (curr.intel.isDone()) {
             curr.intel = null;
