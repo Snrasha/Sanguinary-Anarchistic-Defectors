@@ -1,7 +1,16 @@
 
 
-Version 0.9b(preview):
+
+
+Version 0.9b:
 -The Atan can be found on normal fleet.
+-Add color on Tech manufactory
+-Wadjet  flux dissipation 60 from 80
+-Fix the respawn of stations (50 days to 240days)
+-Stations can drop survey data.
+-Nerf the impact of the Break CAS Beam to 200 from 300
+-Nerf the impact of the Atan CAS Beam to 1200 from 1450
+
 
 
 Version 0.9:

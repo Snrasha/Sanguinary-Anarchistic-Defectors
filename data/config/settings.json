@@ -29,5 +29,9 @@
   "sad_beacon_low":"graphics/icons/intel/SAD_beacon_low.png",
   "sad_beacon_medium":"graphics/icons/intel/SAD_beacon_med.png",
   "sad_beacon_high":"graphics/icons/intel/SAD_beacon_high.png",
-}
+},
+"designTypeColors":{
+  "Sanguinary Tech":[151,39,102,255],
+},
+
 }

@@ -11,7 +11,9 @@ import org.lwjgl.util.vector.Vector2f;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.CargoAPI;
+import com.fs.starfarer.api.campaign.CargoStackAPI;
 import com.fs.starfarer.api.campaign.CustomCampaignEntityAPI;
+import com.fs.starfarer.api.campaign.FleetEncounterContextPlugin;
 import com.fs.starfarer.api.campaign.InteractionDialogAPI;
 import com.fs.starfarer.api.campaign.JumpPointAPI;
 import com.fs.starfarer.api.campaign.OrbitAPI;
@@ -38,6 +40,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.procgen.Constellation;
 import com.fs.starfarer.api.impl.campaign.procgen.NameAssigner;
+import com.fs.starfarer.api.impl.campaign.procgen.SalvageEntityGenDataSpec;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner.SpecialCreationContext;
 import com.fs.starfarer.api.util.Misc;
@@ -49,6 +52,8 @@ import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerat
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.setEntityLocation;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.ThemeGenContext;
+import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageEntity;
+import java.util.Random;
 import org.apache.log4j.Logger;
 import src.data.utils.SAD_Tags;
 import src.data.utils.SAD_themes;
@@ -543,10 +548,63 @@ log.info("    Adding " + num + " battlestations");
             config.showEngageText = false;
 
             config.delegate = new BaseFIDDelegate() {
-                @Override
+@Override
                 public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {
-                }
+                    if (!(dialog.getInteractionTarget() instanceof CampaignFleetAPI)) {
+                        return;
+                    }
 
+                    CampaignFleetAPI fleet = (CampaignFleetAPI) dialog.getInteractionTarget();
+
+                    FleetEncounterContextPlugin.DataForEncounterSide data = context.getDataFor(fleet);
+                    List<FleetMemberAPI> losses = new ArrayList<FleetMemberAPI>();
+                    for (FleetEncounterContextPlugin.FleetMemberData fmd : data.getOwnCasualties()) {
+                        losses.add(fmd.getMember());
+                    }
+
+                    List<SalvageEntityGenDataSpec.DropData> dropRandom = new ArrayList<SalvageEntityGenDataSpec.DropData>();
+
+                    int[] counts = new int[3];
+                    String[] groups = new String[]{"survey_data1", "survey_data2", "survey_data3"};
+                    //for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
+                    for (FleetMemberAPI member : losses) {
+                        if (member.isStation()) {
+                            counts[2] += 10;
+                        }
+
+                        if (member.isCapital()) {
+                            counts[2] += 2;
+                        } else if (member.isCruiser()) {
+                            counts[2] += 1;
+                        } else if (member.isDestroyer()) {
+                            counts[1] += 1;
+                        } else if (member.isFrigate()) {
+                            counts[0] += 1;
+                        }
+
+                    }
+
+//					if (fleet.isStationMode()) {
+//						counts[2] += 10;
+//					}
+                    for (int i = 0; i < counts.length; i++) {
+                        int count = counts[i];
+                        if (count <= 0) {
+                            continue;
+                        }
+
+                        SalvageEntityGenDataSpec.DropData d = new SalvageEntityGenDataSpec.DropData();
+                        d.group = groups[i];
+                        d.chances = (int) Math.ceil(count * 1f);
+                        dropRandom.add(d);
+                    }
+
+                    Random salvageRandom = new Random(Misc.getSalvageSeed(fleet));
+                    CargoAPI extra = SalvageEntity.generateSalvage(salvageRandom, 1f, 1f, 1f, 1f, null, dropRandom);
+                    for (CargoStackAPI stack : extra.getStacksCopy()) {
+                        salvage.addFromStack(stack);
+                    }
+                }
                 @Override
                 public void notifyLeave(InteractionDialogAPI dialog) {
                 }

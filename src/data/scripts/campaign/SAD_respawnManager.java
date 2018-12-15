@@ -1,19 +1,13 @@
 package src.data.scripts.campaign;
 
-import src.data.scripts.campaign.raid.*;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
 import com.fs.starfarer.api.EveryFrameScript;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
-import com.fs.starfarer.api.campaign.FactionAPI;
 import com.fs.starfarer.api.campaign.StarSystemAPI;
-import com.fs.starfarer.api.campaign.econ.Industry;
-import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.characters.PersonAPI;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.fleet.FleetMemberType;
@@ -21,22 +15,17 @@ import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.ids.Abilities;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
-import com.fs.starfarer.api.impl.campaign.ids.Industries;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
 import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.convertOrbitWithSpin;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.pickCommonLocation;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.setEntityLocation;
-import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.MarketCMD;
-import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import com.fs.starfarer.api.util.WeightedRandomPicker;
 import org.lazywizard.lazylib.MathUtils;
 import static src.data.scripts.campaign.SAD_ThemeGenerator.addSADStationInteractionConfig;
 import src.data.utils.SAD_Tags;
-import org.apache.log4j.Logger;
-import src.data.scripts.campaign.SAD_StationFleetManager;
 
 public class SAD_respawnManager implements EveryFrameScript {
 
@@ -62,7 +51,7 @@ public class SAD_respawnManager implements EveryFrameScript {
 
         for (StarSystemAPI system : Global.getSector().getStarSystems()) {
             float days = Global.getSector().getClock().getElapsedDaysSince(system.getLastPlayerVisitTimestamp());
-            if (days < 60f) {
+            if (days < 240f) {
                 continue;
             }
 
@@ -71,6 +60,8 @@ public class SAD_respawnManager implements EveryFrameScript {
             if (!system.hasTag(SAD_Tags.THEME_SAD) && !system.hasTag(SAD_Tags.THEME_SAD_MAIN)) {
                 continue;
             }
+            if(system.hasTag(SAD_Tags.THEME_SAD_SUPPRESSED)) continue;
+            
             float dist = system.getLocation().length();
 
             float distMult = 1f;
@@ -199,7 +190,7 @@ public class SAD_respawnManager implements EveryFrameScript {
         float days = Misc.getDays(amount);
         compt -= days;
         if (compt < 0) {
-            compt = 50;
+            compt = 240;
             CampaignFleetAPI sta = getStation();
         }
     }

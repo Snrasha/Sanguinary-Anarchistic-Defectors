@@ -31,10 +31,12 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
 
     public static class SAD_FleetInteractionConfigGen implements FIDConfigGen {
 
+        @Override
         public FIDConfig createConfig() {
             FIDConfig config = new FIDConfig();
             config.showTransponderStatus = false;
             config.delegate = new FIDDelegate() {
+                @Override
                 public void postPlayerSalvageGeneration(InteractionDialogAPI dialog, FleetEncounterContext context, CargoAPI salvage) {
                     if (!(dialog.getInteractionTarget() instanceof CampaignFleetAPI)) {
                         return;
