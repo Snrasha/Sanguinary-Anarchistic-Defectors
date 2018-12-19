@@ -1,0 +1,13 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 0,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "SAD_blocker",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_blocker_Standard",
+  "weaponGroups": [],
+  "wings": []
+}

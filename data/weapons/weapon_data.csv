@@ -19,6 +19,7 @@ Weak Shrike ASM(S),SAD_shrike_fighter,0,0,2100,1500,,300,75,150,30,0,1,,,KINETIC
 Mimir Flash,SAD_rhpbc_muzzle,0,0,,1,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,Sanguinary Tech,,,,,,,,,,,,
 Dummy Lance,SAD_rhpbc_replacement,0,0,25000,2000,,8000,750,1000,,25,,,,ENERGY,0,,4,12,1,1,0,0,,,,1000,,,30,SYSTEM,,,Sanguinary Tech,,,,,,,,,,,,
 Nídhöggr Lance,SAD_rhpbc,0,0,25000,2000,,8000,750,1000,,25,3,0.18,3,ENERGY,0,,4,12,3,1,0,0,,,,1000,,,30,SYSTEM,,,Sanguinary Tech,,Strike,,,,,,,,,,
+Nídhöggr Lance,SAD_rhpbc_turr,0,0,25000,2000,,8000,750,1000,10,25,3,0.18,3,ENERGY,0,,4,15,3,1,0,0,,,,1000,,,30,SYSTEM,,,Sanguinary Tech,,Strike,,,,,,,,,,5705
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Seeker Flare Launcher,SAD_flareLauncher,,,,500,,10,400,,,,,0,,ENERGY,0,0,0,0.1,1,0.1,90,90,0,0,,200,200,7,1,SYSTEM,,,Sanguinary Tech,,,,,,,,,,,,
 Stopper,SAD_stopper1,0,0,,800,,35,100,15,50,50,,,,KINETIC,0,0,0,4,1,0.1,9,32,0,40,,800,,,30,SYSTEM,,,Sanguinary Tech,,,,,,,,,,,,

@@ -1,0 +1,30 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "goalVariant": true,
+  "hullId": "SAD_module_gunplatform_L",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "SAD_module_gunplatform_L_Standard",
+  "weaponGroups": [
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_pdcepc",
+        "WS0002": "SAD_pdcepc",
+        "WS0003": "SAD_pdcepc",
+        "WS0004": "SAD_pdcepc",
+        "WS0005": "SAD_mcepc",
+        "WS0006": "SAD_mcepc",
+        "WS0007": "SAD_mcepc",
+        "WS0008": "SAD_mcepc",
+        "WS0009": "SAD_slowbeamH",
+        "WS0010": "SAD_wamgun"
+      }
+    }
+  ],
+  "wings": []
+}

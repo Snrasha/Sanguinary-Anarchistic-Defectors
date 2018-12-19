@@ -1,0 +1,212 @@
+{
+  "bounds": [
+    88,
+    93,
+    88,
+    93,
+    122.5,
+    40.5,
+    95.5,
+    -47.5,
+    -57.5,
+    -91.5,
+    -107.5,
+    -82.5,
+    -124.5,
+    -7,
+    -113.5,
+    -3.5,
+    -110,
+    13.5,
+    -110,
+    13.5,
+    -93.5,
+    8.5,
+    -43.5,
+    22.5,
+    -18,
+    55.5,
+    24.5,
+    62.5,
+    37.5,
+    83,
+    45.5,
+    69.5,
+    76.5,
+    69.5
+  ],
+  "builtInMods": [
+    "SAD_harShields",
+    "supercomputer",
+    "reduced_explosion",
+    "chassis_storage"
+  ],
+  "builtInWings": [],
+  "center": [
+    102,
+    142
+  ],
+  "collisionRadius": 161,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 31,
+      "length": 72.5,
+      "location": [
+        -112,
+        -72.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 31
+    },
+    {
+      "angle": 180,
+      "contrailSize": 31,
+      "length": 72.5,
+      "location": [
+        -131.5,
+        -15
+      ],
+      "style": "SanguinaryFlare",
+      "width": 31
+    },
+    {
+      "angle": 180,
+      "contrailSize": 14,
+      "length": 46,
+      "location": [
+        -119,
+        -42
+      ],
+      "style": "SanguinaryFlare",
+      "width": 14
+    },
+    {
+      "angle": 180,
+      "contrailSize": 14,
+      "length": 46,
+      "location": [
+        -123,
+        -49.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 14
+    },
+    {
+      "angle": 180,
+      "contrailSize": 14,
+      "length": 46,
+      "location": [
+        -123,
+        -34
+      ],
+      "style": "SanguinaryFlare",
+      "width": 14
+    }
+  ],
+  "height": 284,
+  "hullId": "SAD_MotherShip_BackSlide_Inv_2",
+  "hullName": "Back Side",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 158.5,
+  "spriteName": "graphics/ships/mothership_2/SAD_BackSide_Inv.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 123.5,
+      "arc": 208,
+      "id": "WS0001",
+      "locations": [
+        -11,
+        15
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 123.5,
+      "arc": 141,
+      "id": "WS0002",
+      "locations": [
+        24,
+        53
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 180,
+      "arc": 153,
+      "id": "WS0003",
+      "locations": [
+        -63,
+        -44
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 131,
+      "arc": 175,
+      "id": "WS0004",
+      "locations": [
+        -63,
+        -1
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 90,
+      "arc": 132,
+      "id": "WS0005",
+      "locations": [
+        81,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 28.5,
+      "arc": 109,
+      "id": "WS0006",
+      "locations": [
+        107.5,
+        50
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -17,
+        -16.5,
+        33.5,
+        -3,
+        62,
+        54.5,
+        105.5,
+        9
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    }
+  ],
+  "width": 204
+}

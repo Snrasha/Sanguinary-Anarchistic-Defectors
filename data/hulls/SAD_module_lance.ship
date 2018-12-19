@@ -1,0 +1,75 @@
+{
+  "bounds": [
+    -46,
+    40.5,
+    -12.5,
+    63,
+    25.5,
+    54,
+    53,
+    14,
+    53,
+    -14,
+    25.5,
+    -54,
+    -12.5,
+    -63,
+    -46,
+    -40.5
+  ],
+  "builtInMods": [
+    "supercomputer",
+    "reduced_explosion",
+    "SAD_harShields"
+  ],
+  "builtInWeapons": {
+    "MAIN": "SAD_rhpbc_turr",
+    "MUZZLE": "SAD_rhpbc_muzzle"
+  },
+  "builtInWings": [],
+  "center": [
+    66,
+    55
+  ],
+  "collisionRadius": 75,
+  "engineSlots": [],
+  "height": 110,
+  "hullId": "SAD_module_lance",
+  "hullName": "Heavy Weapon Module",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 86,
+  "spriteName": "graphics/ships/mothership_2/SAD_lanceModule.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 160,
+      "id": "MAIN",
+      "locations": [
+        -12.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 160,
+      "id": "MUZZLE",
+      "locations": [
+        -12.5,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 132
+}

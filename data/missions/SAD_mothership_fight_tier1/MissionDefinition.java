@@ -1,4 +1,4 @@
-package data.missions.SAD_mothership_inv;
+package data.missions.SAD_mothership_fight_tier1;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
@@ -32,7 +32,7 @@ public class MissionDefinition implements MissionDefinitionPlugin {
         api.addToFleet(FleetSide.PLAYER, "legion_Assault", FleetMemberType.SHIP, true);
         api.addToFleet(FleetSide.PLAYER, "legion_FS", FleetMemberType.SHIP, true);
 
-        api.addToFleet(FleetSide.ENEMY, "SAD_MotherShip_Standard", FleetMemberType.SHIP, false);
+        api.addToFleet(FleetSide.ENEMY, "SAD_MotherShip_2_Standard", FleetMemberType.SHIP, false);
 
         // Set up the map.
         // Set up the map.
