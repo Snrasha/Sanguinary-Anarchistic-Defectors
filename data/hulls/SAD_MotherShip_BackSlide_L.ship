@@ -105,7 +105,7 @@
     }
   ],
   "height": 284,
-  "hullId": "SAD_MotherShip_BackSlide_Inv_2",
+  "hullId": "SAD_MotherShip_BackSlide_L",
   "hullName": "Back Side",
   "hullSize": "FRIGATE",
   "shieldCenter": [
@@ -113,7 +113,7 @@
     0
   ],
   "shieldRadius": 158.5,
-  "spriteName": "graphics/ships/mothership_2/SAD_BackSide_Inv.png",
+  "spriteName": "graphics/ships/mothership_2/SAD_BackSide_L.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,
   "weaponSlots": [

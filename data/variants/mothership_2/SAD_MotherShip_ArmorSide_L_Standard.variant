@@ -1,13 +1,13 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 0,
-  "fluxVents": 0,
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
   "goalVariant": true,
-  "hullId": "SAD_MotherShip_ArmorSide_Inv_2",
+  "hullId": "SAD_MotherShip_ArmorSide_L",
   "hullMods": [],
   "permaMods": [],
   "quality": 0,
-  "variantId": "SAD_MotherShip_ArmorSide_Inv_2_Standard",
+  "variantId": "SAD_MotherShip_ArmorSide_L_Standard",
   "weaponGroups": [
     {
       "autofire": true,

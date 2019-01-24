@@ -35,7 +35,7 @@ public class SAD_respawnManager implements EveryFrameScript {
         Object test = Global.getSector().getMemoryWithoutUpdate().get(KEY);
         return (SAD_respawnManager) test;
     }
- 
+
     public SAD_respawnManager() {
         Global.getSector().getMemoryWithoutUpdate().set(KEY, this);
     }
@@ -60,8 +60,10 @@ public class SAD_respawnManager implements EveryFrameScript {
             if (!system.hasTag(SAD_Tags.THEME_SAD) && !system.hasTag(SAD_Tags.THEME_SAD_MAIN)) {
                 continue;
             }
-            if(system.hasTag(SAD_Tags.THEME_SAD_SUPPRESSED)) continue;
-            
+            if (!system.hasTag(SAD_Tags.THEME_SAD_RESURGENT)) {
+                continue;
+            }
+
             float dist = system.getLocation().length();
 
             float distMult = 1f;
@@ -80,7 +82,7 @@ public class SAD_respawnManager implements EveryFrameScript {
         return picker.pick();
     }
 
-    public List<CampaignFleetAPI> addBattlestations(StarSystemAPI system, float chanceToAddAny, int min, int max, WeightedRandomPicker<String> stationTypes) {
+    public List<CampaignFleetAPI> addBattlestations(StarSystemAPI system, float chanceToAddAny, int min, int max, WeightedRandomPicker<String> stationTypes,int id) {
         List<CampaignFleetAPI> result = new ArrayList<>();
         if (random.nextFloat() >= chanceToAddAny) {
             return result;
@@ -107,7 +109,7 @@ public class SAD_respawnManager implements EveryFrameScript {
                 fleet.setStationMode(true);
                 fleet.addTag(SAD_Tags.SAD_STATION);
 
-                addSADStationInteractionConfig(fleet);
+                addSADStationInteractionConfig(fleet,id);
 
                 system.addEntity(fleet);
 
@@ -157,7 +159,6 @@ public class SAD_respawnManager implements EveryFrameScript {
         StarSystemAPI system = pickSADSystem(true);
 
         if (system == null) {
-
             return null;
         }
 
@@ -168,15 +169,15 @@ public class SAD_respawnManager implements EveryFrameScript {
                 return fleet;
             }
         }
-
-        fleets = addBattlestations(system, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
+        if (0 == MathUtils.getRandom().nextInt(10)) {
+            fleets = addBattlestations(system, 1f, 1, 1, createStringPicker("SAD_MotherShip_2_Standard", 10f),2);
+        } else {
+            fleets = addBattlestations(system, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f),1);
+        }
         for (CampaignFleetAPI fleet : fleets) {
             return fleet;
-
         }
-
         return null;
-
     }
 
     public WeightedRandomPicker<String> createStringPicker(Object... params) {
@@ -194,8 +195,6 @@ public class SAD_respawnManager implements EveryFrameScript {
             CampaignFleetAPI sta = getStation();
         }
     }
-
-    
 
     @Override
     public boolean isDone() {

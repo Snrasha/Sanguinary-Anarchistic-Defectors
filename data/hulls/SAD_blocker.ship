@@ -27,7 +27,7 @@
   "hullName": "Station Structural Spur",
   "hullSize": "FRIGATE",
   "moduleAnchor": [
-    -70,
+    0,
     0
   ],
   "shieldCenter": [

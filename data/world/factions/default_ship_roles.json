@@ -54,27 +54,21 @@
 	},
 
 	"freighterSmall":{
-"fallback":{"freighterMedium":1},
 	},
 	"freighterMedium":{
 	"SAD_Qadesh_Standard":2,
-"fallback":{"freighterSmall":2},
 	},
 	"freighterLarge":{
-"fallback":{"freighterMedium":2},
 	},
 	"tankerSmall":{
-"fallback":{"tankerMedium":1},
 	},
 	"tankerMedium":{
 	"SAD_Tefnut_Standard":2,
-"fallback":{"tankerSmall":2},
 	},
 	"tankerLarge":{
-"fallback":{"tankerMedium":2},
 	},
-
-	"remnantStation1":{
+	"SAD_station":{
 			"SAD_MotherShip_Standard":10,
+			"SAD_MotherShip_2_Standard":10,
 	},
 }

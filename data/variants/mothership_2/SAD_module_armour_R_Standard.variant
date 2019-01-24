@@ -2,9 +2,9 @@
   "displayName": "Armour",
   "fluxCapacitors": 0,
   "fluxVents": 0,
-  "hullId": "SAD_module_armour",
+  "hullId": "SAD_module_armour_R",
   "hullMods": [],
   "quality": 0,
-  "variantId": "SAD_module_armour_Standard",
+  "variantId": "SAD_module_armour_R_Standard",
   "weaponGroups": []
 }

@@ -24,11 +24,11 @@
   "collisionRadius": 149.5,
   "engineSlots": [],
   "height": 103,
-  "hullId": "SAD_module_armour",
+  "hullId": "SAD_module_armour_R",
   "hullName": "Armor Plate",
   "hullSize": "FRIGATE",
   "moduleAnchor": [
-    -40,
+    0,
     0
   ],
   "shieldCenter": [
@@ -36,7 +36,7 @@
     0
   ],
   "shieldRadius": 167.5,
-  "spriteName": "graphics/ships/mothership_2/SAD_armorPlate.png",
+  "spriteName": "graphics/ships/mothership_2/SAD_armorPlate_R.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,
   "weaponSlots": [],

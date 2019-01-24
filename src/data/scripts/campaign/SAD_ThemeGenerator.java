@@ -187,7 +187,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                         addSuppressedStation.pickAndRemove();
                     }
                     if (addStation) {
-                            List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
+                            List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f),1);
                         for (CampaignFleetAPI station : stations) {
                             int maxFleets = 2 + random.nextInt(3);
                             SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
@@ -197,9 +197,9 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
 
                     }
                 } else if (type == SAD_SystemType.RESURGENT) {
-                            List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f));
+                    List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_2_Standard", 10f),2);
                     for (CampaignFleetAPI station : stations) {
-                        int maxFleets = 8 + random.nextInt(5);
+                        int maxFleets = 4 + random.nextInt(5);
                         SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
                                 station, 1f, 0, maxFleets, 10f, 8, 24);
                         data.system.addScript(activeFleets);
@@ -455,7 +455,7 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
     }
 
     public List<CampaignFleetAPI> addBattlestations(StarSystemData data, float chanceToAddAny, int min, int max,
-        WeightedRandomPicker<String> stationTypes) {
+        WeightedRandomPicker<String> stationTypes,int id) {
         List<CampaignFleetAPI> result = new ArrayList<>();
         if (random.nextFloat() >= chanceToAddAny) {
             return result;
@@ -483,7 +483,7 @@ log.info("    Adding " + num + " battlestations");
                 fleet.setStationMode(true);
                 fleet.addTag(SAD_Tags.SAD_STATION);
 
-                addSADStationInteractionConfig(fleet);
+                addSADStationInteractionConfig(fleet,id);
 
                 data.system.addEntity(fleet);
 
@@ -499,10 +499,8 @@ log.info("    Adding " + num + " battlestations");
                 convertOrbitWithSpin(fleet, 5f);
 
                 boolean damaged = type.toLowerCase().contains("damaged");
-                float mult = 25f;
                 int level = 20;
                 if (damaged) {
-                    mult = 10f;
                     level = 10;
                     fleet.getMemoryWithoutUpdate().set("$damagedStation", true);
                 } //else {
@@ -525,9 +523,9 @@ log.info("    Adding " + num + " battlestations");
         return result;
     }
 
-    public static void addSADStationInteractionConfig(CampaignFleetAPI fleet) {
+    public static void addSADStationInteractionConfig(CampaignFleetAPI fleet,int id) {
         fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_INTERACTION_DIALOG_CONFIG_OVERRIDE_GEN,
-                new SAD_StationInteractionConfigGen());
+                new SAD_StationInteractionConfigGen(id));
     }
 
     @Override
@@ -536,6 +534,13 @@ log.info("    Adding " + num + " battlestations");
     }
 
     public static class SAD_StationInteractionConfigGen implements FIDConfigGen {
+        
+        public int id=0;
+        
+        public SAD_StationInteractionConfigGen(int id){
+            super();
+            this.id=id;
+        }
 
         @Override
         public FIDConfig createConfig() {
@@ -564,9 +569,21 @@ log.info("    Adding " + num + " battlestations");
 
                     List<SalvageEntityGenDataSpec.DropData> dropRandom = new ArrayList<SalvageEntityGenDataSpec.DropData>();
 
+                    if(id==2){
+                        SalvageEntityGenDataSpec.DropData d = new SalvageEntityGenDataSpec.DropData();
+                        d.group = "blueprints_guaranteed";
+                        d.chances = 20;
+                        dropRandom.add(d);
+                    }
+                    if(id==1){
+                        SalvageEntityGenDataSpec.DropData d = new SalvageEntityGenDataSpec.DropData();
+                        d.group = "blueprints_guaranteed";
+                        d.chances = 10;
+                        dropRandom.add(d);
+                    }
+                    
                     int[] counts = new int[3];
                     String[] groups = new String[]{"survey_data1", "survey_data2", "survey_data3"};
-                    //for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
                     for (FleetMemberAPI member : losses) {
                         if (member.isStation()) {
                             counts[2] += 10;
@@ -583,10 +600,6 @@ log.info("    Adding " + num + " battlestations");
                         }
 
                     }
-
-//					if (fleet.isStationMode()) {
-//						counts[2] += 10;
-//					}
                     for (int i = 0; i < counts.length; i++) {
                         int count = counts[i];
                         if (count <= 0) {

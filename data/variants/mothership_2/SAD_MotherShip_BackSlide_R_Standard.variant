@@ -3,11 +3,11 @@
   "fluxCapacitors": 10,
   "fluxVents": 10,
   "goalVariant": false,
-  "hullId": "SAD_MotherShip_BackSlide_2",
+  "hullId": "SAD_MotherShip_BackSlide_R",
   "hullMods": [],
   "permaMods": [],
   "quality": 0,
-  "variantId": "SAD_MotherShip_BackSlide_2_Standard",
+  "variantId": "SAD_MotherShip_BackSlide_R_Standard",
   "weaponGroups": [
     {
       "autofire": true,

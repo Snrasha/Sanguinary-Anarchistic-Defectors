@@ -181,7 +181,7 @@ public class SAD_raidManager implements EveryFrameScript {
                 fleet.setStationMode(true);
                 fleet.addTag(SAD_Tags.SAD_STATION);
 
-                addSADStationInteractionConfig(fleet);
+                addSADStationInteractionConfig(fleet,2);
 
                 system.addEntity(fleet);
 

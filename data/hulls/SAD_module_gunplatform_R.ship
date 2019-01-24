@@ -30,7 +30,7 @@
   "collisionRadius": 186.5,
   "engineSlots": [],
   "height": 116,
-  "hullId": "SAD_module_gunplatform_L",
+  "hullId": "SAD_module_gunplatform_R",
   "hullName": "Module, Combat",
   "hullSize": "FRIGATE",
   "shieldCenter": [
@@ -38,7 +38,7 @@
     -0
   ],
   "shieldRadius": 241,
-  "spriteName": "graphics/ships/mothership_2/SAD_gunModuleS_L.png",
+  "spriteName": "graphics/ships/mothership_2/SAD_gunModuleS_R.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,
   "weaponSlots": [
@@ -139,8 +139,8 @@
       "type": "ENERGY"
     },
     {
-      "angle": -43.5,
-      "arc": 144,
+      "angle": 7,
+      "arc": 97,
       "id": "WS0009",
       "locations": [
         3,
@@ -151,8 +151,8 @@
       "type": "ENERGY"
     },
     {
-      "angle": -7,
-      "arc": 97,
+      "angle": 43.5,
+      "arc": 144,
       "id": "WS0010",
       "locations": [
         3,

@@ -1,25 +1,31 @@
 {
   "bounds": [
-    55,
-    -53,
     57.5,
-    43,
-    -33,
-    48,
-    -57.5,
-    13.5,
-    -50,
-    -8,
-    -48,
-    -48.5,
-    -36.5,
-    -33,
-    -25.5,
-    -30,
-    8,
-    -52,
+    -40.5,
+    56.5,
+    47,
+    42.5,
+    57,
+    6.5,
+    54,
+    -27.5,
+    32,
+    -39.5,
     34,
-    -56.5
+    -46.5,
+    49,
+    -51.5,
+    31,
+    -56.5,
+    -16,
+    -32.5,
+    -40,
+    -26.5,
+    -55,
+    15,
+    -42,
+    35.5,
+    -56
   ],
   "builtInMods": [
     "supercomputer",
@@ -35,7 +41,7 @@
   "collisionRadius": 117,
   "engineSlots": [],
   "height": 136,
-  "hullId": "SAD_MotherShip_ArmorSide_2",
+  "hullId": "SAD_MotherShip_ArmorSide_L",
   "hullName": "Armor Side",
   "hullSize": "FRIGATE",
   "shieldCenter": [
@@ -43,77 +49,77 @@
     0
   ],
   "shieldRadius": 119,
-  "spriteName": "graphics/ships/mothership_2/SAD_ArmorSide.png",
+  "spriteName": "graphics/ships/mothership_2/SAD_ArmorSide_L.png",
   "style": "SANGUINARY_TECH",
   "viewOffset": 0,
   "weaponSlots": [
     {
-      "angle": -90,
+      "angle": 98,
       "arc": 71,
       "id": "WS0001",
       "locations": [
         35,
-        -26.5
+        -20
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
       "type": "ENERGY"
     },
     {
-      "angle": -106,
+      "angle": 98,
       "arc": 114,
       "id": "WS0002",
       "locations": [
         6,
-        -44.5
+        45
       ],
       "mount": "TURRET",
       "size": "SMALL",
       "type": "ENERGY"
     },
     {
-      "angle": -96.5,
+      "angle": 92.5,
       "arc": 114,
       "id": "WS0003",
       "locations": [
         -33,
-        -25
+        25
       ],
       "mount": "TURRET",
       "size": "SMALL",
       "type": "ENERGY"
     },
     {
-      "angle": -131,
+      "angle": 90,
       "arc": 114,
       "id": "WS0004",
       "locations": [
         -33,
-        14.5
+        -14.5
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
       "type": "ENERGY"
     },
     {
-      "angle": -121,
+      "angle": 92.5,
       "arc": 102,
       "id": "WS0005",
       "locations": [
         35,
-        19.5
+        26
       ],
       "mount": "TURRET",
       "size": "MEDIUM",
       "type": "ENERGY"
     },
     {
-      "angle": -99.5,
+      "angle": 118,
       "arc": 114,
       "id": "WS0006",
       "locations": [
         -3,
-        -6
+        5
       ],
       "mount": "TURRET",
       "size": "LARGE",

@@ -1,2 +1,5 @@
 name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sprite
 Harmonic Shield Conduits,SAD_harShields,,,,"special, defensive","Special, Defenses",,,TRUE,,0,0,0,0,src.data.hullmods.SAD_harShields,"Specialized gravitic conduits which are able to increase passive flux dissipation on a curve approaching %s/%s/%s/%s-percent of the ships current Hard Flux, depending on hull size.",Improves flux dissipation as hard flux rises.,graphics/hullmods/SAD_harShields.png
+Reduced Hangar,SAD_converted_hangar,1,,,special,Fighters,,,TRUE,,0,0,0,0,src.data.hullmods.SAD_ConvertedHangar,"The hangar from these ships is too small for be 100% operationals
+Increases the refit time of fighter by %s.
+",Improvised fighter bay for non-carriers.,graphics/hullmods/SAD_converted_hangar.png

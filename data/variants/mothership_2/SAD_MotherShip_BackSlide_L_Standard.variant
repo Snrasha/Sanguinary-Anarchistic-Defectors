@@ -2,19 +2,20 @@
   "displayName": "Standard",
   "fluxCapacitors": 10,
   "fluxVents": 10,
-  "goalVariant": true,
-  "hullId": "SAD_MotherShip_ArmorSide_2",
+  "goalVariant": false,
+  "hullId": "SAD_MotherShip_BackSlide_L",
   "hullMods": [],
   "permaMods": [],
   "quality": 0,
-  "variantId": "SAD_MotherShip_ArmorSide_2_Standard",
+  "variantId": "SAD_MotherShip_BackSlide_L_Standard",
   "weaponGroups": [
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
         "WS0002": "SAD_pdcepc",
-        "WS0003": "SAD_pdcepc"
+        "WS0004": "SAD_pdcepc",
+        "WS0006": "SAD_pdcepc"
       }
     },
     {
@@ -22,17 +23,13 @@
       "mode": "LINKED",
       "weapons": {
         "WS0001": "SAD_mcepc",
-        "WS0004": "SAD_mcepc",
+        "WS0003": "SAD_mcepc",
         "WS0005": "SAD_mcepc"
-      }
-    },
-    {
-      "autofire": true,
-      "mode": "LINKED",
-      "weapons": {
-        "WS0006": "SAD_wamgun"
       }
     }
   ],
-  "wings": []
+  "wings": [
+    "SAD_Wadjet_Wing",
+    "SAD_Wadjet_Wing"
+  ]
 }

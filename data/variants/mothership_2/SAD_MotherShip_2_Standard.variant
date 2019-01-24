@@ -6,35 +6,21 @@
   "hullId": "SAD_MotherShip_2",
   "hullMods": [
     "magazines",
-    "hardenedshieldemitter"
+    "hardenedshieldemitter",
+    "blast_doors",
+    "fluxbreakers",
+    "reinforcedhull"
   ],
   "permaMods": [],
   "quality": 0,
   "variantId": "SAD_MotherShip_2_Standard",
   "weaponGroups": [
-    #{
-    #  "autofire": false,
-    #  "mode": "LINKED",
-    #  "weapons": {
-    #  "WS0001": "SAD_module_gunplatform_L_Standard",
-    #  "WS0002": "SAD_module_gunplatform_L_Standard",
-    #  "WS0003": "SAD_module_armour_Standard",
-    #  "WS0004": "SAD_module_armour_Standard",
-    #  "WS0005": "SAD_module_lance_Standard",
-    #  "WS0006": "SAD_MotherShip_BackSlide_2_Standard",
-    #  "WS0007": "SAD_MotherShip_BackSlide_Inv_2_Standard",
-    #  "WS0010": "SAD_blocker_Standard",
-    #  "WS0012": "SAD_blocker_Standard",
-    #  "WS0020": "SAD_MotherShip_ArmorSide_2_Standard",
-    #  "WS0021": "SAD_MotherShip_ArmorSide_Inv_2_Standard"
-    #  }
-    #},
     {
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0011": "SAD_wamgun",
-        "WS0013": "SAD_wamgun"
+  "WS0011": "SAD_wamgun",
+  "WS0013": "SAD_wamgun"
       }
     },
     {
@@ -66,17 +52,17 @@
     }
   ],
   "modules": {
-  "WS0001": "SAD_module_gunplatform_L_Standard",
+  "WS0001": "SAD_module_gunplatform_R_Standard",
   "WS0002": "SAD_module_gunplatform_L_Standard",
-  "WS0003": "SAD_module_armour_Standard",
-  "WS0004": "SAD_module_armour_Standard",
+  "WS0003": "SAD_module_armour_R_Standard",
+  "WS0004": "SAD_module_armour_L_Standard",
   "WS0005": "SAD_module_lance_Standard",
-  "WS0006": "SAD_MotherShip_BackSlide_2_Standard",
-  "WS0007": "SAD_MotherShip_BackSlide_Inv_2_Standard",
+  "WS0006": "SAD_MotherShip_BackSlide_R_Standard",
+  "WS0007": "SAD_MotherShip_BackSlide_L_Standard",
   "WS0010": "SAD_blocker_Standard",
   "WS0012": "SAD_blocker_Standard",
-  "WS0020": "SAD_MotherShip_ArmorSide_2_Standard",
-  "WS0021": "SAD_MotherShip_ArmorSide_Inv_2_Standard"
+  "WS0020": "SAD_MotherShip_ArmorSide_R_Standard",
+  "WS0021": "SAD_MotherShip_ArmorSide_L_Standard"
 },
   "wings": []
 }
