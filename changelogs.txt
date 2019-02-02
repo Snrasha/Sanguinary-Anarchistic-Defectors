@@ -1,3 +1,16 @@
+Version 0.9d(Nerf):
+-Nerf Niddhoggr turn rate reduced to 6 from 10
+		acc/dec reduced to 20 from 22
+-Balance mothership level 2 (Impossible to beat currently without cheat and specialized stuff):
+	Reduce core (The Omni shield) flux dissipation  to 1000 from 1400 and flux capacity to 35 000 from 40 000 
+	Reduce gun platform (front shield)  flux dissipation to 800 from 1000 and flux capacity to 8000 from 12 000
+	Reduce armor of 200 for every weaponized modules and core.
+	Reduce armor of 600 for every no-weaponized modules.
+-Reduce(not a nerf), the flux cost of the CEPC(S) (Always worst than take the PD version, currently), to 90 from 110.
+-For compensed the boost for CPEC(S), reduce the damage from 100 to 90.
+-Reduce time for chargeup the Break CAS Beam(S) to 0.25 from 0.75 (Chargeup cause issues with AI and beam.)
+
+
 Version 0.9c(Fix):
 -Replace every converted Hangar on SAD ship per a custom converted hangar.
 
