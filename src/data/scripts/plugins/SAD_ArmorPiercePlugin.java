@@ -162,7 +162,7 @@ public class SAD_ArmorPiercePlugin
                 x = proj.getLocation().getX();
                 y =  proj.getLocation().getY();
 
-                SpriteAPI sprite = Global.getSettings().getSprite("flare", "nidhoggr_ALF");
+                SpriteAPI sprite = Global.getSettings().getSprite("flare", "SAD_nidhoggr_ALF");
 
                 if (!engine.isPaused()) {
                     sprite.setAlphaMult(MathUtils.getRandomNumberInRange(0.9F, 1.0F));

@@ -8,13 +8,13 @@
   },
   "graphics":{
     "flare":{
-      "nidhoggr_ALF":"graphics/shi/fx/ms_nidhoggrAnFlare.png",
+      "SAD_nidhoggr_ALF":"graphics/fx/SAD_nidhoggrAnFlare.png",
     },
     "concussion":{
-      "flareFlakWave":"graphics/shi/fx/ms_flakWave.png"
+      "SAD_FlakWave":"graphics/fx/SAD_flakWave.png"
     },
     "ping":{
-      "tagPing":"graphics/shi/fx/ms_tagPing.png",
+      "SAD_tagPing":"graphics/fx/SAD_tagPing.png",
     },
     "campaignEntities":{
       "SAD_warning_beacon":"graphics/stations/SAD_buoy00.png",

@@ -4,11 +4,15 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
+import com.fs.starfarer.api.combat.ViewportAPI;
+import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
 import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
+import data.scripts.plugins.MagicRenderPlugin;
 import java.awt.Color;
 import java.util.List;
-import org.lazywizard.lazylib.MathUtils;
+import java.util.Map;
+import java.util.WeakHashMap;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.lwjgl.util.vector.Vector2f;
 import src.data.scripts.plugins.SAD_DisruptSystemEffect;
@@ -16,16 +20,16 @@ import src.data.scripts.plugins.SAD_DisruptSystemEffect;
 public class SAD_DisturbSystem extends BaseShipSystemScript {
 
     private CombatEngineAPI engine;
-    private static final Color COLOR1 = new Color(210, 125, 105, 155);
+    // private static final Color COLOR1 = new Color(210, 125, 105, 155);
     private static final Color COLOR2 = new Color(105, 125, 210, 155);
 
     public static final float RANGE_BONUS = 1000f;
     private static final Vector2f ZERO = new Vector2f();
-
+    private SpriteAPI sprite = null;
 
     @Override
     public void apply(MutableShipStatsAPI stats, String id, ShipSystemStatsScript.State state, float effectLevel) {
-        if (engine ==null) {
+        if (engine == null) {
             engine = Global.getCombatEngine();
         }
         if (engine.isPaused()) {
@@ -38,25 +42,8 @@ public class SAD_DisturbSystem extends BaseShipSystemScript {
         } else {
             return;
         }
-      
-        float jitterLevel;
-        float jitterRangeBonus;
-        if (effectLevel > 0.0F) {
-            jitterLevel = effectLevel;
-            jitterRangeBonus = jitterLevel * RANGE_BONUS;
-
-            if (jitterLevel > 0.0F) {
-                for (int i = 0; i < 30; i++) {
-                    float size = MathUtils.getRandomNumberInRange(8.0F, 2.0F);
-                    Vector2f spawn = MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius() + jitterRangeBonus);
-
-                    //if (Math.random() > 0.9) {
-                    engine.addSmoothParticle(spawn, ZERO, size, (float) Math.random() * 1.0F, 1.0F, COLOR1);
-                    // }
-                }
-
-            }
-        }
+        final ViewportAPI view = Global.getCombatEngine().getViewport();
+        
         if (effectLevel == 1f) {
             List<ShipAPI> list = AIUtils.getNearbyEnemies(ship, RANGE_BONUS + ship.getCollisionRadius());
 
@@ -66,13 +53,27 @@ public class SAD_DisturbSystem extends BaseShipSystemScript {
                 }
                 SAD_DisruptSystemEffect.putTELEMETRY(target);
             }
-            for (int i = 0; i < 30; i++) {
-                    float size = MathUtils.getRandomNumberInRange(10.0F, 6.0F);
-                    Vector2f spawn = MathUtils.getRandomPointInCircle(ship.getLocation(), ship.getCollisionRadius() + RANGE_BONUS);
-
-                    engine.addSmoothParticle(spawn, ZERO, size, (float) Math.random() * 1.0f, 1.0F, COLOR2);
+        }
+        if (effectLevel > 0) {
+            if (sprite == null) {
+                sprite = Global.getSettings().getSprite("ping", "SAD_tagPing");
+                if(sprite==null)return;
+            }
+            if (view.isNearViewport(ship.getLocation(), RANGE_BONUS + ship.getCollisionRadius())) {
+                if (sprite != null) {
+                    
+                    sprite.setAlphaMult(effectLevel*0.25f);
+                    //sprite.setAdditiveBlend();
+                    float raduis=(RANGE_BONUS+ ship.getCollisionRadius())*2;
+                    if(state.equals(State.IN)){
+                        raduis*=effectLevel;
+                    }
+                    
+                    sprite.setSize(raduis,raduis);
+                    
+                    MagicRenderPlugin.addSingleframe(sprite, ship.getLocation());
                 }
-
+            }
         }
     }
 

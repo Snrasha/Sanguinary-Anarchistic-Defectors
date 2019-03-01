@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.WeakHashMap;
 import org.lwjgl.util.vector.Vector2f;
 
 public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
@@ -21,6 +22,7 @@ public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
     private final float maxcompt = 2f;
     private float compt = 0;
     private CombatEngineAPI engine;
+  
 
     @Override
     public void init(CombatEngineAPI engine) {

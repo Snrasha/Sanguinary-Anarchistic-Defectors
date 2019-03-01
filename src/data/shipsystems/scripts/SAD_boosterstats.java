@@ -43,6 +43,7 @@ public class SAD_boosterstats extends BaseShipSystemScript {
     if (index == 1) {
       return new StatusData("increased top speed", false);
     }
+
     return null;
   }
 }

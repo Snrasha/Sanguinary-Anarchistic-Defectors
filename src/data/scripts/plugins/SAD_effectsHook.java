@@ -3,6 +3,7 @@ package src.data.scripts.plugins;
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ViewportAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
@@ -54,6 +55,8 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
     shockwaves.add(new Shockwave(location, 0.05F, 1.0F, 0.2F));
   }
   
+  
+ 
 
   public static void createPing(Vector2f location, Vector2f velocity)
   {
@@ -65,9 +68,9 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
     
     List<tagPing> pings = localData.pings;
     
-    pings.add(new tagPing(location, velocity, 3.0F, 3.5F, 0.75F));
+    pings.add(new tagPing(location, velocity, 3.0F, 2.5F, 0.55F));
   }
- 
+  
 
   @Override
   public void advance(float amount, List<InputEventAPI> events)
@@ -120,6 +123,8 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
       }
     }
  
+    
+ 
   }
   
   @Override
@@ -143,11 +148,10 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
     LocalData localData = (LocalData)engine.getCustomData().get("SAD_effectsHook");
     List<Shockwave> shockwaves = localData.shockwaves;
     List<tagPing> pings = localData.pings;
-  
 
     for (Shockwave wave : shockwaves)
     {
-      SpriteAPI waveSprite = Global.getSettings().getSprite("concussion", "flareFlakWave");
+      SpriteAPI waveSprite = Global.getSettings().getSprite("concussion", "SAD_FlakWave");
       if (waveSprite != null)
       {
         waveSprite.setAlphaMult(wave.alpha);
@@ -159,7 +163,7 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
     }
     
     for (tagPing ping : pings) {
-      SpriteAPI waveSprite = Global.getSettings().getSprite("ping", "tagPing");
+      SpriteAPI waveSprite = Global.getSettings().getSprite("ping", "SAD_tagPing");
       if (waveSprite != null)
       {
         waveSprite.setAlphaMult(ping.alpha);
@@ -175,6 +179,7 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
   private static final class LocalData
   {
     final List<SAD_effectsHook.Shockwave> shockwaves = new LinkedList();
+  
     final List<SAD_effectsHook.tagPing> pings = new LinkedList();
     
     private LocalData() {}
@@ -201,6 +206,8 @@ public class SAD_effectsHook extends BaseEveryFrameCombatPlugin
       scale = minScale;
     }
   }
+  
+ 
   
   static class tagPing
   {

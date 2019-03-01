@@ -199,7 +199,16 @@ public class SAD_transform_Stats extends BaseShipSystemScript {
             float effectLevel
     ) {
         if (index == 0) {
-            return new StatusData("engine power redirected", false);
+            return new StatusData("engine power decreased of 50%", false);
+        }
+        if (index == 1) {
+            return new StatusData("energy weapon power increased of 50%", false);
+        }
+        if (index == 2) {
+            return new StatusData("sensor increased of 25%", false);
+        }
+        if (index == 3) {
+            return new StatusData("shield upkeep decreased of 50%", false);
         }
         return null;
     }

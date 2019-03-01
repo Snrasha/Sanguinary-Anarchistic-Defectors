@@ -425,54 +425,6 @@
     {
       "angle": 0,
       "arc": 5,
-      "id": "WS0019",
-      "locations": [
-        149,
-        110.5
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": -0,
-      "arc": 7,
-      "id": "WS0020",
-      "locations": [
-        149,
-        -110.5
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": 0,
-      "arc": 5,
-      "id": "WS0021",
-      "locations": [
-        163,
-        57.5
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": -0,
-      "arc": 5,
-      "id": "WS0022",
-      "locations": [
-        163,
-        -57.5
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0023",
       "locations": [
         163,

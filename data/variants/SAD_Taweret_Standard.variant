@@ -1,11 +1,12 @@
 {
   "displayName": "Standard",
-  "fluxCapacitors": 39,
+  "fluxCapacitors": 29,
   "fluxVents": 50,
   "goalVariant": true,
   "hullId": "SAD_Taweret",
   "hullMods": [
-    "targetingunit"
+    "targetingunit",
+    "hardenedshieldemitter"
   ],
   "permaMods": [],
   "quality": 0,
@@ -35,21 +36,29 @@
       "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0001": "SAD_slowbeamH",
-        "WS0002": "SAD_wamgun",
         "WS0003": "SAD_mcepc",
-        "WS0004": "SAD_mcepc",
-        "WS0023": "SAD_stormBlaster"
+        "WS0004": "SAD_mcepc"
       }
     },
     {
-      "autofire": false,
+      "autofire": true,
       "mode": "LINKED",
       "weapons": {
-        "WS0019": "SAD_shrike_pod",
-        "WS0020": "SAD_shrike_pod",
-        "WS0021": "SAD_shrike_pod",
-        "WS0022": "SAD_shrike_pod"
+        "WS0002": "SAD_wamgun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SAD_slowbeamH"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0023": "SAD_stormBlaster"
       }
     }
   ],

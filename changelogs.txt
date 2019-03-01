@@ -1,3 +1,14 @@
+Version 0.9f(Hotfix):
+-Fix a crash if you put your mouse on the Reduced hangar hullmod.
+-Fix some shipsystem description when enabled.
+-Nerf the Taweret (remove these 4 frontal medium missiles hardpoints). For remove the dangerosity of him, on the front. And keep just a support ship.
+-Remove 20 OP from the Taweret.
+
+Version 0.9e(Hotfix):
+-Add Indicator for the Taweret range.
+-Modify the color of the ping.
+-Require MagicLib.
+
 Version 0.9d(Nerf):
 -Nerf Niddhoggr turn rate reduced to 6 from 10
 		acc/dec reduced to 20 from 22

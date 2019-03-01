@@ -6,7 +6,6 @@ import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
 import com.fs.starfarer.api.impl.combat.BaseShipSystemScript;
-import com.fs.starfarer.api.plugins.ShipSystemStatsScript;
 import com.fs.starfarer.api.util.Misc;
 import java.awt.Color;
 import java.util.EnumSet;
@@ -43,32 +42,6 @@ public class SAD_flux_perf_Stats extends BaseShipSystemScript {
         if (effectLevel > 0f) {
             ship.setWeaponGlow(effectLevel, Misc.setAlpha(JITTER_UNDER_COLOR, 255), EnumSet.allOf(WeaponAPI.WeaponType.class));
         }
-        /*if ((effectLevel > 0f || effectLevel < 0.9f)) {
-
-            Iterator<WeaponAPI> iter = ship.getAllWeapons().iterator();
-            WeaponAPI weapon;
-            float widthS;
-            float heightS;
-            while (iter.hasNext()) {
-                weapon = iter.next();
-                switch (weapon.getSlot().getId()) {
-                    case "RIGHT":
-                        widthS = weapon.getSprite().getWidth() / 2;
-                        heightS = weapon.getSprite().getHeight() / 2;
-                        weapon.getSprite().setHeight(hapyheight - (effectLevel * 4));
-                        weapon.getSprite().setCenter(widthS - (0.10f * widthS * effectLevel), heightS + (0.50f * heightS * effectLevel));
-                        break;
-                    case "LEFT":
-                        widthS = weapon.getSprite().getWidth() / 2;
-                        heightS = weapon.getSprite().getHeight() / 2;
-                        weapon.getSprite().setHeight(hapyheight - (effectLevel * 4));
-                        weapon.getSprite().setCenter(widthS + (0.10f * widthS * effectLevel), heightS + (0.50f * heightS * effectLevel));
-                        break;
-                }
-
-            }
-        }*/
-
     }
 
     @Override
@@ -87,7 +60,13 @@ public class SAD_flux_perf_Stats extends BaseShipSystemScript {
             float effectLevel
     ) {
         if (index == 0) {
-            return new StatusData("engine power redirected", false);
+            return new StatusData("engine power decreased of 50%", false);
+        }
+        if (index == 1) {
+            return new StatusData("energy weapon range increased of 15%", false);
+        }
+        if (index == 2) {
+            return new StatusData("energy weapon flux decreased of 50%", false);
         }
         return null;
     }
