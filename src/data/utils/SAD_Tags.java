@@ -18,5 +18,5 @@ public class SAD_Tags {
 	public static final String THEME_SAD_DESTROYED = "theme_sad_destroyed";
 	public static final String THEME_SAD_SUPPRESSED = "theme_sad_suppressed";
 	public static final String THEME_SAD_RESURGENT = "theme_sad_resurgent";
-	
+	public static final String THEME_BREAKER = "theme_breakers";
 }

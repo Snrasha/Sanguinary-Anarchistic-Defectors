@@ -1,3 +1,18 @@
+Version 1.0.1:
+-Nerf the wavepulse(S) range to 750 from 900.
+-Made 100% breakable all modules of stations.
+-Nerf of the wadjet shield reduction damage to 1 from 0.8 (take 20% more damage on the shield)
+
+
+
+Version 1.0:
+-Update 0.9.1a
+-Remove the Niddhoggr of rare blueprint.
+-Remove any problem who can happens if SRA update.
+-Nerf the built-in hullmod Harmonic shield conduits per two.
+-Fix range of the disrupt system.
+-Fix ship price.
+
 Version 0.9f(Hotfix):
 -Fix a crash if you put your mouse on the Reduced hangar hullmod.
 -Fix some shipsystem description when enabled.

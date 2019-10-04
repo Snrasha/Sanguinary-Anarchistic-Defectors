@@ -1,7 +1,7 @@
 {
   "animationType": "SMOKE",
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "shrike_fire",
+  "fireSoundTwo": "SAD_shrike_fire",
   "hardpointAngleOffsets": [
     0,
     -0,

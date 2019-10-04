@@ -2,7 +2,7 @@
   "animationType": "SMOKE",
   "barrelMode": "ALTERNATING",
   "displayArcRadius": 300,
-  "fireSoundTwo": "shrike_fire",
+  "fireSoundTwo": "SAD_shrike_fire",
   "hardpointAngleOffsets": [
     0,
   ],

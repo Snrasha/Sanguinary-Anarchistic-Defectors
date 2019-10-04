@@ -29,5 +29,5 @@
 					   "particleColor":[160,220,160,255]},
 	"autocharge":true,
 	"projectileSpecId":"SAD_stopper_proj",  # projectile that will be fired
-	"fireSoundTwo":"cepc_hvy",
+	"fireSoundTwo":"SAD_cepc_hvy",
 }

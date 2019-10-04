@@ -2,6 +2,7 @@ package src.data.shipsystems.scripts;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.CombatEngineLayers;
 import com.fs.starfarer.api.combat.MutableShipStatsAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.ViewportAPI;
@@ -20,11 +21,8 @@ import src.data.scripts.plugins.SAD_DisruptSystemEffect;
 public class SAD_DisturbSystem extends BaseShipSystemScript {
 
     private CombatEngineAPI engine;
-    // private static final Color COLOR1 = new Color(210, 125, 105, 155);
-    private static final Color COLOR2 = new Color(105, 125, 210, 155);
 
     public static final float RANGE_BONUS = 1000f;
-    private static final Vector2f ZERO = new Vector2f();
     private SpriteAPI sprite = null;
 
     @Override
@@ -45,7 +43,7 @@ public class SAD_DisturbSystem extends BaseShipSystemScript {
         final ViewportAPI view = Global.getCombatEngine().getViewport();
         
         if (effectLevel == 1f) {
-            List<ShipAPI> list = AIUtils.getNearbyEnemies(ship, RANGE_BONUS + ship.getCollisionRadius());
+            List<ShipAPI> list = AIUtils.getNearbyEnemies(ship, RANGE_BONUS );
 
             for (ShipAPI target : list) {
                 if ((!target.isAlive()) || target.isFighter()) {
@@ -70,8 +68,8 @@ public class SAD_DisturbSystem extends BaseShipSystemScript {
                     }
                     
                     sprite.setSize(raduis,raduis);
-                    
-                    MagicRenderPlugin.addSingleframe(sprite, ship.getLocation());
+                    MagicRenderPlugin.addSingleframe(sprite, ship.getLocation(), CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER);
+              //      MagicRenderPlugin.addSingleframe(sprite, ship.getLocation());
                 }
             }
         }

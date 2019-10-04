@@ -13,6 +13,9 @@ import com.fs.starfarer.api.campaign.SectorEntityToken.VisibilityLevel;
 import com.fs.starfarer.api.combat.ViewportAPI;
 import com.fs.starfarer.api.graphics.SpriteAPI;
 import com.fs.starfarer.api.impl.campaign.BaseCustomEntityPlugin;
+import com.fs.starfarer.api.impl.campaign.intel.BaseIntelPlugin;
+import com.fs.starfarer.api.ui.TooltipMakerAPI;
+import com.fs.starfarer.api.util.Misc;
 import src.data.scripts.campaign.SAD_ThemeGenerator.SAD_SystemType;
 
 public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
@@ -66,10 +69,6 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 						pingId = "SAD_warning_beacon3";
 						freqMult = 1.5f;
 					}
-					
-					//Global.getSector().addPing(entity, pingId);
-					
-					//Color pingColor = entity.getFaction().getBrightUIColor();
 					Color pingColor = null;
 					if (entity.getMemoryWithoutUpdate().contains(PING_COLOR_KEY)) {
 						pingColor = (Color) entity.getMemoryWithoutUpdate().get(PING_COLOR_KEY);
@@ -155,7 +154,49 @@ public class SAD_WarningBeaconEntityPlugin extends BaseCustomEntityPlugin {
 			glow.renderAtCenter(loc.x + spacing, loc.y);
 		}
 	}
+	@Override
+	public void createMapTooltip(TooltipMakerAPI tooltip, boolean expanded) {
+		String post = "";
+		Color color = entity.getFaction().getBaseUIColor();
+		Color postColor = color;
+		 if (entity.getMemoryWithoutUpdate().getBoolean(SAD_SystemType.SUPPRESSED.getBeaconFlag())) {
+			post = " - Medium";
+			postColor = Misc.getHighlightColor();
+		} else if (entity.getMemoryWithoutUpdate().getBoolean(SAD_SystemType.RESURGENT.getBeaconFlag())) {
+			post = " - High";
+			postColor = Misc.getNegativeHighlightColor();
+		}
+		
+		tooltip.addPara(entity.getName() + post, 0f, color, postColor, post.replaceFirst(" - ", ""));
+	}
+
+	@Override
+	public boolean hasCustomMapTooltip() {
+		return true;
+	}
 	
+	@Override
+	public void appendToCampaignTooltip(TooltipMakerAPI tooltip, VisibilityLevel level) {
+		if (level == VisibilityLevel.COMPOSITION_AND_FACTION_DETAILS || 
+				level == VisibilityLevel.COMPOSITION_DETAILS) {
+			
+			String post = "";
+			Color color = Misc.getTextColor();
+			Color postColor = color;
+			if (entity.getMemoryWithoutUpdate().getBoolean(SAD_SystemType.SUPPRESSED.getBeaconFlag())) {
+				post = "medium";
+				postColor = Misc.getHighlightColor();
+			} else if (entity.getMemoryWithoutUpdate().getBoolean(SAD_SystemType.RESURGENT.getBeaconFlag())) {
+				post = "high";
+				postColor = Misc.getNegativeHighlightColor();
+			}
+			if (!post.isEmpty()) {
+				tooltip.setParaFontDefault();
+				tooltip.addPara(BaseIntelPlugin.BULLET + "Danger level: " + post, 10f, color, postColor, post);
+			}
+		}
+		
+	}
 
 }
 

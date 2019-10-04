@@ -2,7 +2,7 @@
   "animationType": "GLOW_AND_FLASH",
   "autocharge": true,
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "polarizerSmall_fire",
+  "fireSoundTwo": "SAD_polarizerSmall_fire",
   "glowColor": [
     100,
     200,

@@ -3,6 +3,7 @@
     "type":"STAT_MOD",
     "aiType":"WEAPON_BOOST",
     "statsScript":"src.data.shipsystems.scripts.SAD_DisturbSystem",
+  	"weaponTypes":[ENERGY],
 
     "useSound":"system_targeting_feed",
     "outOfUsesSound":"gun_out_of_ammo",

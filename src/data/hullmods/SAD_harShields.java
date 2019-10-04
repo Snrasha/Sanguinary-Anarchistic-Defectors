@@ -12,11 +12,11 @@ public class SAD_harShields extends BaseHullMod
   private static final Map<ShipAPI.HullSize, Float> MAG = new HashMap();
   
   static {
-    MAG.put(ShipAPI.HullSize.FIGHTER, Float.valueOf(0.8F));
-    MAG.put(ShipAPI.HullSize.FRIGATE, Float.valueOf(0.8F));
-    MAG.put(ShipAPI.HullSize.DESTROYER, Float.valueOf(0.6F));
-    MAG.put(ShipAPI.HullSize.CRUISER, Float.valueOf(0.5F));
-    MAG.put(ShipAPI.HullSize.CAPITAL_SHIP, Float.valueOf(0.4F));
+    MAG.put(ShipAPI.HullSize.FIGHTER, Float.valueOf(0.4F));
+    MAG.put(ShipAPI.HullSize.FRIGATE, Float.valueOf(0.4F));
+    MAG.put(ShipAPI.HullSize.DESTROYER, Float.valueOf(0.3F));
+    MAG.put(ShipAPI.HullSize.CRUISER, Float.valueOf(0.25F));
+    MAG.put(ShipAPI.HullSize.CAPITAL_SHIP, Float.valueOf(0.2F));
   }
   
   @Override

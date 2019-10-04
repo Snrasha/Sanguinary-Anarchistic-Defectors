@@ -3,8 +3,8 @@
   "autocharge": true,
   "barrelMode": "ALTERNATING",
   "displayArcRadius": 1250,
-  "fireSoundOne":"nidhoggr_charge",
-	"fireSoundTwo":"nidhoggr_fire",
+  "fireSoundOne":"SAD_nidhoggr_charge",
+	"fireSoundTwo":"SAD_nidhoggr_fire",
   "hardpointAngleOffsets": [
     0
   ],

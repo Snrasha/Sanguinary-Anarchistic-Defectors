@@ -26,6 +26,6 @@
 	"autocharge":true,
 	#"interruptibleBurst":true,
 	"projectileSpecId":"SAD_rhpcblast",  # projectile that will be fired
-	"fireSoundOne":"nidhoggr_charge",
-	"fireSoundTwo":"nidhoggr_fire",
+	"fireSoundOne":"SAD_nidhoggr_charge",
+	"fireSoundTwo":"SAD_nidhoggr_fire",
 }

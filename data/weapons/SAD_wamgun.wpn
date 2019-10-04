@@ -29,5 +29,5 @@
 	"autocharge":true,
 	"projectileSpecId":"SAD_wavebeam",  # projectile that will be fired
 	"fireSoundOne":"laser_intro",
-	"fireSoundTwo":"wamgun",
+	"fireSoundTwo":"SAD_wamgun",
 }

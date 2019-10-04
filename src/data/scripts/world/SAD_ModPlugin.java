@@ -19,18 +19,23 @@ import src.data.scripts.campaign.SAD_respawnManager;
 public class SAD_ModPlugin extends BaseModPlugin {
 
     public static final String SIMPLE_SHRIKE = "SAD_shrike";
-    public static boolean templarsExist = false;
-
+    
     @Override
     public void onApplicationLoad() {
-        templarsExist = Global.getSettings().getModManager().isModEnabled("Templars");
-
-        try {
-            /* if (TEM_LatticeShield.AEGIS_SHIELD_COLOR != null) {
-        templarsExist = true;
-      }*/
-
-        } catch (NoClassDefFoundError localNoClassDefFoundError1) {
+        boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
+        if (!hasLazyLib) {
+            throw new RuntimeException("High tech armada requires LazyLib!"
+                    + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=5444");
+        }
+        boolean hasMagicLib = Global.getSettings().getModManager().isModEnabled("MagicLib");
+        if (!hasMagicLib) {
+            throw new RuntimeException("High tech armada requires MagicLib!"
+                    + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=13718");
+        }
+        boolean hasShaderLib = Global.getSettings().getModManager().isModEnabled("shaderLib");
+        if (!hasShaderLib) {
+            throw new RuntimeException("High tech armada requires GraphicsLib!"
+                    + "\nGet it at http://fractalsoftworks.com/forum/index.php?topic=10982");
         }
     }
 
@@ -71,9 +76,12 @@ public class SAD_ModPlugin extends BaseModPlugin {
     @Override
     public void onNewGame() {
         init();
-
+        initSanguinary();
     }
-
+    private static void initSanguinary()
+    {
+        new SAD_Gen().sanguinary(Global.getSector());
+    }
     public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip) {
         switch (missile.getProjectileSpecId()) {
             case SIMPLE_SHRIKE:

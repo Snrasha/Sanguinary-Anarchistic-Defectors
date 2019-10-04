@@ -21,5 +21,5 @@
 					   "particleColor":[220,140,190,255]},
 	"autocharge":true,
 	"projectileSpecId":"SAD_wadjetproj",  # projectile that will be fired
-	"fireSoundTwo":"neriad_gun",
+	"fireSoundTwo":"SAD_neriad_gun",
 }

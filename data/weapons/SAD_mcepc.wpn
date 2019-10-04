@@ -2,7 +2,7 @@
   "animationType": "MUZZLE_FLASH",
   "autocharge": true,
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "cepc_hvy",
+  "fireSoundTwo": "SAD_cepc_hvy",
   "hardpointAngleOffsets": [
     0
   ],

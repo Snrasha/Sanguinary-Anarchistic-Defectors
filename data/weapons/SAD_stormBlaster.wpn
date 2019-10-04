@@ -1,7 +1,7 @@
 {
   "animationType": "MUZZLE_FLASH",
   "barrelMode": "ALTERNATING",
-  "fireSoundTwo": "stormblaster_fire",
+  "fireSoundTwo": "SAD_stormblaster_fire",
   "hardpointAngleOffsets": [
     0
   ],

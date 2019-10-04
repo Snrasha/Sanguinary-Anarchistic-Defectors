@@ -74,7 +74,7 @@ public class SAD_EMPFlakSmall extends BaseEveryFrameCombatPlugin
     light.fadeOut(0.2F);
     org.dark.shaders.light.LightShader.addLight(light);
     
-    com.fs.starfarer.api.Global.getSoundPlayer().playSound("ms_lemp_shot_impact", 1.0F, 1.0F, point, projectile.getVelocity());
+    com.fs.starfarer.api.Global.getSoundPlayer().playSound("SAD_lemp_shot_impact", 1.0F, 1.0F, point, projectile.getVelocity());
     
     List<ShipAPI> ships = CombatUtils.getShipsWithinRange(point, 30.0F);
     List<CombatEntityAPI> targets = CombatUtils.getAsteroidsWithinRange(point, 30.0F);

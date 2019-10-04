@@ -83,10 +83,9 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         }
     }
 
-    public static final int MIN_CONSTELLATIONS_WITH_SAD = 5;//15
-    public static final int MAX_CONSTELLATIONS_WITH_SAD = 10;//25
+    public static final int MIN_CONSTELLATIONS_WITH_SAD = 4;//15
+    public static final int MAX_CONSTELLATIONS_WITH_SAD = 6;//25
 
-    public static float CONSTELLATION_SKIP_PROB = 0.25f;
 
     @Override
     public String getThemeId() {
@@ -303,10 +302,14 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             if (data.isBlackHole() || data.isNebula() || data.isPulsar()) {
                 continue;
             }
+            if(data.system.hasTag(SAD_Tags.THEME_BREAKER) || data.system.hasTag(Tags.THEME_REMNANT)){
+                continue;
+            }
 
             if (data.planets.size() >= 4 || data.habitable.size() >= 1) {
                 result.add(data);
             }
+            
         }
 
         Collections.sort(systems, new Comparator<StarSystemData>() {

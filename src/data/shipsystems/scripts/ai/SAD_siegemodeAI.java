@@ -23,9 +23,6 @@ public class SAD_siegemodeAI implements com.fs.starfarer.api.combat.ShipSystemAI
         this.ship = ship;
         this.system = system;
         this.flags = flags;
-        
-        
-
     }
 
     @Override
