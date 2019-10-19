@@ -43,7 +43,8 @@
     "SAD_harShields",
     "supercomputer",
     "reduced_explosion",
-    "chassis_storage"
+    "chassis_storage",
+        "always_detaches"
   ],
   "builtInWings": [],
   "center": [

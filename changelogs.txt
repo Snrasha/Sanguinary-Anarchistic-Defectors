@@ -1,7 +1,19 @@
+Version 1.0.1b:
+-Fix weapon pool of the faction. (Some weapon never appears.)
+-SAD fleet do not loot anymore survey but random blueprint (like they love steal them)
+-SAD fleet will be more big. (Only new game)
+-SAD doctrine will try to put more capital.
+-More SAD fleet will spawn.
+
+
+
+
 Version 1.0.1:
 -Nerf the wavepulse(S) range to 750 from 900.
 -Made 100% breakable all modules of stations.
 -Nerf of the wadjet shield reduction damage to 1 from 0.8 (take 20% more damage on the shield)
+-Fix generation of Sanguinary system, do not block remnant or blade breaker to spawn. (Need new game to spawn correctly)
+-Sanguinary System can spawn on non-habitable system. (Where Remnant are always on these good spot, Sanguinary will not)
 
 
 

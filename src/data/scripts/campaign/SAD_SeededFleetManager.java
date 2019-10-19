@@ -20,6 +20,7 @@ import com.fs.starfarer.api.impl.campaign.fleets.SeededFleetManager;
 import com.fs.starfarer.api.impl.campaign.ids.Abilities;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
+import com.fs.starfarer.api.impl.campaign.procgen.SalvageEntityGenDataSpec;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.SalvageEntityGenDataSpec.DropData;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageEntity;
@@ -52,6 +53,7 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
 
                     List<DropData> dropRandom = new ArrayList<DropData>();
 
+                    String group = "blueprints_guaranteed";
                     int[] counts = new int[3];
                     String[] groups = new String[]{"survey_data1", "survey_data2", "survey_data3"};
                     //for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
@@ -71,10 +73,6 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
                         }
 
                     }
-
-//					if (fleet.isStationMode()) {
-//						counts[2] += 10;
-//					}
                     for (int i = 0; i < counts.length; i++) {
                         int count = counts[i];
                         if (count <= 0) {
@@ -82,8 +80,9 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
                         }
 
                         DropData d = new DropData();
-                        d.group = groups[i];
-                        d.chances = (int) Math.ceil(count * 1f);
+                        //d.group = groups[i];
+                        d.group = group;
+                        d.chances = (int) Math.ceil(count * 0.05f);
                         dropRandom.add(d);
                     }
 

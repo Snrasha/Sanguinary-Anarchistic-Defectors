@@ -188,9 +188,9 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
                     if (addStation) {
                             List<CampaignFleetAPI> stations = addBattlestations(data, 1f, 1, 1, createStringPicker("SAD_MotherShip_Standard", 10f),1);
                         for (CampaignFleetAPI station : stations) {
-                            int maxFleets = 2 + random.nextInt(3);
+                            int maxFleets = 4 + random.nextInt(3);
                             SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
-                                    station, 1f, 0, maxFleets, 20f, 6, 12);
+                                    station, 1f, 0, maxFleets, 20f, 6, 20);
                             data.system.addScript(activeFleets);
                         }
 
@@ -299,14 +299,14 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         List<StarSystemData> result = new ArrayList<>();
 
         for (StarSystemData data : systems) {
-            if (data.isBlackHole() || data.isNebula() || data.isPulsar()) {
+            if (data.isBlackHole() || data.isPulsar()) {
                 continue;
             }
             if(data.system.hasTag(SAD_Tags.THEME_BREAKER) || data.system.hasTag(Tags.THEME_REMNANT)){
                 continue;
             }
 
-            if (data.planets.size() >= 4 || data.habitable.size() >= 1) {
+            if (data.planets.size() >= 2) {
                 result.add(data);
             }
             
@@ -585,7 +585,7 @@ log.info("    Adding " + num + " battlestations");
                         dropRandom.add(d);
                     }
                     
-                    int[] counts = new int[3];
+                    /*int[] counts = new int[3];
                     String[] groups = new String[]{"survey_data1", "survey_data2", "survey_data3"};
                     for (FleetMemberAPI member : losses) {
                         if (member.isStation()) {
@@ -614,7 +614,7 @@ log.info("    Adding " + num + " battlestations");
                         d.chances = (int) Math.ceil(count * 1f);
                         dropRandom.add(d);
                     }
-
+*/
                     Random salvageRandom = new Random(Misc.getSalvageSeed(fleet));
                     CargoAPI extra = SalvageEntity.generateSalvage(salvageRandom, 1f, 1f, 1f, 1f, null, dropRandom);
                     for (CargoStackAPI stack : extra.getStacksCopy()) {

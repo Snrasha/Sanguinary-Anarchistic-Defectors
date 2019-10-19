@@ -36,7 +36,8 @@
   "builtInMods": [
     "SAD_harShields",
     "supercomputer",
-    "reduced_explosion"
+    "reduced_explosion",
+        "always_detaches"
   ],
   "builtInWings": [],
   "center": [

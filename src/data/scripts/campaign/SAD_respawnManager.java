@@ -147,9 +147,9 @@ public class SAD_respawnManager implements EveryFrameScript {
             }
         }
         for (CampaignFleetAPI station : result) {
-            int maxFleets = 2 + random.nextInt(3);
+            int maxFleets = 4 + random.nextInt(3);
             SAD_StationFleetManager activeFleets = new SAD_StationFleetManager(
-                    station, 1f, 0, maxFleets, 20f, 6, 12);
+                    station, 1f, 0, maxFleets, 20f, 6, 20);
             system.addScript(activeFleets);
         }
         return result;

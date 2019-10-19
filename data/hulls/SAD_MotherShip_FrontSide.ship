@@ -32,7 +32,8 @@
   "builtInMods": [
     "SAD_harShields",
     "supercomputer",
-    "reduced_explosion"
+    "reduced_explosion",
+    "always_detaches"
   ],
   "builtInWeapons": {
     "MAIN": "SAD_rhpbc",

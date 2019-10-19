@@ -66,7 +66,6 @@ public class SAD_DisturbSystem extends BaseShipSystemScript {
                     if(state.equals(State.IN)){
                         raduis*=effectLevel;
                     }
-                    
                     sprite.setSize(raduis,raduis);
                     MagicRenderPlugin.addSingleframe(sprite, ship.getLocation(), CombatEngineLayers.ABOVE_SHIPS_AND_MISSILES_LAYER);
               //      MagicRenderPlugin.addSingleframe(sprite, ship.getLocation());

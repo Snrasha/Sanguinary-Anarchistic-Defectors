@@ -177,7 +177,7 @@
 			"shipQuality":1,
 			"numShips":5,
 
-			"shipSize":3,
+			"shipSize":4,
 			"aggression":3,
 
 			"combatFreighterProbability":0.25,     				# instead of some portion of the freighters in a fleet

@@ -25,7 +25,8 @@
     "supercomputer",
     "SAD_harShields",
     "no_weapon_flux",
-    "reduced_explosion"
+    "reduced_explosion",
+        "always_detaches"
   ],
   "builtInWings": [],
   "center": [

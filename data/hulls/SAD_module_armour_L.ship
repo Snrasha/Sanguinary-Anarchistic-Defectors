@@ -17,6 +17,9 @@
     -5.5,
     -43.5
   ],
+  "builtInMods": [
+        "always_detaches"
+  ],
   "center": [
     186,
     51.5
