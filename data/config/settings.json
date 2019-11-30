@@ -33,5 +33,7 @@
 "designTypeColors":{
   "Sanguinary Tech":[151,39,102,255],
 },
+"SanguinaryAnarchisticDefectors_sectorConstellationMin":4,
+"SanguinaryAnarchisticDefectors_sectorConstellationMax":6,
 
 }

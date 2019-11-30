@@ -55,6 +55,7 @@ import com.fs.starfarer.api.impl.campaign.procgen.themes.ThemeGenContext;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageEntity;
 import java.util.Random;
 import org.apache.log4j.Logger;
+import src.data.scripts.world.SAD_ModPlugin;
 import src.data.utils.SAD_Tags;
 import src.data.utils.SAD_themes;
 
@@ -83,10 +84,6 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         }
     }
 
-    public static final int MIN_CONSTELLATIONS_WITH_SAD = 4;//15
-    public static final int MAX_CONSTELLATIONS_WITH_SAD = 6;//25
-
-
     @Override
     public String getThemeId() {
         return SAD_themes.SAD;
@@ -100,7 +97,18 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
             return;
         }
 
-        int num = (int) StarSystemGenerator.getNormalRandom(MIN_CONSTELLATIONS_WITH_SAD, MAX_CONSTELLATIONS_WITH_SAD);
+        int min=Global.getSettings().getInt("SanguinaryAnarchisticDefectors_sectorConstellationMin");//4
+        int max=Global.getSettings().getInt("SanguinaryAnarchisticDefectors_sectorConstellationMax");//6
+        if(SAD_ModPlugin.HASAJUSTEDSECTOR){
+            min=Global.getSettings().getInt("SanguinaryAnarchisticDefectors_sectorConstellationMin_AS");
+            max=Global.getSettings().getInt("SanguinaryAnarchisticDefectors_sectorConstellationMax_AS");
+       
+        }
+        if(max<1)max=6;
+        if(min<1)min=4;
+        
+        
+        int num = (int) StarSystemGenerator.getNormalRandom(min, max);
         //num = 30;
         if (num > total) {
             num = (int) total;

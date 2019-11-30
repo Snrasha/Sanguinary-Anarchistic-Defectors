@@ -1,3 +1,9 @@
+Version 1.0.1c:
+-Add incompatibility with incompatible mods.
+-Add compatibility with Adjusted Sector.
+-Add 2 setting on Settings.json for modify the amount of SAD system. --> Adjusted Sector override this two setting.
+
+
 Version 1.0.1b:
 -Fix weapon pool of the faction. (Some weapon never appears.)
 -SAD fleet do not loot anymore survey but random blueprint (like they love steal them)
