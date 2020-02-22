@@ -49,11 +49,6 @@ OR
 flavorTextMarketSAD,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == sad","AddText ""The docks are a riot of color and noise as cargoes are energetically off and onloaded.  An SRA official in a rather eye catching outfit waves you down to see if you need any help."" textGrayColor",,,
 ,,,,,,
-beaconOpenDialogSadDestroyed,OpenInteractionDialog,"$tag:warning_beacon
-$sadDestroyed","ShowDefaultVisual
-SetShortcut beaconLeave ""ESCAPE""","This autonomous warning beacon emits a looping message.
-
-""WARNING: This star system belongs to Anarchists. You aren't authorized to enter this system, except if you wish to die in cold void's embrace.""",beaconLeave:Leave,
 beaconOpenDialogSadSuppressed,OpenInteractionDialog,"$tag:warning_beacon
 $sadSuppressed","ShowDefaultVisual
 SetShortcut beaconLeave ""ESCAPE""","This autonomous warning beacon emits a looping message.

@@ -5,12 +5,7 @@ import src.data.scripts.campaign.SAD_SeededFleetManager;
 import src.data.scripts.campaign.SAD_StationFleetManager;
 import src.data.scripts.campaign.SAD_ThemeGenerator;
 import src.data.scripts.campaign.SAD_WarningBeaconEntityPlugin;
-import src.data.scripts.campaign.raid.SAD_RaidAssignmentAI;
-import src.data.scripts.campaign.raid.SAD_RouteManager;
-import src.data.scripts.campaign.raid.SAD_RouteManager.SAD_OptionalFleetData;
-import src.data.scripts.campaign.raid.SAD_RouteManager.SAD_RouteFleetSpawner;
-import src.data.scripts.campaign.raid.SAD_RouteManager.RouteData;
-import src.data.scripts.campaign.raid.SAD_RouteManager.RouteSegment;
+import src.data.scripts.campaign.intels.SAD_DiscoverEntityListener;
 
 public class XStreamConfig {
 
@@ -39,6 +34,7 @@ public class XStreamConfig {
         x.aliasAttribute(SAD_WarningBeaconEntityPlugin.class, "freqMult", "f");
         x.aliasAttribute(SAD_WarningBeaconEntityPlugin.class, "sincePing", "s");
 
+	x.alias("SAD_DiscoverEntityListener", SAD_DiscoverEntityListener.class);
     /*    x.alias("SAD_RouteManager", SAD_RouteManager.class);
         x.aliasAttribute(SAD_RouteManager.class, "routes", "r");
 

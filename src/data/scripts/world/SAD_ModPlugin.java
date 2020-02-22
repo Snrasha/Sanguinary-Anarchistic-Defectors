@@ -7,6 +7,7 @@ import com.fs.starfarer.api.PluginPick;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
 import com.fs.starfarer.api.campaign.GenericPluginManagerAPI;
 import com.fs.starfarer.api.campaign.SectorAPI;
+import com.fs.starfarer.api.campaign.listeners.ListenerManagerAPI;
 import com.fs.starfarer.api.combat.MissileAIPlugin;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
@@ -17,7 +18,7 @@ import src.data.utils.XStreamConfig;
 //import data.scripts.hullmods.TEM_LatticeShield;
 import src.data.scripts.ai.SAD_SimpleMissileAI;
 import src.data.scripts.campaign.SAD_respawnManager;
-//import src.data.scripts.campaign.raid.SAD_raidManager;
+import src.data.scripts.campaign.intels.SAD_DiscoverEntityListener;
 
 public class SAD_ModPlugin extends BaseModPlugin {
 
@@ -27,30 +28,27 @@ public class SAD_ModPlugin extends BaseModPlugin {
     {
         "xenoargh" // Makes many pseudo total conversions, but are not tagged as such
     });
-        public static final List<String> modBlacklist = Arrays.asList(new String[] // These all have good reasons
+    public static final List<String> modBlacklist = Arrays.asList(new String[] // These all have good reasons
     {
         "xxx_ss_FX_example_project",
-           "xxx_ss_FX_mod_core",
-                   "@_ss_rebal_@",
-                           "explorer_society",
-                                   "ezfaction",
-                                           "xxx_Starsector_AI_Overhaul",
-    });
-    
+        "xxx_ss_FX_mod_core",
+        "@_ss_rebal_@",
+        "explorer_society",
+        "ezfaction",
+        "xxx_Starsector_AI_Overhaul",});
+
     @Override
     public void onApplicationLoad() {
-        for (ModSpecAPI mod : Global.getSettings().getModManager().getEnabledModsCopy())
-        {
-            if (modAuthorBlacklist.contains(mod.getAuthor()))
-            {
+        for (ModSpecAPI mod : Global.getSettings().getModManager().getEnabledModsCopy()) {
+            if (modAuthorBlacklist.contains(mod.getAuthor())) {
                 throw new RuntimeException("" + mod.getName() + " is not compatible with Snrasha mods! (See Snrasha on the Discord)");
             }
-           
-            if(modBlacklist.contains(mod.getId())){
+
+            if (modBlacklist.contains(mod.getId())) {
                 throw new RuntimeException("" + mod.getName() + " is not compatible with Snrasha mods! (See Snrasha on the Discord)");
             }
         }
-        
+
         boolean hasLazyLib = Global.getSettings().getModManager().isModEnabled("lw_lazylib");
         if (!hasLazyLib) {
             throw new RuntimeException("Require LazyLib!"
@@ -68,7 +66,6 @@ public class SAD_ModPlugin extends BaseModPlugin {
         }
         HASAJUSTEDSECTOR = Global.getSettings().getModManager().isModEnabled("Adjusted Sector");
 
-        
     }
 
     private static void init() {
@@ -90,18 +87,25 @@ public class SAD_ModPlugin extends BaseModPlugin {
 
         SectorAPI sector = Global.getSector();
         GenericPluginManagerAPI plugins = sector.getGenericPlugins();
+        ListenerManagerAPI listeners = Global.getSector().getListenerManager();
         /*if (!sector.hasScript(SAD_raidManager.class)) {
             sector.addScript(new SAD_raidManager());
         }*/
         if (!sector.hasScript(SAD_respawnManager.class)) {
             sector.addScript(new SAD_respawnManager());
         }
-        
+       // if (!plugins.hasPlugin(SAD_DiscoverEntityListener.class)) {
+                  // plugins.addPlugin(new SAD_CoreDiscoverEntityPlugin(), true);
+   // }
+        if (!listeners.hasListener(SAD_DiscoverEntityListener.class)) {
+            listeners.addListener(new SAD_DiscoverEntityListener());
+        }
+
     }
 
     @Override
     public void onNewGameAfterEconomyLoad() {
-       addScriptsIfNeeded();
+        addScriptsIfNeeded();
 
     }
 
@@ -110,10 +114,11 @@ public class SAD_ModPlugin extends BaseModPlugin {
         init();
         initSanguinary();
     }
-    private static void initSanguinary()
-    {
+
+    private static void initSanguinary() {
         new SAD_Gen().sanguinary(Global.getSector());
     }
+
     public PluginPick<MissileAIPlugin> pickMissileAI(MissileAPI missile, ShipAPI launchingShip) {
         switch (missile.getProjectileSpecId()) {
             case SIMPLE_SHRIKE:

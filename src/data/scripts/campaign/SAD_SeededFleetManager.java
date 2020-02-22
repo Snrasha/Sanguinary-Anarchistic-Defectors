@@ -54,8 +54,10 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
                     List<DropData> dropRandom = new ArrayList<DropData>();
 
                     String group = "blueprints_guaranteed";
+                    
+
                     int[] counts = new int[3];
-                    String[] groups = new String[]{"survey_data1", "survey_data2", "survey_data3"};
+                    String[] groups = new String[]{"weapon_bp", "fighter_bp", "ship_bp"};
                     //for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
                     for (FleetMemberAPI member : losses) {
                         if (member.isStation()) {
@@ -63,13 +65,13 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
                         }
 
                         if (member.isCapital()) {
-                            counts[2] += 2;
+                            counts[2] += 3;
                         } else if (member.isCruiser()) {
-                            counts[2] += 1;
+                        /*    counts[2] += 1;
                         } else if (member.isDestroyer()) {
                             counts[1] += 1;
                         } else if (member.isFrigate()) {
-                            counts[0] += 1;
+                            counts[0] += 1;*/
                         }
 
                     }
@@ -80,8 +82,8 @@ public class SAD_SeededFleetManager extends SeededFleetManager {
                         }
 
                         DropData d = new DropData();
-                        //d.group = groups[i];
-                        d.group = group;
+                        d.group = groups[i];
+                        //d.group = group;
                         d.chances = (int) Math.ceil(count * 0.05f);
                         dropRandom.add(d);
                     }

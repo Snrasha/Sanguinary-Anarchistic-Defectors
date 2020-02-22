@@ -1,7 +1,15 @@
+Version 1.0.1d:
+-Rename the wadjet weapon  CPEC to Light Ionized CPEC
+-Reduce damage of the wadjet weapon to 20 from 25
+-Remove blueprint drop for every ships except capitals and cruiser (and the station).
+-The blueprint drop has be divised per two.
+-You can drop now only rare blueprint, not package.
+
 Version 1.0.1c:
 -Add incompatibility with incompatible mods.
 -Add compatibility with Adjusted Sector.
 -Add 2 setting on Settings.json for modify the amount of SAD system. --> Adjusted Sector override this two setting.
+-Add different color beacon on intel! SOOOO GOOD. (And yeah, no reason of why i have not put it before)
 
 
 Version 1.0.1b:

@@ -3,7 +3,7 @@
 	"SAD_warning_beacon2":{
 		"sounds":["default_campaign_ping", ""],
 		"color":[0,165,255,255],
-		"useFactionColor":false,
+		"useFactionColor":true,
 		"width":7,
 		"range":250,
 		"duration":1,
@@ -16,7 +16,7 @@
 	"SAD_warning_beacon3":{
 		"sounds":["default_campaign_ping", "", "default_campaign_ping"],
 		"color":[0,165,255,255],
-		"useFactionColor":false,
+		"useFactionColor":true,
 		"width":7,
 		"range":250,
 		"duration":1,

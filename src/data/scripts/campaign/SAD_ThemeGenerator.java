@@ -102,7 +102,6 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         if(SAD_ModPlugin.HASAJUSTEDSECTOR){
             min=Global.getSettings().getInt("SanguinaryAnarchisticDefectors_sectorConstellationMin_AS");
             max=Global.getSettings().getInt("SanguinaryAnarchisticDefectors_sectorConstellationMax_AS");
-       
         }
         if(max<1)max=6;
         if(min<1)min=4;
@@ -373,7 +372,8 @@ public class SAD_ThemeGenerator extends BaseThemeGenerator {
         CustomCampaignEntityAPI beacon = Global.getSector().getHyperspace().addCustomEntity("SAD_warning_beacon", null, Entities.WARNING_BEACON, Factions.NEUTRAL);
 
         beacon.getMemoryWithoutUpdate().set(type.getBeaconFlag(), true);
-
+   beacon.addTag(SAD_Tags.SAD_WARNING_BEACON);
+   beacon.removeTag(Tags.WARNING_BEACON);
         switch (type) {
             case SUPPRESSED:
                 beacon.addTag(Tags.BEACON_MEDIUM);

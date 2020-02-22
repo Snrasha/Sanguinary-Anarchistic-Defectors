@@ -1,5 +1,6 @@
 {
 
+
   "plugins":{
     "SAD_SmallEMPFlak":"src.data.scripts.plugins.SAD_EMPFlakSmall",
     "SAD_DisruptSystem":"src.data.scripts.plugins.SAD_DisruptSystemEffect",
@@ -7,6 +8,10 @@
     "SAD_Effects":"src.data.scripts.plugins.SAD_effectsHook",
   },
   "graphics":{
+    "intel":{
+      "sad_beacon_medium":"graphics/icons/intel/SAD_beacon_med.png",
+      "sad_beacon_high":"graphics/icons/intel/SAD_beacon_high.png",
+    },
     "flare":{
       "SAD_nidhoggr_ALF":"graphics/fx/SAD_nidhoggrAnFlare.png",
     },
@@ -25,11 +30,6 @@
     },
   },
 
-  "intel":{
-  "sad_beacon_low":"graphics/icons/intel/SAD_beacon_low.png",
-  "sad_beacon_medium":"graphics/icons/intel/SAD_beacon_med.png",
-  "sad_beacon_high":"graphics/icons/intel/SAD_beacon_high.png",
-},
 "designTypeColors":{
   "Sanguinary Tech":[151,39,102,255],
 },

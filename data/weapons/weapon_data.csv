@@ -13,7 +13,7 @@ Break CAS Beam(S),SAD_slowbeamH,0,0.5,8500,900,650,,,200,10,22,,,,HIGH_EXPLOSIVE
 Shrike ASM(S),SAD_shrike_rack,0,0.5,250,2000,,600,150,300,30,5,3,,,KINETIC,0,,0,1,1,,0,0,0,,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7,sad_bp",,Sanguinary Tech,,,,,,,,,,,,
 Shrike ASM Pod(S),SAD_shrike_pod,0,0.5,2100,2000,,600,150,300,30,10,12,,,KINETIC,0,,0,8,3,0.5,0,0,0,0,,800,250,3,100,"STRIKE,USE_VS_FRIGATES,GUIDED_POOR","strike10, missile8, kinetic7,sad_bp",,Sanguinary Tech,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-CEPC(fighter),SAD_wadjet_gun,0,0,200,450,,25,20,,50,0,,,,ENERGY,0,,0,0.3,2,0.08,9,20,4,20,,1500,,,10,SYSTEM,,,Sanguinary Tech,,,,,,,,,,,,
+Light Ionized CPEC,SAD_wadjet_gun,0,0,200,450,,20,20,,50,0,,,,ENERGY,0,,0,0.3,2,0.08,9,20,4,20,,1500,,,10,SYSTEM,,,Sanguinary Tech,,,,,,,,,,,,
 Weak Shrike ASM(S),SAD_shrike_fighter,0,0,2100,1500,,300,75,150,30,0,1,,,KINETIC,0,,0,8,3,0.5,0,0,0,0,,800,250,3,100,"SYSTEM,STRIKE,USE_VS_FRIGATES","strike10, missile8, kinetic7",,Sanguinary Tech,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Mimir Flash,SAD_rhpbc_muzzle,0,0,,1,,,,,,,,,,,,,,,,,,,,,,,,,,SYSTEM,,,Sanguinary Tech,,,,,,,,,,,,
