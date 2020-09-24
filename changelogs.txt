@@ -1,3 +1,7 @@
+Version 1.0.1e:
+-Fix a memory leak.
+
+
 Version 1.0.1d:
 -Rename the wadjet weapon  CPEC to Light Ionized CPEC
 -Reduce damage of the wadjet weapon to 20 from 25

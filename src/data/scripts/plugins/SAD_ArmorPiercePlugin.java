@@ -27,7 +27,6 @@ import org.lwjgl.util.vector.Vector2f;
 public class SAD_ArmorPiercePlugin
         extends BaseEveryFrameCombatPlugin {
 
-    private static CombatEngineAPI engine;
     private static final Map<String, CollisionClass> originalCollisionClasses = new HashMap();
 
     private static final String PIERCE_SOUND = "explosion_missile";
@@ -52,7 +51,8 @@ public class SAD_ArmorPiercePlugin
     static {
         PROJ_IDS.add("ms_rhpcblast");
     }*/
-
+    private CombatEngineAPI engine=null;
+    
     @Override
     public void advance(float amount, List<InputEventAPI> events) {
         if (engine != Global.getCombatEngine()) {

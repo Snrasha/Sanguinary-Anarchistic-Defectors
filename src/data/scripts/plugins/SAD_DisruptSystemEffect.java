@@ -1,16 +1,13 @@
 package src.data.scripts.plugins;
 
-import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
-import com.fs.starfarer.api.util.IntervalUtil;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.WeakHashMap;
 import org.lwjgl.util.vector.Vector2f;
 
 public class SAD_DisruptSystemEffect extends BaseEveryFrameCombatPlugin {
