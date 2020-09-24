@@ -1,12 +1,12 @@
 {
 
-    "masterVersionFile":"https://bitbucket.org/Snrasha/sad/downloads/sad.version",
+    "masterVersionFile":"https://raw.githubusercontent.com/Snrasha/Sanguinary-Anarchistic-Defectors/master/SAD.version",
     "modName":"Sanguinary Anarchistic Defectors",
     "modThreadId":13430,
     "modVersion":
     {
         "major":1,
         "minor":0,
-        "patch":1d
+        "patch":1e
     }
 }
