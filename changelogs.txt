@@ -1,3 +1,7 @@
+Version 1.0.1f:
+-Replace ship description with ship description of Black Lynx.
+
+
 Version 1.0.1e:
 -Fix a memory leak.
 -Move bitbucket version checker to a another.
