@@ -9,6 +9,7 @@ import java.util.List;
 import org.lwjgl.util.vector.Vector2f;
 
 import com.fs.starfarer.api.Global;
+import com.fs.starfarer.api.campaign.AICoreOfficerPlugin;
 import com.fs.starfarer.api.campaign.CampaignFleetAPI;
 import com.fs.starfarer.api.campaign.CargoAPI;
 import com.fs.starfarer.api.campaign.CargoStackAPI;
@@ -32,11 +33,11 @@ import com.fs.starfarer.api.impl.campaign.FleetInteractionDialogPluginImpl.FIDCo
 import com.fs.starfarer.api.impl.campaign.events.OfficerManagerEvent;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.ids.Abilities;
+import com.fs.starfarer.api.impl.campaign.ids.Commodities;
 import com.fs.starfarer.api.impl.campaign.ids.Entities;
 import com.fs.starfarer.api.impl.campaign.ids.Factions;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
 import com.fs.starfarer.api.impl.campaign.ids.MemFlags;
-import com.fs.starfarer.api.impl.campaign.ids.Skills;
 import com.fs.starfarer.api.impl.campaign.ids.Tags;
 import com.fs.starfarer.api.impl.campaign.procgen.Constellation;
 import com.fs.starfarer.api.impl.campaign.procgen.NameAssigner;
@@ -50,6 +51,7 @@ import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerat
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.convertOrbitWithSpin;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.pickCommonLocation;
 import static com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.setEntityLocation;
+import com.fs.starfarer.api.impl.campaign.procgen.themes.RemnantOfficerGeneratorPlugin;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.SalvageSpecialAssigner;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.ThemeGenContext;
 import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageEntity;
@@ -508,14 +510,19 @@ log.info("    Adding " + num + " battlestations");
                     level = 10;
                     fleet.getMemoryWithoutUpdate().set("$damagedStation", true);
                 } 
-                PersonAPI commander = OfficerManagerEvent.createOfficer(
-                        Global.getSector().getFaction(sanguinary_autonomist_defectors_Tags.SAD_FACTION), level, true);
-                if (!damaged) {
-                    commander.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 3);
-                }
+                String coreId = Commodities.ALPHA_CORE;
+		AICoreOfficerPlugin plugin = Misc.getAICoreOfficerPlugin(coreId);
+                PersonAPI commander = plugin.createPerson(coreId, fleet.getFaction().getId(), random);
+				
+				fleet.setCommander(commander);
+                
                 FleetFactoryV3.addCommanderSkills(commander, fleet, random);
                 fleet.setCommander(commander);
                 fleet.getFlagship().setCaptain(commander);
+                		if (!damaged) {
+					RemnantOfficerGeneratorPlugin.integrateAndAdaptCoreForAIFleet(fleet.getFlagship());
+					RemnantOfficerGeneratorPlugin.addCommanderSkills(commander, fleet, null, 3, random);
+				}
 
                 member.getRepairTracker().setCR(member.getRepairTracker().getMaxCR());
                 result.add(fleet);
