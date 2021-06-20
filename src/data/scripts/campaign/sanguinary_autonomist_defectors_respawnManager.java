@@ -29,7 +29,7 @@ import src.data.utils.sanguinary_autonomist_defectors_Tags;
 
 public class sanguinary_autonomist_defectors_respawnManager implements EveryFrameScript {
 
-    public static final String KEY = "$sanguinary_autonomist_defectors_raidManager";
+    public static final String KEY = "$sanguinary_autonomist_defectors_respawnManager";
 
     public static sanguinary_autonomist_defectors_respawnManager getInstance() {
         Object test = Global.getSector().getMemoryWithoutUpdate().get(KEY);
@@ -57,10 +57,10 @@ public class sanguinary_autonomist_defectors_respawnManager implements EveryFram
 
             float weight = 0f;
             weight = 1000f;
-            if (!system.hasTag(sanguinary_autonomist_defectors_Tags.THEME_SAD) && !system.hasTag(sanguinary_autonomist_defectors_Tags.THEME_sanguinary_autonomist_defectors_MAIN)) {
+            if (!system.hasTag(sanguinary_autonomist_defectors_Tags.THEME_SAD) && !system.hasTag(sanguinary_autonomist_defectors_Tags.THEME_SAD_MAIN)) {
                 continue;
             }
-            if (!system.hasTag(sanguinary_autonomist_defectors_Tags.THEME_sanguinary_autonomist_defectors_RESURGENT)) {
+            if (!system.hasTag(sanguinary_autonomist_defectors_Tags.THEME_SAD_RESURGENT)) {
                 continue;
             }
 
@@ -96,7 +96,7 @@ public class sanguinary_autonomist_defectors_respawnManager implements EveryFram
             String type = stationTypes.pick();
             if (loc != null) {
 
-                CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet("sad", FleetTypes.BATTLESTATION, null);
+                CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet(sanguinary_autonomist_defectors_Tags.SAD_FACTION, FleetTypes.BATTLESTATION, null);
 
                 FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, type);
                 fleet.getFleetData().addFleetMember(member);
@@ -107,7 +107,7 @@ public class sanguinary_autonomist_defectors_respawnManager implements EveryFram
                 fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_ALLOW_DISENGAGE, true);
 
                 fleet.setStationMode(true);
-                fleet.addTag(sanguinary_autonomist_defectors_Tags.sanguinary_autonomist_defectors_STATION);
+                fleet.addTag(sanguinary_autonomist_defectors_Tags.SAD_STATION);
 
                 addSADStationInteractionConfig(fleet,id);
 
@@ -133,7 +133,7 @@ public class sanguinary_autonomist_defectors_respawnManager implements EveryFram
                     fleet.getMemoryWithoutUpdate().set("$damagedStation", true);
                 } //else {
                 PersonAPI commander = OfficerManagerEvent.createOfficer(
-                        Global.getSector().getFaction("sad"), level, true);
+                        Global.getSector().getFaction(sanguinary_autonomist_defectors_Tags.SAD_FACTION), level, true);
                 if (!damaged) {
                     commander.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 3);
                 }
@@ -165,7 +165,7 @@ public class sanguinary_autonomist_defectors_respawnManager implements EveryFram
         List<CampaignFleetAPI> fleets = system.getFleets();
 
         for (CampaignFleetAPI fleet : fleets) {
-            if (fleet.hasTag(sanguinary_autonomist_defectors_Tags.sanguinary_autonomist_defectors_STATION)) {
+            if (fleet.hasTag(sanguinary_autonomist_defectors_Tags.SAD_STATION)) {
                 return fleet;
             }
         }

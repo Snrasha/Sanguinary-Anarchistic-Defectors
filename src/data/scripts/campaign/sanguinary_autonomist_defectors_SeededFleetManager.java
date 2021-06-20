@@ -27,6 +27,7 @@ import com.fs.starfarer.api.impl.campaign.rulecmd.salvage.SalvageEntity;
 import com.fs.starfarer.api.util.Misc;
 import java.util.ArrayList;
 import java.util.List;
+import src.data.utils.sanguinary_autonomist_defectors_Tags;
 
 public class sanguinary_autonomist_defectors_SeededFleetManager extends SeededFleetManager {
 
@@ -145,7 +146,7 @@ public class sanguinary_autonomist_defectors_SeededFleetManager extends SeededFl
 
         FleetParamsV3 params = new FleetParamsV3(
                 system.getLocation(),
-                "sad",
+                sanguinary_autonomist_defectors_Tags.SAD_FACTION,
                 1f,
                 type,
                 combatPoints, // combatPts

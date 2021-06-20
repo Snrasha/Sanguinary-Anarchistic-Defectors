@@ -58,7 +58,7 @@ public class sanguinary_autonomist_defectors_WarningBeaconIntel extends WarningB
     public Set<String> getIntelTags(SectorMapAPI map) {
         Set<String> tags = super.getIntelTags(map);
         tags.add(Tags.INTEL_BEACON);
-        tags.add(sanguinary_autonomist_defectors_Tags.sanguinary_autonomist_defectors_FACTION);
+        tags.add(sanguinary_autonomist_defectors_Tags.SAD_FACTION);
         return tags;
     }
 }

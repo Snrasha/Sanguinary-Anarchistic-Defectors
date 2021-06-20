@@ -2,11 +2,13 @@ Version 1.1:
 -Update for 0.95
 -Rename faction Sanguinary anarchist Defectors to Sanguinary Autonomist Defectors.
 -Rename every prefix sanguinary_autonomist_defectors_ from SAD_
--Remove armor percing plugin for some weapon
--Remove simple missile ai for shrike, reinsert vanilla.
+-Remove armor percing plugin for the niddhoggr weapon.
+-Modify the medium polarizer.
 -Big buff for Babi phase frigate.
 -Rename niddhoggr to Osiris like this is a duplicate of the weapon
 -Remove Balistic Atan from the pool. 
+-Modify descriptions.
+-Modify Anuket fighter for be more efficient.
 
 
 Version 1.0.1f:

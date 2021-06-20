@@ -13,11 +13,11 @@ public class sanguinary_autonomist_defectors_DiscoverEntityListener implements D
     @Override
     public void reportEntityDiscovered(SectorEntityToken entity) {
 
-        if (entity.hasTag(sanguinary_autonomist_defectors_Tags.sanguinary_autonomist_defectors_WARNING_BEACON)) {
+        if (entity.hasTag(sanguinary_autonomist_defectors_Tags.SAD_WARNING_BEACON)) {
             
             //Weirdly, they spawn three times and like the beacon is a bit useless after.
-            entity.removeTag(sanguinary_autonomist_defectors_Tags.sanguinary_autonomist_defectors_WARNING_BEACON);
-            entity.addTag(sanguinary_autonomist_defectors_Tags.sanguinary_autonomist_defectors_WARNING_BEACON2);
+            entity.removeTag(sanguinary_autonomist_defectors_Tags.SAD_WARNING_BEACON);
+            entity.addTag(sanguinary_autonomist_defectors_Tags.SAD_WARNING_BEACON2);
            /* LOG.info("sanguinary_autonomist_defectors_WARNING_BEACON");
             for (String tag : entity.getTags()) {
                 LOG.info("--- " + tag);

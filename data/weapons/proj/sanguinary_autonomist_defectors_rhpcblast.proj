@@ -1,16 +1,18 @@
 {
 	"id":"sanguinary_autonomist_defectors_rhpcblast",
 	"specClass":"projectile",
-	"spawnType":"BALLISTIC",
-	"collisionClass":"PROJECTILE_FF",
+	"spawnType":"BALLISTIC_AS_BEAM",
+	"collisionClass":"RAY",
 	"collisionClassByFighter":"PROJECTILE_FIGHTER",
-	"length":19.0,
-	"width":19.0,
-	"hitGlowRadius":60,
-	"fadeTime":0.22,
-	"fringeColor":[197,210,191,255],
-	"coreColor":[234,251,234,255],
+	"length":57,
+	"width":40,
+	"fadeTime":0.3,
+	"fringeColor":[125,255,115,150],
+	"coreColor":[165,255,145,255],
+	"glowColor":[70,200,50,75],
+	"glowRadius":40,
+	"hitGlowRadius":90,
 	"textureScrollSpeed":64.0,
 	"pixelsPerTexel":5.0,
-	"bulletSprite":"graphics/missiles/sanguinary_autonomist_defectors_nidhoggr.png"
+	"bulletSprite":"graphics/missiles/sanguinary_autonomist_defectors_wave_nidhoggr.png"
 }

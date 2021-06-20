@@ -3,6 +3,7 @@
 	"specClass":"projectile",
 	"spawnType":"BALLISTIC_AS_BEAM",
 	"collisionClass":"RAY",
+		"onHitEffect":"com.fs.starfarer.api.impl.combat.IonCannonOnHitEffect",
 	"collisionClassByFighter":"RAY_FIGHTER",
 	"length":35.0,
 	"width":20,

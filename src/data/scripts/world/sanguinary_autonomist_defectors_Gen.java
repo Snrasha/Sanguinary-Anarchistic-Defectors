@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import src.data.scripts.campaign.sanguinary_autonomist_defectors_ThemeGenerator;
+import src.data.utils.sanguinary_autonomist_defectors_Tags;
 
 public class sanguinary_autonomist_defectors_Gen implements SectorGeneratorPlugin {
 
@@ -37,7 +38,7 @@ public class sanguinary_autonomist_defectors_Gen implements SectorGeneratorPlugi
 
     private static void initFactionRelationships(SectorAPI sector) {
 
-        FactionAPI sad = sector.getFaction("sad");
+        FactionAPI sad = sector.getFaction(sanguinary_autonomist_defectors_Tags.SAD_FACTION);
 
         List<FactionAPI> factionList = sector.getAllFactions();
         factionList.remove(sad);
@@ -46,6 +47,8 @@ public class sanguinary_autonomist_defectors_Gen implements SectorGeneratorPlugi
             sad.setRelationship(faction.getId(), RepLevel.HOSTILE);
         }
         sad.setRelationship(Factions.INDEPENDENT, RepLevel.NEUTRAL);
+        sad.setRelationship(Factions.REMNANTS, RepLevel.NEUTRAL);
+
         sad.setRelationship(Factions.PLAYER, RepLevel.HOSTILE);
 
     }

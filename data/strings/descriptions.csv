@@ -2,24 +2,24 @@ id,type,text1,text2,text3,notes
 ,,,,,
 sanguinary_autonomist_defectors_shrike_rack,WEAPON,"A short-ranged tracking missile, launched from a triple-rack. Intended to bypass active defenses by virtue of overwhelming velocity.
 
-Railgun assisted kinetic penetrator.  Propulsion is very potent, but fuel supply quite short, giving almost no chance of recovery if the shot misses.  Effective primarily against shields.  It is fitted with a small explosive charge, which is set to go off when it senses it is surrounded by a targeted ships hull; while the damage to the hull is typically small, this can damage and disrupt shipboard systems.
+Railgun assisted kinetic penetrator. Propulsion is very potent, but fuel supply quite short, giving almost no chance of recovery if the shot misses.  Effective primarily against shields.  It is fitted with a small explosive charge, which is set to go off when it senses it is surrounded by a targeted ships hull; while the damage to the hull is typically small, this can damage and disrupt shipboard systems.
 
-The modified version of the Sanguinary Anarchist increase the aiming but reduce the amount of explosive charge on the missile.",Close Support,,
+This Sanguinary Tech modification increases the accuracy but reduces the explosive damage of the missile.",Close Support,,
 sanguinary_autonomist_defectors_shrike_pod,WEAPON,"A short-ranged tracking missile, launched from a magazine-fed dual pod. Intended to pierce active defenses by virtue of overwhelming velocity.
 
-Railgun assisted kinetic penetrator.  Propulsion is very potent, but fuel supply quite short, giving almost no chance of recovery if the shot misses.  Effective primarily against shields.  It is fitted with a small explosive charge, which is set to go off when it senses it is surrounded by a targeted ships hull; while the damage to the hull is typically small, this can damage and disrupt shipboard systems..
+Railgun assisted kinetic penetrator. Propulsion is very potent, but fuel supply quite short, giving almost no chance of recovery if the shot misses.  Effective primarily against shields.  It is fitted with a small explosive charge, which is set to go off when it senses it is surrounded by a targeted ships hull; while the damage to the hull is typically small, this can damage and disrupt shipboard systems..
 
-The modified version of the Sanguinary Anarchist increase the aiming but reduce the amount of explosive charge on the missile.",Close Support,,
+This Sanguinary Tech modification increases the accuracy but reduces the explosive damage of the missile.",Close Support,,
 sanguinary_autonomist_defectors_cepc,WEAPON,"The CEPC, or Carried Energy Pulse Cannon, is an SRA weapon system capable of significant, if front loaded, damage.
 
 Rather than fire the bolt through a typical lasing medium or projector, Shadowyards researchers opted to utilize a physical medium to act as a carrier for the energy pulse.  While the method has proven to be somewhat more efficient than many other methods and can produce highly damaging bolts, the Charge Carrier Medium (CCM) must be charged before firing, resulting in a limited capacity of available shots at any given time.  The CEPC's fire rate is more than sufficient for this to lead to noticeable drops in combat efficiency in fairly short time frames.
 
-The modified version of the Sanguinary Anarchist modify the number of projectile fired per the weapon.",Close Support,,
+This Sanguinary Tech modification modifies the number of projectiles fired per shot.",Close Support,,
 sanguinary_autonomist_defectors_hcepc,WEAPON,"The CEPC, or Carried Energy Pulse Cannon, is an SRA weapon system capable of significant, if front loaded, damage.
 
 Rather than fire the bolt through a typical lasing medium or projector, Shadowyards researchers opted to utilize a physical medium to act as a carrier for the energy pulse.  While the method has proven to be somewhat more efficient than many other methods and can produce highly damaging bolts, the Charge Carrier Medium (CCM) must be charged before firing, resulting in a limited capacity of available shots at any given time.  The CEPC's fire rate is more than sufficient for this to lead to noticeable drops in combat efficiency in fairly short time frames.
 
-The modified version of the Sanguinary Anarchist modify the number of projectile fired per the weapon.",Close Support,,
+This Sanguinary Tech modification modifies the number of projectiles fired per shot.",Close Support,,
 sanguinary_autonomist_defectors_stopper1,WEAPON,"Sometimes, you need a Scatter CEPC for your phase ship.
 This Stopper version of the Shamash do not pass shield or break the engine, but inflict true damage.",Close Support,,
 sanguinary_autonomist_defectors_pdcepc,WEAPON,"The Light variant of the CEPC is the SRA's most common dedicated CIWS system, focused on maintaining a high fire rate with excellent accuracy.
@@ -29,17 +29,16 @@ sanguinary_autonomist_defectors_mcepc,WEAPON,"The Medium CEPC is well liked amon
 
 Twin cannons ensure a high rate of fire with good accuracy while extended accelerator rails give it superior range.  An improved charging system allows it to fire larger CCM pellets safely, which has greatly improved the weapons damage at some cost in efficiency.
 
-The modified version of the Sanguinary Anarchist modify the number of projectile fired per the weapon.",Assault,,
+This Sanguinary Tech modification modifies the number of projectiles fired per shot.",Assault,,
 sanguinary_autonomist_defectors_wamgun,WEAPON,"Featuring distinctive crescent-bolts of energy, the 'Wavepulse' Cannon is a general-purpose, if exotic, weapon of war.
 
 Ultimately a simple weapon, the Wavepulse is actually numerous smaller particle cannons, horizontally aligned firing in sequence to produce a much larger blast of energy.  Of only middling efficiency, the configuration of particle projectors is nevertheless quite effective at producing localized stress to shields and armor, and the weapon is noted for leaving distinctive 'scars' on damaged hull plating.  The resulting 'cutting' effect can on occasion inflict additional damage as a result of secondary stresses resulting from the unusual damage pattern.
 
-The SAD version increase the capacity of the weapon to shoot but lose insane damage on the process.",Close Support,,
-sanguinary_autonomist_defectors_mpolar,WEAPON,"The Polarizer is an energy weapon that delivers an modest electromagnetic pulse (EMP) charge. The polarizer carries its charges on a variant of the CEPC’s carrier medium, which, in it’s highly charged state, becomes unstable; it also fires a shielded micro-sensor which detects hostile craft and causes the blast to explode, delivering its charge to targets within a short range.
+This Sanguinary Tech modification increases the shot capacity of the weapon at a significant cost to damage output.",Close Support,,
+sanguinary_autonomist_defectors_mpolar,WEAPON,"The Polarizer is an energy weapon that delivers an modest electromagnetic pulse (EMP) charge. The polarizer carries its charges on a variant of the CEPC’s carrier medium, which, in it’s highly charged state, becomes unstable;
 
 As such the Polarizer sees a good deal of use as a general purpose close defense battery, though it remains useful in disabling enemy ships.
-
-The medium version from the Sanguinary Anarchist use always the same ammo, but with a high fire-rate.",Special,,
+The medium version from the Sanguinary Tech is based of the Ion Pulser for a high fire-rate.",Special,,
 sanguinary_autonomist_defectors_stormBlaster,WEAPON,"Rotary energy weapon system with an extremely high rate of fire. With a insane ammo magazine, it can shoot for a long time before run out.
 Particle masses become unstable after a short distance and tend to detonate spectacularly when near dense concentrations of matter, such as starships.  Though it's damage against shields and armor is middling at best, the Storm Blaster shines when engaging small craft or vessels with unprotected hull.",Close Support,,
 sanguinary_autonomist_defectors_slowbeamM,WEAPON,This unique weapon of Atan-Class is a Mono CAS Beam reduced for be usable for the Atan.,Close Support,,
@@ -57,7 +56,7 @@ sanguinary_autonomist_defectors_BurnDrive,SHIP_SYSTEM,Temporarily engages a prim
 sanguinary_autonomist_defectors_flare,SHIP_SYSTEM,Launches flares that distract the guidance systems of incoming missiles and PD weapons. The flares also track missiles and any missile impacting a flare will be destroyed.,Defensive,Launches flares to confuse the guidance systems of nearby enemy missiles. The flares are fast and actively track the missiles.,
 ,,,,,
 sanguinary_autonomist_defectors_Wadjet,SHIP,"While Wadjets share the Neriad's design, they feature a few differences, most notably the replacement of it's primary weapons. Armed with 2 CPECs, mission profiles of Wadjet wings include general purpose, interception and escort duties. Usable everywhere in the Sector and atmosphere-capable like the Neriad, Wadjet wings have been upgraded with top-class engines, improving top speed and a better front shield generator. Thanks to the relative rarity of these wings and performance upgrades, the cost of these fighters is often double that of the standard SRA Neriad.",,,
-sanguinary_autonomist_defectors_Anuket,SHIP,"Not very effecient, the SAD-designed Anuket bomber wing is equipped with a pair of Strike ASM missiles and little else. Surprisingly cheap, and disposable.
+sanguinary_autonomist_defectors_Anuket,SHIP,"The SAD-designed Anuket bomber wing is equipped with a pair of 6 Strike ASM missiles. A efficient bomber capable of destroy small ships without point defense.
 ",,,
 sanguinary_autonomist_defectors_Neith,SHIP,"A purpose-built combat frigate, the SAD utilized stolen blueprints of the Seski corvette in designing this ship. It is also painted in the traditionally bright colors of the SAD.
 
@@ -118,7 +117,7 @@ sanguinary_autonomist_defectors_Osiris,SHIP,"Never meant to see the light of day
 
 There are rumors that certain factions have stolen this design and simply added a new paintjob to it, largely because the SAD has made intimidating their foes a lot easier than the SRA ever has when used against other factions. Mining versions of this ship, as ridiculous as it sounds used to exist, but unfortunately all production chips for these examples were lost or seized by certain hostile powers in order to prevent such ships from over-saturating markets with ore.
 
-The Niddhoggr is equipped with a luxurious interior that puts even the finest accommodations available in the Sector to shame. It even possesses a tram system, which facilitates crew and ammunition transport and speeds up inner ship logistics both during battles and in between them. Its massive array of thrusters allows it to perform impressive maneuvers, but the lack of safety controls means that some of these movements are so dangerous to the crew aboard that some parts of the ship are entirely automated, to avoid endangerment and casualties. Originally known as the J�rmungandr-class (named after a great serpent in Norse mythology), it was reborn after some consideration as the Niddhoggr, since some still argue that this ship's true nature is connected to the infamous Unsung project from the pre-Collapse era. However, most of that has changed since the SRA dropped the design and SAD shipwrights have stolen it from orbital wrecking yards.
+The Osiris is equipped with a luxurious interior that puts even the finest accommodations available in the Sector to shame. It even possesses a tram system, which facilitates crew and ammunition transport and speeds up inner ship logistics both during battles and in between them. Its massive array of thrusters allows it to perform impressive maneuvers, but the lack of safety controls means that some of these movements are so dangerous to the crew aboard that some parts of the ship are entirely automated, to avoid endangerment and casualties. Originally known as the J�rmungandr-class (named after a great serpent in Norse mythology), it was reborn after some consideration as the Niddhoggr, since some still argue that this ship's true nature is connected to the infamous Unsung project from the pre-Collapse era. However, most of that has changed since the SRA dropped the design and SAD shipwrights have stolen it from orbital wrecking yards.
 
 Very few ships of this class remain in combat-capable condition and it remains one of the rarest vessels in the SAD's entire arsenal. Post-Collapse, ships of this class often represent a safe haven for those spacers seeking a peaceful life filled with luxury and surrounded by cold, hard walls painted over with the traditionally bright colors of the SAD to escape from the abject reality of life in the post-Collapse Sector.",,,
 sanguinary_autonomist_defectors_Babi,SHIP,"Well liked by Sanguinary crews, the Babi-class is a phase frigate based on the Shamash blueprint, and is entirely overhauled and modified to current specifications. While still using Phase Anchor technology from the Domain era, intelligent captains often pair these with other phase skimmers and harasser-type craft to maximize effectiveness, and these ships excel in groups to cover for several design flaws in the manufacturing process.

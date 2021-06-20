@@ -11,6 +11,7 @@ import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetParamsV3;
 import com.fs.starfarer.api.impl.campaign.fleets.SourceBasedFleetManager;
 import com.fs.starfarer.api.impl.campaign.ids.FleetTypes;
+import src.data.utils.sanguinary_autonomist_defectors_Tags;
 
 public class sanguinary_autonomist_defectors_StationFleetManager extends SourceBasedFleetManager {
 
@@ -55,7 +56,7 @@ public class sanguinary_autonomist_defectors_StationFleetManager extends SourceB
         FleetParamsV3 params = new FleetParamsV3(
                 source.getMarket(),
                 source.getLocationInHyperspace(),
-                "sad",
+                sanguinary_autonomist_defectors_Tags.SAD_FACTION,
                 1f,
                 type,
                 combatPoints, // combatPts

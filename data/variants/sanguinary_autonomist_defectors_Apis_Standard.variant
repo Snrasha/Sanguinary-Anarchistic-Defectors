@@ -22,6 +22,7 @@
       "autofire": false,
       "mode": "LINKED",
       "weapons": {
+      #    "LARGE": "sanguinary_autonomist_defectors_rhpbc_turr"
         "LARGE": "sanguinary_autonomist_defectors_wamgun"
       }
     }

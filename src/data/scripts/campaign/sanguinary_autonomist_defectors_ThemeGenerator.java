@@ -57,15 +57,14 @@ import java.util.Random;
 import org.apache.log4j.Logger;
 import src.data.scripts.world.sanguinary_autonomist_defectors_ModPlugin;
 import src.data.utils.sanguinary_autonomist_defectors_Tags;
-import src.data.utils.sanguinary_autonomist_defectors_themes;
 
 public class sanguinary_autonomist_defectors_ThemeGenerator extends BaseThemeGenerator {
     public static final Logger log = Global.getLogger(sanguinary_autonomist_defectors_ThemeGenerator.class);
 
     public static enum sanguinary_autonomist_defectors_SystemType {
 
-        SUPPRESSED(sanguinary_autonomist_defectors_Tags.THEME_sanguinary_autonomist_defectors_SUPPRESSED, "$sadSuppressed"),
-        RESURGENT(sanguinary_autonomist_defectors_Tags.THEME_sanguinary_autonomist_defectors_RESURGENT, "$sadResurgent"),;
+        SUPPRESSED(sanguinary_autonomist_defectors_Tags.THEME_SAD_SUPPRESSED, "$sadSuppressed"),
+        RESURGENT(sanguinary_autonomist_defectors_Tags.THEME_SAD_RESURGENT, "$sadResurgent"),;
 
         private String tag;
         private String beaconFlag;
@@ -86,7 +85,7 @@ public class sanguinary_autonomist_defectors_ThemeGenerator extends BaseThemeGen
 
     @Override
     public String getThemeId() {
-        return sanguinary_autonomist_defectors_themes.SAD;
+        return sanguinary_autonomist_defectors_Tags.SAD_FACTION;
     }
 
     @Override
@@ -176,7 +175,7 @@ public class sanguinary_autonomist_defectors_ThemeGenerator extends BaseThemeGen
                 populateMain(data, type);
 
                 data.system.addTag(sanguinary_autonomist_defectors_Tags.THEME_SAD);
-                data.system.addTag(sanguinary_autonomist_defectors_Tags.THEME_sanguinary_autonomist_defectors_MAIN);
+                data.system.addTag(sanguinary_autonomist_defectors_Tags.THEME_SAD_MAIN);
                 data.system.addTag(type.getTag());
                 sadSystems.add(data);
 
@@ -222,7 +221,7 @@ public class sanguinary_autonomist_defectors_ThemeGenerator extends BaseThemeGen
                 populateNonMain(data);
 
                 data.system.addTag(sanguinary_autonomist_defectors_Tags.THEME_SAD);
-                data.system.addTag(sanguinary_autonomist_defectors_Tags.THEME_sanguinary_autonomist_defectors_MAIN);
+                data.system.addTag(sanguinary_autonomist_defectors_Tags.THEME_SAD_MAIN);
                 data.system.addTag(type.getTag());
                 sadSystems.add(data);
 
@@ -372,7 +371,7 @@ public class sanguinary_autonomist_defectors_ThemeGenerator extends BaseThemeGen
         CustomCampaignEntityAPI beacon = Global.getSector().getHyperspace().addCustomEntity("sanguinary_autonomist_defectors_warning_beacon", null, Entities.WARNING_BEACON, Factions.NEUTRAL);
 
         beacon.getMemoryWithoutUpdate().set(type.getBeaconFlag(), true);
-   beacon.addTag(sanguinary_autonomist_defectors_Tags.sanguinary_autonomist_defectors_WARNING_BEACON);
+   beacon.addTag(sanguinary_autonomist_defectors_Tags.SAD_WARNING_BEACON);
    beacon.removeTag(Tags.WARNING_BEACON);
         switch (type) {
             case SUPPRESSED:
@@ -477,7 +476,7 @@ log.info("    Adding " + num + " battlestations");
             String type = stationTypes.pick();
             if (loc != null) {
 
-                CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet("sad", FleetTypes.BATTLESTATION, null);
+                CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet(sanguinary_autonomist_defectors_Tags.SAD_FACTION, FleetTypes.BATTLESTATION, null);
 
                 FleetMemberAPI member = Global.getFactory().createFleetMember(FleetMemberType.SHIP, type);
                 fleet.getFleetData().addFleetMember(member);
@@ -487,7 +486,7 @@ log.info("    Adding " + num + " battlestations");
                 fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_ALLOW_DISENGAGE, true);
 
                 fleet.setStationMode(true);
-                fleet.addTag(sanguinary_autonomist_defectors_Tags.sanguinary_autonomist_defectors_STATION);
+                fleet.addTag(sanguinary_autonomist_defectors_Tags.SAD_STATION);
 
                 addSADStationInteractionConfig(fleet,id);
 
@@ -510,7 +509,7 @@ log.info("    Adding " + num + " battlestations");
                     fleet.getMemoryWithoutUpdate().set("$damagedStation", true);
                 } 
                 PersonAPI commander = OfficerManagerEvent.createOfficer(
-                        Global.getSector().getFaction("sad"), level, true);
+                        Global.getSector().getFaction(sanguinary_autonomist_defectors_Tags.SAD_FACTION), level, true);
                 if (!damaged) {
                     commander.getStats().setSkillLevel(Skills.GUNNERY_IMPLANTS, 3);
                 }

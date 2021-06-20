@@ -3,7 +3,7 @@
 	"specClass":"beam",
 	"type":"DECORATIVE",
 	"size":"SMALL",
-	"everyFrameEffect":"src.data.scripts.plugins.sanguinary_autonomist_defectors_ScriptOsiris",
+	"everyFrameEffect":"src.data.scripts.weapons.sanguinary_autonomist_defectors_ScriptOsiris",
 	"showDamageWhenDecorative":false,
 	"renderBelowAllWeapons":true,
 	"turretSprite":"",

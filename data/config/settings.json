@@ -2,7 +2,6 @@
 
 
   "plugins":{
-    "sanguinary_autonomist_defectors_SmallEMPFlak":"src.data.scripts.plugins.sanguinary_autonomist_defectors_EMPFlakSmall",
     "sanguinary_autonomist_defectors_DisruptSystem":"src.data.scripts.plugins.sanguinary_autonomist_defectors_DisruptSystemEffect",
     "sanguinary_autonomist_defectors_Effects":"src.data.scripts.plugins.sanguinary_autonomist_defectors_effectsHook",
   },
