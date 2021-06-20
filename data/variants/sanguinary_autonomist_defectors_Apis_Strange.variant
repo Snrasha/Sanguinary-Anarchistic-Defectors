@@ -1,0 +1,32 @@
+{
+  "displayName": "Strange",
+  "fluxCapacitors": 2,
+  "fluxVents": 20,
+  "goalVariant": true,
+  "hullId": "sanguinary_autonomist_defectors_Apis",
+  "hullMods": [
+    "converted_hangar"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "sanguinary_autonomist_defectors_Apis_Strange",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "LARGE": "sanguinary_autonomist_defectors_slowbeamH"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "MIDDLE": "sanguinary_autonomist_defectors_mcepc"
+      }
+    }
+  ],
+  "wings": [
+    "sanguinary_autonomist_defectors_Wadjet_Wing"
+  ]
+}

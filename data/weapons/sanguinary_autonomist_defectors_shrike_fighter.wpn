@@ -1,0 +1,47 @@
+{
+  "animationType": "SMOKE",
+  "barrelMode": "ALTERNATING",
+  "displayArcRadius": 300,
+  "fireSoundTwo": "sanguinary_autonomist_defectors_shrike_fire",
+  "hardpointAngleOffsets": [
+    0,
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "id": "sanguinary_autonomist_defectors_shrike_fighter",
+  "projectileSpecId": "sanguinary_autonomist_defectors_shrike",
+  "renderHints": [
+    RENDER_LOADED_MISSILES
+  ],
+  "size": "SMALL",
+  "smokeSpec": {
+    "blowbackDuration": 2,
+    "blowbackLength": 30,
+    "blowbackParticleCount": 3,
+    "blowbackSpread": 10,
+    "cloudDuration": 1,
+    "cloudParticleCount": 3,
+    "cloudRadius": 10,
+    "particleColor": [
+      100,
+      100,
+      100,
+      200
+    ],
+    "particleSizeMin": 20,
+    "particleSizeRange": 20
+  },
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+  0,0
+  ],
+  "turretSprite": "",
+  "type": "MISSILE"
+}

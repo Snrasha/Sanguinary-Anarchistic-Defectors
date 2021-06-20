@@ -1,0 +1,22 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors":14,
+  "fluxVents": 0,
+  "goalVariant": true,
+  "hullId": "sanguinary_autonomist_defectors_Qadesh",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "sanguinary_autonomist_defectors_Qadesh_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0002": "sanguinary_autonomist_defectors_pdcepc"
+      }
+    }
+  ],
+  "wings": []
+}

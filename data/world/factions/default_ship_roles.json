@@ -2,73 +2,72 @@
 	# should be a copy of "combatSmall", minus variants that are annoying to fight in low numbers
 	# for example, no Hyperions or fast beam-based kiting loadouts, or ships with damper field
 	"combatSmallForSmallFleet":{
-		"SAD_Hapy_Burst":5,
-		"SAD_Hapy_Missile":5,
-		"SAD_Neith_Missile":5,
-		"SAD_Neith_Standard":5,
-		"SAD_Thoth_Standard":5,
-		"SAD_Thoth_Missile":5,
+		"sanguinary_autonomist_defectors_Hapy_Burst":5,
+		"sanguinary_autonomist_defectors_Hapy_Missile":5,
+		"sanguinary_autonomist_defectors_Neith_Missile":5,
+		"sanguinary_autonomist_defectors_Neith_Standard":5,
+		"sanguinary_autonomist_defectors_Thoth_Standard":5,
+		"sanguinary_autonomist_defectors_Thoth_Missile":5,
 	},
 	"combatSmall":{
-	"SAD_Hapy_Burst":10,
-	"SAD_Hapy_Missile":10,
-	"SAD_Neith_Missile":10,
-	"SAD_Neith_Standard":10,
-	"SAD_Thoth_Standard":10,
-	"SAD_Thoth_Missile":10,
-	"SAD_Atan_b_Standard":1,
+	"sanguinary_autonomist_defectors_Hapy_Burst":10,
+	"sanguinary_autonomist_defectors_Hapy_Missile":10,
+	"sanguinary_autonomist_defectors_Neith_Missile":10,
+	"sanguinary_autonomist_defectors_Neith_Standard":10,
+	"sanguinary_autonomist_defectors_Thoth_Standard":10,
+	"sanguinary_autonomist_defectors_Thoth_Missile":10,
 	},
 	"combatMedium":{
-		"SAD_Khonsu_Standard":15,
-		"SAD_Ptah_Standard":15,
-		"SAD_Apis_Standard":3,
-		"SAD_Apis_Strange":3,
+		"sanguinary_autonomist_defectors_Khonsu_Standard":15,
+		"sanguinary_autonomist_defectors_Ptah_Standard":15,
+		"sanguinary_autonomist_defectors_Apis_Standard":3,
+		"sanguinary_autonomist_defectors_Apis_Strange":3,
 	},
 	"combatLarge":{
-		"SAD_Maat_Standard":16,
-		"SAD_Owclaw_Another":6,
-		"SAD_Owclaw_Attack":6,
-		"SAD_Imhotep_Missile":8,
-		"SAD_Imhotep_Standard":8,
-		"SAD_Taweret_Standard":2,
-		"SAD_Niddhoggr_Standard":1,
-		"SAD_Atan_Standard":1,
+		"sanguinary_autonomist_defectors_Maat_Standard":16,
+		"sanguinary_autonomist_defectors_Owclaw_Another":6,
+		"sanguinary_autonomist_defectors_Owclaw_Attack":6,
+		"sanguinary_autonomist_defectors_Imhotep_Missile":8,
+		"sanguinary_autonomist_defectors_Imhotep_Standard":8,
+		"sanguinary_autonomist_defectors_Taweret_Standard":2,
+		"sanguinary_autonomist_defectors_Osiris_Standard":1,
+		"sanguinary_autonomist_defectors_Atan_Standard":1,
 	},
 	"combatCapital":{
-		"SAD_Taweret_Standard":10,
-		"SAD_Niddhoggr_Standard":5,
+		"sanguinary_autonomist_defectors_Taweret_Standard":10,
+		"sanguinary_autonomist_defectors_Osiris_Standard":5,
 	},
 
 	"phaseSmall":{
-		"SAD_Babi_Standard":3,
+		"sanguinary_autonomist_defectors_Babi_Standard":3,
 	},
 	"carrierSmall":{
-		"SAD_Seshat_Standard":4,
+		"sanguinary_autonomist_defectors_Seshat_Standard":4,
 	},
 	"carrierMedium":{
-	"SAD_Hathor_Standard":4,
+	"sanguinary_autonomist_defectors_Hathor_Standard":4,
 	},
 	"carrierLarge":{
-	"SAD_Imhotep_Missile":2,
-	"SAD_Imhotep_Standard":2,
+	"sanguinary_autonomist_defectors_Imhotep_Missile":2,
+	"sanguinary_autonomist_defectors_Imhotep_Standard":2,
 	},
 
 	"freighterSmall":{
 	},
 	"freighterMedium":{
-	"SAD_Qadesh_Standard":2,
+	"sanguinary_autonomist_defectors_Qadesh_Standard":2,
 	},
 	"freighterLarge":{
 	},
 	"tankerSmall":{
 	},
 	"tankerMedium":{
-	"SAD_Tefnut_Standard":2,
+	"sanguinary_autonomist_defectors_Tefnut_Standard":2,
 	},
 	"tankerLarge":{
 	},
-	"SAD_station":{
-			"SAD_MotherShip_Standard":10,
-			"SAD_MotherShip_2_Standard":10,
+	"sanguinary_autonomist_defectors_station":{
+			"sanguinary_autonomist_defectors_MotherShip_Standard":10,
+			"sanguinary_autonomist_defectors_MotherShip_2_Standard":10,
 	},
 }

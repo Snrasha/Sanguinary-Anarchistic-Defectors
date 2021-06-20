@@ -1,0 +1,16 @@
+{
+    "faction":"sad",
+    "firstname":"Peanut",
+    "lastname":"DuLoup",
+    "gender":"F",    # M/F/N  (Male, female, any)
+    "officerlevel":-1, # Per default if -1, put the officerLevel max of your settings.
+    "mainShip":"sanguinary_autonomist_defectors_Atan_Standard", # Flag Ship variant
+    "ships":["2"], # Variants added after the mainShip
+    "randomFleet":true, # If random fleet(from the faction) will be added.
+    "reward":200000, # Bounty reward.
+    "combatPoints":40,
+    "needBounty":"sanguinary_autonomist_defectors_taweret_strong",
+    "description":"Peanut DuLoup have join the Gladiator registration only for you.",
+    "dialog":"You have killed my father and my mother! Die for the glory of Anarchist!",
+    "avatar":"graphics/portraits/portrait27.png", # Portrait of the Gladiator
+}

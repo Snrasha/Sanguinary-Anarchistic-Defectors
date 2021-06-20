@@ -1,0 +1,174 @@
+{
+  "bounds": [
+    -24.5,
+    9.5,
+    -49,
+    16,
+    -21,
+    22,
+    -10.5,
+    40,
+    9,
+    47.5,
+    34.5,
+    38.5,
+    50.5,
+    11,
+    42,
+    4.5,
+    42,
+    -4.5,
+    50.5,
+    -11,
+    34.5,
+    -38.5,
+    9,
+    -47.5,
+    -10.5,
+    -40,
+    -21,
+    -22,
+    -49,
+    -16,
+    -24.5,
+    -9.5,
+    -37.5,
+    -0
+  ],
+  "builtInMods": [
+    "high_maintenance",
+    "delicate"
+  ],
+  "builtInWeapons": {
+    "WS0003": "sanguinary_autonomist_defectors_hcepc",
+    "WS0004": "sanguinary_autonomist_defectors_hcepc",
+    "WS0005": "sanguinary_autonomist_defectors_stopper1"
+  },
+  "builtInWings": [],
+  "center": [
+    54,
+    51.5
+  ],
+  "collisionRadius": 65,
+  "engineSlots": [
+    {
+      "angle": -151,
+      "contrailSize": 5.788279,
+      "length": 20.691156,
+      "location": [
+        -32,
+        -17.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 5.788279
+    },
+    {
+      "angle": 151,
+      "contrailSize": 5.788279,
+      "length": 20.691156,
+      "location": [
+        -32,
+        17.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 5.788279
+    },
+    {
+      "angle": -161,
+      "contrailSize": 9.714613,
+      "length": 36.573986,
+      "location": [
+        -32.5,
+        -4
+      ],
+      "style": "SanguinaryFlare",
+      "width": 9.714613
+    },
+    {
+      "angle": 161,
+      "contrailSize": 9.714613,
+      "length": 36.573986,
+      "location": [
+        -32.5,
+        4
+      ],
+      "style": "SanguinaryFlare",
+      "width": 9.714613
+    }
+  ],
+  "height": 103,
+  "hullId": "sanguinary_autonomist_defectors_Babi",
+  "hullName": "Babi",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 63,
+  "spriteName": "graphics/ships/phase/sanguinary_autonomist_defectors_Babi.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 57,
+      "id": "WS0005",
+      "locations": [
+        40,
+        0
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -90,
+      "arc": 265,
+      "id": "WS0003",
+      "locations": [
+        11,
+        -26.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 90,
+      "arc": 265,
+      "id": "WS0004",
+      "locations": [
+        11,
+        26.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -117.5,
+      "arc": 119,
+      "id": "WS0001",
+      "locations": [
+        9.5,
+        -46.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    },
+    {
+      "angle": 117.5,
+      "arc": 119,
+      "id": "WS0002",
+      "locations": [
+        9.5,
+        46.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "SYSTEM"
+    }
+  ],
+  "width": 108
+}

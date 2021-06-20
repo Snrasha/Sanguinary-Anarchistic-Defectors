@@ -1,0 +1,187 @@
+{
+  "bounds": [
+    -47.5,
+    13.5,
+    -27,
+    14,
+    -31.5,
+    24.5,
+    -19.5,
+    34,
+    -1,
+    17,
+    20.5,
+    27.5,
+    19.5,
+    11,
+    40.5,
+    10,
+    40.5,
+    -10,
+    19.5,
+    -11,
+    20.5,
+    -27.5,
+    -1,
+    -17,
+    -19.5,
+    -34,
+    -31.5,
+    -24.5,
+    -27,
+    -14,
+    -47.5,
+    -13.5
+  ],
+  "builtInMods": [
+    "sanguinary_autonomist_defectors_harShields",
+    "high_maintenance"
+  ],
+  "builtInWeapons": {
+    "BLEFT": "sanguinary_autonomist_defectors_Atan_b_l",
+    "BRIGHT": "sanguinary_autonomist_defectors_Atan_b_r",
+    "TLEFT": "sanguinary_autonomist_defectors_Atan_t_l",
+    "TRIGHT": "sanguinary_autonomist_defectors_Atan_t_r",
+    "WS0002": "sanguinary_autonomist_defectors_slowbeamM"
+  },
+  "builtInWings": [],
+  "center": [
+    33,
+    49.5
+  ],
+  "collisionRadius": 84,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -45,
+        -6
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": -180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -45,
+        6
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    },
+    {
+      "angle": 180,
+      "contrailSize": 17,
+      "length": 36.5,
+      "location": [
+        -49.5,
+        -0
+      ],
+      "style": "SanguinaryFlare",
+      "width": 17
+    }
+  ],
+  "height": 99,
+  "hullId": "sanguinary_autonomist_defectors_Atan",
+  "hullName": "Atan",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 78,
+  "spriteName": "graphics/ships/atan/sanguinary_autonomist_defectors_Atan_Core.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 20,
+      "id": "WS0001",
+      "locations": [
+        26.5,
+        -21.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 15,
+      "id": "WS0002",
+      "locations": [
+        11.5,
+        21.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "MEDIUM",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "TRIGHT",
+      "locations": [
+        11.5,
+        -11
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "TLEFT",
+      "locations": [
+        11.5,
+        11
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "BRIGHT",
+      "locations": [
+        -17.5,
+        -20
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "BLEFT",
+      "locations": [
+        -17.5,
+        20
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 270,
+      "id": "WS0003",
+      "locations": [
+        -1.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    }
+  ],
+  "width": 66
+}

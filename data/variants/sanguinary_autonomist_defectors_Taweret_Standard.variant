@@ -1,0 +1,66 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 29,
+  "fluxVents": 50,
+  "goalVariant": true,
+  "hullId": "sanguinary_autonomist_defectors_Taweret",
+  "hullMods": [
+    "targetingunit",
+    "hardenedshieldemitter"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "sanguinary_autonomist_defectors_Taweret_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0005": "sanguinary_autonomist_defectors_mpolar",
+        "WS0006": "sanguinary_autonomist_defectors_mpolar",
+        "WS0007": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0008": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0009": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0010": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0011": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0012": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0013": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0014": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0015": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0016": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0017": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0018": "sanguinary_autonomist_defectors_pdcepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "sanguinary_autonomist_defectors_mcepc",
+        "WS0004": "sanguinary_autonomist_defectors_mcepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "sanguinary_autonomist_defectors_wamgun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sanguinary_autonomist_defectors_slowbeamH"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0023": "sanguinary_autonomist_defectors_stormBlaster"
+      }
+    }
+  ],
+  "wings": []
+}

@@ -1,0 +1,76 @@
+{
+  "bounds": [
+    -46,
+    40.5,
+    -12.5,
+    63,
+    25.5,
+    54,
+    53,
+    14,
+    53,
+    -14,
+    25.5,
+    -54,
+    -12.5,
+    -63,
+    -46,
+    -40.5
+  ],
+  "builtInMods": [
+    "supercomputer",
+    "reduced_explosion",
+    "sanguinary_autonomist_defectors_harShields",
+        "always_detaches"
+  ],
+  "builtInWeapons": {
+    "MAIN": "sanguinary_autonomist_defectors_rhpbc_turr",
+    "MUZZLE": "sanguinary_autonomist_defectors_rhpbc_muzzle"
+  },
+  "builtInWings": [],
+  "center": [
+    66,
+    55
+  ],
+  "collisionRadius": 75,
+  "engineSlots": [],
+  "height": 110,
+  "hullId": "sanguinary_autonomist_defectors_module_lance",
+  "hullName": "Heavy Weapon Module",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 86,
+  "spriteName": "graphics/ships/mothership_2/sanguinary_autonomist_defectors_lanceModule.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 160,
+      "id": "MAIN",
+      "locations": [
+        -12.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 160,
+      "id": "MUZZLE",
+      "locations": [
+        -12.5,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 132
+}

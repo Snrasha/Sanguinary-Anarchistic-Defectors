@@ -1,12 +1,12 @@
 {
 
-	"SAD_warning_beacon":{
+	"sanguinary_autonomist_defectors_warning_beacon":{
 		"defaultName":"Sanguinary Warning Beacon", # used if name=null in addCustomEntity()
 		"defaultRadius":40, # used if radius<0 in addCustomEntity()
 		"detectionRange":3000, # must be >0 for discoverable/discoveryXP to be used
 		"discoverable":true,
 		"discoveryXP":500,
-		"icon":"graphics/icons/SAD_warning_beacon.png",
+		"icon":"graphics/icons/sanguinary_autonomist_defectors_warning_beacon.png",
 		"iconColor":[255,100,255,255],
 		"iconWidth":24,
 		"iconHeight":24,
@@ -15,10 +15,10 @@
 		"showInCampaign":true,
 		"showIconOnMap":true,
 		"scaleIconWithZoom":true,
-		"customDescriptionId":"SAD_warning_beacon",
+		"customDescriptionId":"sanguinary_autonomist_defectors_warning_beacon",
 		"interactionImage":"graphics/illustrations/comm_relay.jpg",
-		"tags":["has_interaction_dialog", "sad_warning_beacon", "neutrino_high"],
+		"tags":["has_interaction_dialog", "sanguinary_autonomist_defectors_warning_beacon", "neutrino_high"],
 		"layers":[STATIONS], # what layer(s) to render in. See CampaignEngineLayers.java for possible values
-		"pluginClass":"src.data.scripts.campaign.SAD_WarningBeaconEntityPlugin",
+		"pluginClass":"src.data.scripts.campaign.sanguinary_autonomist_defectors_WarningBeaconEntityPlugin",
 	},
 }

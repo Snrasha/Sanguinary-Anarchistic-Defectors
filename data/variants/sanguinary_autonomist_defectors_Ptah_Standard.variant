@@ -1,0 +1,35 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 17,
+  "fluxVents": 20,
+  "goalVariant": true,
+  "hullId": "sanguinary_autonomist_defectors_Ptah",
+  "hullMods": [
+    "magazines",
+    "fluxdistributor",
+    "fluxbreakers"
+  ],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "sanguinary_autonomist_defectors_Ptah_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sanguinary_autonomist_defectors_mcepc",
+        "WS0004": "sanguinary_autonomist_defectors_cepc",
+        "WS0005": "sanguinary_autonomist_defectors_cepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "sanguinary_autonomist_defectors_mpolar",
+        "WS0003": "sanguinary_autonomist_defectors_pdcepc"
+      }
+    }
+  ],
+  "wings": []
+}

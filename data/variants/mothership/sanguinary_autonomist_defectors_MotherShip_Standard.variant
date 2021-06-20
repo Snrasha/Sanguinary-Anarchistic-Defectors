@@ -1,0 +1,64 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 50,
+  "fluxVents": 50,
+  "goalVariant": true,
+  "hullId": "sanguinary_autonomist_defectors_MotherShip",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "sanguinary_autonomist_defectors_MotherShip_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0024": "sanguinary_autonomist_defectors_mcepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0012": "sanguinary_autonomist_defectors_wamgun",
+        "WS0013": "sanguinary_autonomist_defectors_wamgun",
+        "WS0014": "sanguinary_autonomist_defectors_wamgun",
+        "WS0015": "sanguinary_autonomist_defectors_wamgun"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "sanguinary_autonomist_defectors_mpolar",
+        "WS0009": "sanguinary_autonomist_defectors_mpolar",
+        "WS0010": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0011": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0016": "sanguinary_autonomist_defectors_mpolar",
+        "WS0017": "sanguinary_autonomist_defectors_mpolar",
+        "WS0018": "sanguinary_autonomist_defectors_mpolar",
+        "WS0019": "sanguinary_autonomist_defectors_mpolar",
+        "WS0020": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0021": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0022": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0023": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0025": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0026": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0027": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0028": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0029": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0030": "sanguinary_autonomist_defectors_pdcepc"
+      }
+    }
+  ],
+  "modules": {
+  "WS0002": "sanguinary_autonomist_defectors_MotherShip_ArmorSide_Inv_Standard",
+  "WS0004": "sanguinary_autonomist_defectors_MotherShip_ContainerSide_Inv_Standard",
+  "WS0007": "sanguinary_autonomist_defectors_MotherShip_BackSlide_Inv_Standard",
+  "WS0001": "sanguinary_autonomist_defectors_MotherShip_ArmorSide_Standard",
+  "WS0003": "sanguinary_autonomist_defectors_MotherShip_ContainerSide_Standard",
+  "WS0005": "sanguinary_autonomist_defectors_MotherShip_FrontSide_Standard",
+  "WS0006": "sanguinary_autonomist_defectors_MotherShip_BackSlide_Standard"
+},
+  "wings": []
+}

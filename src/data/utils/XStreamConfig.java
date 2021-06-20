@@ -1,44 +1,44 @@
 package src.data.utils;
 
-import src.data.scripts.campaign.SAD_AssignmentAI;
-import src.data.scripts.campaign.SAD_SeededFleetManager;
-import src.data.scripts.campaign.SAD_StationFleetManager;
-import src.data.scripts.campaign.SAD_ThemeGenerator;
-import src.data.scripts.campaign.SAD_WarningBeaconEntityPlugin;
-import src.data.scripts.campaign.intels.SAD_DiscoverEntityListener;
+import src.data.scripts.campaign.sanguinary_autonomist_defectors_AssignmentAI;
+import src.data.scripts.campaign.sanguinary_autonomist_defectors_SeededFleetManager;
+import src.data.scripts.campaign.sanguinary_autonomist_defectors_StationFleetManager;
+import src.data.scripts.campaign.sanguinary_autonomist_defectors_ThemeGenerator;
+import src.data.scripts.campaign.sanguinary_autonomist_defectors_WarningBeaconEntityPlugin;
+import src.data.scripts.campaign.intels.sanguinary_autonomist_defectors_DiscoverEntityListener;
 
 public class XStreamConfig {
 
     public static void configureXStream(com.thoughtworks.xstream.XStream x) {
-        x.alias("SAD_AssignmentAI", SAD_AssignmentAI.class);
-        x.aliasAttribute(SAD_AssignmentAI.class, "homeSystem", "h");
-        x.aliasAttribute(SAD_AssignmentAI.class, "fleet", "f");
-        x.aliasAttribute(SAD_AssignmentAI.class, "source", "s");
+        x.alias("sanguinary_autonomist_defectors_AssignmentAI", sanguinary_autonomist_defectors_AssignmentAI.class);
+        x.aliasAttribute(sanguinary_autonomist_defectors_AssignmentAI.class, "homeSystem", "h");
+        x.aliasAttribute(sanguinary_autonomist_defectors_AssignmentAI.class, "fleet", "f");
+        x.aliasAttribute(sanguinary_autonomist_defectors_AssignmentAI.class, "source", "s");
 
-        x.alias("SAD_SeededFleetManager", SAD_SeededFleetManager.class);
-        x.aliasAttribute(SAD_SeededFleetManager.class, "minPts", "i");
-        x.aliasAttribute(SAD_SeededFleetManager.class, "maxPts", "a");
-        x.aliasAttribute(SAD_SeededFleetManager.class, "activeChance", "c");
+        x.alias("sanguinary_autonomist_defectors_SeededFleetManager", sanguinary_autonomist_defectors_SeededFleetManager.class);
+        x.aliasAttribute(sanguinary_autonomist_defectors_SeededFleetManager.class, "minPts", "i");
+        x.aliasAttribute(sanguinary_autonomist_defectors_SeededFleetManager.class, "maxPts", "a");
+        x.aliasAttribute(sanguinary_autonomist_defectors_SeededFleetManager.class, "activeChance", "c");
 
-        x.alias("SAD_StationFleetManager", SAD_StationFleetManager.class);
-        x.aliasAttribute(SAD_StationFleetManager.class, "minPts", "iA");
-        x.aliasAttribute(SAD_StationFleetManager.class, "maxPts", "aA");
-        x.aliasAttribute(SAD_StationFleetManager.class, "totalLost", "tL");
+        x.alias("sanguinary_autonomist_defectors_StationFleetManager", sanguinary_autonomist_defectors_StationFleetManager.class);
+        x.aliasAttribute(sanguinary_autonomist_defectors_StationFleetManager.class, "minPts", "iA");
+        x.aliasAttribute(sanguinary_autonomist_defectors_StationFleetManager.class, "maxPts", "aA");
+        x.aliasAttribute(sanguinary_autonomist_defectors_StationFleetManager.class, "totalLost", "tL");
 
-        //x.alias("SAD_ThemeGenerator", SAD_ThemeGenerator.class);
-        x.alias("SAD_RSICGen", SAD_ThemeGenerator.SAD_StationInteractionConfigGen.class);
-        x.alias("SAD_RFICGen", SAD_SeededFleetManager.SAD_FleetInteractionConfigGen.class);
+        //x.alias("sanguinary_autonomist_defectors_ThemeGenerator", sanguinary_autonomist_defectors_ThemeGenerator.class);
+        x.alias("sanguinary_autonomist_defectors_RSICGen", sanguinary_autonomist_defectors_ThemeGenerator.sanguinary_autonomist_defectors_StationInteractionConfigGen.class);
+        x.alias("sanguinary_autonomist_defectors_RFICGen", sanguinary_autonomist_defectors_SeededFleetManager.sanguinary_autonomist_defectors_FleetInteractionConfigGen.class);
 
-        x.alias("SAD_WarningBeaconEntityPlugin", SAD_WarningBeaconEntityPlugin.class);
-        x.aliasAttribute(SAD_WarningBeaconEntityPlugin.class, "phase", "p");
-        x.aliasAttribute(SAD_WarningBeaconEntityPlugin.class, "freqMult", "f");
-        x.aliasAttribute(SAD_WarningBeaconEntityPlugin.class, "sincePing", "s");
+        x.alias("sanguinary_autonomist_defectors_WarningBeaconEntityPlugin", sanguinary_autonomist_defectors_WarningBeaconEntityPlugin.class);
+        x.aliasAttribute(sanguinary_autonomist_defectors_WarningBeaconEntityPlugin.class, "phase", "p");
+        x.aliasAttribute(sanguinary_autonomist_defectors_WarningBeaconEntityPlugin.class, "freqMult", "f");
+        x.aliasAttribute(sanguinary_autonomist_defectors_WarningBeaconEntityPlugin.class, "sincePing", "s");
 
-	x.alias("SAD_DiscoverEntityListener", SAD_DiscoverEntityListener.class);
-    /*    x.alias("SAD_RouteManager", SAD_RouteManager.class);
-        x.aliasAttribute(SAD_RouteManager.class, "routes", "r");
+	x.alias("sanguinary_autonomist_defectors_DiscoverEntityListener", sanguinary_autonomist_defectors_DiscoverEntityListener.class);
+    /*    x.alias("sanguinary_autonomist_defectors_RouteManager", sanguinary_autonomist_defectors_RouteManager.class);
+        x.aliasAttribute(sanguinary_autonomist_defectors_RouteManager.class, "routes", "r");
 
-        x.alias("SAD_RouteData", RouteData.class);
+        x.alias("sanguinary_autonomist_defectors_RouteData", RouteData.class);
         x.aliasAttribute(RouteData.class, "extra", "x");
         x.aliasAttribute(RouteData.class, "delay", "a");
         x.aliasAttribute(RouteData.class, "source", "o");
@@ -52,27 +52,27 @@ public class XStreamConfig {
         x.aliasAttribute(RouteData.class, "current", "r");
         x.aliasAttribute(RouteData.class, "spawner", "p");
 
-        x.alias("SAD_AssignmentAI", SAD_AssignmentAI.class);
-       // x.aliasAttribute(SAD_AssignmentAI.class, "capTracker", "cT");
-       // x.aliasAttribute(SAD_AssignmentAI.class, "buildTracker", "bT");
+        x.alias("sanguinary_autonomist_defectors_AssignmentAI", sanguinary_autonomist_defectors_AssignmentAI.class);
+       // x.aliasAttribute(sanguinary_autonomist_defectors_AssignmentAI.class, "capTracker", "cT");
+       // x.aliasAttribute(sanguinary_autonomist_defectors_AssignmentAI.class, "buildTracker", "bT");
 
-        x.alias("SAD_RaidAssignmentAI", SAD_RaidAssignmentAI.class);
-        x.aliasAttribute(SAD_RaidAssignmentAI.class, "gaveReturnAssignments", "gRA");
+        x.alias("sanguinary_autonomist_defectors_RaidAssignmentAI", sanguinary_autonomist_defectors_RaidAssignmentAI.class);
+        x.aliasAttribute(sanguinary_autonomist_defectors_RaidAssignmentAI.class, "gaveReturnAssignments", "gRA");
 
-        x.alias("SAD_RouteFleetSpawner", SAD_RouteFleetSpawner.class);
+        x.alias("sanguinary_autonomist_defectors_RouteFleetSpawner", sanguinary_autonomist_defectors_RouteFleetSpawner.class);
 
-        x.alias("SAD_RtSeg", RouteSegment.class);
+        x.alias("sanguinary_autonomist_defectors_RtSeg", RouteSegment.class);
         x.aliasAttribute(RouteSegment.class, "id", "i");
         x.aliasAttribute(RouteSegment.class, "elapsed", "e");
         x.aliasAttribute(RouteSegment.class, "daysMax", "d");
         x.aliasAttribute(RouteSegment.class, "from", "f");
         x.aliasAttribute(RouteSegment.class, "to", "t");
-        x.alias("SAD_OptionalFleetData", SAD_OptionalFleetData.class);
-        x.aliasAttribute(SAD_OptionalFleetData.class, "strength", "s");
-        x.aliasAttribute(SAD_OptionalFleetData.class, "quality", "q");
-        x.aliasAttribute(SAD_OptionalFleetData.class, "factionId", "f");
-        x.aliasAttribute(SAD_OptionalFleetData.class, "fleetType", "t");
-        x.aliasAttribute(SAD_OptionalFleetData.class, "damage", "d");
+        x.alias("sanguinary_autonomist_defectors_OptionalFleetData", sanguinary_autonomist_defectors_OptionalFleetData.class);
+        x.aliasAttribute(sanguinary_autonomist_defectors_OptionalFleetData.class, "strength", "s");
+        x.aliasAttribute(sanguinary_autonomist_defectors_OptionalFleetData.class, "quality", "q");
+        x.aliasAttribute(sanguinary_autonomist_defectors_OptionalFleetData.class, "factionId", "f");
+        x.aliasAttribute(sanguinary_autonomist_defectors_OptionalFleetData.class, "fleetType", "t");
+        x.aliasAttribute(sanguinary_autonomist_defectors_OptionalFleetData.class, "damage", "d");
 */
     }
 }

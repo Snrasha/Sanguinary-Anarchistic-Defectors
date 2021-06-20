@@ -1,0 +1,114 @@
+{
+  "bounds": [
+    -12,
+    14,
+    13.5,
+    2.5,
+    13.5,
+    -2.5,
+    -12,
+    -14
+  ],
+  "builtInMods": [
+    "sanguinary_autonomist_defectors_harShields"
+  ],
+  "builtInWeapons": {
+    "COCKPIT": "sanguinary_autonomist_defectors_w_cockpit",
+    "LEFT": "sanguinary_autonomist_defectors_w_l",
+    "RIGHT": "sanguinary_autonomist_defectors_w_r"
+  },
+  "builtInWings": [],
+  "center": [
+    15.5,
+    16
+  ],
+  "collisionRadius": 26,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -11.5,
+        -0
+      ],
+      "style": "SanguinaryFlare",
+      "width": 10
+    }
+  ],
+  "height": 32,
+  "hullId": "sanguinary_autonomist_defectors_Wadjet",
+  "hullName": "Wadjet",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 25,
+  "spriteName": "graphics/ships/wadjet/sanguinary_autonomist_defectors_Wadjet_Core.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 15,
+      "id": "FRONTL",
+      "locations": [
+        3,
+        -8.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 15,
+      "id": "FRONTR",
+      "locations": [
+        3,
+        8.5
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "RIGHT",
+      "locations": [
+        -9,
+        -8.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": -0,
+      "arc": 360,
+      "id": "LEFT",
+      "locations": [
+        -9,
+        8.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "COCKPIT",
+      "locations": [
+        8.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "DECORATIVE"
+    }
+  ],
+  "width": 31
+}

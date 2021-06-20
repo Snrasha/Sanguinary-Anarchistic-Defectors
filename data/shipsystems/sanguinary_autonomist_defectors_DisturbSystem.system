@@ -1,0 +1,10 @@
+{
+    "id":"sanguinary_autonomist_defectors_DisturbSystem",
+    "type":"STAT_MOD",
+    "aiType":"WEAPON_BOOST",
+    "statsScript":"src.data.shipsystems.scripts.sanguinary_autonomist_defectors_DisturbSystem",
+  	"weaponTypes":[ENERGY],
+
+    "useSound":"system_targeting_feed",
+    "outOfUsesSound":"gun_out_of_ammo",
+}

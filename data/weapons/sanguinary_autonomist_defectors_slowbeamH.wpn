@@ -1,0 +1,58 @@
+{
+  "beamFireOnlyOnFullCharge": true,
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    200,
+    175,
+    255
+  ],
+  "everyFrameEffect": "src.data.scripts.weapons.sanguinary_autonomist_defectors_MurtiSoundPlugin",
+  "fireSoundTwo": "sanguinary_autonomist_defectors_slowBeamM_Loop",
+  "fringeColor": [
+    185,
+    60,
+    55,
+    255
+  ],
+  "glowColor": [
+    225,
+    100,
+    100,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0,
+  ],
+  "hardpointOffsets": [
+    26,
+    0,
+  ],
+  "hardpointSprite": "graphics/weapons/sanguinary_autonomist_defectors_slowBeamH_hardpoint.png",
+  "hitGlowRadius": 0,
+  "id": "sanguinary_autonomist_defectors_slowbeamH",
+  "pierceSet": [
+    PROJECTILE_FF,
+    PROJECTILE_NO_FF,
+    PROJECTILE_FIGHTER
+  ],
+  "pixelsPerTexel": 5,
+  "size": "LARGE",
+  "specClass": "beam",
+  "textureScrollSpeed": 72,
+  "textureType": [
+    "graphics/fx/sanguinary_autonomist_defectors_beam_slow_fringe.png",
+    "graphics/fx/sanguinary_autonomist_defectors_beam_slow_core.png"
+  ],
+  "turretAngleOffsets": [
+    0,
+  ],
+  "turretOffsets": [
+    13.5,
+    0,
+  ],
+  "turretSprite": "graphics/weapons/sanguinary_autonomist_defectors_slowBeamH_turret.png",
+  "type": "ENERGY",
+  "width": 20
+}

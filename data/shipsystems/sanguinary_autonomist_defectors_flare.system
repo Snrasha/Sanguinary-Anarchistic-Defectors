@@ -1,0 +1,11 @@
+{
+	"id":"sanguinary_autonomist_defectors_flare",
+	"type":"WEAPON",
+	"aiType":"FLARE",
+	"weaponDataId":"sanguinary_autonomist_defectors_flareLauncher",
+
+	"outOfUsesSound":"gun_out_of_ammo",
+
+	"aiHints":{
+	}
+}

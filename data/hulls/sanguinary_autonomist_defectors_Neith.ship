@@ -1,0 +1,104 @@
+{
+  "bounds": [
+    -34.5,
+    10.5,
+    -19,
+    16,
+    13.5,
+    10.5,
+    39.5,
+    10,
+    39.5,
+    -10,
+    13.5,
+    -10.5,
+    -19,
+    -16,
+    -34.5,
+    -10.5
+  ],
+  "builtInMods": [
+    "sanguinary_autonomist_defectors_harShields"
+  ],
+  "builtInWings": [],
+  "center": [
+    35,
+    41.5
+  ],
+  "collisionRadius": 63.5,
+  "engineSlots": [
+    {
+      "angle": -137,
+      "contrailSize": 17.283285,
+      "length": 34.721348,
+      "location": [
+        -37,
+        -10
+      ],
+      "style": "SanguinaryFlare",
+      "width": 17.283285
+    },
+    {
+      "angle": 137,
+      "contrailSize": 17.283285,
+      "length": 34.721348,
+      "location": [
+        -37,
+        10
+      ],
+      "style": "SanguinaryFlare",
+      "width": 17.283285
+    }
+  ],
+  "height": 83,
+  "hullId": "sanguinary_autonomist_defectors_Neith",
+  "hullName": "Neith",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 62,
+  "spriteName": "graphics/ships/sanguinary_autonomist_defectors_Neith.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 180,
+      "id": "WS0001",
+      "locations": [
+        -4.5,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 15,
+      "id": "WS0002",
+      "locations": [
+        25,
+        -18.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYNERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 15,
+      "id": "WS0003",
+      "locations": [
+        25,
+        18.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYNERGY"
+    }
+  ],
+  "width": 70
+}

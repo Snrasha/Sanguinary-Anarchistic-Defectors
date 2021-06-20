@@ -1,0 +1,18 @@
+{
+	"id":"sanguinary_autonomist_defectors_wadjetproj",
+	"specClass":"projectile",
+	"spawnType":"BALLISTIC",
+	"collisionClass":"PROJECTILE_FF",
+	"collisionClassByFighter":"PROJECTILE_FIGHTER",
+	"length":7.0,
+	"width":5.0,
+	"hitGlowRadius":9,
+	"fadeTime":0.05,
+	"fringeColor":[60,55,185,255],
+	"coreColor":[200,175,255,255],
+	"glowColor":[100,100,255,75],
+	"glowRadius":8,
+	"textureScrollSpeed":64.0,
+	"pixelsPerTexel":5.0,
+	"bulletSprite":"graphics/missiles/sanguinary_autonomist_defectors_phzdn_shot.png",
+}

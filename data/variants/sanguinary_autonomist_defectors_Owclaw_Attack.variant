@@ -1,0 +1,39 @@
+{
+  "displayName": "Attack",
+  "fluxCapacitors": 16,
+  "fluxVents": 30,
+  "goalVariant": true,
+  "hullId": "sanguinary_autonomist_defectors_Owclaw",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "sanguinary_autonomist_defectors_Owclaw_Attack",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sanguinary_autonomist_defectors_mcepc",
+        "WS0002": "sanguinary_autonomist_defectors_mcepc",
+        "WS0003": "sanguinary_autonomist_defectors_mcepc",
+        "WS0004": "sanguinary_autonomist_defectors_mcepc",
+        "WS0005": "sanguinary_autonomist_defectors_cepc",
+        "WS0006": "sanguinary_autonomist_defectors_cepc",
+        "WS0007": "sanguinary_autonomist_defectors_slowbeamH"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {}
+    },
+    {
+      "autofire": false,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0008": "sanguinary_autonomist_defectors_mpolar"
+      }
+    }
+  ],
+  "wings": []
+}

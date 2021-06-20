@@ -10,28 +10,28 @@
 		"shieldInnerColor":[165,115,120,75],
 		"fluxVentCoreColor":[95,205,140,255],
 		"fluxVentFringeColor":[50,110,74,255],
-    "engineLoopSet":"SAD_engine_loop", 				# id of entry in sounds.json
-		"engineAccelerateSet":"SAD_engine_accelerate",		        # id of entry in sounds.json
-		"empLoopSet":"SAD_emp_loop",					# id of entry in sounds.json
-		"fluxLoopSet":"SAD_flux_loop",					# id of entry in sounds.json
-		"ventFluxSet":"SAD_vent_flux",					# id of entry in sounds.json
-		"shieldBurnoutSet":"SAD_shield_burnout",			# id of entry in sounds.json
-		"shieldLowerSet":"SAD_shield_lower",				# id of entry in sounds.json
-		"shieldRaiseSet":"SAD_shield_raise",				# id of entry in sounds.json
-		"explosionShipSet":"SAD_explosion_ship",			# id of entry in sounds.json
-		"damageDecalSheet":"graphics/damage/SAD_damage_decals_base.png",
-		"damageDecalGlowSheet":"graphics/damage/SAD_damage_decals_glow.png",
+    "engineLoopSet":"sanguinary_autonomist_defectors_engine_loop", 				# id of entry in sounds.json
+		"engineAccelerateSet":"sanguinary_autonomist_defectors_engine_accelerate",		        # id of entry in sounds.json
+		"empLoopSet":"sanguinary_autonomist_defectors_emp_loop",					# id of entry in sounds.json
+		"fluxLoopSet":"sanguinary_autonomist_defectors_flux_loop",					# id of entry in sounds.json
+		"ventFluxSet":"sanguinary_autonomist_defectors_vent_flux",					# id of entry in sounds.json
+		"shieldBurnoutSet":"sanguinary_autonomist_defectors_shield_burnout",			# id of entry in sounds.json
+		"shieldLowerSet":"sanguinary_autonomist_defectors_shield_lower",				# id of entry in sounds.json
+		"shieldRaiseSet":"sanguinary_autonomist_defectors_shield_raise",				# id of entry in sounds.json
+		"explosionShipSet":"sanguinary_autonomist_defectors_explosion_ship",			# id of entry in sounds.json
+		"damageDecalSheet":"graphics/damage/sanguinary_autonomist_defectors_damage_decals_base.png",
+		"damageDecalGlowSheet":"graphics/damage/sanguinary_autonomist_defectors_damage_decals_glow.png",
 
 		"colorShiftCovers":false,
 		"coversColorShiftAmount":0.5,  # 0 to 1
 
 		"coversMatchShipBrightness":false,
-		"slotCoverSmallTurret":"graphics/weapons/covers/SAD_cover_shadow_ts.png",
-		"slotCoverSmallHardpoint":"graphics/weapons/covers/SAD_cover_shadow_hps.png",
-		"slotCoverMediumTurret":"graphics/weapons/covers/SAD_cover_shadow_tm.png",
-		"slotCoverMediumHardpoint":"graphics/weapons/covers/SAD_cover_shadow_hpm.png",
-		"slotCoverLargeTurret":"graphics/weapons/covers/SAD_cover_shadow_tl.png",
-		"slotCoverLargeHardpoint":"graphics/weapons/covers/SAD_cover_shadow_hpl.png",
+		"slotCoverSmallTurret":"graphics/weapons/covers/sanguinary_autonomist_defectors_cover_shadow_ts.png",
+		"slotCoverSmallHardpoint":"graphics/weapons/covers/sanguinary_autonomist_defectors_cover_shadow_hps.png",
+		"slotCoverMediumTurret":"graphics/weapons/covers/sanguinary_autonomist_defectors_cover_shadow_tm.png",
+		"slotCoverMediumHardpoint":"graphics/weapons/covers/sanguinary_autonomist_defectors_cover_shadow_hpm.png",
+		"slotCoverLargeTurret":"graphics/weapons/covers/sanguinary_autonomist_defectors_cover_shadow_tl.png",
+		"slotCoverLargeHardpoint":"graphics/weapons/covers/sanguinary_autonomist_defectors_cover_shadow_hpl.png",
 
 		"dHullOverlaySmall":"graphics/damage/ship_damage_over3.png",
 		"dHullOverlayLarge":"graphics/damage/ship_damage_over3.png",

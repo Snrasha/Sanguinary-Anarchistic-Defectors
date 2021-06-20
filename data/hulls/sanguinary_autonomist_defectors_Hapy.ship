@@ -1,0 +1,135 @@
+{
+  "bounds": [
+    -30,
+    13.5,
+    -6.5,
+    28,
+    30.5,
+    20,
+    30.5,
+    -20,
+    -6.5,
+    -28,
+    -30,
+    -13.5
+  ],
+  "builtInMods": [
+    "sanguinary_autonomist_defectors_harShields"
+  ],
+  "builtInWings": [],
+  "center": [
+    32,
+    37.5
+  ],
+  "collisionRadius": 65.5,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 11,
+      "length": 29,
+      "location": [
+        -34.5,
+        -8.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 11
+    },
+    {
+      "angle": -180,
+      "contrailSize": 11,
+      "length": 29,
+      "location": [
+        -34.5,
+        8.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 11
+    },
+    {
+      "angle": 180,
+      "contrailSize": 23,
+      "length": 36.5,
+      "location": [
+        -36.5,
+        -0
+      ],
+      "style": "SanguinaryFlare",
+      "width": 23
+    }
+  ],
+  "height": 75,
+  "hullId": "sanguinary_autonomist_defectors_Hapy",
+  "hullName": "Hapy",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 63,
+  "spriteName": "graphics/ships/hapy/sanguinary_autonomist_defectors_Hapy.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 180,
+      "arc": 247,
+      "id": "WS0001",
+      "locations": [
+        -18,
+        -0
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 15,
+      "id": "WS0002",
+      "locations": [
+        17,
+        -27.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 15,
+      "id": "WS0003",
+      "locations": [
+        17,
+        27.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 15,
+      "id": "WS0004",
+      "locations": [
+        36,
+        -15.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYNERGY"
+    },
+    {
+      "angle": -0,
+      "arc": 15,
+      "id": "WS0005",
+      "locations": [
+        36,
+        15.5
+      ],
+      "mount": "HARDPOINT",
+      "size": "SMALL",
+      "type": "SYNERGY"
+    }
+  ],
+  "width": 64
+}

@@ -1,3 +1,14 @@
+Version 1.1:
+-Update for 0.95
+-Rename faction Sanguinary anarchist Defectors to Sanguinary Autonomist Defectors.
+-Rename every prefix sanguinary_autonomist_defectors_ from SAD_
+-Remove armor percing plugin for some weapon
+-Remove simple missile ai for shrike, reinsert vanilla.
+-Big buff for Babi phase frigate.
+-Rename niddhoggr to Osiris like this is a duplicate of the weapon
+-Remove Balistic Atan from the pool. 
+
+
 Version 1.0.1f:
 -Replace ship description with ship description of Black Lynx.
 

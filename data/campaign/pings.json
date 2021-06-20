@@ -1,6 +1,6 @@
 {
 
-	"SAD_warning_beacon2":{
+	"sanguinary_autonomist_defectors_warning_beacon2":{
 		"sounds":["default_campaign_ping", ""],
 		"color":[0,165,255,255],
 		"useFactionColor":true,
@@ -13,7 +13,7 @@
 		"delay":1,
 	},
 
-	"SAD_warning_beacon3":{
+	"sanguinary_autonomist_defectors_warning_beacon3":{
 		"sounds":["default_campaign_ping", "", "default_campaign_ping"],
 		"color":[0,165,255,255],
 		"useFactionColor":true,

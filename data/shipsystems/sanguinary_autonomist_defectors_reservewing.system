@@ -1,0 +1,13 @@
+{
+	"id":"sanguinary_autonomist_defectors_reservewing",
+	"type":"STAT_MOD",
+	#"aiType":"CUSTOM",
+  "aiType":"RESERVE_DEPLOYMENT",
+	"statsScript":"src.data.shipsystems.scripts.sanguinary_autonomist_defectors_ReserveWingStats",
+
+	"useSound":"system_reserve_wing",
+	"outOfUsesSound":"gun_out_of_ammo",
+
+	"aiHints":{
+	}
+}

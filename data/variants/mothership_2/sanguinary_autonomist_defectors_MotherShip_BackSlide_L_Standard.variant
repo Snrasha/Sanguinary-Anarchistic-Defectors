@@ -1,0 +1,35 @@
+{
+  "displayName": "Standard",
+  "fluxCapacitors": 10,
+  "fluxVents": 10,
+  "goalVariant": false,
+  "hullId": "sanguinary_autonomist_defectors_MotherShip_BackSlide_L",
+  "hullMods": [],
+  "permaMods": [],
+  "quality": 0,
+  "variantId": "sanguinary_autonomist_defectors_MotherShip_BackSlide_L_Standard",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0002": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0004": "sanguinary_autonomist_defectors_pdcepc",
+        "WS0006": "sanguinary_autonomist_defectors_pdcepc"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "sanguinary_autonomist_defectors_mcepc",
+        "WS0003": "sanguinary_autonomist_defectors_mcepc",
+        "WS0005": "sanguinary_autonomist_defectors_mcepc"
+      }
+    }
+  ],
+  "wings": [
+    "sanguinary_autonomist_defectors_Wadjet_Wing",
+    "sanguinary_autonomist_defectors_Wadjet_Wing"
+  ]
+}

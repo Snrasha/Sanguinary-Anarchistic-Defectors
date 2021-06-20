@@ -1,0 +1,180 @@
+{
+  "bounds": [
+    120.5,
+    -47.5,
+    120,
+    25,
+    101,
+    46,
+    122,
+    68.5,
+    -25,
+    69.5,
+    -73,
+    98.5,
+    -109.5,
+    90,
+    -110,
+    15,
+    -80,
+    6,
+    -53,
+    -28.5,
+    -27,
+    -48,
+    -13.5,
+    -70,
+    -5.5,
+    -86.5,
+    8.5,
+    -75.5,
+    42,
+    -75,
+    98.5,
+    -44
+  ],
+  "builtInMods": [
+    "sanguinary_autonomist_defectors_harShields",
+    "supercomputer",
+    "reduced_explosion",
+        "always_detaches"
+  ],
+  "builtInWings": [],
+  "center": [
+    98.5,
+    126
+  ],
+  "collisionRadius": 152,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 31,
+      "length": 72.5,
+      "location": [
+        -109,
+        22.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 31
+    },
+    {
+      "angle": 180,
+      "contrailSize": 31,
+      "length": 72.5,
+      "location": [
+        -109,
+        83
+      ],
+      "style": "SanguinaryFlare",
+      "width": 31
+    },
+    {
+      "angle": 180,
+      "contrailSize": 14,
+      "length": 46,
+      "location": [
+        -116,
+        52.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 14
+    },
+    {
+      "angle": 180,
+      "contrailSize": 14,
+      "length": 46,
+      "location": [
+        -120,
+        44.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 14
+    },
+    {
+      "angle": 180,
+      "contrailSize": 14,
+      "length": 46,
+      "location": [
+        -120,
+        60.5
+      ],
+      "style": "SanguinaryFlare",
+      "width": 14
+    }
+  ],
+  "height": 248,
+  "hullId": "sanguinary_autonomist_defectors_MotherShip_BackSlide",
+  "hullName": "Back Side",
+  "hullSize": "FRIGATE",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 149,
+  "spriteName": "graphics/ships/mothership/sanguinary_autonomist_defectors_BackSide.png",
+  "style": "SANGUINARY_TECH",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        65.5,
+        8.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        33.5,
+        8
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": -116.5,
+      "arc": 190,
+      "id": "WS0001",
+      "locations": [
+        -12,
+        -20.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -115,
+      "arc": 213,
+      "id": "WS0002",
+      "locations": [
+        -4,
+        -62
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": -166,
+      "arc": 153,
+      "id": "WS0003",
+      "locations": [
+        -63.5,
+        64.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "ENERGY"
+    }
+  ],
+  "width": 193
+}

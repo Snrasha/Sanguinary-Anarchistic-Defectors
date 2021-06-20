@@ -1,0 +1,48 @@
+{
+  "collisionClass": "RAY",
+  "collisionClassByFighter": "RAY_FIGHTER",
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "fringeColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "glowColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    0,
+    0
+  ],
+  "hardpointSprite": "",
+  "hitGlowRadius": 0,
+  "id": "sanguinary_autonomist_defectors_w_cockpit",
+  "pixelsPerTexel": 1,
+  "showDamageWhenDecorative": false,
+  "size": "SMALL",
+  "specClass": "beam",
+  "textureScrollSpeed": 1,
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    0,
+    0
+  ],
+  "turretSprite": "graphics/ships/wadjet/sanguinary_autonomist_defectors_w_cockpit.png",
+  "type": "DECORATIVE",
+  "width": 1
+}

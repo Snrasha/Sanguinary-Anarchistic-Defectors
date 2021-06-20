@@ -2,38 +2,37 @@
 
 
   "plugins":{
-    "SAD_SmallEMPFlak":"src.data.scripts.plugins.SAD_EMPFlakSmall",
-    "SAD_DisruptSystem":"src.data.scripts.plugins.SAD_DisruptSystemEffect",
-    "SAD_ArmorPiercePlugin":"src.data.scripts.plugins.SAD_ArmorPiercePlugin",
-    "SAD_Effects":"src.data.scripts.plugins.SAD_effectsHook",
+    "sanguinary_autonomist_defectors_SmallEMPFlak":"src.data.scripts.plugins.sanguinary_autonomist_defectors_EMPFlakSmall",
+    "sanguinary_autonomist_defectors_DisruptSystem":"src.data.scripts.plugins.sanguinary_autonomist_defectors_DisruptSystemEffect",
+    "sanguinary_autonomist_defectors_Effects":"src.data.scripts.plugins.sanguinary_autonomist_defectors_effectsHook",
   },
   "graphics":{
     "intel":{
-      "sad_beacon_medium":"graphics/icons/intel/SAD_beacon_med.png",
-      "sad_beacon_high":"graphics/icons/intel/SAD_beacon_high.png",
+      "sanguinary_autonomist_defectors_beacon_medium":"graphics/icons/intel/sanguinary_autonomist_defectors_beacon_med.png",
+      "sanguinary_autonomist_defectors_beacon_high":"graphics/icons/intel/sanguinary_autonomist_defectors_beacon_high.png",
     },
     "flare":{
-      "SAD_nidhoggr_ALF":"graphics/fx/SAD_nidhoggrAnFlare.png",
+      "sanguinary_autonomist_defectors_nidhoggr_ALF":"graphics/fx/sanguinary_autonomist_defectors_nidhoggrAnFlare.png",
     },
     "concussion":{
-      "SAD_FlakWave":"graphics/fx/SAD_flakWave.png"
+      "sanguinary_autonomist_defectors_FlakWave":"graphics/fx/sanguinary_autonomist_defectors_flakWave.png"
     },
     "ping":{
-      "SAD_tagPing":"graphics/fx/SAD_tagPing.png",
+      "sanguinary_autonomist_defectors_tagPing":"graphics/fx/sanguinary_autonomist_defectors_tagPing.png",
     },
     "campaignEntities":{
-      "SAD_warning_beacon":"graphics/stations/SAD_buoy00.png",
-      "SAD_warning_beacon_glow":"graphics/stations/SAD_buoy00glow.png",
+      "sanguinary_autonomist_defectors_warning_beacon":"graphics/stations/sanguinary_autonomist_defectors_buoy00.png",
+      "sanguinary_autonomist_defectors_warning_beacon_glow":"graphics/stations/sanguinary_autonomist_defectors_buoy00glow.png",
     },
     "blueprint_packages":{
-      "sad_tech_package":"graphics/icons/cargo/SAD_package.png",
+      "sanguinary_autonomist_defectors_tech_package":"graphics/icons/cargo/sanguinary_autonomist_defectors_package.png",
     },
   },
 
 "designTypeColors":{
   "Sanguinary Tech":[151,39,102,255],
 },
-"SanguinaryAnarchisticDefectors_sectorConstellationMin":4,
-"SanguinaryAnarchisticDefectors_sectorConstellationMax":6,
+"SanguinaryAutonomistDefectors_sectorConstellationMin":4,
+"SanguinaryAutonomistDefectors_sectorConstellationMax":6,
 
 }

@@ -1,0 +1,43 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "sanguinary_autonomist_defectors_stormblaster_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    16.5,
+    0
+  ],
+  "frameRate": 20,
+  "numFrames": 4,
+  "hardpointSprite": "graphics/weapons/stormBlaster/sanguinary_autonomist_defectors_stormBlaster_00.png",
+  "turretSprite": "graphics/weapons/stormBlaster/sanguinary_autonomist_defectors_stormBlaster_00.png",
+  "id": "sanguinary_autonomist_defectors_stormBlaster",
+  "muzzleFlashSpec": {
+    "length": 35,
+    "particleColor": [
+      225,
+      100,
+      100,
+      235
+    ],
+    "particleCount": 11,
+    "particleDuration": 0.15,
+    "particleSizeMin": 6,
+    "particleSizeRange": 14,
+    "spread": 5
+  },
+  "projectileSpecId": "sanguinary_autonomist_defectors_stormproj",
+  "size": "LARGE",
+  "specClass": "projectile",
+  "textureType": ROUGH,
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    2.5,
+    0
+  ],
+  "type": "ENERGY"
+}
