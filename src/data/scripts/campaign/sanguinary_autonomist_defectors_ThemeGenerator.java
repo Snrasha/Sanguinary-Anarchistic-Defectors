@@ -513,10 +513,7 @@ log.info("    Adding " + num + " battlestations");
                 String coreId = Commodities.ALPHA_CORE;
 		AICoreOfficerPlugin plugin = Misc.getAICoreOfficerPlugin(coreId);
                 PersonAPI commander = plugin.createPerson(coreId, fleet.getFaction().getId(), random);
-				
-				fleet.setCommander(commander);
-                
-                FleetFactoryV3.addCommanderSkills(commander, fleet, random);
+				                
                 fleet.setCommander(commander);
                 fleet.getFlagship().setCaptain(commander);
                 		if (!damaged) {
@@ -526,7 +523,6 @@ log.info("    Adding " + num + " battlestations");
 
                 member.getRepairTracker().setCR(member.getRepairTracker().getMaxCR());
                 result.add(fleet);
-
             }
         }
 

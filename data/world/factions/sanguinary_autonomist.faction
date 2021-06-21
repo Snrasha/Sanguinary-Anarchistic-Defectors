@@ -174,13 +174,11 @@
 			"combatFreighterCombatUseFraction":0.25,  				# as part of the normal combat lineup
 			"combatFreighterCombatUseFractionWhenPriority":0.20,# as part of normal combat lineup, when marked as priority ship
 			"autofitRandomizeProbability":0.0,
-
-			"commanderSkillsShuffleProbability":0.5,
-			"commanderSkills":[
-					"electronic_warfare",
-					"fighter_doctrine",
-					"officer_management",
-					"coordinated_maneuvers",
+			"commanderSkillsShuffleProbability":1,
+			"commanderSkills":[ # unlike other factions, can get up to 3 skills depending
+				"electronic_warfare",
+				"flux_regulation",
+				"coordinated_maneuvers",
 			],
 	},
 },
