@@ -1,0 +1,14 @@
+{
+    "faction":"sanguinary_autonomist_defectors",
+    "firstname":"Sakura",
+    "lastname":"Crazy",
+    "gender":"F",    # M/F/N  (Male, female, any)
+    "officerlevel":7, # Per default if -1, put the officerLevel max of your settings.
+    "mainShip":"sanguinary_autonomist_defectors_Sakura_Standard", # Flag Ship variant
+    "advships":[["sanguinary_autonomist_defectors_Atan_b_Standard",6,"aggressive"]],
+    "randomFleet":false, # If random fleet(from the faction) will be added.
+    "reward":60000, # Bounty reward.
+    "description":"This woman called Sakura is piloting a unique Sakura-class cruiser. No need to specify the narcissism.",
+    "dialog":"I feel flattered that you come to me",
+    "avatar":"graphics/portraits/sanguinary_autonomist_defectors_sakura_portrait.png", # Portrait of the Gladiator
+}

@@ -1,0 +1,213 @@
+{
+  "hullName": "Sakura",
+  "hullId": "sanguinary_autonomist_defectors_Sakura",
+  "hullSize": "CRUISER",
+  "spriteName": "graphics/ships/sanguinary_autonomist_defectors_Sakura.png",
+  "style": "SANGUINARY_TECH",
+  "height": 256,
+  "width": 168,
+  "center": [84, 128],
+  "collisionRadius": 146,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 137.5,
+  "viewOffset": 0,
+  "builtInMods": [
+    "sanguinary_autonomist_defectors_harShields"
+  ],
+  "weaponSlots": [
+    {
+      "id": "WS0001",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 154,
+      "angle": -28,
+      "locations": [5, -56]
+    },
+    {
+      "id": "WS0002",
+      "size": "MEDIUM",
+      "type": "HYBRID",
+      "mount": "TURRET",
+      "arc": 154,
+      "angle": 28,
+      "locations": [5, 56]
+    },
+    {
+      "id": "WS0003",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": 126.5,
+      "locations": [-63, 16]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 130,
+      "angle": -126.5,
+      "locations": [-63, -16]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 147,
+      "angle": -126.5,
+      "locations": [-92, -16]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "COMPOSITE",
+      "mount": "TURRET",
+      "arc": 147,
+      "angle": 126.5,
+      "locations": [-92, 16]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "BALLISTIC",
+      "mount": "TURRET",
+      "arc": 294,
+      "angle": 0,
+      "locations": [19, -0]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "BALLISTIC",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [59, -0]
+    },
+    {
+      "id": "WS0009",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": 0,
+      "locations": [126, -28.5]
+    },
+    {
+      "id": "WS0010",
+      "size": "SMALL",
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [126, 28.5]
+    }
+  ],
+  "engineSlots": [
+    {
+      "location": [-79, -51],
+      "length": 40,
+      "width": 17,
+      "angle": 180,
+      "contrailSize": 17,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-79, 51],
+      "length": 40,
+      "width": 17,
+      "angle": -180,
+      "contrailSize": 17,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-76.5, -58.5],
+      "length": 28,
+      "width": 13,
+      "angle": 180,
+      "contrailSize": 13,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-76.5, 58.5],
+      "length": 28,
+      "width": 13,
+      "angle": -180,
+      "contrailSize": 13,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-127, -23],
+      "length": 54.5,
+      "width": 25,
+      "angle": 180,
+      "contrailSize": 25,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-127, 23],
+      "length": 54.5,
+      "width": 25,
+      "angle": -180,
+      "contrailSize": 25,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [24.5, -83],
+      "length": 28,
+      "width": 13,
+      "angle": -92,
+      "contrailSize": 128,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [24.5, 83],
+      "length": 28,
+      "width": 13,
+      "angle": 92,
+      "contrailSize": 128,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [84, -78],
+      "length": 11.370847,
+      "width": 7.798424,
+      "angle": -92,
+      "contrailSize": 128,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [84, 78],
+      "length": 11.370847,
+      "width": 7.798424,
+      "angle": 92,
+      "contrailSize": 128,
+      "style": "SanguinaryFlare"
+    }
+  ],
+  "bounds": [
+    -116, 35,
+    -71, 40.5,
+    -68.5, 67,
+    -13, 84.5,
+    95.5, 76.5,
+    120, 55,
+    121, 23,
+    51, 47.5,
+    45, 21.5,
+    68.5, 15.5,
+    68.5, -15.5,
+    45, -21.5,
+    51, -47.5,
+    121, -23,
+    120, -55,
+    95.5, -76.5,
+    -13, -84.5,
+    -68.5, -67,
+    -71, -40.5,
+    -116, -35
+  ]
+}

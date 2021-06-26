@@ -1,3 +1,8 @@
+Version 1.2:
+-Add the Sakura for Vayra and Gladiator Society
+-Modify the Osiris shipsystem because of his weakness on the back.
+-Fix the endless battle faction on the Gladiator Society
+
 Version 1.1c:
 -Fix a crash.
 Version 1.1b:
