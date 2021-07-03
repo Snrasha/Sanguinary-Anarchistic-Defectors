@@ -1,207 +1,155 @@
 {
-  "bounds": [
-    -59,
-    6,
-    -44.5,
-    11,
-    -98.5,
-    23,
-    -99,
-    32,
-    -63,
-    53.5,
-    -27,
-    60.5,
-    48,
-    56,
-    48.5,
-    43,
-    32.5,
-    37.5,
-    38.5,
-    23.5,
-    82,
-    20,
-    91,
-    11,
-    91,
-    -11,
-    82,
-    -20,
-    38.5,
-    -23.5,
-    32.5,
-    -37.5,
-    48.5,
-    -43,
-    48,
-    -56,
-    -27,
-    -60.5,
-    -63,
-    -53.5,
-    -99,
-    -32,
-    -98.5,
-    -23,
-    -44.5,
-    -11,
-    -59,
-    -6
-  ],
+  "hullName": "Khonsu",
+  "hullId": "sanguinary_autonomist_defectors_Khonsu",
+  "hullSize": "DESTROYER",
+  "spriteName": "graphics/ships/sanguinary_autonomist_defectors_Khonsu.png",
+  "style": "SANGUINARY_TECH",
+  "height": 205,
+  "width": 122,
+  "center": [61, 102.5],
+  "collisionRadius": 152.5,
+  "shieldCenter": [0, -0],
+  "shieldRadius": 147.5,
+  "viewOffset": 0,
   "builtInMods": [
     "sanguinary_autonomist_defectors_harShields"
   ],
-  "builtInWings": [],
-  "center": [
-    61,
-    102.5
-  ],
-  "collisionRadius": 152.5,
-  "engineSlots": [
-    {
-      "angle": 180,
-      "contrailSize": 20,
-      "length": 51,
-      "location": [
-        -101.5,
-        -27
-      ],
-      "style": "SanguinaryFlare",
-      "width": 20
-    },
-    {
-      "angle": -180,
-      "contrailSize": 20,
-      "length": 51,
-      "location": [
-        -101.5,
-        27
-      ],
-      "style": "SanguinaryFlare",
-      "width": 20
-    },
-    {
-      "angle": -180,
-      "contrailSize": 29,
-      "length": 77.5,
-      "location": [
-        -65,
-        0.5
-      ],
-      "style": "SanguinaryFlare",
-      "width": 29
-    }
-  ],
-  "height": 205,
-  "hullId": "sanguinary_autonomist_defectors_Khonsu",
-  "hullName": "Khonsu",
-  "hullSize": "DESTROYER",
-  "shieldCenter": [
-    0,
-    -0
-  ],
-  "shieldRadius": 147.5,
-  "spriteName": "graphics/ships/sanguinary_autonomist_defectors_Khonsu.png",
-  "style": "SANGUINARY_TECH",
-  "viewOffset": 0,
+  "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn"
+  },
   "weaponSlots": [
     {
-      "angle": 0,
-      "arc": 233,
       "id": "WS0001",
-      "locations": [
-        70.5,
-        -0
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 233,
+      "angle": 0,
+      "locations": [70.5, -0]
     },
     {
-      "angle": 0,
-      "arc": 5,
       "id": "WS0002",
-      "locations": [
-        33.5,
-        -28.5
-      ],
-      "mount": "HARDPOINT",
       "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": -0,
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
       "arc": 5,
-      "id": "WS0003",
-      "locations": [
-        33.5,
-        28.5
-      ],
-      "mount": "HARDPOINT",
-      "size": "MEDIUM",
-      "type": "MISSILE"
-    },
-    {
-      "angle": -63.5,
-      "arc": 171,
-      "id": "WS0004",
-      "locations": [
-        -9.5,
-        -36
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": 63.5,
-      "arc": 171,
-      "id": "WS0005",
-      "locations": [
-        -9.5,
-        36
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": -132,
-      "arc": 230,
-      "id": "WS0006",
-      "locations": [
-        -33,
-        -36
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": 132,
-      "arc": 230,
-      "id": "WS0007",
-      "locations": [
-        -33,
-        36
-      ],
-      "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
       "angle": 0,
-      "arc": 15,
-      "id": "WS0008",
-      "locations": [
-        99,
-        -0
-      ],
-      "mount": "HARDPOINT",
+      "locations": [33.5, -28.5]
+    },
+    {
+      "id": "WS0003",
       "size": "MEDIUM",
-      "type": "ENERGY"
+      "type": "MISSILE",
+      "mount": "HARDPOINT",
+      "arc": 5,
+      "angle": -0,
+      "locations": [33.5, 28.5]
+    },
+    {
+      "id": "WS0004",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 171,
+      "angle": -63.5,
+      "locations": [-9.5, -36]
+    },
+    {
+      "id": "WS0005",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 171,
+      "angle": 63.5,
+      "locations": [-9.5, 36]
+    },
+    {
+      "id": "WS0006",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 230,
+      "angle": -132,
+      "locations": [-33, -36]
+    },
+    {
+      "id": "WS0007",
+      "size": "SMALL",
+      "type": "ENERGY",
+      "mount": "TURRET",
+      "arc": 230,
+      "angle": 132,
+      "locations": [-33, 36]
+    },
+    {
+      "id": "WS0008",
+      "size": "MEDIUM",
+      "type": "ENERGY",
+      "mount": "HARDPOINT",
+      "arc": 15,
+      "angle": 0,
+      "locations": [99, -0]
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
-  "width": 122
+  "engineSlots": [
+    {
+      "location": [-101.5, -27],
+      "length": 51,
+      "width": 20,
+      "angle": 180,
+      "contrailSize": 20,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-101.5, 27],
+      "length": 51,
+      "width": 20,
+      "angle": -180,
+      "contrailSize": 20,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-65, 0.5],
+      "length": 77.5,
+      "width": 29,
+      "angle": -180,
+      "contrailSize": 29,
+      "style": "SanguinaryFlare"
+    }
+  ],
+  "bounds": [
+    -59, 6,
+    -44.5, 11,
+    -98.5, 23,
+    -99, 32,
+    -63, 53.5,
+    -27, 60.5,
+    48, 56,
+    48.5, 43,
+    32.5, 37.5,
+    38.5, 23.5,
+    82, 20,
+    91, 11,
+    91, -11,
+    82, -20,
+    38.5, -23.5,
+    32.5, -37.5,
+    48.5, -43,
+    48, -56,
+    -27, -60.5,
+    -63, -53.5,
+    -99, -32,
+    -98.5, -23,
+    -44.5, -11,
+    -59, -6
+  ]
 }

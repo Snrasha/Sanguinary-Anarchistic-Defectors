@@ -29,6 +29,9 @@
     -40,
     -7
   ],
+  "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn"
+  },
   "builtInMods": [
     "sanguinary_autonomist_defectors_harShields",
     "sanguinary_autonomist_defectors_converted_hangar"
@@ -88,6 +91,15 @@
       "mount": "HIDDEN",
       "size": "LARGE",
       "type": "LAUNCH_BAY"
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "width": 58

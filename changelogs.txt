@@ -1,7 +1,21 @@
 Version 1.2:
+-With Nexerelin, SAD will do remnant-like raid.
 -Add the Sakura for Vayra and Gladiator Society
 -Fix the endless battle faction on the Gladiator Society
 -Increase topseed, maneuverability of Osiris, increase range, maintenance supplies and maximum burn.
+-Add blueprint drop for cruiser destroyed.
+-EMP damage added on every weapons CPEC. Reduce damage of the amount of emp damage added.
+-Medium CEPC(S)  range down to 700 from 800. OP down to 10 from 14. Firerate increased but damage reduced. EMP damage added.
+-Medium Polarizer(S) range reduced to 500 from 650, OP cost reduced to 8 from 14 and flux cost increased to 30 from 20
+-Light CEPC(S) flux cost increased to 10 from 4
+-CEPC(S) flux cost reduced to 60 from 90 and range reduced to 600 from 675.
+-Rarity of drop are cancelled.
+-Nerf of the two motherships where the 
+       main shield:
+              efficiency has now 2 and 1.5 from 0.7 
+       secondary shield now 1 from 0.8
+       flux dissipation of the weak one now 1000 from 1400. (the weak one is wrongly more dangerous than the second.)
+
 
 Version 1.1c:
 -Fix a crash.

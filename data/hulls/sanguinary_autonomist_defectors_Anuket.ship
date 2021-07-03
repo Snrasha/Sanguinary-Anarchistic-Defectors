@@ -7,6 +7,9 @@
     17,
     -0
   ],
+  "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn"
+  },
   "builtInWings": [],
   "center": [
     18.5,
@@ -73,6 +76,15 @@
       "mount": "HARDPOINT",
       "size": "SMALL",
       "type": "MISSILE"
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "width": 37

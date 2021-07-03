@@ -1,181 +1,135 @@
 {
-  "bounds": [
-    -34,
-    6,
-    -23,
-    10,
-    -31.5,
-    12.5,
-    -23.5,
-    24,
-    -17.5,
-    28.5,
-    -11.5,
-    27,
-    -8,
-    36.5,
-    4.5,
-    37,
-    13.5,
-    27.5,
-    23,
-    25,
-    24.5,
-    14.5,
-    35.5,
-    4.5,
-    35.5,
-    -4.5,
-    24.5,
-    -14.5,
-    23,
-    -25,
-    13.5,
-    -27.5,
-    4.5,
-    -37,
-    -8,
-    -36.5,
-    -11.5,
-    -27,
-    -17.5,
-    -28.5,
-    -23.5,
-    -24,
-    -31.5,
-    -12.5,
-    -23,
-    -10,
-    -34,
-    -6
-  ],
+  "hullName": "Thoth",
+  "hullId": "sanguinary_autonomist_defectors_Thoth",
+  "hullSize": "FRIGATE",
+  "spriteName": "graphics/ships/sanguinary_autonomist_defectors_Thoth.png",
+  "style": "SANGUINARY_TECH",
+  "height": 74,
+  "width": 74,
+  "center": [37, 37],
+  "collisionRadius": 62.5,
+  "shieldCenter": [0, 0],
+  "shieldRadius": 59.5,
+  "viewOffset": 0,
   "builtInMods": [
     "sanguinary_autonomist_defectors_harShields"
   ],
-  "builtInWings": [],
-  "center": [
-    37,
-    37
-  ],
-  "collisionRadius": 62.5,
-  "engineSlots": [
-    {
-      "angle": 143,
-      "contrailSize": 30,
-      "length": 30,
-      "location": [
-        -26.5,
-        20
-      ],
-      "style": "SanguinaryFlare",
-      "width": 10
-    },
-    {
-      "angle": -143,
-      "contrailSize": 30,
-      "length": 30,
-      "location": [
-        -26.5,
-        -20
-      ],
-      "style": "SanguinaryFlare",
-      "width": 10
-    },
-    {
-      "angle": 180,
-      "contrailSize": 27,
-      "length": 51.5,
-      "location": [
-        -36,
-        -0
-      ],
-      "style": "SanguinaryFlare",
-      "width": 27
-    },
-    {
-      "angle": 51,
-      "contrailSize": 128,
-      "length": 30,
-      "location": [
-        7,
-        28
-      ],
-      "style": "SanguinaryFlare",
-      "width": 10
-    },
-    {
-      "angle": -51,
-      "contrailSize": 128,
-      "length": 30,
-      "location": [
-        7,
-        -28
-      ],
-      "style": "SanguinaryFlare",
-      "width": 10
-    }
-  ],
-  "height": 74,
-  "hullId": "sanguinary_autonomist_defectors_Thoth",
-  "hullName": "Thoth",
-  "hullSize": "FRIGATE",
-  "shieldCenter": [
-    0,
-    0
-  ],
-  "shieldRadius": 59.5,
-  "spriteName": "graphics/ships/sanguinary_autonomist_defectors_Thoth.png",
-  "style": "SANGUINARY_TECH",
-  "viewOffset": 0,
+  "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn"
+  },
   "weaponSlots": [
     {
-      "angle": -90,
-      "arc": 243,
       "id": "WS0001",
-      "locations": [
-        -5.5,
-        -16
-      ],
-      "mount": "TURRET",
       "size": "SMALL",
-      "type": "ENERGY"
-    },
-    {
-      "angle": 90,
+      "type": "ENERGY",
+      "mount": "TURRET",
       "arc": 243,
+      "angle": -90,
+      "locations": [-5.5, -16]
+    },
+    {
       "id": "WS0002",
-      "locations": [
-        -5.5,
-        16
-      ],
+      "size": "SMALL",
+      "type": "ENERGY",
       "mount": "TURRET",
-      "size": "SMALL",
-      "type": "ENERGY"
+      "arc": 243,
+      "angle": 90,
+      "locations": [-5.5, 16]
     },
     {
-      "angle": 0,
-      "arc": 16,
       "id": "WS0003",
-      "locations": [
-        29.5,
-        -20.5
-      ],
-      "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 16,
+      "angle": 0,
+      "locations": [29.5, -20.5]
     },
     {
-      "angle": -0,
-      "arc": 16,
       "id": "WS0004",
-      "locations": [
-        29.5,
-        20.5
-      ],
-      "mount": "HARDPOINT",
       "size": "SMALL",
-      "type": "SYNERGY"
+      "type": "SYNERGY",
+      "mount": "HARDPOINT",
+      "arc": 16,
+      "angle": -0,
+      "locations": [29.5, 20.5]
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
-  "width": 74
+  "engineSlots": [
+    {
+      "location": [-26.5, 20],
+      "length": 30,
+      "width": 10,
+      "angle": 143,
+      "contrailSize": 30,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-26.5, -20],
+      "length": 30,
+      "width": 10,
+      "angle": -143,
+      "contrailSize": 30,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [-36, -0],
+      "length": 51.5,
+      "width": 27,
+      "angle": 180,
+      "contrailSize": 27,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [7, 28],
+      "length": 30,
+      "width": 10,
+      "angle": 51,
+      "contrailSize": 128,
+      "style": "SanguinaryFlare"
+    },
+    {
+      "location": [7, -28],
+      "length": 30,
+      "width": 10,
+      "angle": -51,
+      "contrailSize": 128,
+      "style": "SanguinaryFlare"
+    }
+  ],
+  "bounds": [
+    -34, 6,
+    -23, 10,
+    -31.5, 12.5,
+    -23.5, 24,
+    -17.5, 28.5,
+    -11.5, 27,
+    -8, 36.5,
+    4.5, 37,
+    13.5, 27.5,
+    23, 25,
+    24.5, 14.5,
+    35.5, 4.5,
+    35.5, -4.5,
+    24.5, -14.5,
+    23, -25,
+    13.5, -27.5,
+    4.5, -37,
+    -8, -36.5,
+    -11.5, -27,
+    -17.5, -28.5,
+    -23.5, -24,
+    -31.5, -12.5,
+    -23, -10,
+    -34, -6
+  ]
 }

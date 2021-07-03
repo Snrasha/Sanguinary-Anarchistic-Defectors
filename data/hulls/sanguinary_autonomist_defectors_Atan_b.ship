@@ -38,6 +38,7 @@
     "high_maintenance"
   ],
   "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn",
     "BLEFT": "sanguinary_autonomist_defectors_Atan_b_l_b",
     "BRIGHT": "sanguinary_autonomist_defectors_Atan_b_r_b",
     "TLEFT": "sanguinary_autonomist_defectors_Atan_t_l_b",
@@ -181,6 +182,15 @@
       "mount": "TURRET",
       "size": "SMALL",
       "type": "BALLISTIC"
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "width": 66

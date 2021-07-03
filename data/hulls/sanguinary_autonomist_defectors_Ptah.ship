@@ -69,6 +69,7 @@
     "sanguinary_autonomist_defectors_harShields"
   ],
   "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn",
     "LEFT": "sanguinary_autonomist_defectors_Ptah_L",
     "RIGHT": "sanguinary_autonomist_defectors_Ptah_R"
   },
@@ -209,6 +210,15 @@
       "mount": "TURRET",
       "size": "SMALL",
       "type": "DECORATIVE"
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "width": 148

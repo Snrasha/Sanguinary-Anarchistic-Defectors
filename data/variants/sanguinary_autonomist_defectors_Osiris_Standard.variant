@@ -1,17 +1,18 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 39,
-  "fluxVents": 50,
-  "goalVariant": true,
+  "variantId": "sanguinary_autonomist_defectors_Osiris_Standard",
   "hullId": "sanguinary_autonomist_defectors_Osiris",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 44,
+  "fluxVents": 50,
+  "quality": 1,
+  "permaMods": [],
   "hullMods": [
     "targetingunit",
     "magazines",
-    "missleracks"
+    "missleracks",
+    "recovery_shuttles"
   ],
-  "permaMods": [],
-  "quality": 1,
-  "variantId": "sanguinary_autonomist_defectors_Osiris_Standard",
   "weaponGroups": [
     {
       "autofire": false,
@@ -69,6 +70,7 @@
       }
     }
   ],
+  "modules": [],
   "wings": [
     "sanguinary_autonomist_defectors_Wadjet_Wing",
     "sanguinary_autonomist_defectors_Wadjet_Wing",

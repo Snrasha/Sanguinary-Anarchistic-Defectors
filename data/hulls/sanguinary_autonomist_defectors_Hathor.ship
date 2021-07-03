@@ -23,6 +23,9 @@
     -75,
     -0
   ],
+  "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn"
+  },
   "builtInMods": [
     "sanguinary_autonomist_defectors_harShields"
   ],
@@ -152,6 +155,15 @@
       "mount": "TURRET",
       "size": "SMALL",
       "type": "ENERGY"
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "width": 102

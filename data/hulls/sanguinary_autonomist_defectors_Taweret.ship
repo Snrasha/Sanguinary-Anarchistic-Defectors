@@ -73,6 +73,7 @@
     "sanguinary_autonomist_defectors_harShields"
   ],
   "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn",
     "WS0023": "sanguinary_autonomist_defectors_stormBlaster"
   },
   "builtInWings": [],
@@ -433,6 +434,15 @@
       "mount": "HARDPOINT",
       "size": "LARGE",
       "type": "BUILT_IN"
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "width": 420

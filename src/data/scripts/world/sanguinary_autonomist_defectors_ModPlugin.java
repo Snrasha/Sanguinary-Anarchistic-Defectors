@@ -2,7 +2,6 @@ package src.data.scripts.world;
 
 import com.fs.starfarer.api.BaseModPlugin;
 import com.fs.starfarer.api.Global;
-import com.fs.starfarer.api.ModSpecAPI;
 import com.fs.starfarer.api.PluginPick;
 import com.fs.starfarer.api.campaign.CampaignPlugin;
 import com.fs.starfarer.api.campaign.GenericPluginManagerAPI;
@@ -12,10 +11,7 @@ import com.fs.starfarer.api.combat.MissileAIPlugin;
 import com.fs.starfarer.api.combat.MissileAPI;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.thoughtworks.xstream.XStream;
-import java.util.Arrays;
-import java.util.List;
 import src.data.utils.XStreamConfig;
-//import data.scripts.hullmods.TEM_LatticeShield;
 import src.data.scripts.ai.sanguinary_autonomist_defectors_SimpleMissileAI;
 import src.data.scripts.campaign.sanguinary_autonomist_defectors_respawnManager;
 import src.data.scripts.campaign.intels.sanguinary_autonomist_defectors_DiscoverEntityListener;

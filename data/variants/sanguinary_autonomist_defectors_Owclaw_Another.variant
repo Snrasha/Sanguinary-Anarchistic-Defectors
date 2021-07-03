@@ -1,15 +1,15 @@
 {
-  "displayName": "Another",
-  "fluxCapacitors": 3,
-  "fluxVents": 30,
-  "goalVariant": true,
+  "variantId": "sanguinary_autonomist_defectors_Owclaw_Another",
   "hullId": "sanguinary_autonomist_defectors_Owclaw",
+  "displayName": "Another",
+  "goalVariant": true,
+  "fluxCapacitors": 25,
+  "fluxVents": 30,
+  "quality": 0,
+  "permaMods": [],
   "hullMods": [
     "targetingunit"
   ],
-  "permaMods": [],
-  "quality": 0,
-  "variantId": "sanguinary_autonomist_defectors_Owclaw_Another",
   "weaponGroups": [
     {
       "autofire": true,
@@ -37,5 +37,6 @@
       }
     }
   ],
+  "modules": [],
   "wings": []
 }

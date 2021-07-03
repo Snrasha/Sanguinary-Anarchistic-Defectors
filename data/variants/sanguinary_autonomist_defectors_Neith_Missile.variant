@@ -1,15 +1,15 @@
 {
-  "displayName": "Missile",
-  "fluxCapacitors": 0,
-  "fluxVents": 8,
-  "goalVariant": true,
+  "variantId": "sanguinary_autonomist_defectors_Neith_Missile",
   "hullId": "sanguinary_autonomist_defectors_Neith",
+  "displayName": "Missile",
+  "goalVariant": true,
+  "fluxCapacitors": 4,
+  "fluxVents": 8,
+  "quality": 0,
+  "permaMods": [],
   "hullMods": [
     "missleracks"
   ],
-  "permaMods": [],
-  "quality": 0,
-  "variantId": "sanguinary_autonomist_defectors_Neith_Missile",
   "weaponGroups": [
     {
       "autofire": false,
@@ -27,5 +27,6 @@
       }
     }
   ],
+  "modules": [],
   "wings": []
 }

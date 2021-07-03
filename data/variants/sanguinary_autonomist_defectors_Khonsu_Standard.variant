@@ -1,13 +1,13 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 12,
-  "fluxVents": 20,
-  "goalVariant": true,
-  "hullId": "sanguinary_autonomist_defectors_Khonsu",
-  "hullMods": [],
-  "permaMods": [],
-  "quality": 0,
   "variantId": "sanguinary_autonomist_defectors_Khonsu_Standard",
+  "hullId": "sanguinary_autonomist_defectors_Khonsu",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 16,
+  "fluxVents": 20,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [],
   "weaponGroups": [
     {
       "autofire": true,
@@ -36,5 +36,6 @@
       }
     }
   ],
+  "modules": [],
   "wings": []
 }

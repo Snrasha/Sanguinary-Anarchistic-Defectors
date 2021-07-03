@@ -46,6 +46,9 @@
     "supercomputer",
     "reduced_explosion"
   ],
+  "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn"
+  },
   "builtInWings": [],
   "center": [
     174,
@@ -353,6 +356,15 @@
       "mount": "HARDPOINT",
       "size": "LARGE",
       "type": "STATION_MODULE"
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "width": 348

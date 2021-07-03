@@ -17,6 +17,9 @@
     -38.5,
     -67.5
   ],
+  "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn"
+  },
   "builtInMods": [
     "supercomputer",
     "reduced_explosion",
@@ -162,6 +165,15 @@
       "mount": "TURRET",
       "size": "LARGE",
       "type": "ENERGY"
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "width": 190

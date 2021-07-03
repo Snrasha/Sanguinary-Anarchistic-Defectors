@@ -62,17 +62,13 @@ public class sanguinary_autonomist_defectors_SeededFleetManager extends SeededFl
                     //for (FleetMemberAPI member : fleet.getFleetData().getMembersListCopy()) {
                     for (FleetMemberAPI member : losses) {
                         if (member.isStation()) {
-                            counts[2] += 10;
+                            counts[2] += 15;
                         }
 
                         if (member.isCapital()) {
                             counts[2] += 3;
                         } else if (member.isCruiser()) {
-                        /*    counts[2] += 1;
-                        } else if (member.isDestroyer()) {
-                            counts[1] += 1;
-                        } else if (member.isFrigate()) {
-                            counts[0] += 1;*/
+                            counts[2] += 1;
                         }
 
                     }

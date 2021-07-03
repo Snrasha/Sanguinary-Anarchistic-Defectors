@@ -1,13 +1,15 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 10,
-  "fluxVents": 8,
-  "goalVariant": true,
-  "hullId": "sanguinary_autonomist_defectors_Neith",
-  "hullMods": [],
-  "permaMods": [],
-  "quality": 0,
   "variantId": "sanguinary_autonomist_defectors_Neith_Standard",
+  "hullId": "sanguinary_autonomist_defectors_Neith",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 10,
+  "fluxVents": 9,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "blast_doors"
+  ],
   "weaponGroups": [
     {
       "autofire": true,
@@ -25,5 +27,6 @@
       }
     }
   ],
+  "modules": [],
   "wings": []
 }

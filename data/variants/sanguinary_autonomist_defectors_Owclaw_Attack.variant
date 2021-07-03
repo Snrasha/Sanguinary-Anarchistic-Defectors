@@ -1,13 +1,15 @@
 {
-  "displayName": "Attack",
-  "fluxCapacitors": 16,
-  "fluxVents": 30,
-  "goalVariant": true,
-  "hullId": "sanguinary_autonomist_defectors_Owclaw",
-  "hullMods": [],
-  "permaMods": [],
-  "quality": 0,
   "variantId": "sanguinary_autonomist_defectors_Owclaw_Attack",
+  "hullId": "sanguinary_autonomist_defectors_Owclaw",
+  "displayName": "Attack",
+  "goalVariant": true,
+  "fluxCapacitors": 28,
+  "fluxVents": 25,
+  "quality": 0,
+  "permaMods": [],
+  "hullMods": [
+    "reinforcedhull"
+  ],
   "weaponGroups": [
     {
       "autofire": true,
@@ -35,5 +37,6 @@
       }
     }
   ],
+  "modules": [],
   "wings": []
 }

@@ -11,6 +11,9 @@
   "shieldCenter": [0, 0],
   "shieldRadius": 137.5,
   "viewOffset": 0,
+  "builtInWeapons": {
+    "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn"
+  },
   "builtInMods": [
     "sanguinary_autonomist_defectors_harShields"
   ],
@@ -104,6 +107,15 @@
       "arc": 5,
       "angle": -0,
       "locations": [126, 28.5]
+    },
+    {
+      "id": "SHIELD",
+      "size": "SMALL",
+      "type": "DECORATIVE",
+      "mount": "HIDDEN",
+      "arc": 0,
+      "angle": 0,
+      "locations": [0, -0]
     }
   ],
   "engineSlots": [

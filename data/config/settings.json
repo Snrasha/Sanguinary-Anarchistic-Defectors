@@ -26,6 +26,14 @@
     "blueprint_packages":{
       "sanguinary_autonomist_defectors_tech_package":"graphics/icons/cargo/sanguinary_autonomist_defectors_package.png",
     },
+    "fx":{
+      "sanguinary_autonomist_defectors_shieldsInner256":"graphics/fx/sanguinary_autonomist_defectors_shields256b.png",
+      "sanguinary_autonomist_defectors_shieldsRing256":"graphics/fx/shields256ringd.png",
+      "sanguinary_autonomist_defectors_shieldsInner128":"graphics/fx/sanguinary_autonomist_defectors_shields128b.png",
+      "sanguinary_autonomist_defectors_shieldsRing128":"graphics/fx/shields128ringc.png",
+      "sanguinary_autonomist_defectors_shieldsInner64":"graphics/fx/sanguinary_autonomist_defectors_shields64b.png",
+      "sanguinary_autonomist_defectors_shieldsRing64":"graphics/fx/shields64ring.png",
+    },
   },
 
 "designTypeColors":{

@@ -1,15 +1,15 @@
 {
-  "displayName": "Standard",
-  "fluxCapacitors": 4,
-  "fluxVents": 21,
-  "goalVariant": true,
+  "variantId": "sanguinary_autonomist_defectors_Imhotep_Standard",
   "hullId": "sanguinary_autonomist_defectors_Imhotep",
+  "displayName": "Standard",
+  "goalVariant": true,
+  "fluxCapacitors": 24,
+  "fluxVents": 21,
+  "quality": 0,
+  "permaMods": [],
   "hullMods": [
     "targetingunit"
   ],
-  "permaMods": [],
-  "quality": 0,
-  "variantId": "sanguinary_autonomist_defectors_Imhotep_Standard",
   "weaponGroups": [
     {
       "autofire": true,
@@ -37,6 +37,7 @@
       "weapons": {}
     }
   ],
+  "modules": [],
   "wings": [
     "sanguinary_autonomist_defectors_Wadjet_Wing",
     "sanguinary_autonomist_defectors_Wadjet_Wing"
