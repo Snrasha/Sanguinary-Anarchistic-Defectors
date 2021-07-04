@@ -138,7 +138,8 @@
     -12.5
   ],
   "builtInMods": [
-    "sanguinary_autonomist_defectors_harShields"
+    "sanguinary_autonomist_defectors_harShields",
+    "sanguinary_autonomist_defectors_OsirisHullmod"
   ],
   "builtInWeapons": {
     "SHIELD": "sanguinary_autonomist_defectors_ShieldEffect_wpn",

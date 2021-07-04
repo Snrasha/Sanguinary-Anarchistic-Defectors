@@ -1,3 +1,6 @@
+Version 1.2.1:
+-Add a powerfull hullmod to Osiris.
+
 Version 1.2:
 -With Nexerelin, SAD will do remnant-like raid.
 -Add the Sakura for Vayra and Gladiator Society
